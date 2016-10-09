@@ -7,6 +7,18 @@ class RegisterForm(forms.Form):
 	password = forms.CharField(max_length=100, required=True)
 	password_re = forms.CharField(max_length=100, required=True)
 
+	def clean_password(self):
+	    data = self.cleaned_data["password"]
+	    if len(data) < 8:
+	        raise forms.ValidationError("Password too short! (Minimum: 8 characters)")
+	    return data
+
+	def clean_email(self):
+	    data = self.cleaned_data["email"]
+	    if User.objects.filter(email=data).exists():
+	        raise forms.ValidationError("Email already in use!")
+	    return data
+
 	def clean(self):
 	    password1 = None
 	    password2 = None
