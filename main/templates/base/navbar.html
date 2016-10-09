@@ -13,6 +13,11 @@
 				<li><a href="/">Help</a></li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
+				{% if not user.is_authenticated %}
+					<li><a href="{% url 'login' %}"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+				{% else %}
+					<li><a href="{% url 'logout' %}"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+				{% endif %}
 			</ul>
 		</div>
 	</div>
