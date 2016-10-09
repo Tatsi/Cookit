@@ -20,7 +20,8 @@ import main.views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^$', main.views.mainpage),
-    url(r'^accounts/login/$', auth_views.login, name="login"),
-    url(r'^logout/$', auth_views.logout, name="logout")
+    url(r'^$', main.views.mainpage, name='mainpage'),
+    url(r'^accounts/login/$', auth_views.login, name='login'),
+    url(r'^logout/$', auth_views.logout, name='logout'),
+    url(r'^register/$', main.views.register, name='register')
 ]
