@@ -1,0 +1,31 @@
+body {
+  padding-top: 60px; }
+
+.form-group.desktop-search {
+  margin-top: 10px;
+  margin-bottom: 0;
+  width: 34px;
+  height: 28px;
+  background-color: #fff;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  transition: all 0.35s, border-radius 0s; }
+  .form-group.desktop-search:hover {
+    width: 250px; }
+  .form-group.desktop-search input {
+    padding-right: 20px;
+    height: 28px;
+    border: 0 none;
+    background: transparent; }
+  .form-group.desktop-search span.glyphicon-search {
+    position: absolute;
+    right: 10px;
+    top: 17px; }
+
+.input-group.mobile-search input {
+  border-radius: 0; }
+.input-group.mobile-search button {
+  border-radius: 0; }
+
+/*# sourceMappingURL=styles.css.map */
