@@ -2,3 +2,4 @@
 __pycache__
 *.pyc
 .sass-cache/
+db.sqlite3

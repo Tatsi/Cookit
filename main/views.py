@@ -15,6 +15,9 @@ def feed(request):
 	context = {'recipes': array}
 	return render(request, 'feed.html', context)
 
+def recipepage(request):
+	context = {}
+	return render(request, 'recipepage.html', context)
 
 def register(request):
 	if request.method == "POST":

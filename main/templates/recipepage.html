@@ -1,0 +1,24 @@
+{% extends "base/base.html" %}
+{% load static %}
+
+{% block content %}
+
+<div class="recipe-page">
+	<h2>Chicken soup</h2>
+	<div class="row">
+		<div class="col-md-6">
+			<img src="{% static 'images/chickensoup.jpg' %}">
+		</div>
+		<div class="col-md-6">
+			<p><span class="glyphicon glyphicon-user"></span> Mary_1982</p>
+			<i>Pure soul food, this warming, easy chicken soup makes the most of leftover roast chicken.</i>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-6">
+			<p><span class="glyphicon glyphicon-time"></span> 1h</p>
+		</div>
+	</div>
+</div>
+
+{% endblock %}
