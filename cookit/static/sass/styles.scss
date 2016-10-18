@@ -1,4 +1,7 @@
 $recipe-name-color: #1b7b34;
+$heading-color: #f24c4e;
+$navbar-color: #eab126;
+$navbar-hover-color: #ffbf23;
 
 html {
 	background-color: #eee;
@@ -12,54 +15,107 @@ body {
 	background-color: #fff;
 }
 
-// Expanding search input
-.form-group.desktop-search {
-	margin-top: 10px;
-	margin-bottom: 0;
-	width: 34px;
-	height: 28px;
-	background-color: #fff;
-	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
-	border-radius: 20px;
-	border: 1px solid #ccc;
-	transition: all 0.35s, border-radius 0s;
-
-	&:hover {
-		width: 250px;
-	}
-
-	input {
-		padding-right: 20px;
-		height: 28px;
-		border: 0 none;
-		background: transparent;
-		box-shadow: none;
-	}
-	span.glyphicon-search {
-		position: absolute;
-		right: 10px;
-		top: 17px;
-	}
+// Common style for all the orange elements on the page
+// e.g. navbar and buttons
+.shadow-element {
+	color: #fff;
+	background-color: $navbar-color;
+	box-shadow: 2px 2px 3px #888888;
 }
 
-.input-group.mobile-search {
-	input {
-		border-radius: 0;
+.navbar {
+	a {
+		color: #fff;
+
+		&:hover, &:focus, &:active {
+			background-color: $navbar-hover-color !important;
+		}
 	}
-	button {
-		border-radius: 0;
+
+	// Expanding search input
+	.form-group.desktop-search {
+		margin-top: 10px;
+		margin-bottom: 0;
+		width: 34px;
+		height: 28px;
+		background-color: #fff;
+		box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+		border-radius: 20px;
+		border: 1px solid #ccc;
+		transition: all 0.35s, border-radius 0s;
+
+		&:hover {
+			width: 250px;
+		}
+
+		input {
+			padding-right: 20px;
+			height: 28px;
+			border: 0 none;
+			background: transparent;
+			box-shadow: none;
+		}
+		span.glyphicon-search {
+			position: absolute;
+			right: 10px;
+			top: 17px;
+			color: #555;
+		}
+	}
+
+	.input-group.mobile-search {
+		input {
+			border-radius: 0;
+		}
+		button {
+			border-radius: 0;
+		}
 	}
 }
 
 .recipe-page {
 	h2 {
 		color: $recipe-name-color;
+		span {
+			float: right;
+			color: $heading-color;
+		}
+	}
+	h4 {
+		color: $heading-color;
 	}
 	img {
-		width: 95%;
+		width: 100%;
 	}
-	.row {
-		margin-bottom: 10px;
+	.time {
+		margin-top: 10px;
+		margin-bottom: 15px;
+		p {
+			display: inline-block;
+		}
+		form {
+			display: inline-block;
+			margin-left: 20px;
+			input {
+				width: 36px;
+			}
+		}
+		button {
+			float: right;
+			&:hover {
+				background-color: $navbar-hover-color;
+				color: #fff;
+			}
+		}
+	}
+	.instructions {
+	    border-top: 1px solid #eee;
+		p {
+			margin: 0;
+		}
+		ul, ol {
+			padding-left: 20px;
+		}
 	}
 }
 

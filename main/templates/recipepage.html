@@ -4,19 +4,52 @@
 {% block content %}
 
 <div class="recipe-page">
-	<h2>Chicken soup</h2>
+	<div class="row">
+		<div class="col-md-6">
+			<h2>{{ name }}
+			{% if favourite == True %}
+				<span class="fa fa-heart"></span>
+			{% else %}
+				<span class="fa fa-heart-o"></span>
+			{% endif %}
+			</h2>
+		</div>
+	</div>
 	<div class="row">
 		<div class="col-md-6">
 			<img src="{% static 'images/chickensoup.jpg' %}">
 		</div>
 		<div class="col-md-6">
-			<p><span class="glyphicon glyphicon-user"></span> Mary_1982</p>
-			<i>Pure soul food, this warming, easy chicken soup makes the most of leftover roast chicken.</i>
+			<p><span class="glyphicon glyphicon-user"></span> {{ username }}</p>
+			<i>{{ description }}</i>
 		</div>
 	</div>
-	<div class="row">
+	<div class="row time">
 		<div class="col-md-6">
-			<p><span class="glyphicon glyphicon-time"></span> 1h</p>
+			<p><span class="glyphicon glyphicon-time"></span> {{ time }}</p>
+			<form action="">
+				<span class="fa fa-users"></span>
+				<input type="number" name="quantity" min="1" value="{{ servings }}">
+			</form>
+			<button class="btn shadow-element">COOKIT!</button>
+		</div>
+	</div>
+	<div class="row instructions">
+		<div class="col-md-4">
+			<h4>Ingredients</h4>
+			<ul>
+				{% for ingredient in ingredients %}
+				<li><p>{{ ingredient.amount }} {{ ingredient.name }}</p></li>
+				{% endfor %}
+			</ul>
+		</div>
+		<div class="col-md-8">
+			<h4>Instructions</h4>
+			<ol>
+				{% for step in instructions %}
+				<li><p>{{ step }}</p></li>
+				{% endfor %}
+			</ol>
 		</div>
 	</div>
 </div>

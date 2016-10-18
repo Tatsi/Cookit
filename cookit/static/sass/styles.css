@@ -7,7 +7,16 @@ body {
 .center-column {
   background-color: #fff; }
 
-.form-group.desktop-search {
+.shadow-element {
+  color: #fff;
+  background-color: #eab126;
+  box-shadow: 2px 2px 3px #888888; }
+
+.navbar a {
+  color: #fff; }
+  .navbar a:hover, .navbar a:focus, .navbar a:active {
+    background-color: #ffbf23 !important; }
+.navbar .form-group.desktop-search {
   margin-top: 10px;
   margin-bottom: 0;
   width: 34px;
@@ -17,30 +26,54 @@ body {
   border-radius: 20px;
   border: 1px solid #ccc;
   transition: all 0.35s, border-radius 0s; }
-  .form-group.desktop-search:hover {
+  .navbar .form-group.desktop-search:hover {
     width: 250px; }
-  .form-group.desktop-search input {
+  .navbar .form-group.desktop-search input {
     padding-right: 20px;
     height: 28px;
     border: 0 none;
     background: transparent;
     box-shadow: none; }
-  .form-group.desktop-search span.glyphicon-search {
+  .navbar .form-group.desktop-search span.glyphicon-search {
     position: absolute;
     right: 10px;
-    top: 17px; }
-
-.input-group.mobile-search input {
+    top: 17px;
+    color: #555; }
+.navbar .input-group.mobile-search input {
   border-radius: 0; }
-.input-group.mobile-search button {
+.navbar .input-group.mobile-search button {
   border-radius: 0; }
 
 .recipe-page h2 {
   color: #1b7b34; }
+  .recipe-page h2 span {
+    float: right;
+    color: #f24c4e; }
+.recipe-page h4 {
+  color: #f24c4e; }
 .recipe-page img {
-  width: 95%; }
-.recipe-page .row {
-  margin-bottom: 10px; }
+  width: 100%; }
+.recipe-page .time {
+  margin-top: 10px;
+  margin-bottom: 15px; }
+  .recipe-page .time p {
+    display: inline-block; }
+  .recipe-page .time form {
+    display: inline-block;
+    margin-left: 20px; }
+    .recipe-page .time form input {
+      width: 36px; }
+  .recipe-page .time button {
+    float: right; }
+    .recipe-page .time button:hover {
+      background-color: #ffbf23;
+      color: #fff; }
+.recipe-page .instructions {
+  border-top: 1px solid #eee; }
+  .recipe-page .instructions p {
+    margin: 0; }
+  .recipe-page .instructions ul, .recipe-page .instructions ol {
+    padding-left: 20px; }
 
 .thumbnail.right-caption {
   float: left; }
