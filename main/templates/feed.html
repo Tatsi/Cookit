@@ -1,0 +1,9 @@
+{% extends "base/base.html" %}
+
+{% block content %}
+<div class="row">
+{% for item in recipes %}
+{% include "recipe_card.html" with item=item %}
+{% endfor %}
+</div>
+{% endblock %}
