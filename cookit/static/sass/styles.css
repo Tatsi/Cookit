@@ -35,4 +35,11 @@ body {
 .input-group.mobile-search button {
   border-radius: 0; }
 
+.recipe-page h2 {
+  color: #1b7b34; }
+.recipe-page img {
+  width: 95%; }
+.recipe-page .row {
+  margin-bottom: 10px; }
+
 /*# sourceMappingURL=styles.css.map */
