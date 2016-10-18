@@ -12,10 +12,23 @@ body {
   background-color: #eab126;
   box-shadow: 2px 2px 3px #888888; }
 
+.collapse-header {
+  padding: 8px;
+  border: 1px solid #eee; }
+  .collapse-header .toggle:after {
+    font-family: 'Glyphicons Halflings';
+    content: "\e114";
+    float: right;
+    color: #555; }
+  .collapse-header.collapsed .toggle:after {
+    content: "\e113"; }
+
 .navbar a {
   color: #fff; }
   .navbar a:hover, .navbar a:focus, .navbar a:active {
     background-color: #ffbf23 !important; }
+.navbar .icon-bar {
+  background-color: #fff; }
 .navbar .form-group.desktop-search {
   margin-top: 10px;
   margin-bottom: 0;
@@ -71,12 +84,10 @@ body {
     .recipe-page .time button:hover {
       background-color: #ffbf23;
       color: #fff; }
-.recipe-page .instructions {
-  border-top: 1px solid #eee; }
-  .recipe-page .instructions p {
-    margin: 0; }
-  .recipe-page .instructions ul, .recipe-page .instructions ol {
-    padding-left: 20px; }
+.recipe-page .instructions p {
+  margin: 0; }
+.recipe-page .instructions ul, .recipe-page .instructions ol {
+  padding-left: 20px; }
 
 .thumbnail.right-caption {
   float: left; }

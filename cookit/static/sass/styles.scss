@@ -2,9 +2,11 @@ $recipe-name-color: #1b7b34;
 $heading-color: #f24c4e;
 $navbar-color: #eab126;
 $navbar-hover-color: #ffbf23;
+$light-grey: #eee;
+$dark-grey: #555;
 
 html {
-	background-color: #eee;
+	background-color: $light-grey;
 }
 
 body {
@@ -23,6 +25,24 @@ body {
 	box-shadow: 2px 2px 3px #888888;
 }
 
+// Common style for collapsing headers
+// e.g. mobile ingredients and instructions
+.collapse-header {
+	padding: 8px;
+	border: 1px solid $light-grey;
+	// symbol for non-collapsed header
+	.toggle:after {
+		font-family: 'Glyphicons Halflings';
+		content: "\e114";
+		float: right;
+		color: $dark-grey;
+	}
+	&.collapsed .toggle:after {
+		// symbol for collapsed header
+		content: "\e113";
+	}
+}
+
 .navbar {
 	a {
 		color: #fff;
@@ -30,6 +50,10 @@ body {
 		&:hover, &:focus, &:active {
 			background-color: $navbar-hover-color !important;
 		}
+	}
+
+	.icon-bar {
+		background-color: #fff;
 	}
 
 	// Expanding search input
@@ -47,7 +71,6 @@ body {
 		&:hover {
 			width: 250px;
 		}
-
 		input {
 			padding-right: 20px;
 			height: 28px;
@@ -59,10 +82,11 @@ body {
 			position: absolute;
 			right: 10px;
 			top: 17px;
-			color: #555;
+			color: $dark-grey;
 		}
 	}
 
+	// Mobile version for search
 	.input-group.mobile-search {
 		input {
 			border-radius: 0;
@@ -84,6 +108,7 @@ body {
 .recipe-page {
 	h2 {
 		color: $recipe-name-color;
+
 		span {
 			float: right;
 			color: $heading-color;
@@ -98,18 +123,21 @@ body {
 	.time {
 		margin-top: 10px;
 		margin-bottom: 15px;
+
 		p {
 			display: inline-block;
 		}
 		form {
 			display: inline-block;
 			margin-left: 20px;
+
 			input {
 				width: 36px;
 			}
 		}
 		button {
 			float: right;
+
 			&:hover {
 				background-color: $navbar-hover-color;
 				color: #fff;
@@ -117,7 +145,6 @@ body {
 		}
 	}
 	.instructions {
-	    border-top: 1px solid #eee;
 		p {
 			margin: 0;
 		}
@@ -128,16 +155,16 @@ body {
 }
 
 .thumbnail.right-caption {
-    float: left;
+	float: left;
 
-    > img {
-        float: left;
-        margin-right: 9px;
-    }
+	> img {
+		float: left;
+		margin-right: 9px;
+	}
 
-     > .caption {
-        padding: 4px;
-    }
+	> .caption {
+		padding: 4px;
+	}
 
 }
 
