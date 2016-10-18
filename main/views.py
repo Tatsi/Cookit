@@ -8,6 +8,13 @@ def mainpage(request):
 	context = {}
 	return render(request, 'mainpage.html', context)
 
+def feed(request):
+	array = []
+	for i in range(5):
+		array.append({'title': 'Pea soup a la Otaniemi mk. '+str(i), 'stars': '1'*i+'0'*(5-i), 'description': 'This is a delicious pea soup featuring goose liver. Exeptionally well suited for quick lounches.'})
+	context = {'recipes': array}
+	return render(request, 'feed.html', context)
+
 
 def register(request):
 	if request.method == "POST":

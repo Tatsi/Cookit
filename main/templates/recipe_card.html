@@ -1,0 +1,16 @@
+<div class="col-sm-6">
+	<div class="thumbnail right-caption">
+		<img src="http://placehold.it/180x150" alt="recipe thumb">
+		<div class="caption">
+			<h4>{{item.title}}</h4>
+			<p>{{item.description}}</p>
+			{% for star in item.stars %}
+				{% if star == "1" %}
+					<span class="glyphicon glyphicon-star vote-star"></span>
+				{% else %}
+					<span class="glyphicon glyphicon-star-empty vote-star"></span>
+				{% endif %}
+			{% endfor %}
+		</div>
+	</div>
+</div>

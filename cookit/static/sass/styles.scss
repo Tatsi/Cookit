@@ -62,3 +62,22 @@ body {
 		margin-bottom: 10px;
 	}
 }
+
+.thumbnail.right-caption {
+    float: left;
+
+    > img {
+        float: left;
+        margin-right: 9px;
+    }
+
+     > .caption {
+        padding: 4px;
+    }
+
+}
+
+.vote-star {
+	font-size: 1.5em;
+	color: #EAB126;
+}
