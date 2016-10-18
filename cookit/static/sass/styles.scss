@@ -1,3 +1,5 @@
+$recipe-name-color: #1b7b34;
+
 html {
 	background-color: #eee;
 }
@@ -54,6 +56,18 @@ body {
 		h1 {
 			font-size: 1.0em;
 		}
+	}
+}
+
+.recipe-page {
+	h2 {
+		color: $recipe-name-color;
+	}
+	img {
+		width: 95%;
+	}
+	.row {
+		margin-bottom: 10px;
 	}
 }
 

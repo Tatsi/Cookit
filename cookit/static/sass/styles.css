@@ -38,6 +38,13 @@ body {
 .thumbnail .caption h1 {
   font-size: 1.0em; }
 
+.recipe-page h2 {
+  color: #1b7b34; }
+.recipe-page img {
+  width: 95%; }
+.recipe-page .row {
+  margin-bottom: 10px; }
+
 .thumbnail.right-caption {
   float: left; }
   .thumbnail.right-caption > img {

@@ -24,5 +24,6 @@ urlpatterns = [
     url(r'^feed/$', main.views.feed, name='feed'),
     url(r'^accounts/login/$', auth_views.login, name='login'),
     url(r'^logout/$', auth_views.logout, name='logout'),
-    url(r'^register/$', main.views.register, name='register')
+    url(r'^register/$', main.views.register, name='register'),
+    url(r'^recipes/recipe/$', main.views.recipepage, name='recipepage'),
 ]
