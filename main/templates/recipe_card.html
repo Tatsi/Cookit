@@ -2,8 +2,8 @@
 	<div class="thumbnail right-caption">
 		<img src="http://placehold.it/180x150" alt="recipe thumb">
 		<div class="caption">
-			<h4>{{item.title}}</h4>
-			<p>{{item.description}}</p>
+			<h1>{{item.title}}<span class="glyphicon glyphicon-heart favo-icon pull-right"></span></h1>
+			<p>{{item.description|truncatechars:80}}</p>
 			{% for star in item.stars %}
 				{% if star == "1" %}
 					<span class="glyphicon glyphicon-star vote-star"></span>

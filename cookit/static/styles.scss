@@ -49,6 +49,14 @@ body {
 	}
 }
 
+.thumbnail {
+	.caption {
+		h1 {
+			font-size: 1.0em;
+		}
+	}
+}
+
 .thumbnail.right-caption {
     float: left;
 
@@ -66,4 +74,9 @@ body {
 .vote-star {
 	font-size: 1.5em;
 	color: #EAB126;
+}
+
+.favo-icon {
+	color: red;
+	font-size: 1.5em;
 }

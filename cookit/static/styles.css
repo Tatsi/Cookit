@@ -35,6 +35,9 @@ body {
 .input-group.mobile-search button {
   border-radius: 0; }
 
+.thumbnail .caption h1 {
+  font-size: 1.0em; }
+
 .thumbnail.right-caption {
   float: left; }
   .thumbnail.right-caption > img {
@@ -46,5 +49,9 @@ body {
 .vote-star {
   font-size: 1.5em;
   color: #EAB126; }
+
+.favo-icon {
+  color: red;
+  font-size: 1.5em; }
 
 /*# sourceMappingURL=styles.css.map */
