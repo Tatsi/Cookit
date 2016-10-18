@@ -73,6 +73,14 @@ body {
 	}
 }
 
+.thumbnail {
+	.caption {
+		h1 {
+			font-size: 1.0em;
+		}
+	}
+}
+
 .recipe-page {
 	h2 {
 		color: $recipe-name-color;
@@ -136,4 +144,9 @@ body {
 .vote-star {
 	font-size: 1.5em;
 	color: #EAB126;
+}
+
+.favo-icon {
+	color: red;
+	font-size: 1.5em;
 }

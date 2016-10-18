@@ -44,6 +44,9 @@ body {
 .navbar .input-group.mobile-search button {
   border-radius: 0; }
 
+.thumbnail .caption h1 {
+  font-size: 1.0em; }
+
 .recipe-page h2 {
   color: #1b7b34; }
   .recipe-page h2 span {
@@ -86,5 +89,9 @@ body {
 .vote-star {
   font-size: 1.5em;
   color: #EAB126; }
+
+.favo-icon {
+  color: red;
+  font-size: 1.5em; }
 
 /*# sourceMappingURL=styles.css.map */
