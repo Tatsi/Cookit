@@ -11,7 +11,7 @@ def mainpage(request):
 def feed(request):
 	array = []
 	for i in range(5):
-		array.append({'title': 'Pea soup a la Otaniemi '+str(i), 'stars': '1'*i+'0'*(5-i), 'description': 'This is a delicious pea soup featuring goose liver. Exeptionally well suited for quick lounches.'})
+		array.append({'title': 'Pea soup a la Otaniemi '+str(i), 'author': 'user123', 'stars': '1'*i+'0'*(5-i), 'description': 'This is a delicious pea soup featuring goose liver. Exeptionally well suited for quick lounches.', 'id': i})
 	context = {'recipes': array}
 	return render(request, 'feed.html', context)
 

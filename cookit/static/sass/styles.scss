@@ -101,7 +101,31 @@ body {
 	.caption {
 		h1 {
 			font-size: 1.0em;
+			margin: 5px;
 		}
+		h5 {
+			font-size: 0.7em;
+			margin-top: 0.1em;
+			color: #777;
+		}
+	}
+
+	&:hover {
+		border-color: red;
+	}
+
+	&.right-caption {
+		float: left;
+
+		> img {
+			float: left;
+			margin-right: 9px;
+		}
+
+		> .caption {
+			padding: 4px;
+		}
+
 	}
 }
 
@@ -154,20 +178,6 @@ body {
 	}
 }
 
-.thumbnail.right-caption {
-	float: left;
-
-	> img {
-		float: left;
-		margin-right: 9px;
-	}
-
-	> .caption {
-		padding: 4px;
-	}
-
-}
-
 .vote-star {
 	font-size: 1.5em;
 	color: #EAB126;
@@ -175,5 +185,6 @@ body {
 
 .favo-icon {
 	color: red;
-	font-size: 1.5em;
+	font-size: 2.5em;
 }
+

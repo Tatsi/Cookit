@@ -1,16 +1,19 @@
 <div class="col-sm-6">
-	<div class="thumbnail right-caption">
-		<img src="http://placehold.it/180x150" alt="recipe thumb">
-		<div class="caption">
-			<h1>{{item.title}}<span class="glyphicon glyphicon-heart favo-icon pull-right"></span></h1>
-			<p>{{item.description|truncatechars:80}}</p>
-			{% for star in item.stars %}
-				{% if star == "1" %}
-					<span class="glyphicon glyphicon-star vote-star"></span>
-				{% else %}
-					<span class="glyphicon glyphicon-star-empty vote-star"></span>
-				{% endif %}
-			{% endfor %}
+	<a href="{% url 'recipe' %}" class="recipe_link">
+		<div class="thumbnail right-caption">
+			<img class="img-rounded img-responsive" src="http://placehold.it/180x150" alt="recipe thumb">
+			<div class="caption">
+				<h1>{{item.title}}<span class="glyphicon glyphicon-heart favo-icon pull-right"></span></h1>
+				<h5> by {{item.author}}</h5>
+				<p>{{item.description|truncatechars:90}}</p>
+				{% for star in item.stars %}
+					{% if star == "1" %}
+						<span class="glyphicon glyphicon-star vote-star"></span>
+					{% else %}
+						<span class="glyphicon glyphicon-star-empty vote-star"></span>
+					{% endif %}
+				{% endfor %}
+			</div>
 		</div>
-	</div>
+	</a>
 </div>

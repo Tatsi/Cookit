@@ -58,7 +58,21 @@ body {
   border-radius: 0; }
 
 .thumbnail .caption h1 {
-  font-size: 1.0em; }
+  font-size: 1.0em;
+  margin: 5px; }
+.thumbnail .caption h5 {
+  font-size: 0.7em;
+  margin-top: 0.1em;
+  color: #777; }
+.thumbnail:hover {
+  border-color: red; }
+.thumbnail.right-caption {
+  float: left; }
+  .thumbnail.right-caption > img {
+    float: left;
+    margin-right: 9px; }
+  .thumbnail.right-caption > .caption {
+    padding: 4px; }
 
 .recipe-page h2 {
   color: #1b7b34; }
@@ -89,20 +103,12 @@ body {
 .recipe-page .instructions ul, .recipe-page .instructions ol {
   padding-left: 20px; }
 
-.thumbnail.right-caption {
-  float: left; }
-  .thumbnail.right-caption > img {
-    float: left;
-    margin-right: 9px; }
-  .thumbnail.right-caption > .caption {
-    padding: 4px; }
-
 .vote-star {
   font-size: 1.5em;
   color: #EAB126; }
 
 .favo-icon {
   color: red;
-  font-size: 1.5em; }
+  font-size: 2.5em; }
 
 /*# sourceMappingURL=styles.css.map */
