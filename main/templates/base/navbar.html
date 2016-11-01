@@ -11,10 +11,12 @@
 		<div class="collapse navbar-collapse" id="myNavbar">
 			<ul class="nav navbar-nav">
 				<li><a href="{% url 'feed' %}">Recipes</a></li>
-				<li><a href="/">Own Recipes</a></li>
-				<li><a href="/">Favourites</a></li>
-				<li><a href="/">History</a></li>
-				<li><a href="/">New Recipe</a></li>
+				{% if user.is_authenticated %}
+					<li><a href="/">Own Recipes</a></li>
+					<li><a href="/">Favourites</a></li>
+					<li><a href="/">History</a></li>
+					<li><a href="{% url 'new_recipe' %}">New Recipe</a></li>
+				{% endif %}
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
 				<!-- for desktop view -->
@@ -22,7 +24,7 @@
 					<form action="">
 						<div class="form-group desktop-search">
 							<input type="text" class="form-control" placeholder="Search" />
-							<span class="glyphicon glyphicon-search"></span>
+							<a href="/"><span class="glyphicon glyphicon-search"></span></a>
 						</div>
 					</form>
 				</li>
