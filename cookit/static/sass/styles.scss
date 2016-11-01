@@ -30,6 +30,7 @@ body {
 .collapse-header {
 	padding: 8px;
 	border: 1px solid $light-grey;
+	cursor: pointer;
 	// symbol for non-collapsed header
 	.toggle:after {
 		font-family: 'Glyphicons Halflings';
@@ -43,6 +44,41 @@ body {
 	}
 }
 
+// Common styles for headings
+h2 {
+	color: $recipe-name-color;
+
+	span {
+		float: right;
+		color: $heading-color;
+	}
+}
+h4 {
+	color: $heading-color;
+}
+
+// Common styles for add buttons
+button.add-btn {
+	background-color: $navbar-color;
+	color: #fff;
+	height: 45px;
+	width: 45px;
+	border-radius: 25px;
+	font-size: 18px;
+	margin-left: 10px;
+
+	&:hover {
+		background-color: $navbar-hover-color;
+		color: #fff;
+	}
+
+	> .glyphicon-plus {
+		left: 1px;
+		top: 2px;
+	}
+}
+
+// Styles for navigation bar
 .navbar {
 	a {
 		color: #fff;
@@ -97,28 +133,23 @@ body {
 	}
 }
 
-.thumbnail {
-	.caption {
-		h1 {
-			font-size: 1.0em;
-		}
+// Styles for recipe page
+@media (min-width: 768px) {
+	.recipe-page {
+		padding: 20px;
 	}
 }
-
 .recipe-page {
-	h2 {
-		color: $recipe-name-color;
-
-		span {
-			float: right;
-			color: $heading-color;
-		}
-	}
-	h4 {
-		color: $heading-color;
-	}
 	img {
 		width: 100%;
+	}
+	.instructions {
+		p {
+			margin: 0;
+		}
+		ul, ol {
+			padding-left: 20px;
+		}
 	}
 	.time {
 		margin-top: 10px;
@@ -128,11 +159,12 @@ body {
 			display: inline-block;
 		}
 		form {
-			display: inline-block;
 			margin-left: 20px;
+			display: inline-block;
 
 			input {
-				width: 36px;
+				display: inline-block;
+				width: 55px;
 			}
 		}
 		button {
@@ -144,12 +176,80 @@ body {
 			}
 		}
 	}
-	.instructions {
-		p {
-			margin: 0;
+}
+
+// Styles for new recipe page
+@media (min-width: 768px) {
+	.new-recipe-page {
+		padding: 20px;
+	}
+}
+.new-recipe-page {
+	textarea {
+		resize: none;
+	}
+	h2 input {
+		border: none;
+	}
+	img {
+		max-width: 20%;
+		display: inline-block;
+		+ button {
+			margin-left: 30px;
+			width: 50px;
+			height: 50px;
+			color: $dark-grey;
 		}
-		ul, ol {
-			padding-left: 20px;
+	}
+	.time {
+		padding-top: 40px;
+
+		input {
+			&#hours {
+				width: 55px;
+			}
+			&#minutes {
+				width: 55px;
+			}
+			&#servings {
+				width: 55px;
+			}
+		}
+		span.fa-users {
+			margin-left: 30px;
+		}
+	}
+	.instructions {
+		.form-group {
+			&.amount {
+				width: 80%;
+
+				> input {
+					width: 49.8%;
+				}
+				> select {
+					width: 49%;
+				}
+			}
+			+ .add-btn {
+	 			position: absolute;
+	 			top: 50px;
+	 		}
+		}
+
+		select {
+			&#ingredient {
+				width: 80%;
+				margin-top: 5px;
+			}
+ 		}
+	}
+}
+
+.thumbnail {
+	.caption {
+		h1 {
+			font-size: 1.0em;
 		}
 	}
 }

@@ -27,9 +27,11 @@
 	<div class="row time">
 		<div class="col-md-6">
 			<p><span class="glyphicon glyphicon-time"></span> {{ time }}</p>
-			<form action="">
-				<span class="fa fa-users"></span>
-				<input type="number" name="quantity" min="1" value="{{ servings }}">
+			<form class="form-inline" action="">
+				<div class="form-group">
+					<span class="fa fa-users"></span>
+					<input class="form-control" type="number" id="servings" name="servings" min="1" value="{{ servings }}">
+				</div>
 			</form>
 			<button class="btn shadow-element">COOKIT!</button>
 		</div>

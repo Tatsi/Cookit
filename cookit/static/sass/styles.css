@@ -14,7 +14,8 @@ body {
 
 .collapse-header {
   padding: 8px;
-  border: 1px solid #eee; }
+  border: 1px solid #eee;
+  cursor: pointer; }
   .collapse-header .toggle:after {
     font-family: 'Glyphicons Halflings';
     content: "\e114";
@@ -22,6 +23,30 @@ body {
     color: #555; }
   .collapse-header.collapsed .toggle:after {
     content: "\e113"; }
+
+h2 {
+  color: #1b7b34; }
+  h2 span {
+    float: right;
+    color: #f24c4e; }
+
+h4 {
+  color: #f24c4e; }
+
+button.add-btn {
+  background-color: #eab126;
+  color: #fff;
+  height: 45px;
+  width: 45px;
+  border-radius: 25px;
+  font-size: 18px;
+  margin-left: 10px; }
+  button.add-btn:hover {
+    background-color: #ffbf23;
+    color: #fff; }
+  button.add-btn > .glyphicon-plus {
+    left: 1px;
+    top: 2px; }
 
 .navbar a {
   color: #fff; }
@@ -57,37 +82,72 @@ body {
 .navbar .input-group.mobile-search button {
   border-radius: 0; }
 
-.thumbnail .caption h1 {
-  font-size: 1.0em; }
-
-.recipe-page h2 {
-  color: #1b7b34; }
-  .recipe-page h2 span {
-    float: right;
-    color: #f24c4e; }
-.recipe-page h4 {
-  color: #f24c4e; }
+@media (min-width: 768px) {
+  .recipe-page {
+    padding: 20px; } }
 .recipe-page img {
   width: 100%; }
+.recipe-page .instructions p {
+  margin: 0; }
+.recipe-page .instructions ul, .recipe-page .instructions ol {
+  padding-left: 20px; }
 .recipe-page .time {
   margin-top: 10px;
   margin-bottom: 15px; }
   .recipe-page .time p {
     display: inline-block; }
   .recipe-page .time form {
-    display: inline-block;
-    margin-left: 20px; }
+    margin-left: 20px;
+    display: inline-block; }
     .recipe-page .time form input {
-      width: 36px; }
+      display: inline-block;
+      width: 55px; }
   .recipe-page .time button {
     float: right; }
     .recipe-page .time button:hover {
       background-color: #ffbf23;
       color: #fff; }
-.recipe-page .instructions p {
-  margin: 0; }
-.recipe-page .instructions ul, .recipe-page .instructions ol {
-  padding-left: 20px; }
+
+@media (min-width: 768px) {
+  .new-recipe-page {
+    padding: 20px; } }
+.new-recipe-page textarea {
+  resize: none; }
+.new-recipe-page h2 input {
+  border: none; }
+.new-recipe-page img {
+  max-width: 20%;
+  display: inline-block; }
+  .new-recipe-page img + button {
+    margin-left: 30px;
+    width: 50px;
+    height: 50px;
+    color: #555; }
+.new-recipe-page .time {
+  padding-top: 40px; }
+  .new-recipe-page .time input#hours {
+    width: 55px; }
+  .new-recipe-page .time input#minutes {
+    width: 55px; }
+  .new-recipe-page .time input#servings {
+    width: 55px; }
+  .new-recipe-page .time span.fa-users {
+    margin-left: 30px; }
+.new-recipe-page .instructions .form-group.amount {
+  width: 80%; }
+  .new-recipe-page .instructions .form-group.amount > input {
+    width: 49.8%; }
+  .new-recipe-page .instructions .form-group.amount > select {
+    width: 49%; }
+.new-recipe-page .instructions .form-group + .add-btn {
+  position: absolute;
+  top: 50px; }
+.new-recipe-page .instructions select#ingredient {
+  width: 80%;
+  margin-top: 5px; }
+
+.thumbnail .caption h1 {
+  font-size: 1.0em; }
 
 .thumbnail.right-caption {
   float: left; }

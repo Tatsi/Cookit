@@ -1,0 +1,129 @@
+{% extends "base/base.html" %}
+{% load static %}
+
+{% block content %}
+
+<div class="new-recipe-page">
+	<form class="form-inline" id="new-recipe" action="">
+		<div class="row">
+			<div class="col-md-6">
+				<h2><input type="text" name="name" placeholder="Name of the recipe..."></input></h2>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12">
+				<img src="{% static 'images/chickensoup.jpg' %}" class="img-thumbnail">
+				<button class="btn btn-default"><span class="glyphicon glyphicon-plus"></span></button>
+			</div>
+		</div>
+		<div class="time row">
+			<div class="col-md-5">
+				<div class="form-group">
+					<span class="glyphicon glyphicon-time"></span>
+					<input class="form-control" type="number" id="hours" name="hours" min="0">
+					<label class="form-label" for="hours">h</label>
+					<input class="form-control" type="number" id="minutes" name="minutes" min="0" max="59">
+					<label class="form-label" for="minutes">min</label>
+				</div>
+				<div class="form-group">
+					<span class="fa fa-users"></span>
+					<input class="form-control" type="number" id="servings" name="servings" min="1">
+					<label class="form-label" for="servings">servings</label>
+				</div>
+			</div>
+			<div class="col-md-7">
+				<textarea class="form-control" id="description" rows="3" cols="50" name="description" placeholder="A short, optional description of your recipe..." form="new-recipe"></textarea>
+			</div>
+		</div>
+		<hr class="hidden-xs">
+		<div class="row instructions">
+			<div class="col-md-5">
+				<!-- Non-collapsing ingredient list for desktop -->
+				<div class="hidden-xs">
+					<h4>Ingredients</h4>
+					<ul>
+						{% for ingredient in ingredients %}
+						<li><p>{{ ingredient.amount }} {{ ingredient.name }}</p></li>
+						{% endfor %}
+					</ul>
+						<div class="form-group amount">
+							<input class="form-control" type="number" name="amount" placeholder="Amount">
+							<select class="form-control">
+								<option>Grams</option>
+								<option>Cups</option>
+								<option>Litres</option>
+								<option>Tbsp</option>
+								<option>Tsp</option>
+							</select>
+						</div>
+						<button class="btn add-btn"><span class="glyphicon glyphicon-plus"></span></button>
+						<select class="form-control" id="ingredient">
+							<option>Chicken</option>
+							<option>Pepper</option>
+							<option>Onion</option>
+							<option>Celery</option>
+							<option>Carrots</option>
+						</select>
+				</div>
+				<!-- Collapsing ingredient list for mobile -->
+				<div class="visible-xs">
+					<h4 class="collapse-header" data-toggle="collapse" href="#ingredients">Ingredients<span class="toggle"></span></h4>
+					<ul id="ingredients" class="collapse in">
+						{% for ingredient in ingredients %}
+						<li><p>{{ ingredient.amount }} {{ ingredient.name }}</p></li>
+						{% endfor %}
+					</ul>
+					<input class="form-control" type="number" name="amount" placeholder="Amount">
+					<div class="form-group">
+						<select class="form-control">
+							<option>Grams</option>
+							<option>Cups</option>
+							<option>Litres</option>
+							<option>Tbsp</option>
+							<option>Tsp</option>
+						</select>
+					</div>
+					<div class="form-group">
+						<select class="form-control">
+							<option>Chicken</option>
+							<option>Pepper</option>
+							<option>Onion</option>
+							<option>Celery</option>
+							<option>Carrots</option>
+						</select>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-7">
+				<!-- Non-collapsing instruction list for desktop -->
+				<div class="hidden-xs">
+					<h4>Instructions</h4>
+					<ol>
+						{% for step in instructions %}
+						<li><p>{{ step }}</p></li>
+						{% endfor %}
+					</ol>
+					<div class="form-group">
+						<textarea class="form-control" rows="3" cols="50" name="instruction" placeholder="Add step..."></textarea>
+						<button class="btn add-btn"><span class="glyphicon glyphicon-plus"></span></button>
+					</div>
+				</div>
+				<!-- Collapsing instruction list for mobile -->
+				<div class="visible-xs">
+					<h4 class="collapse-header collapsed" data-toggle="collapse" href="#instructions">Instructions<span class="toggle"></span></h4>
+					<ol id="instructions" class="collapse">
+						{% for step in instructions %}
+						<li><p>{{ step }}</p></li>
+						{% endfor %}
+					</ol>
+					<div class="form-group">
+						<textarea class="form-control" rows="3" cols="50" name="instruction" placeholder="Add step..."></textarea>
+						<button class="btn add-btn"><span class="glyphicon glyphicon-plus"></span></button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</form>
+</div>
+
+{% endblock %}
