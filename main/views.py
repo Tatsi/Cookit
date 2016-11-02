@@ -2,7 +2,7 @@ from django.contrib.auth.models import User
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from django.urls import reverse
-from main.forms import RegisterForm
+from main.forms import RegisterForm, IngredientsForm
 
 def mainpage(request):
 	context = {}
@@ -13,6 +13,14 @@ def feed(request):
 	for i in range(5):
 		array.append({'title': 'Pea soup a la Otaniemi '+str(i), 'author': 'user123', 'stars': '1'*i+'0'*(5-i), 'description': 'This is a delicious pea soup featuring goose liver. Exeptionally well suited for quick lounches.', 'id': i})
 	context = {'recipes': array}
+	context['ingredients'] = ['pea', 'carrot']
+	if request.method == 'POST':
+		form = IngredientsForm(request.POST)
+		if form.is_valid():
+			context['ingredients'].append(form.cleaned_data['ingredient'])
+	else:
+		form = IngredientsForm()
+
 	return render(request, 'feed.html', context)
 
 def recipe(request):
@@ -55,7 +63,7 @@ def new_recipe(request):
     return render(request, 'new_recipe.html', context)
 
 def register(request):
-	if request.method == "POST":
+	if request.method == 'POST':
 		form = RegisterForm(request.POST)
 		if form.is_valid():
 			new_user = User.objects.create_user(form.cleaned_data["username"], email=form.cleaned_data["email"],

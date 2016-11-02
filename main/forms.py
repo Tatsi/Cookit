@@ -1,6 +1,9 @@
 from django import forms
 from django.contrib.auth.models import User
 
+class IngredientsForm(forms.Form):
+	ingredient = forms.CharField(max_length=80, required=True)
+
 class RegisterForm(forms.Form):
 	username = forms.CharField(max_length=100, required=True)
 	email = forms.EmailField(max_length=100, required=True)
