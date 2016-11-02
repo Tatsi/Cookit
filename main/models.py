@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 class Recipe(models.Model):
     id = models.BigIntegerField(primary_key=True)
@@ -9,3 +10,9 @@ class Recipe(models.Model):
     # TODO ingredients
     rating_count = models.BigIntegerField()
     average_rating = models.DecimalField(max_digits=10, decimal_places=9)
+
+class UserAccount(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    # TODO favourite recipes
+    # TODO favourite users
+    # TODO history_recipes
