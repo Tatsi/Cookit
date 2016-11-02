@@ -12,7 +12,7 @@ class Recipe(models.Model):
     title = models.CharField(max_length=300)
     image_url = models.CharField(max_length=600)
     steps = models.CharField(max_length=10000, blank=True)
-    creator = models.ForeignKey(UserAccount)
+    creator = models.ForeignKey(UserAccount, on_delete=models.CASCADE)
     ingredients = models.ManyToManyField('Ingredient', through='RecipeIngredient')
     rating_count = models.BigIntegerField()
     average_rating = models.DecimalField(max_digits=10, decimal_places=9)
