@@ -10,6 +10,7 @@ class UserAccount(models.Model):
 class Recipe(models.Model):
     # id = models.BigIntegerField(primary_key=True) # Not needed
     title = models.CharField(max_length=300)
+    description = models.CharField(max_length=500)
     image_url = models.CharField(max_length=600)
     steps = models.CharField(max_length=10000, blank=True)
     creator = models.ForeignKey(UserAccount)
@@ -18,7 +19,7 @@ class Recipe(models.Model):
     average_rating = models.DecimalField(max_digits=10, decimal_places=9)
 
 class Ingredient(models.Model):
-    ingredient_id = models.BigIntegerField(primary_key=True)
+    ingredient_id = models.BigIntegerField(primary_key=True) # ID in external API
     unit_short = models.CharField(max_length=10)
     unit = models.CharField(max_length=20)
     unit_long = models.CharField(max_length=100)

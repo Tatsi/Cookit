@@ -4,10 +4,11 @@
 {% block content %}
 
 <div class="new-recipe-page">
-	<form class="form-inline" id="new-recipe" action="">
+	<form class="form-inline" id="new-recipe" method="post">
+		{% csrf_token %}
 		<div class="row">
 			<div class="col-md-6">
-				<h2><input type="text" name="name" placeholder="Name of the recipe..."></input></h2>
+				<h2><input type="text" name="title" placeholder="Enter title..."></input></h2>
 			</div>
 		</div>
 		<div class="row">
@@ -123,6 +124,7 @@
 				</div>
 			</div>
 		</div>
+		<button type="submit" class="btn btn-primary">Submit</button>
 	</form>
 </div>
 

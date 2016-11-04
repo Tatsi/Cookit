@@ -1,9 +1,20 @@
 from django import forms
 from django.contrib.auth.models import User
 
+# Form for submitting new recipes
+class NewRecipeForm(forms.Form):
+	title = forms.CharField()
+	description = forms.CharField()
+	steps = forms.CharField() # Takes steps in JSON format
+	ingredients = forms.CharField() # Takes ingredients in JSON format
+	servings = forms.IntegerField()
+	duration = forms.DurationField()
+
+# Form for filtering recipes based on ingredients user has
 class IngredientsForm(forms.Form):
 	ingredient = forms.CharField(max_length=80, required=True)
 
+# Form for user account registration
 class RegisterForm(forms.Form):
 	username = forms.CharField(max_length=100, required=True)
 	email = forms.EmailField(max_length=100, required=True)

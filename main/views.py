@@ -2,7 +2,7 @@ from django.contrib.auth.models import User
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from django.urls import reverse
-from main.forms import RegisterForm, IngredientsForm
+from main.forms import RegisterForm, IngredientsForm, NewRecipeForm
 
 def mainpage(request):
 	context = {}
@@ -18,9 +18,11 @@ def feed(request):
 		form = IngredientsForm(request.POST)
 		if form.is_valid():
 			context['ingredients'].append(form.cleaned_data['ingredient'])
+			# TODO: Save the ingredient to DB for the user
 	else:
 		form = IngredientsForm()
-
+	
+	# TODO: Update the filter and return the list of matching recipes
 	return render(request, 'feed.html', context)
 
 def recipe(request):
@@ -59,16 +61,23 @@ def recipe(request):
 	return render(request, 'recipe.html', context)
 
 def new_recipe(request):
-    context = {}
-    return render(request, 'new_recipe.html', context)
+	if request.method == 'POST':
+		form = NewRecipeForm(request.POST)
+		if form.is_valid():
+			# Save data to DB
+			pass
+	else:
+		form = NewRecipeForm()
+	context = {}
+	return render(request, 'new_recipe.html', context)
 
 def register(request):
 	if request.method == 'POST':
 		form = RegisterForm(request.POST)
 		if form.is_valid():
 			new_user = User.objects.create_user(form.cleaned_data["username"], email=form.cleaned_data["email"],
-			                                    password=form.cleaned_data["password"])
+												password=form.cleaned_data["password"])
 			return HttpResponseRedirect(reverse('mainpage'))
 	else:
-	    form = RegisterForm()
+		form = RegisterForm()
 	return render(request, "registration/register.html", {"form": form})
