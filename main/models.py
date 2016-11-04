@@ -11,6 +11,8 @@ class Recipe(models.Model):
     # id = models.BigIntegerField(primary_key=True) # Not needed
     title = models.CharField(max_length=300)
     description = models.CharField(max_length=500)
+    servings = models.IntegerField()
+    duration = models.DurationField()
     image_url = models.CharField(max_length=600)
     steps = models.CharField(max_length=10000, blank=True)
     creator = models.ForeignKey(UserAccount)

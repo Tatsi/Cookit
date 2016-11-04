@@ -3,6 +3,7 @@ from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from django.urls import reverse
 from main.forms import RegisterForm, IngredientsForm, NewRecipeForm
+from django.utils import dateparse
 
 def mainpage(request):
 	context = {}
@@ -64,8 +65,12 @@ def new_recipe(request):
 	if request.method == 'POST':
 		form = NewRecipeForm(request.POST)
 		if form.is_valid():
-			# Save data to DB
-			pass
+			# Dummy. Now we just print the data to console
+			# TODO: Save the recipe to DB
+			print(form.cleaned_data['title'])
+			print(form.cleaned_data['description'])
+			print(form.cleaned_data['servings'])
+			timedelta = str(form.cleaned_data['hours']) + ':' + str(form.cleaned_data['minutes']) + ':0'
 	else:
 		form = NewRecipeForm()
 	context = {}

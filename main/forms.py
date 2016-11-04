@@ -5,21 +5,22 @@ from django.contrib.auth.models import User
 class NewRecipeForm(forms.Form):
 	title = forms.CharField()
 	description = forms.CharField()
-	steps = forms.CharField() # Takes steps in JSON format
-	ingredients = forms.CharField() # Takes ingredients in JSON format
+	steps = forms.CharField(required=False) # Takes steps in JSON format?
+	ingredients = forms.CharField(required=False) # Takes ingredients in JSON format?
 	servings = forms.IntegerField()
-	duration = forms.DurationField()
+	hours = forms.IntegerField() 
+	minutes = forms.IntegerField()
 
 # Form for filtering recipes based on ingredients user has
 class IngredientsForm(forms.Form):
-	ingredient = forms.CharField(max_length=80, required=True)
+	ingredient = forms.CharField(max_length=80)
 
 # Form for user account registration
 class RegisterForm(forms.Form):
-	username = forms.CharField(max_length=100, required=True)
-	email = forms.EmailField(max_length=100, required=True)
-	password = forms.CharField(max_length=100, required=True)
-	password_re = forms.CharField(max_length=100, required=True)
+	username = forms.CharField(max_length=100)
+	email = forms.EmailField(max_length=100)
+	password = forms.CharField(max_length=100)
+	password_re = forms.CharField(max_length=100)
 
 	def clean_password(self):
 	    data = self.cleaned_data["password"]
