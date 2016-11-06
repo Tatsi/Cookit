@@ -49,7 +49,7 @@ with open('main/fixtures/ingredients_' + time + '.json', 'w') as outfile:
                             ingredient_id = ingredient_id,
                             name = name,
                             default_amount = default_amount,
-                            aisle = aisle,
+                            category = aisle,
                             unit = unit,
                             unit_short = unitShort,
                             unit_long = unitLong,
