@@ -9,6 +9,7 @@ import json
 request_count = 10
 recipes_per_request = 10
 time = datetime.datetime.now().strftime("%Y-%m-%d_%H_%M_%S").encode('utf-8')
+data = []
 
 with open('main/fixtures/ingredients_' + time + '.json', 'w') as outfile:
     for x in range(0, request_count):
@@ -27,7 +28,7 @@ with open('main/fixtures/ingredients_' + time + '.json', 'w') as outfile:
 
         for r in recipes:
             ingredients = r["extendedIngredients"]
-            data = []
+            
 
             for i in ingredients:
                 #pprint(i)
@@ -52,10 +53,11 @@ with open('main/fixtures/ingredients_' + time + '.json', 'w') as outfile:
                             category = aisle,
                             unit = unit,
                             unit_short = unitShort,
-                            unit_long = unitLong,
-                            meta_information = metaInformation
+                            unit_long = unitLong
+                            #meta_information = metaInformation
                         )
                     )
                     data.append(entry)
-            json.dump(data, outfile, indent = 4)
+
+    json.dump(data, outfile, indent = 4)
 
