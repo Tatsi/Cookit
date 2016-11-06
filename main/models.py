@@ -25,6 +25,8 @@ class Ingredient(models.Model):
     name = models.CharField(max_length=500)
     category = models.CharField(max_length=500)
     default_amount = models.CharField(max_length=100)
+    aisle = models.CharField(max_length=200)
+    meta_information = models.CharField(max_length=600)
 
 class RecipeIngredient(models.Model):
     recipe = models.ForeignKey(Recipe)
