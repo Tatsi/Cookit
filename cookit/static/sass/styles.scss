@@ -133,6 +133,7 @@ button.add-btn {
 	}
 }
 
+// Styles for feed items
 .thumbnail {
 	.caption {
 		h1 {
@@ -162,6 +163,16 @@ button.add-btn {
 			padding: 4px;
 		}
 	}
+}
+
+.ingredients-list {
+	h4 {
+		display: inline;
+	}
+}
+
+.ingredients-form {
+	margin: 5px;
 }
 
 // Styles for recipe page
