@@ -28,4 +28,11 @@
 {% include "recipe_card.html" with item=item %}
 {% endfor %}
 </div>
+
+<script type="text/javascript">
+var all_ingredients = {{all_ingredients|safe}};
+$('#ingredientInput').typeahead({source: all_ingredients });
+
+
+</script>
 {% endblock %}

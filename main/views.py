@@ -3,6 +3,7 @@ from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from django.urls import reverse
 from main.forms import RegisterForm, IngredientsForm, NewRecipeForm
+from main.models import Ingredient
 from django.utils import dateparse
 
 def mainpage(request):
@@ -22,6 +23,9 @@ def feed(request):
 			# TODO: Save the ingredient to DB for the user
 	else:
 		form = IngredientsForm()
+
+	# Convert all ingredients to a list and pass to template
+	context['all_ingredients'] = list(Ingredient.objects.all().values_list('name', flat=True))
 	
 	# TODO: Update the filter and return the list of matching recipes
 	return render(request, 'feed.html', context)
