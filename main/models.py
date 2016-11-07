@@ -6,9 +6,9 @@ class UserAccount(models.Model):
     favourite_recipes = models.ManyToManyField('Recipe', related_name="%(app_label)s_%(class)s_favourites")
     favourite_users = models.ManyToManyField('self')
     history_recipes = models.ManyToManyField('Recipe', related_name="%(app_label)s_%(class)s_history")
+    ingredients = models.ManyToManyField('Ingredient', through='UserIngredient')
 
 class Recipe(models.Model):
-    # id = models.BigIntegerField(primary_key=True) # Not needed
     title = models.CharField(max_length=300)
     description = models.CharField(max_length=500)
     servings = models.IntegerField()
@@ -28,12 +28,17 @@ class Ingredient(models.Model):
     name = models.CharField(max_length=500)
     category = models.CharField(max_length=500)
     default_amount = models.CharField(max_length=100)
-    #meta_information = models.CharField(max_length=600)
 
 class RecipeIngredient(models.Model):
     recipe = models.ForeignKey(Recipe)
     ingredient = models.ForeignKey(Ingredient)
     amount = models.CharField(max_length=100)
+
+class UserIngredient(models.Model):
+    user_account = models.ForeignKey(UserAccount)
+    ingredient = models.ForeignKey(Ingredient)
+    amount = models.CharField(max_length=100)
+    infinite = models.BooleanField(default=False)
 
 
 
