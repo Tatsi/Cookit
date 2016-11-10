@@ -1,10 +1,11 @@
 # Create testing data fixtures to main/fixtures. The created fixture file contains examples of all other 
-# models than ingredients
+# models than ingredients.
+# The fixture can be loaded with command: python manage.py loaddata main/fixtures/<filename>
 
 from pprint import pprint
 import json
 import datetime
-
+from random import sample
 
 time = datetime.datetime.now().strftime("%Y-%m-%d_%H_%M_%S").encode('utf-8')
 data = []
@@ -46,27 +47,37 @@ with open('main/fixtures/others_' + time + '.json', 'w') as outfile:
         favourite_recipes = range(1, i)
         favourite_users = range(1, i)
         history_recipes = range(1, i)
-        ingredients = range(1, i + 10 * (i - 1))
+        ingredients = range(10*(i-1)+1, 8 + 10 * (i - 1)+1 )       
 
-        # Create the related UserIngredients
-        # TODO
-
+        # Create the actual User Accounts
         entry = dict(
             model = 'main.useraccount',
             pk = i,
             fields = dict(
                 user = i,
                 favourite_users = favourite_users,
-                history_recipes = history_recipes,
-                ingredients = ingredients
+                history_recipes = history_recipes
+                #ingredients = ingredients
             )
         )
         data.append(entry)
 
-        # Create Recipe 1-30 entries
-        title = "Recipe number " + str(i)
-        description = "This is the description of recipe" + str(i) + ". It is very tasty and simple."
-        duration = models.DurationField()
+        # Create the related UserIngredients
+        for x in ingredients:
+            entry = dict(
+                model = 'main.useringredient',
+                pk = x,
+                fields = dict(
+                    user_account = i,
+                    ingredient = 1026,
+                    amount = str(i * x) + "g",
+                    infinite = False
+                )
+            )
+            data.append(entry)
+
+        # Create 3 Recipe entries for each user
+        duration = datetime.timedelta(days=20, hours=10)
         image_url = "www.example.com/image.png"
         steps = """"
             [
@@ -76,34 +87,47 @@ with open('main/fixtures/others_' + time + '.json', 'w') as outfile:
             "Enjoy your delicious meal!",
             ]
         """
-        for j in range(1, 4):
-            ingredients = sample(xrange(1000), 2 + i * j)
-            
-            # Create the related RecipeIngredient fixtures
-            # recipe = models.ForeignKey(Recipe)
-            # ingredient = models.ForeignKey(Ingredient)
-            # amount = models.CharField(max_length=100)
-            # TODO
-
+        for j in range(1,4):
+            title = "Recipe number " + str(i)
+            description = "This is the description of recipe" + str(i) + ". It is very tasty and simple."
+            ingredients = range((i-1) * 10 + (j-1) * 5, (i-1) * 10 + (j-1) * 5 + 5 )
+            key = (i-1) * 3 + j-1
             average_rating = 3.232323232
 
+            # Create the related RecipeIngredient fixtures
+            for k in ingredients:          
+                entry = dict(
+                    model = 'main.recipeingredient',
+                    pk = k,
+                    fields = dict(
+                        recipe = key,
+                        #ingredient = sample(xrange(1000), 1)[0],
+                        ingredient = 4053,
+                        amount = str(k) + " cup"
+                    )
+                )
+                data.append(entry)
+
             entry = dict(
-                model = 'main.useraccount',
-                pk = i,
+                model = 'main.recipe',
+                pk = key,
                 fields = dict(
                     title = title,
                     description = description,
                     servings = i,
-                    duration = duration,
+                    duration = str(duration),
                     image_url = image_url,
                     steps = steps,
                     creator = i,
-                    ingredients = ingredients,
+                    #ingredients = ingredients,
                     rating_count = i * j,
                     average_rating = average_rating
                 )
             )
             data.append(entry)
+
+            
+
 
     json.dump(data, outfile, indent = 4)
 
