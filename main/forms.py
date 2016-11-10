@@ -13,7 +13,8 @@ class NewRecipeForm(forms.Form):
 
 # Form for filtering recipes based on ingredients user has
 class IngredientsForm(forms.Form):
-	ingredient = forms.CharField(max_length=80)
+	ingredient = forms.CharField(max_length=100)
+	delete = forms.BooleanField(required=False)
 
 # Form for user account registration
 class RegisterForm(forms.Form):

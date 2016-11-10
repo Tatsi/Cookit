@@ -28,6 +28,8 @@ class Ingredient(models.Model):
     name = models.CharField(max_length=500)
     category = models.CharField(max_length=500)
     default_amount = models.CharField(max_length=100)
+    class Meta:
+        ordering = ['name']
 
 class RecipeIngredient(models.Model):
     recipe = models.ForeignKey(Recipe)

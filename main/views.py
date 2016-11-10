@@ -19,9 +19,20 @@ def feed(request):
 	context = {'recipes': array}
 	if request.method == 'POST':
 		form = IngredientsForm(request.POST)
+		print(request.POST)
 		if form.is_valid():
-			ingredient = Ingredient.objects.get(name=form.cleaned_data['ingredient'])
-			user_ingredient = UserIngredient.objects.create(user_account=user_acc, ingredient=ingredient, amount='1')
+			try:
+				ingredient = Ingredient.objects.get(name=form.cleaned_data['ingredient'])
+			except Ingredient.DoesNotExist:
+				pass
+			else:
+				item = UserIngredient.objects.filter(user_account=user_acc, ingredient=ingredient)
+				if not form.cleaned_data['delete']:
+					if not item.exists():
+						user_ingredient = UserIngredient.objects.create(user_account=user_acc, ingredient=ingredient, amount='1')
+				else:
+					if item.exists():
+						item.delete()
 	else:
 		form = IngredientsForm()
 

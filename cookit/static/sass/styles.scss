@@ -169,6 +169,10 @@ button.add-btn {
 	h4 {
 		display: inline;
 	}
+	span.ingredient-label:hover {
+		cursor: pointer;
+		border: 1px solid red;
+	}
 }
 
 .ingredients-form {

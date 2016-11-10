@@ -6,17 +6,18 @@
 	<h4>My ingredients</h4>
 	<div class="ingredients-list">
 		{% for item in my_ingredients %}
-			<h4><span class="label label-success">{{ item.name }}</span></h4>
+			<h4><span class="label label-success ingredient-label">{{ item.name }}</span></h4>
 		{% endfor %}
 	</div>
 </div>
 
 <!-- Ingredient form -->
-<form class="ingredients-form" method="post">
+<form class="ingredients-form" method="post" id="main_form">
 	{% csrf_token %}
 	<div class="form-group">
 		<div class="col-sm-6 col-sm-offset-3 col-xs-10">
 			<input type="text" name="ingredient" class="form-control" id="ingredientInput" placeholder="Search for ingredients...">
+			<input type="hidden" name="delete" id="delelteInput">
 		</div>
 		<button type="submit" class="btn btn-primary">Submit</button>
 	</div>
@@ -30,9 +31,12 @@
 </div>
 
 <script type="text/javascript">
-var all_ingredients = {{all_ingredients|safe}};
-$('#ingredientInput').typeahead({source: all_ingredients });
-
-
+	var all_ingredients = {{all_ingredients|safe}};
+	$('#ingredientInput').typeahead({source: all_ingredients });
+	$('.ingredient-label').click(function() {
+		$('#ingredientInput').val($(this).text());
+		$('#delelteInput').val('delete');
+		$('#main_form').submit();
+	});
 </script>
 {% endblock %}
