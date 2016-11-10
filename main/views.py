@@ -11,36 +11,38 @@ def mainpage(request):
 	return render(request, 'mainpage.html', context)
 
 def feed(request):
-	# TODO: add exception handling - if user not logged in
-	user_acc = UserAccount.objects.get(user=request.user)
+	# dummy implementation of recipes
 	array = []
 	for i in range(5):
 		array.append({'title': 'Pea soup a la Otaniemi '+str(i), 'author': 'user123', 'stars': '1'*i+'0'*(5-i), 'description': 'This is a delicious pea soup featuring goose liver. Exeptionally well suited for quick lounches.', 'id': i})
 	context = {'recipes': array}
-	if request.method == 'POST':
-		form = IngredientsForm(request.POST)
-		print(request.POST)
-		if form.is_valid():
-			try:
-				ingredient = Ingredient.objects.get(name=form.cleaned_data['ingredient'])
-			except Ingredient.DoesNotExist:
-				pass
-			else:
-				item = UserIngredient.objects.filter(user_account=user_acc, ingredient=ingredient)
-				if not form.cleaned_data['delete']:
-					if not item.exists():
-						user_ingredient = UserIngredient.objects.create(user_account=user_acc, ingredient=ingredient, amount='1')
+	
+	if request.user.is_authenticated():
+		user_acc = UserAccount.objects.get(user=request.user)
+
+		if request.method == 'POST':
+			form = IngredientsForm(request.POST)
+			if form.is_valid():
+				try:
+					ingredient = Ingredient.objects.get(name=form.cleaned_data['ingredient'])
+				except Ingredient.DoesNotExist:
+					pass
 				else:
-					if item.exists():
-						item.delete()
-	else:
-		form = IngredientsForm()
+					item = UserIngredient.objects.filter(user_account=user_acc, ingredient=ingredient)
+					if not form.cleaned_data['delete']:
+						if not item.exists():
+							user_ingredient = UserIngredient.objects.create(user_account=user_acc, ingredient=ingredient, amount='1')
+					else:
+						if item.exists():
+							item.delete()
+		else:
+			form = IngredientsForm()
 
-	# Convert all ingredients to a list and pass to template
-	context['all_ingredients'] = list(Ingredient.objects.all().values_list('name', flat=True))
+		# Convert all ingredients to a list and pass to template
+		context['all_ingredients'] = list(Ingredient.objects.all().values_list('name', flat=True))
 
-	# Fetch ingredients the user has
-	context['my_ingredients'] = user_acc.ingredients.all()
+		# Fetch ingredients the user has
+		context['my_ingredients'] = user_acc.ingredients.all()
 	
 	# TODO: Update the filter and return the list of matching recipes
 	return render(request, 'feed.html', context)

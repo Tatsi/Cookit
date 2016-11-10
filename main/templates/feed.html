@@ -1,27 +1,29 @@
 {% extends "base/base.html" %}
 
 {% block content %}
-<!-- Ingredient list -->
-<div class="text-center ">
-	<h4>My ingredients</h4>
-	<div class="ingredients-list">
-		{% for item in my_ingredients %}
-			<h4><span class="label label-success ingredient-label">{{ item.name }}</span></h4>
-		{% endfor %}
-	</div>
-</div>
-
-<!-- Ingredient form -->
-<form class="ingredients-form" method="post" id="main_form">
-	{% csrf_token %}
-	<div class="form-group">
-		<div class="col-sm-6 col-sm-offset-3 col-xs-10">
-			<input type="text" name="ingredient" class="form-control" id="ingredientInput" placeholder="Search for ingredients...">
-			<input type="hidden" name="delete" id="delelteInput">
+{% if user.is_authenticated %}
+	<!-- Ingredient list -->
+	<div class="text-center ">
+		<h4>My ingredients</h4>
+		<div class="ingredients-list">
+			{% for item in my_ingredients %}
+				<h4><span class="label label-success ingredient-label">{{ item.name }}</span></h4>
+			{% endfor %}
 		</div>
-		<button type="submit" class="btn btn-primary">Submit</button>
 	</div>
-</form>
+
+	<!-- Ingredient form -->
+	<form class="ingredients-form" method="post" id="main_form">
+		{% csrf_token %}
+		<div class="form-group">
+			<div class="col-sm-6 col-sm-offset-3 col-xs-10">
+				<input type="text" name="ingredient" class="form-control" id="ingredientInput" placeholder="Search for ingredients...">
+				<input type="hidden" name="delete" id="delelteInput">
+			</div>
+			<button type="submit" class="btn btn-primary">Submit</button>
+		</div>
+	</form>
+{% endif %}
 
 <!-- Feed -->
 <div class="row">
