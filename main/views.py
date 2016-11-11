@@ -88,6 +88,10 @@ def recipe(request, recipe_id):
 		else:
 			favourite = True
 
+	# Round ratings for the stars
+	rating = int(round(recipe.average_rating))
+	stars = '1' * rating + '0' * (5-rating)
+
 	# Parse duration
 	duration = recipe.duration
 	seconds = duration.seconds
@@ -107,6 +111,7 @@ def recipe(request, recipe_id):
 		'servings': recipe.servings,
 		'ingredients': ingredients,
 		'instructions': steps,
+		'stars': stars,
 	}
 	return render(request, 'recipe.html', context)
 
