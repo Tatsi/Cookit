@@ -1,18 +1,18 @@
-# Create testing data fixtures to main/fixtures. The created fixture file contains examples of all other 
+# Create testing data fixtures to main/fixtures. The created fixture file contains examples of all other
 # models than ingredients.
 # The fixture can be loaded with command: python manage.py loaddata main/fixtures/<filename>
 
 from pprint import pprint
 import json
 import datetime
-from random import sample
+from random import sample, randint
 
 time = datetime.datetime.now().strftime("%Y-%m-%d_%H_%M_%S").encode('utf-8')
 data = []
 
-with open('main/fixtures/others_' + time + '.json', 'w') as outfile:  
+with open('main/fixtures/others_' + time + '.json', 'w') as outfile:
     for i in range(1, 11):
-        username = "user" + str(i) 
+        username = "user" + str(i)
         email = "user" + str(i) + "@cookit.com"
         is_super_user = False
 
@@ -47,7 +47,7 @@ with open('main/fixtures/others_' + time + '.json', 'w') as outfile:
         favourite_recipes = range(1, i)
         favourite_users = range(1, i)
         history_recipes = range(1, i)
-        ingredients = range(10*(i-1)+1, 8 + 10 * (i - 1)+1 )       
+        ingredients = range(10*(i-1)+1, 8 + 10 * (i - 1)+1 )
 
         # Create the actual User Accounts
         entry = dict(
@@ -56,6 +56,7 @@ with open('main/fixtures/others_' + time + '.json', 'w') as outfile:
             fields = dict(
                 user = i,
                 favourite_users = favourite_users,
+                favourite_recipes = favourite_recipes,
                 history_recipes = history_recipes
                 #ingredients = ingredients
             )
@@ -77,16 +78,17 @@ with open('main/fixtures/others_' + time + '.json', 'w') as outfile:
             data.append(entry)
 
         # Create 3 Recipe entries for each user
-        duration = datetime.timedelta(days=20, hours=10)
+        hours = randint(0, 4)
+        minutes = randint(0, 59)
+        duration = datetime.timedelta(hours=hours, minutes=minutes)
         image_url = "www.example.com/image.png"
-        steps = """"
-            [
+        steps = [
             "Take all the ingredients in front of you.",
             "Mix them and season with salt and pepper.",
             "Fry them in a frying pan for 20 minutes.",
             "Enjoy your delicious meal!",
-            ]
-        """
+        ]
+        steps = json.dumps(steps)
         for j in range(1,4):
             title = "Recipe number " + str(i)
             description = "This is the description of recipe" + str(i) + ". It is very tasty and simple."
@@ -95,7 +97,7 @@ with open('main/fixtures/others_' + time + '.json', 'w') as outfile:
             average_rating = 3.232323232
 
             # Create the related RecipeIngredient fixtures
-            for k in ingredients:          
+            for k in ingredients:
                 entry = dict(
                     model = 'main.recipeingredient',
                     pk = k,
@@ -126,7 +128,7 @@ with open('main/fixtures/others_' + time + '.json', 'w') as outfile:
             )
             data.append(entry)
 
-            
+
 
 
     json.dump(data, outfile, indent = 4)

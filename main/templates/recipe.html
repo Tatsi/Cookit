@@ -20,13 +20,13 @@
 			<img src="{% static 'images/chickensoup.jpg' %}">
 		</div>
 		<div class="col-md-6">
-			<p><span class="glyphicon glyphicon-user"></span> {{ username }}</p>
+			<p><span class="glyphicon glyphicon-user"></span> {{ creator.user.username }}</p>
 			<i>{{ description }}</i>
 		</div>
 	</div>
 	<div class="row time">
 		<div class="col-md-6">
-			<p><span class="glyphicon glyphicon-time"></span> {{ time }}</p>
+			<p><span class="glyphicon glyphicon-time"></span> {{ time.hours }}h {{ time.minutes }}min</p>
 			<form class="form-inline" action="">
 				<div class="form-group">
 					<span class="fa fa-users"></span>
@@ -44,7 +44,7 @@
 				<h4>Ingredients</h4>
 				<ul>
 					{% for ingredient in ingredients %}
-					<li><p>{{ ingredient.amount }} {{ ingredient.name }}</p></li>
+					<li><p>{{ ingredient.amount }} {{ ingredient.ingredient.name }}</p></li>
 					{% endfor %}
 				</ul>
 			</div>

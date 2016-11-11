@@ -1,10 +1,11 @@
 from django.contrib.auth.models import User
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, Http404
 from django.shortcuts import render
 from django.urls import reverse
 from main.forms import RegisterForm, IngredientsForm, NewRecipeForm
-from main.models import Ingredient, UserAccount, UserIngredient
+from main.models import Ingredient, UserAccount, UserIngredient, Recipe, RecipeIngredient
 from django.utils import dateparse
+import json
 
 def mainpage(request):
 	context = {}
@@ -16,7 +17,7 @@ def feed(request):
 	for i in range(5):
 		array.append({'title': 'Pea soup a la Otaniemi '+str(i), 'author': 'user123', 'stars': '1'*i+'0'*(5-i), 'description': 'This is a delicious pea soup featuring goose liver. Exeptionally well suited for quick lounches.', 'id': i})
 	context = {'recipes': array}
-	
+
 	if request.user.is_authenticated():
 		user_acc = UserAccount.objects.get(user=request.user)
 
@@ -43,42 +44,50 @@ def feed(request):
 
 		# Fetch ingredients the user has
 		context['my_ingredients'] = user_acc.ingredients.all()
-	
+
 	# TODO: Update the filter and return the list of matching recipes
 	return render(request, 'feed.html', context)
 
-def recipe(request):
-	name = 'Chicken soup'
-	favourite = True
-	username = 'Mary_1982'
-	description = 'Pure soul food, this warming, easy chicken soup makes the most of leftover roast chicken.'
-	time = '1 h'
-	servings = 6
-	ingredients = [
-		{'amount': '55 g', 'name': 'butter'},
-		{'amount': '2', 'name': 'onions'},
-		{'amount': '2 sticks', 'name': 'celery'},
-		{'amount': '2', 'name': 'carrots'},
-		{'amount': '25 g', 'name': 'flour'},
-		{'amount': '450 g', 'name': 'chicken'},
-		{'amount': '1 tbsp', 'name': 'parsley'},
-		{'amount': '1 tsp', 'name': 'black pepper'},
-	]
-	instructions = [
-		'Melt the butter in a large saucepan over a medium heat and gently fry the onions, celery and carrots until they start to soften.',
-		'Stir in the flour and cook for 2 minutes. Add the chicken stock and bring the mixture to the boil, stirring as you do so. Season with salt and pepper, then reduce the heat until the mixture is simmering and simmer for 10 minutes, until the vegetables are tender.',
-		'Add the cooked chicken and cook until heated through. Adjust the seasoning, stir in the parsley and serve.',
-		'Eat'
-	]
+def recipe(request, recipe_id):
+	# Get recipe from db
+	try:
+		recipe = Recipe.objects.get(id=recipe_id)
+	except Recipe.DoesNotExist:
+		raise Http404("No Recipe found for ID %s.".format(recipe_id))
+
+	# Check if the user has this recipe in his favourites
+	user = request.user
+	user_account = UserAccount.objects.get(user=user)
+	try:
+		user_account.favourite_recipes.get(id=recipe_id)
+	except Recipe.DoesNotExist:
+		favourite = False
+	else:
+		favourite = True
+
+	# Parse duration
+	duration = recipe.duration
+	seconds = duration.seconds
+	hours, seconds = divmod(seconds, 3600)
+	minutes, seconds = divmod(seconds, 60)
+
+	# Parse steps
+	steps = json.loads(recipe.steps)
+
+	# Filter ingredients
+	ingredients = RecipeIngredient.objects.filter(recipe=recipe)
+
 	context = {
-		'name': name,
+		'name': recipe.title,
 		'favourite': favourite,
-		'username': username,
-		'description': description,
-		'time': time,
-		'servings': servings,
+		'creator': recipe.creator,
+		'description': recipe.description,
+		'time': {'hours': hours, 'minutes': minutes},
+		'servings': recipe.servings,
 		'ingredients': ingredients,
-		'instructions': instructions,
+		'instructions': steps,
+		'ratings': recipe.rating_count,
+		'average_rating': recipe.average_rating,
 	}
 	return render(request, 'recipe.html', context)
 
