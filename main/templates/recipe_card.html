@@ -3,7 +3,13 @@
 		<div class="thumbnail right-caption">
 			<img class="img-rounded img-responsive" src="http://placehold.it/180x150" alt="recipe thumb">
 			<div class="caption">
-				<h1>{{item.title}}<span class="glyphicon glyphicon-heart favo-icon pull-right"></span></h1>
+				<h1>{{item.title}}
+				{% if item.favourite %}
+					<span class="fa fa-heart"></span>
+				{% else %}
+					<span class="fa fa-heart-o"></span>
+				{% endif %}
+				</h1>
 				<h5> by {{item.author}}</h5>
 				<p>{{item.description|truncatechars:90}}</p>
 				{% for star in item.stars %}

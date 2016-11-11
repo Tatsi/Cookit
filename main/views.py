@@ -13,6 +13,7 @@ def mainpage(request):
 
 def feed(request, feed_type=None):
 	user = request.user
+	user_account = UserAccount.objects.get(user=user) if user.is_authenticated() else None
 
 	if feed_type is None:
 		# dummy implementation of recipes
@@ -21,23 +22,25 @@ def feed(request, feed_type=None):
 			recipes.append({'title': 'Pea soup a la Otaniemi '+str(i), 'author': 'user123', 'stars': '1'*i+'0'*(5-i), 'description': 'This is a delicious pea soup featuring goose liver. Exeptionally well suited for quick lounches.', 'id': i})
 	else:
 		if user.is_authenticated():
-			user_account = UserAccount.objects.get(user=user)
 			if feed_type == "own_recipes":
 				recipes = Recipe.objects.filter(creator=user_account)
 			elif feed_type == "favourites":
 				recipes = user_account.favourite_recipes.all()
 			elif feed_type == "history":
-				recipes = user_account.history_recipes.all()
+				recipes = user_account.cooked_recipes.all()
 			else:
 				raise Http404()
 		else:
 			raise Http404()
 
+	if user.is_authenticated():
+		for recipe in recipes:
+			if recipe in user_account.favourite_recipes.all():
+				recipe.favourite = True
 
 	context = {'recipes': recipes}
 
 	if user.is_authenticated():
-		user_acc = UserAccount.objects.get(user=user)
 		if request.method == 'POST':
 			form = IngredientsForm(request.POST)
 			if form.is_valid():
@@ -46,10 +49,10 @@ def feed(request, feed_type=None):
 				except Ingredient.DoesNotExist:
 					pass
 				else:
-					item = UserIngredient.objects.filter(user_account=user_acc, ingredient=ingredient)
+					item = UserIngredient.objects.filter(user_account=user_account, ingredient=ingredient)
 					if not form.cleaned_data['delete']:
 						if not item.exists():
-							user_ingredient = UserIngredient.objects.create(user_account=user_acc, ingredient=ingredient, amount='1')
+							user_ingredient = UserIngredient.objects.create(user_account=user_account, ingredient=ingredient, amount='1')
 					else:
 						if item.exists():
 							item.delete()
@@ -60,7 +63,7 @@ def feed(request, feed_type=None):
 		context['all_ingredients'] = list(Ingredient.objects.all().values_list('name', flat=True))
 
 		# Fetch ingredients the user has
-		context['my_ingredients'] = user_acc.ingredients.all()
+		context['my_ingredients'] = user_account.ingredients.all()
 
 	# TODO: Update the filter and return the list of matching recipes
 	return render(request, 'feed.html', context)
