@@ -46,8 +46,8 @@ with open('main/fixtures/others_' + time + '.json', 'w') as outfile:
         # Create UserAccount 1-10 fixtures with links to previous users
         favourite_recipes = range(1, i)
         favourite_users = range(1, i)
-        history_recipes = range(1, i)
-        ingredients = range(10*(i-1)+1, 8 + 10 * (i - 1)+1 )
+        history_recipes = range(10 * (i-1) + 1, 8 + 10 * (i - 1) + 1 )
+        ingredients = range(10 * (i-1) + 1, 8 + 10 * (i - 1) + 1 )
 
         # Create the actual User Accounts
         entry = dict(
@@ -56,8 +56,8 @@ with open('main/fixtures/others_' + time + '.json', 'w') as outfile:
             fields = dict(
                 user = i,
                 favourite_users = favourite_users,
-                favourite_recipes = favourite_recipes,
-                history_recipes = history_recipes
+                favourite_recipes = favourite_recipes
+                #history_recipes = history_recipes
                 #ingredients = ingredients
             )
         )
@@ -77,6 +77,22 @@ with open('main/fixtures/others_' + time + '.json', 'w') as outfile:
             )
             data.append(entry)
 
+        # Create the related HistoryRecipes
+        
+        for j in range(1,4):
+            entry = dict(
+                model = 'main.cookedrecipe',
+                pk = x,
+                fields = dict(
+                    recipe = str((i-1) * 3 + j-1),
+                    user_account = i,
+                    cooking_date = "2016-02-02",
+                    cooking_time = "09:23:15",
+                    serving_count = str(x + 1)
+                )
+            )
+            data.append(entry)
+
         # Create 3 Recipe entries for each user
         hours = randint(0, 4)
         minutes = randint(0, 59)
@@ -90,8 +106,8 @@ with open('main/fixtures/others_' + time + '.json', 'w') as outfile:
         ]
         steps = json.dumps(steps)
         for j in range(1,4):
-            title = "Recipe number " + str(i)
-            description = "This is the description of recipe" + str(i) + ". It is very tasty and simple."
+            title = "Recipe number " + str((i-1) * 3 + j-1)
+            description = "This is the description of recipe" + str((i-1) * 3 + j-1) + ". It is very tasty and simple."
             ingredients = range((i-1) * 10 + (j-1) * 5, (i-1) * 10 + (j-1) * 5 + 5 )
             key = (i-1) * 3 + j-1
             average_rating = 3.232323232
@@ -121,6 +137,8 @@ with open('main/fixtures/others_' + time + '.json', 'w') as outfile:
                     image_url = image_url,
                     steps = steps,
                     creator = i,
+                    creation_date = "2016-02-02",
+                    creation_time = "09:23:15",
                     #ingredients = ingredients,
                     rating_count = i * j,
                     average_rating = average_rating

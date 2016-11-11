@@ -20,9 +20,8 @@
     {
         "fields": {
             "favourite_recipes": [], 
-            "history_recipes": [], 
-            "user": 1, 
-            "favourite_users": []
+            "favourite_users": [], 
+            "user": 1
         }, 
         "model": "main.useraccount", 
         "pk": 1
@@ -109,6 +108,39 @@
     }, 
     {
         "fields": {
+            "cooking_time": "09:23:15", 
+            "cooking_date": "2016-02-02", 
+            "recipe": "0", 
+            "serving_count": "9", 
+            "user_account": 1
+        }, 
+        "model": "main.cookedrecipe", 
+        "pk": 8
+    }, 
+    {
+        "fields": {
+            "cooking_time": "09:23:15", 
+            "cooking_date": "2016-02-02", 
+            "recipe": "1", 
+            "serving_count": "9", 
+            "user_account": 1
+        }, 
+        "model": "main.cookedrecipe", 
+        "pk": 8
+    }, 
+    {
+        "fields": {
+            "cooking_time": "09:23:15", 
+            "cooking_date": "2016-02-02", 
+            "recipe": "2", 
+            "serving_count": "9", 
+            "user_account": 1
+        }, 
+        "model": "main.cookedrecipe", 
+        "pk": 8
+    }, 
+    {
+        "fields": {
             "amount": "0 cup", 
             "recipe": 0, 
             "ingredient": 4053
@@ -154,14 +186,16 @@
     }, 
     {
         "fields": {
-            "description": "This is the description of recipe1. It is very tasty and simple.", 
+            "description": "This is the description of recipe0. It is very tasty and simple.", 
             "creator": 1, 
-            "title": "Recipe number 1", 
+            "title": "Recipe number 0", 
+            "creation_time": "09:23:15", 
+            "creation_date": "2016-02-02", 
             "average_rating": 3.232323232, 
             "rating_count": 1, 
             "steps": "[\"Take all the ingredients in front of you.\", \"Mix them and season with salt and pepper.\", \"Fry them in a frying pan for 20 minutes.\", \"Enjoy your delicious meal!\"]", 
             "servings": 1, 
-            "duration": "2:01:00", 
+            "duration": "4:26:00", 
             "image_url": "www.example.com/image.png"
         }, 
         "model": "main.recipe", 
@@ -217,11 +251,13 @@
             "description": "This is the description of recipe1. It is very tasty and simple.", 
             "creator": 1, 
             "title": "Recipe number 1", 
+            "creation_time": "09:23:15", 
+            "creation_date": "2016-02-02", 
             "average_rating": 3.232323232, 
             "rating_count": 2, 
             "steps": "[\"Take all the ingredients in front of you.\", \"Mix them and season with salt and pepper.\", \"Fry them in a frying pan for 20 minutes.\", \"Enjoy your delicious meal!\"]", 
             "servings": 1, 
-            "duration": "2:01:00", 
+            "duration": "4:26:00", 
             "image_url": "www.example.com/image.png"
         }, 
         "model": "main.recipe", 
@@ -274,14 +310,16 @@
     }, 
     {
         "fields": {
-            "description": "This is the description of recipe1. It is very tasty and simple.", 
+            "description": "This is the description of recipe2. It is very tasty and simple.", 
             "creator": 1, 
-            "title": "Recipe number 1", 
+            "title": "Recipe number 2", 
+            "creation_time": "09:23:15", 
+            "creation_date": "2016-02-02", 
             "average_rating": 3.232323232, 
             "rating_count": 3, 
             "steps": "[\"Take all the ingredients in front of you.\", \"Mix them and season with salt and pepper.\", \"Fry them in a frying pan for 20 minutes.\", \"Enjoy your delicious meal!\"]", 
             "servings": 1, 
-            "duration": "2:01:00", 
+            "duration": "4:26:00", 
             "image_url": "www.example.com/image.png"
         }, 
         "model": "main.recipe", 
@@ -310,13 +348,10 @@
             "favourite_recipes": [
                 1
             ], 
-            "history_recipes": [
-                1
-            ], 
-            "user": 2, 
             "favourite_users": [
                 1
-            ]
+            ], 
+            "user": 2
         }, 
         "model": "main.useraccount", 
         "pk": 2
@@ -403,6 +438,39 @@
     }, 
     {
         "fields": {
+            "cooking_time": "09:23:15", 
+            "cooking_date": "2016-02-02", 
+            "recipe": "3", 
+            "serving_count": "19", 
+            "user_account": 2
+        }, 
+        "model": "main.cookedrecipe", 
+        "pk": 18
+    }, 
+    {
+        "fields": {
+            "cooking_time": "09:23:15", 
+            "cooking_date": "2016-02-02", 
+            "recipe": "4", 
+            "serving_count": "19", 
+            "user_account": 2
+        }, 
+        "model": "main.cookedrecipe", 
+        "pk": 18
+    }, 
+    {
+        "fields": {
+            "cooking_time": "09:23:15", 
+            "cooking_date": "2016-02-02", 
+            "recipe": "5", 
+            "serving_count": "19", 
+            "user_account": 2
+        }, 
+        "model": "main.cookedrecipe", 
+        "pk": 18
+    }, 
+    {
+        "fields": {
             "amount": "10 cup", 
             "recipe": 3, 
             "ingredient": 4053
@@ -448,14 +516,16 @@
     }, 
     {
         "fields": {
-            "description": "This is the description of recipe2. It is very tasty and simple.", 
+            "description": "This is the description of recipe3. It is very tasty and simple.", 
             "creator": 2, 
-            "title": "Recipe number 2", 
+            "title": "Recipe number 3", 
+            "creation_time": "09:23:15", 
+            "creation_date": "2016-02-02", 
             "average_rating": 3.232323232, 
             "rating_count": 2, 
             "steps": "[\"Take all the ingredients in front of you.\", \"Mix them and season with salt and pepper.\", \"Fry them in a frying pan for 20 minutes.\", \"Enjoy your delicious meal!\"]", 
             "servings": 2, 
-            "duration": "1:17:00", 
+            "duration": "1:36:00", 
             "image_url": "www.example.com/image.png"
         }, 
         "model": "main.recipe", 
@@ -508,14 +578,16 @@
     }, 
     {
         "fields": {
-            "description": "This is the description of recipe2. It is very tasty and simple.", 
+            "description": "This is the description of recipe4. It is very tasty and simple.", 
             "creator": 2, 
-            "title": "Recipe number 2", 
+            "title": "Recipe number 4", 
+            "creation_time": "09:23:15", 
+            "creation_date": "2016-02-02", 
             "average_rating": 3.232323232, 
             "rating_count": 4, 
             "steps": "[\"Take all the ingredients in front of you.\", \"Mix them and season with salt and pepper.\", \"Fry them in a frying pan for 20 minutes.\", \"Enjoy your delicious meal!\"]", 
             "servings": 2, 
-            "duration": "1:17:00", 
+            "duration": "1:36:00", 
             "image_url": "www.example.com/image.png"
         }, 
         "model": "main.recipe", 
@@ -568,14 +640,16 @@
     }, 
     {
         "fields": {
-            "description": "This is the description of recipe2. It is very tasty and simple.", 
+            "description": "This is the description of recipe5. It is very tasty and simple.", 
             "creator": 2, 
-            "title": "Recipe number 2", 
+            "title": "Recipe number 5", 
+            "creation_time": "09:23:15", 
+            "creation_date": "2016-02-02", 
             "average_rating": 3.232323232, 
             "rating_count": 6, 
             "steps": "[\"Take all the ingredients in front of you.\", \"Mix them and season with salt and pepper.\", \"Fry them in a frying pan for 20 minutes.\", \"Enjoy your delicious meal!\"]", 
             "servings": 2, 
-            "duration": "1:17:00", 
+            "duration": "1:36:00", 
             "image_url": "www.example.com/image.png"
         }, 
         "model": "main.recipe", 
@@ -605,15 +679,11 @@
                 1, 
                 2
             ], 
-            "history_recipes": [
-                1, 
-                2
-            ], 
-            "user": 3, 
             "favourite_users": [
                 1, 
                 2
-            ]
+            ], 
+            "user": 3
         }, 
         "model": "main.useraccount", 
         "pk": 3
@@ -700,6 +770,39 @@
     }, 
     {
         "fields": {
+            "cooking_time": "09:23:15", 
+            "cooking_date": "2016-02-02", 
+            "recipe": "6", 
+            "serving_count": "29", 
+            "user_account": 3
+        }, 
+        "model": "main.cookedrecipe", 
+        "pk": 28
+    }, 
+    {
+        "fields": {
+            "cooking_time": "09:23:15", 
+            "cooking_date": "2016-02-02", 
+            "recipe": "7", 
+            "serving_count": "29", 
+            "user_account": 3
+        }, 
+        "model": "main.cookedrecipe", 
+        "pk": 28
+    }, 
+    {
+        "fields": {
+            "cooking_time": "09:23:15", 
+            "cooking_date": "2016-02-02", 
+            "recipe": "8", 
+            "serving_count": "29", 
+            "user_account": 3
+        }, 
+        "model": "main.cookedrecipe", 
+        "pk": 28
+    }, 
+    {
+        "fields": {
             "amount": "20 cup", 
             "recipe": 6, 
             "ingredient": 4053
@@ -745,14 +848,16 @@
     }, 
     {
         "fields": {
-            "description": "This is the description of recipe3. It is very tasty and simple.", 
+            "description": "This is the description of recipe6. It is very tasty and simple.", 
             "creator": 3, 
-            "title": "Recipe number 3", 
+            "title": "Recipe number 6", 
+            "creation_time": "09:23:15", 
+            "creation_date": "2016-02-02", 
             "average_rating": 3.232323232, 
             "rating_count": 3, 
             "steps": "[\"Take all the ingredients in front of you.\", \"Mix them and season with salt and pepper.\", \"Fry them in a frying pan for 20 minutes.\", \"Enjoy your delicious meal!\"]", 
             "servings": 3, 
-            "duration": "2:16:00", 
+            "duration": "2:24:00", 
             "image_url": "www.example.com/image.png"
         }, 
         "model": "main.recipe", 
@@ -805,14 +910,16 @@
     }, 
     {
         "fields": {
-            "description": "This is the description of recipe3. It is very tasty and simple.", 
+            "description": "This is the description of recipe7. It is very tasty and simple.", 
             "creator": 3, 
-            "title": "Recipe number 3", 
+            "title": "Recipe number 7", 
+            "creation_time": "09:23:15", 
+            "creation_date": "2016-02-02", 
             "average_rating": 3.232323232, 
             "rating_count": 6, 
             "steps": "[\"Take all the ingredients in front of you.\", \"Mix them and season with salt and pepper.\", \"Fry them in a frying pan for 20 minutes.\", \"Enjoy your delicious meal!\"]", 
             "servings": 3, 
-            "duration": "2:16:00", 
+            "duration": "2:24:00", 
             "image_url": "www.example.com/image.png"
         }, 
         "model": "main.recipe", 
@@ -865,14 +972,16 @@
     }, 
     {
         "fields": {
-            "description": "This is the description of recipe3. It is very tasty and simple.", 
+            "description": "This is the description of recipe8. It is very tasty and simple.", 
             "creator": 3, 
-            "title": "Recipe number 3", 
+            "title": "Recipe number 8", 
+            "creation_time": "09:23:15", 
+            "creation_date": "2016-02-02", 
             "average_rating": 3.232323232, 
             "rating_count": 9, 
             "steps": "[\"Take all the ingredients in front of you.\", \"Mix them and season with salt and pepper.\", \"Fry them in a frying pan for 20 minutes.\", \"Enjoy your delicious meal!\"]", 
             "servings": 3, 
-            "duration": "2:16:00", 
+            "duration": "2:24:00", 
             "image_url": "www.example.com/image.png"
         }, 
         "model": "main.recipe", 
@@ -903,17 +1012,12 @@
                 2, 
                 3
             ], 
-            "history_recipes": [
-                1, 
-                2, 
-                3
-            ], 
-            "user": 4, 
             "favourite_users": [
                 1, 
                 2, 
                 3
-            ]
+            ], 
+            "user": 4
         }, 
         "model": "main.useraccount", 
         "pk": 4
@@ -1000,6 +1104,39 @@
     }, 
     {
         "fields": {
+            "cooking_time": "09:23:15", 
+            "cooking_date": "2016-02-02", 
+            "recipe": "9", 
+            "serving_count": "39", 
+            "user_account": 4
+        }, 
+        "model": "main.cookedrecipe", 
+        "pk": 38
+    }, 
+    {
+        "fields": {
+            "cooking_time": "09:23:15", 
+            "cooking_date": "2016-02-02", 
+            "recipe": "10", 
+            "serving_count": "39", 
+            "user_account": 4
+        }, 
+        "model": "main.cookedrecipe", 
+        "pk": 38
+    }, 
+    {
+        "fields": {
+            "cooking_time": "09:23:15", 
+            "cooking_date": "2016-02-02", 
+            "recipe": "11", 
+            "serving_count": "39", 
+            "user_account": 4
+        }, 
+        "model": "main.cookedrecipe", 
+        "pk": 38
+    }, 
+    {
+        "fields": {
             "amount": "30 cup", 
             "recipe": 9, 
             "ingredient": 4053
@@ -1045,14 +1182,16 @@
     }, 
     {
         "fields": {
-            "description": "This is the description of recipe4. It is very tasty and simple.", 
+            "description": "This is the description of recipe9. It is very tasty and simple.", 
             "creator": 4, 
-            "title": "Recipe number 4", 
+            "title": "Recipe number 9", 
+            "creation_time": "09:23:15", 
+            "creation_date": "2016-02-02", 
             "average_rating": 3.232323232, 
             "rating_count": 4, 
             "steps": "[\"Take all the ingredients in front of you.\", \"Mix them and season with salt and pepper.\", \"Fry them in a frying pan for 20 minutes.\", \"Enjoy your delicious meal!\"]", 
             "servings": 4, 
-            "duration": "2:27:00", 
+            "duration": "2:53:00", 
             "image_url": "www.example.com/image.png"
         }, 
         "model": "main.recipe", 
@@ -1105,14 +1244,16 @@
     }, 
     {
         "fields": {
-            "description": "This is the description of recipe4. It is very tasty and simple.", 
+            "description": "This is the description of recipe10. It is very tasty and simple.", 
             "creator": 4, 
-            "title": "Recipe number 4", 
+            "title": "Recipe number 10", 
+            "creation_time": "09:23:15", 
+            "creation_date": "2016-02-02", 
             "average_rating": 3.232323232, 
             "rating_count": 8, 
             "steps": "[\"Take all the ingredients in front of you.\", \"Mix them and season with salt and pepper.\", \"Fry them in a frying pan for 20 minutes.\", \"Enjoy your delicious meal!\"]", 
             "servings": 4, 
-            "duration": "2:27:00", 
+            "duration": "2:53:00", 
             "image_url": "www.example.com/image.png"
         }, 
         "model": "main.recipe", 
@@ -1165,14 +1306,16 @@
     }, 
     {
         "fields": {
-            "description": "This is the description of recipe4. It is very tasty and simple.", 
+            "description": "This is the description of recipe11. It is very tasty and simple.", 
             "creator": 4, 
-            "title": "Recipe number 4", 
+            "title": "Recipe number 11", 
+            "creation_time": "09:23:15", 
+            "creation_date": "2016-02-02", 
             "average_rating": 3.232323232, 
             "rating_count": 12, 
             "steps": "[\"Take all the ingredients in front of you.\", \"Mix them and season with salt and pepper.\", \"Fry them in a frying pan for 20 minutes.\", \"Enjoy your delicious meal!\"]", 
             "servings": 4, 
-            "duration": "2:27:00", 
+            "duration": "2:53:00", 
             "image_url": "www.example.com/image.png"
         }, 
         "model": "main.recipe", 
@@ -1204,19 +1347,13 @@
                 3, 
                 4
             ], 
-            "history_recipes": [
-                1, 
-                2, 
-                3, 
-                4
-            ], 
-            "user": 5, 
             "favourite_users": [
                 1, 
                 2, 
                 3, 
                 4
-            ]
+            ], 
+            "user": 5
         }, 
         "model": "main.useraccount", 
         "pk": 5
@@ -1303,6 +1440,39 @@
     }, 
     {
         "fields": {
+            "cooking_time": "09:23:15", 
+            "cooking_date": "2016-02-02", 
+            "recipe": "12", 
+            "serving_count": "49", 
+            "user_account": 5
+        }, 
+        "model": "main.cookedrecipe", 
+        "pk": 48
+    }, 
+    {
+        "fields": {
+            "cooking_time": "09:23:15", 
+            "cooking_date": "2016-02-02", 
+            "recipe": "13", 
+            "serving_count": "49", 
+            "user_account": 5
+        }, 
+        "model": "main.cookedrecipe", 
+        "pk": 48
+    }, 
+    {
+        "fields": {
+            "cooking_time": "09:23:15", 
+            "cooking_date": "2016-02-02", 
+            "recipe": "14", 
+            "serving_count": "49", 
+            "user_account": 5
+        }, 
+        "model": "main.cookedrecipe", 
+        "pk": 48
+    }, 
+    {
+        "fields": {
             "amount": "40 cup", 
             "recipe": 12, 
             "ingredient": 4053
@@ -1348,14 +1518,16 @@
     }, 
     {
         "fields": {
-            "description": "This is the description of recipe5. It is very tasty and simple.", 
+            "description": "This is the description of recipe12. It is very tasty and simple.", 
             "creator": 5, 
-            "title": "Recipe number 5", 
+            "title": "Recipe number 12", 
+            "creation_time": "09:23:15", 
+            "creation_date": "2016-02-02", 
             "average_rating": 3.232323232, 
             "rating_count": 5, 
             "steps": "[\"Take all the ingredients in front of you.\", \"Mix them and season with salt and pepper.\", \"Fry them in a frying pan for 20 minutes.\", \"Enjoy your delicious meal!\"]", 
             "servings": 5, 
-            "duration": "4:20:00", 
+            "duration": "3:43:00", 
             "image_url": "www.example.com/image.png"
         }, 
         "model": "main.recipe", 
@@ -1408,14 +1580,16 @@
     }, 
     {
         "fields": {
-            "description": "This is the description of recipe5. It is very tasty and simple.", 
+            "description": "This is the description of recipe13. It is very tasty and simple.", 
             "creator": 5, 
-            "title": "Recipe number 5", 
+            "title": "Recipe number 13", 
+            "creation_time": "09:23:15", 
+            "creation_date": "2016-02-02", 
             "average_rating": 3.232323232, 
             "rating_count": 10, 
             "steps": "[\"Take all the ingredients in front of you.\", \"Mix them and season with salt and pepper.\", \"Fry them in a frying pan for 20 minutes.\", \"Enjoy your delicious meal!\"]", 
             "servings": 5, 
-            "duration": "4:20:00", 
+            "duration": "3:43:00", 
             "image_url": "www.example.com/image.png"
         }, 
         "model": "main.recipe", 
@@ -1468,14 +1642,16 @@
     }, 
     {
         "fields": {
-            "description": "This is the description of recipe5. It is very tasty and simple.", 
+            "description": "This is the description of recipe14. It is very tasty and simple.", 
             "creator": 5, 
-            "title": "Recipe number 5", 
+            "title": "Recipe number 14", 
+            "creation_time": "09:23:15", 
+            "creation_date": "2016-02-02", 
             "average_rating": 3.232323232, 
             "rating_count": 15, 
             "steps": "[\"Take all the ingredients in front of you.\", \"Mix them and season with salt and pepper.\", \"Fry them in a frying pan for 20 minutes.\", \"Enjoy your delicious meal!\"]", 
             "servings": 5, 
-            "duration": "4:20:00", 
+            "duration": "3:43:00", 
             "image_url": "www.example.com/image.png"
         }, 
         "model": "main.recipe", 
@@ -1508,21 +1684,14 @@
                 4, 
                 5
             ], 
-            "history_recipes": [
-                1, 
-                2, 
-                3, 
-                4, 
-                5
-            ], 
-            "user": 6, 
             "favourite_users": [
                 1, 
                 2, 
                 3, 
                 4, 
                 5
-            ]
+            ], 
+            "user": 6
         }, 
         "model": "main.useraccount", 
         "pk": 6
@@ -1609,6 +1778,39 @@
     }, 
     {
         "fields": {
+            "cooking_time": "09:23:15", 
+            "cooking_date": "2016-02-02", 
+            "recipe": "15", 
+            "serving_count": "59", 
+            "user_account": 6
+        }, 
+        "model": "main.cookedrecipe", 
+        "pk": 58
+    }, 
+    {
+        "fields": {
+            "cooking_time": "09:23:15", 
+            "cooking_date": "2016-02-02", 
+            "recipe": "16", 
+            "serving_count": "59", 
+            "user_account": 6
+        }, 
+        "model": "main.cookedrecipe", 
+        "pk": 58
+    }, 
+    {
+        "fields": {
+            "cooking_time": "09:23:15", 
+            "cooking_date": "2016-02-02", 
+            "recipe": "17", 
+            "serving_count": "59", 
+            "user_account": 6
+        }, 
+        "model": "main.cookedrecipe", 
+        "pk": 58
+    }, 
+    {
+        "fields": {
             "amount": "50 cup", 
             "recipe": 15, 
             "ingredient": 4053
@@ -1654,14 +1856,16 @@
     }, 
     {
         "fields": {
-            "description": "This is the description of recipe6. It is very tasty and simple.", 
+            "description": "This is the description of recipe15. It is very tasty and simple.", 
             "creator": 6, 
-            "title": "Recipe number 6", 
+            "title": "Recipe number 15", 
+            "creation_time": "09:23:15", 
+            "creation_date": "2016-02-02", 
             "average_rating": 3.232323232, 
             "rating_count": 6, 
             "steps": "[\"Take all the ingredients in front of you.\", \"Mix them and season with salt and pepper.\", \"Fry them in a frying pan for 20 minutes.\", \"Enjoy your delicious meal!\"]", 
             "servings": 6, 
-            "duration": "2:19:00", 
+            "duration": "4:40:00", 
             "image_url": "www.example.com/image.png"
         }, 
         "model": "main.recipe", 
@@ -1714,14 +1918,16 @@
     }, 
     {
         "fields": {
-            "description": "This is the description of recipe6. It is very tasty and simple.", 
+            "description": "This is the description of recipe16. It is very tasty and simple.", 
             "creator": 6, 
-            "title": "Recipe number 6", 
+            "title": "Recipe number 16", 
+            "creation_time": "09:23:15", 
+            "creation_date": "2016-02-02", 
             "average_rating": 3.232323232, 
             "rating_count": 12, 
             "steps": "[\"Take all the ingredients in front of you.\", \"Mix them and season with salt and pepper.\", \"Fry them in a frying pan for 20 minutes.\", \"Enjoy your delicious meal!\"]", 
             "servings": 6, 
-            "duration": "2:19:00", 
+            "duration": "4:40:00", 
             "image_url": "www.example.com/image.png"
         }, 
         "model": "main.recipe", 
@@ -1774,14 +1980,16 @@
     }, 
     {
         "fields": {
-            "description": "This is the description of recipe6. It is very tasty and simple.", 
+            "description": "This is the description of recipe17. It is very tasty and simple.", 
             "creator": 6, 
-            "title": "Recipe number 6", 
+            "title": "Recipe number 17", 
+            "creation_time": "09:23:15", 
+            "creation_date": "2016-02-02", 
             "average_rating": 3.232323232, 
             "rating_count": 18, 
             "steps": "[\"Take all the ingredients in front of you.\", \"Mix them and season with salt and pepper.\", \"Fry them in a frying pan for 20 minutes.\", \"Enjoy your delicious meal!\"]", 
             "servings": 6, 
-            "duration": "2:19:00", 
+            "duration": "4:40:00", 
             "image_url": "www.example.com/image.png"
         }, 
         "model": "main.recipe", 
@@ -1815,15 +2023,6 @@
                 5, 
                 6
             ], 
-            "history_recipes": [
-                1, 
-                2, 
-                3, 
-                4, 
-                5, 
-                6
-            ], 
-            "user": 7, 
             "favourite_users": [
                 1, 
                 2, 
@@ -1831,7 +2030,8 @@
                 4, 
                 5, 
                 6
-            ]
+            ], 
+            "user": 7
         }, 
         "model": "main.useraccount", 
         "pk": 7
@@ -1918,6 +2118,39 @@
     }, 
     {
         "fields": {
+            "cooking_time": "09:23:15", 
+            "cooking_date": "2016-02-02", 
+            "recipe": "18", 
+            "serving_count": "69", 
+            "user_account": 7
+        }, 
+        "model": "main.cookedrecipe", 
+        "pk": 68
+    }, 
+    {
+        "fields": {
+            "cooking_time": "09:23:15", 
+            "cooking_date": "2016-02-02", 
+            "recipe": "19", 
+            "serving_count": "69", 
+            "user_account": 7
+        }, 
+        "model": "main.cookedrecipe", 
+        "pk": 68
+    }, 
+    {
+        "fields": {
+            "cooking_time": "09:23:15", 
+            "cooking_date": "2016-02-02", 
+            "recipe": "20", 
+            "serving_count": "69", 
+            "user_account": 7
+        }, 
+        "model": "main.cookedrecipe", 
+        "pk": 68
+    }, 
+    {
+        "fields": {
             "amount": "60 cup", 
             "recipe": 18, 
             "ingredient": 4053
@@ -1963,14 +2196,16 @@
     }, 
     {
         "fields": {
-            "description": "This is the description of recipe7. It is very tasty and simple.", 
+            "description": "This is the description of recipe18. It is very tasty and simple.", 
             "creator": 7, 
-            "title": "Recipe number 7", 
+            "title": "Recipe number 18", 
+            "creation_time": "09:23:15", 
+            "creation_date": "2016-02-02", 
             "average_rating": 3.232323232, 
             "rating_count": 7, 
             "steps": "[\"Take all the ingredients in front of you.\", \"Mix them and season with salt and pepper.\", \"Fry them in a frying pan for 20 minutes.\", \"Enjoy your delicious meal!\"]", 
             "servings": 7, 
-            "duration": "2:51:00", 
+            "duration": "3:36:00", 
             "image_url": "www.example.com/image.png"
         }, 
         "model": "main.recipe", 
@@ -2023,14 +2258,16 @@
     }, 
     {
         "fields": {
-            "description": "This is the description of recipe7. It is very tasty and simple.", 
+            "description": "This is the description of recipe19. It is very tasty and simple.", 
             "creator": 7, 
-            "title": "Recipe number 7", 
+            "title": "Recipe number 19", 
+            "creation_time": "09:23:15", 
+            "creation_date": "2016-02-02", 
             "average_rating": 3.232323232, 
             "rating_count": 14, 
             "steps": "[\"Take all the ingredients in front of you.\", \"Mix them and season with salt and pepper.\", \"Fry them in a frying pan for 20 minutes.\", \"Enjoy your delicious meal!\"]", 
             "servings": 7, 
-            "duration": "2:51:00", 
+            "duration": "3:36:00", 
             "image_url": "www.example.com/image.png"
         }, 
         "model": "main.recipe", 
@@ -2083,14 +2320,16 @@
     }, 
     {
         "fields": {
-            "description": "This is the description of recipe7. It is very tasty and simple.", 
+            "description": "This is the description of recipe20. It is very tasty and simple.", 
             "creator": 7, 
-            "title": "Recipe number 7", 
+            "title": "Recipe number 20", 
+            "creation_time": "09:23:15", 
+            "creation_date": "2016-02-02", 
             "average_rating": 3.232323232, 
             "rating_count": 21, 
             "steps": "[\"Take all the ingredients in front of you.\", \"Mix them and season with salt and pepper.\", \"Fry them in a frying pan for 20 minutes.\", \"Enjoy your delicious meal!\"]", 
             "servings": 7, 
-            "duration": "2:51:00", 
+            "duration": "3:36:00", 
             "image_url": "www.example.com/image.png"
         }, 
         "model": "main.recipe", 
@@ -2125,16 +2364,6 @@
                 6, 
                 7
             ], 
-            "history_recipes": [
-                1, 
-                2, 
-                3, 
-                4, 
-                5, 
-                6, 
-                7
-            ], 
-            "user": 8, 
             "favourite_users": [
                 1, 
                 2, 
@@ -2143,7 +2372,8 @@
                 5, 
                 6, 
                 7
-            ]
+            ], 
+            "user": 8
         }, 
         "model": "main.useraccount", 
         "pk": 8
@@ -2230,6 +2460,39 @@
     }, 
     {
         "fields": {
+            "cooking_time": "09:23:15", 
+            "cooking_date": "2016-02-02", 
+            "recipe": "21", 
+            "serving_count": "79", 
+            "user_account": 8
+        }, 
+        "model": "main.cookedrecipe", 
+        "pk": 78
+    }, 
+    {
+        "fields": {
+            "cooking_time": "09:23:15", 
+            "cooking_date": "2016-02-02", 
+            "recipe": "22", 
+            "serving_count": "79", 
+            "user_account": 8
+        }, 
+        "model": "main.cookedrecipe", 
+        "pk": 78
+    }, 
+    {
+        "fields": {
+            "cooking_time": "09:23:15", 
+            "cooking_date": "2016-02-02", 
+            "recipe": "23", 
+            "serving_count": "79", 
+            "user_account": 8
+        }, 
+        "model": "main.cookedrecipe", 
+        "pk": 78
+    }, 
+    {
+        "fields": {
             "amount": "70 cup", 
             "recipe": 21, 
             "ingredient": 4053
@@ -2275,14 +2538,16 @@
     }, 
     {
         "fields": {
-            "description": "This is the description of recipe8. It is very tasty and simple.", 
+            "description": "This is the description of recipe21. It is very tasty and simple.", 
             "creator": 8, 
-            "title": "Recipe number 8", 
+            "title": "Recipe number 21", 
+            "creation_time": "09:23:15", 
+            "creation_date": "2016-02-02", 
             "average_rating": 3.232323232, 
             "rating_count": 8, 
             "steps": "[\"Take all the ingredients in front of you.\", \"Mix them and season with salt and pepper.\", \"Fry them in a frying pan for 20 minutes.\", \"Enjoy your delicious meal!\"]", 
             "servings": 8, 
-            "duration": "2:34:00", 
+            "duration": "3:48:00", 
             "image_url": "www.example.com/image.png"
         }, 
         "model": "main.recipe", 
@@ -2335,14 +2600,16 @@
     }, 
     {
         "fields": {
-            "description": "This is the description of recipe8. It is very tasty and simple.", 
+            "description": "This is the description of recipe22. It is very tasty and simple.", 
             "creator": 8, 
-            "title": "Recipe number 8", 
+            "title": "Recipe number 22", 
+            "creation_time": "09:23:15", 
+            "creation_date": "2016-02-02", 
             "average_rating": 3.232323232, 
             "rating_count": 16, 
             "steps": "[\"Take all the ingredients in front of you.\", \"Mix them and season with salt and pepper.\", \"Fry them in a frying pan for 20 minutes.\", \"Enjoy your delicious meal!\"]", 
             "servings": 8, 
-            "duration": "2:34:00", 
+            "duration": "3:48:00", 
             "image_url": "www.example.com/image.png"
         }, 
         "model": "main.recipe", 
@@ -2395,14 +2662,16 @@
     }, 
     {
         "fields": {
-            "description": "This is the description of recipe8. It is very tasty and simple.", 
+            "description": "This is the description of recipe23. It is very tasty and simple.", 
             "creator": 8, 
-            "title": "Recipe number 8", 
+            "title": "Recipe number 23", 
+            "creation_time": "09:23:15", 
+            "creation_date": "2016-02-02", 
             "average_rating": 3.232323232, 
             "rating_count": 24, 
             "steps": "[\"Take all the ingredients in front of you.\", \"Mix them and season with salt and pepper.\", \"Fry them in a frying pan for 20 minutes.\", \"Enjoy your delicious meal!\"]", 
             "servings": 8, 
-            "duration": "2:34:00", 
+            "duration": "3:48:00", 
             "image_url": "www.example.com/image.png"
         }, 
         "model": "main.recipe", 
@@ -2438,17 +2707,6 @@
                 7, 
                 8
             ], 
-            "history_recipes": [
-                1, 
-                2, 
-                3, 
-                4, 
-                5, 
-                6, 
-                7, 
-                8
-            ], 
-            "user": 9, 
             "favourite_users": [
                 1, 
                 2, 
@@ -2458,7 +2716,8 @@
                 6, 
                 7, 
                 8
-            ]
+            ], 
+            "user": 9
         }, 
         "model": "main.useraccount", 
         "pk": 9
@@ -2545,6 +2804,39 @@
     }, 
     {
         "fields": {
+            "cooking_time": "09:23:15", 
+            "cooking_date": "2016-02-02", 
+            "recipe": "24", 
+            "serving_count": "89", 
+            "user_account": 9
+        }, 
+        "model": "main.cookedrecipe", 
+        "pk": 88
+    }, 
+    {
+        "fields": {
+            "cooking_time": "09:23:15", 
+            "cooking_date": "2016-02-02", 
+            "recipe": "25", 
+            "serving_count": "89", 
+            "user_account": 9
+        }, 
+        "model": "main.cookedrecipe", 
+        "pk": 88
+    }, 
+    {
+        "fields": {
+            "cooking_time": "09:23:15", 
+            "cooking_date": "2016-02-02", 
+            "recipe": "26", 
+            "serving_count": "89", 
+            "user_account": 9
+        }, 
+        "model": "main.cookedrecipe", 
+        "pk": 88
+    }, 
+    {
+        "fields": {
             "amount": "80 cup", 
             "recipe": 24, 
             "ingredient": 4053
@@ -2590,14 +2882,16 @@
     }, 
     {
         "fields": {
-            "description": "This is the description of recipe9. It is very tasty and simple.", 
+            "description": "This is the description of recipe24. It is very tasty and simple.", 
             "creator": 9, 
-            "title": "Recipe number 9", 
+            "title": "Recipe number 24", 
+            "creation_time": "09:23:15", 
+            "creation_date": "2016-02-02", 
             "average_rating": 3.232323232, 
             "rating_count": 9, 
             "steps": "[\"Take all the ingredients in front of you.\", \"Mix them and season with salt and pepper.\", \"Fry them in a frying pan for 20 minutes.\", \"Enjoy your delicious meal!\"]", 
             "servings": 9, 
-            "duration": "1:26:00", 
+            "duration": "4:26:00", 
             "image_url": "www.example.com/image.png"
         }, 
         "model": "main.recipe", 
@@ -2650,14 +2944,16 @@
     }, 
     {
         "fields": {
-            "description": "This is the description of recipe9. It is very tasty and simple.", 
+            "description": "This is the description of recipe25. It is very tasty and simple.", 
             "creator": 9, 
-            "title": "Recipe number 9", 
+            "title": "Recipe number 25", 
+            "creation_time": "09:23:15", 
+            "creation_date": "2016-02-02", 
             "average_rating": 3.232323232, 
             "rating_count": 18, 
             "steps": "[\"Take all the ingredients in front of you.\", \"Mix them and season with salt and pepper.\", \"Fry them in a frying pan for 20 minutes.\", \"Enjoy your delicious meal!\"]", 
             "servings": 9, 
-            "duration": "1:26:00", 
+            "duration": "4:26:00", 
             "image_url": "www.example.com/image.png"
         }, 
         "model": "main.recipe", 
@@ -2710,14 +3006,16 @@
     }, 
     {
         "fields": {
-            "description": "This is the description of recipe9. It is very tasty and simple.", 
+            "description": "This is the description of recipe26. It is very tasty and simple.", 
             "creator": 9, 
-            "title": "Recipe number 9", 
+            "title": "Recipe number 26", 
+            "creation_time": "09:23:15", 
+            "creation_date": "2016-02-02", 
             "average_rating": 3.232323232, 
             "rating_count": 27, 
             "steps": "[\"Take all the ingredients in front of you.\", \"Mix them and season with salt and pepper.\", \"Fry them in a frying pan for 20 minutes.\", \"Enjoy your delicious meal!\"]", 
             "servings": 9, 
-            "duration": "1:26:00", 
+            "duration": "4:26:00", 
             "image_url": "www.example.com/image.png"
         }, 
         "model": "main.recipe", 
@@ -2754,18 +3052,6 @@
                 8, 
                 9
             ], 
-            "history_recipes": [
-                1, 
-                2, 
-                3, 
-                4, 
-                5, 
-                6, 
-                7, 
-                8, 
-                9
-            ], 
-            "user": 10, 
             "favourite_users": [
                 1, 
                 2, 
@@ -2776,7 +3062,8 @@
                 7, 
                 8, 
                 9
-            ]
+            ], 
+            "user": 10
         }, 
         "model": "main.useraccount", 
         "pk": 10
@@ -2863,6 +3150,39 @@
     }, 
     {
         "fields": {
+            "cooking_time": "09:23:15", 
+            "cooking_date": "2016-02-02", 
+            "recipe": "27", 
+            "serving_count": "99", 
+            "user_account": 10
+        }, 
+        "model": "main.cookedrecipe", 
+        "pk": 98
+    }, 
+    {
+        "fields": {
+            "cooking_time": "09:23:15", 
+            "cooking_date": "2016-02-02", 
+            "recipe": "28", 
+            "serving_count": "99", 
+            "user_account": 10
+        }, 
+        "model": "main.cookedrecipe", 
+        "pk": 98
+    }, 
+    {
+        "fields": {
+            "cooking_time": "09:23:15", 
+            "cooking_date": "2016-02-02", 
+            "recipe": "29", 
+            "serving_count": "99", 
+            "user_account": 10
+        }, 
+        "model": "main.cookedrecipe", 
+        "pk": 98
+    }, 
+    {
+        "fields": {
             "amount": "90 cup", 
             "recipe": 27, 
             "ingredient": 4053
@@ -2908,14 +3228,16 @@
     }, 
     {
         "fields": {
-            "description": "This is the description of recipe10. It is very tasty and simple.", 
+            "description": "This is the description of recipe27. It is very tasty and simple.", 
             "creator": 10, 
-            "title": "Recipe number 10", 
+            "title": "Recipe number 27", 
+            "creation_time": "09:23:15", 
+            "creation_date": "2016-02-02", 
             "average_rating": 3.232323232, 
             "rating_count": 10, 
             "steps": "[\"Take all the ingredients in front of you.\", \"Mix them and season with salt and pepper.\", \"Fry them in a frying pan for 20 minutes.\", \"Enjoy your delicious meal!\"]", 
             "servings": 10, 
-            "duration": "3:29:00", 
+            "duration": "1:27:00", 
             "image_url": "www.example.com/image.png"
         }, 
         "model": "main.recipe", 
@@ -2968,14 +3290,16 @@
     }, 
     {
         "fields": {
-            "description": "This is the description of recipe10. It is very tasty and simple.", 
+            "description": "This is the description of recipe28. It is very tasty and simple.", 
             "creator": 10, 
-            "title": "Recipe number 10", 
+            "title": "Recipe number 28", 
+            "creation_time": "09:23:15", 
+            "creation_date": "2016-02-02", 
             "average_rating": 3.232323232, 
             "rating_count": 20, 
             "steps": "[\"Take all the ingredients in front of you.\", \"Mix them and season with salt and pepper.\", \"Fry them in a frying pan for 20 minutes.\", \"Enjoy your delicious meal!\"]", 
             "servings": 10, 
-            "duration": "3:29:00", 
+            "duration": "1:27:00", 
             "image_url": "www.example.com/image.png"
         }, 
         "model": "main.recipe", 
@@ -3028,14 +3352,16 @@
     }, 
     {
         "fields": {
-            "description": "This is the description of recipe10. It is very tasty and simple.", 
+            "description": "This is the description of recipe29. It is very tasty and simple.", 
             "creator": 10, 
-            "title": "Recipe number 10", 
+            "title": "Recipe number 29", 
+            "creation_time": "09:23:15", 
+            "creation_date": "2016-02-02", 
             "average_rating": 3.232323232, 
             "rating_count": 30, 
             "steps": "[\"Take all the ingredients in front of you.\", \"Mix them and season with salt and pepper.\", \"Fry them in a frying pan for 20 minutes.\", \"Enjoy your delicious meal!\"]", 
             "servings": 10, 
-            "duration": "3:29:00", 
+            "duration": "1:27:00", 
             "image_url": "www.example.com/image.png"
         }, 
         "model": "main.recipe", 
