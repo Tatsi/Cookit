@@ -7,10 +7,12 @@
 	<div class="row">
 		<div class="col-md-6">
 			<h2>{{ recipe.title }}
-			{% if favourite %}
-				<span class="fa fa-heart" id="favourite"></span>
-			{% else %}
-				<span class="fa fa-heart-o" id="favourite"></span>
+			{% if user.is_authenticated %}
+				{% if favourite %}
+					<span class="fa fa-heart" id="favourite"></span>
+				{% else %}
+					<span class="fa fa-heart-o" id="favourite"></span>
+				{% endif %}
 			{% endif %}
 			</h2>
 		</div>
@@ -37,14 +39,20 @@
 	<div class="row time">
 		<div class="col-md-6">
 			<p><span class="glyphicon glyphicon-time"></span> {{ time.hours }}h {{ time.minutes }}min</p>
-			<form class="form-inline" id="cook_recipe">
-				{% csrf_token %}
-				<div class="form-group">
-					<span class="fa fa-users"></span>
-					<input class="form-control" type="number" id="servings" name="servings" min="1" value="{{ servings }}">
-				</div>
-				<button class="btn shadow-element" type="submit">COOKIT!</button>
-			</form>
+			<div class="servings">
+			{% if user.is_authenticated %}
+				<form class="form-inline" id="cook_recipe">
+					{% csrf_token %}
+					<div class="form-group">
+						<span class="fa fa-users"></span>
+						<input class="form-control" type="number" id="servings" name="servings" min="1" value="{{ recipe.servings }}">
+					</div>
+						<button class="btn shadow-element" type="submit">COOKIT!</button>
+				</form>
+			{% else %}
+				<p><span class="fa fa-users"></span> {{ recipe.servings }}</p>
+			{% endif %}
+			</div>
 		</div>
 	</div>
 	<hr class="hidden-xs">

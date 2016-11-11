@@ -87,6 +87,8 @@ def recipe(request, recipe_id):
 			favourite = False
 		else:
 			favourite = True
+	else:
+		favourite = False
 
 	# Round ratings for the stars
 	rating = int(round(recipe.average_rating))
@@ -108,7 +110,6 @@ def recipe(request, recipe_id):
 		'recipe': recipe,
 		'favourite': favourite,
 		'time': {'hours': hours, 'minutes': minutes},
-		'servings': recipe.servings,
 		'ingredients': ingredients,
 		'instructions': steps,
 		'stars': stars,
