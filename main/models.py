@@ -5,7 +5,7 @@ class UserAccount(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     favourite_recipes = models.ManyToManyField('Recipe', related_name="%(app_label)s_%(class)s_favourites")
     favourite_users = models.ManyToManyField('self')
-    history_recipes = models.ManyToManyField('Recipe', through='CookedRecipe')
+    cooked_recipes = models.ManyToManyField('Recipe', through='CookedRecipe')
     ingredients = models.ManyToManyField('Ingredient', through='UserIngredient')
 
 class Recipe(models.Model):
