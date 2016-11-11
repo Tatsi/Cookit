@@ -130,6 +130,26 @@ def cook_recipe(request, recipe_id):
 			)
 			return HttpResponse('')
 
+def add_favourite(request, recipe_id):
+	# Get recipe from db
+	try:
+		recipe = Recipe.objects.get(id=recipe_id)
+	except Recipe.DoesNotExist:
+		raise Http404("No Recipe found for ID %s.".format(recipe_id))
+
+	user = request.user
+	user_account = UserAccount.objects.get(user=user) if user.is_authenticated() else None
+
+	if request.method == "POST":
+		if user_account:
+			try:
+				user_account.favourite_recipes.get(id=recipe_id)
+			except Recipe.DoesNotExist:
+				user_account.favourite_recipes.add(recipe)
+			else:
+				user_account.favourite_recipes.remove(recipe)
+			return HttpResponse('')
+
 def new_recipe(request):
 	if request.method == 'POST':
 		form = NewRecipeForm(request.POST)
