@@ -1,9 +1,9 @@
 from django.contrib.auth.models import User
-from django.http import HttpResponseRedirect, Http404
+from django.http import HttpResponse, HttpResponseRedirect, Http404
 from django.shortcuts import render
 from django.urls import reverse
 from main.forms import RegisterForm, IngredientsForm, NewRecipeForm
-from main.models import Ingredient, UserAccount, UserIngredient, Recipe, RecipeIngredient
+from main.models import Ingredient, UserAccount, UserIngredient, Recipe, RecipeIngredient, CookedRecipe
 from django.utils import dateparse
 import json
 
@@ -19,7 +19,7 @@ def feed(request, feed_type=None):
 		# dummy implementation of recipes
 		recipes = []
 		for i in range(5):
-			recipes.append({'title': 'Pea soup a la Otaniemi '+str(i), 'author': 'user123', 'stars': '1'*i+'0'*(5-i), 'description': 'This is a delicious pea soup featuring goose liver. Exeptionally well suited for quick lounches.', 'id': i})
+			recipes.append({'title': 'Pea soup a la Otaniemi '+str(i), 'creator': Recipe.objects.get(id=i).creator, 'stars': '1'*i+'0'*(5-i), 'description': 'This is a delicious pea soup featuring goose liver. Exeptionally well suited for quick lounches.', 'id': i})
 	else:
 		if user.is_authenticated():
 			if feed_type == "own_recipes":
@@ -27,7 +27,8 @@ def feed(request, feed_type=None):
 			elif feed_type == "favourites":
 				recipes = user_account.favourite_recipes.all()
 			elif feed_type == "history":
-				recipes = user_account.cooked_recipes.all()
+				cooked_recipes = CookedRecipe.objects.filter(user_account=user_account).order_by('-cooking_date', '-cooking_time')
+				recipes = [cooked.recipe for cooked in cooked_recipes]
 			else:
 				raise Http404()
 		else:
@@ -75,15 +76,17 @@ def recipe(request, recipe_id):
 	except Recipe.DoesNotExist:
 		raise Http404("No Recipe found for ID %s.".format(recipe_id))
 
-	# Check if the user has this recipe in his favourites
 	user = request.user
-	user_account = UserAccount.objects.get(user=user)
-	try:
-		user_account.favourite_recipes.get(id=recipe_id)
-	except Recipe.DoesNotExist:
-		favourite = False
-	else:
-		favourite = True
+	user_account = UserAccount.objects.get(user=user) if user.is_authenticated() else None
+
+	# Check if the user has this recipe in his favourites
+	if user_account:
+		try:
+			user_account.favourite_recipes.get(id=recipe_id)
+		except Recipe.DoesNotExist:
+			favourite = False
+		else:
+			favourite = True
 
 	# Parse duration
 	duration = recipe.duration
@@ -98,18 +101,34 @@ def recipe(request, recipe_id):
 	ingredients = RecipeIngredient.objects.filter(recipe=recipe)
 
 	context = {
-		'name': recipe.title,
+		'recipe': recipe,
 		'favourite': favourite,
-		'creator': recipe.creator,
-		'description': recipe.description,
 		'time': {'hours': hours, 'minutes': minutes},
 		'servings': recipe.servings,
 		'ingredients': ingredients,
 		'instructions': steps,
-		'ratings': recipe.rating_count,
-		'average_rating': recipe.average_rating,
 	}
 	return render(request, 'recipe.html', context)
+
+def cook_recipe(request, recipe_id):
+	# Get recipe from db
+	try:
+		recipe = Recipe.objects.get(id=recipe_id)
+	except Recipe.DoesNotExist:
+		raise Http404("No Recipe found for ID %s.".format(recipe_id))
+
+	user = request.user
+	user_account = UserAccount.objects.get(user=user) if user.is_authenticated() else None
+
+	if request.method == "POST":
+		if user_account:
+			servings = request.POST.get("servings")
+			CookedRecipe.objects.create(
+				recipe = recipe,
+				user_account = user_account,
+				serving_count = servings
+			)
+			return HttpResponse('')
 
 def new_recipe(request):
 	if request.method == 'POST':

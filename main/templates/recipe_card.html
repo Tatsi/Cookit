@@ -10,7 +10,7 @@
 					<span class="fa fa-heart-o"></span>
 				{% endif %}
 				</h1>
-				<h5> by {{item.author}}</h5>
+				<h5> by {{item.creator.user.username}}</h5>
 				<p>{{item.description|truncatechars:90}}</p>
 				{% for star in item.stars %}
 					{% if star == "1" %}

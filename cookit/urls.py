@@ -27,5 +27,6 @@ urlpatterns = [
     url(r'^logout/$', auth_views.logout, name='logout'),
     url(r'^register/$', main.views.register, name='register'),
     url(r'^recipes/(?P<recipe_id>\d+)/$', main.views.recipe, name='recipe'),
+    url(r'^recipes/(?P<recipe_id>\d+)/cook/$', main.views.cook_recipe, name='cook_recipe'),
     url(r'^recipes/new/$', main.views.new_recipe, name='new_recipe'),
 ]

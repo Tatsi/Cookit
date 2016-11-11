@@ -6,7 +6,7 @@
 <div class="recipe-page">
 	<div class="row">
 		<div class="col-md-6">
-			<h2>{{ name }}
+			<h2>{{ recipe.title }}
 			{% if favourite == True %}
 				<span class="fa fa-heart"></span>
 			{% else %}
@@ -20,20 +20,21 @@
 			<img src="{% static 'images/chickensoup.jpg' %}">
 		</div>
 		<div class="col-md-6">
-			<p><span class="glyphicon glyphicon-user"></span> {{ creator.user.username }}</p>
-			<i>{{ description }}</i>
+			<p><span class="glyphicon glyphicon-user"></span> {{ recipe.creator.user.username }}</p>
+			<i>{{ recipe.description }}</i>
 		</div>
 	</div>
 	<div class="row time">
 		<div class="col-md-6">
 			<p><span class="glyphicon glyphicon-time"></span> {{ time.hours }}h {{ time.minutes }}min</p>
-			<form class="form-inline" action="">
+			<form class="form-inline" id="cook_recipe">
+				{% csrf_token %}
 				<div class="form-group">
 					<span class="fa fa-users"></span>
 					<input class="form-control" type="number" id="servings" name="servings" min="1" value="{{ servings }}">
 				</div>
+				<button class="btn shadow-element" type="submit">COOKIT!</button>
 			</form>
-			<button class="btn shadow-element">COOKIT!</button>
 		</div>
 	</div>
 	<hr class="hidden-xs">
@@ -80,5 +81,25 @@
 		</div>
 	</div>
 </div>
+
+<script type="text/javascript">
+
+	$(document).on('submit', '#cook_recipe', function(e) {
+		e.preventDefault();
+		$.ajax({
+			type: "POST",
+			url: "{% url 'cook_recipe' recipe.id %}",
+			data: {
+				servings: $('#servings').val(),
+				csrfmiddlewaretoken: $('input[name=csrfmiddlewaretoken').val(),
+			},
+			// TODO: do something nice here instead of this
+			success:function() {
+				alert("Cooked this recipe");
+			}
+		});
+
+	});
+</script>
 
 {% endblock %}

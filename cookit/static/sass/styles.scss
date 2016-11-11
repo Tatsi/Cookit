@@ -208,18 +208,19 @@ button.add-btn {
 		form {
 			margin-left: 20px;
 			display: inline-block;
-
 			input {
 				display: inline-block;
 				width: 55px;
 			}
-		}
-		button {
-			float: right;
+			button {
+				position: absolute;
+				right: 20px;
+				top: 0;
 
-			&:hover {
-				background-color: $navbar-hover-color;
-				color: #fff;
+				&:hover {
+					background-color: $navbar-hover-color;
+					color: #fff;
+				}
 			}
 		}
 	}
