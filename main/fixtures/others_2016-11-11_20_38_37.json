@@ -141,7 +141,7 @@
     }, 
     {
         "fields": {
-            "amount": "0 cup", 
+            "amount": "0", 
             "recipe": 0, 
             "ingredient": 4053
         }, 
@@ -150,7 +150,7 @@
     }, 
     {
         "fields": {
-            "amount": "1 cup", 
+            "amount": "1", 
             "recipe": 0, 
             "ingredient": 4053
         }, 
@@ -159,7 +159,7 @@
     }, 
     {
         "fields": {
-            "amount": "2 cup", 
+            "amount": "2", 
             "recipe": 0, 
             "ingredient": 4053
         }, 
@@ -168,7 +168,7 @@
     }, 
     {
         "fields": {
-            "amount": "3 cup", 
+            "amount": "3", 
             "recipe": 0, 
             "ingredient": 4053
         }, 
@@ -177,7 +177,7 @@
     }, 
     {
         "fields": {
-            "amount": "4 cup", 
+            "amount": "4", 
             "recipe": 0, 
             "ingredient": 4053
         }, 
@@ -195,7 +195,7 @@
             "rating_count": 1, 
             "steps": "[\"Take all the ingredients in front of you.\", \"Mix them and season with salt and pepper.\", \"Fry them in a frying pan for 20 minutes.\", \"Enjoy your delicious meal!\"]", 
             "servings": 1, 
-            "duration": "4:26:00", 
+            "duration": "3:11:00", 
             "image_url": "www.example.com/image.png"
         }, 
         "model": "main.recipe", 
@@ -203,7 +203,7 @@
     }, 
     {
         "fields": {
-            "amount": "5 cup", 
+            "amount": "5", 
             "recipe": 1, 
             "ingredient": 4053
         }, 
@@ -212,7 +212,7 @@
     }, 
     {
         "fields": {
-            "amount": "6 cup", 
+            "amount": "6", 
             "recipe": 1, 
             "ingredient": 4053
         }, 
@@ -221,7 +221,7 @@
     }, 
     {
         "fields": {
-            "amount": "7 cup", 
+            "amount": "7", 
             "recipe": 1, 
             "ingredient": 4053
         }, 
@@ -230,7 +230,7 @@
     }, 
     {
         "fields": {
-            "amount": "8 cup", 
+            "amount": "8", 
             "recipe": 1, 
             "ingredient": 4053
         }, 
@@ -239,7 +239,7 @@
     }, 
     {
         "fields": {
-            "amount": "9 cup", 
+            "amount": "9", 
             "recipe": 1, 
             "ingredient": 4053
         }, 
@@ -257,7 +257,7 @@
             "rating_count": 2, 
             "steps": "[\"Take all the ingredients in front of you.\", \"Mix them and season with salt and pepper.\", \"Fry them in a frying pan for 20 minutes.\", \"Enjoy your delicious meal!\"]", 
             "servings": 1, 
-            "duration": "4:26:00", 
+            "duration": "3:11:00", 
             "image_url": "www.example.com/image.png"
         }, 
         "model": "main.recipe", 
@@ -265,7 +265,7 @@
     }, 
     {
         "fields": {
-            "amount": "10 cup", 
+            "amount": "10", 
             "recipe": 2, 
             "ingredient": 4053
         }, 
@@ -274,7 +274,7 @@
     }, 
     {
         "fields": {
-            "amount": "11 cup", 
+            "amount": "11", 
             "recipe": 2, 
             "ingredient": 4053
         }, 
@@ -283,7 +283,7 @@
     }, 
     {
         "fields": {
-            "amount": "12 cup", 
+            "amount": "12", 
             "recipe": 2, 
             "ingredient": 4053
         }, 
@@ -292,7 +292,7 @@
     }, 
     {
         "fields": {
-            "amount": "13 cup", 
+            "amount": "13", 
             "recipe": 2, 
             "ingredient": 4053
         }, 
@@ -301,7 +301,7 @@
     }, 
     {
         "fields": {
-            "amount": "14 cup", 
+            "amount": "14", 
             "recipe": 2, 
             "ingredient": 4053
         }, 
@@ -319,7 +319,7 @@
             "rating_count": 3, 
             "steps": "[\"Take all the ingredients in front of you.\", \"Mix them and season with salt and pepper.\", \"Fry them in a frying pan for 20 minutes.\", \"Enjoy your delicious meal!\"]", 
             "servings": 1, 
-            "duration": "4:26:00", 
+            "duration": "3:11:00", 
             "image_url": "www.example.com/image.png"
         }, 
         "model": "main.recipe", 
@@ -471,7 +471,7 @@
     }, 
     {
         "fields": {
-            "amount": "10 cup", 
+            "amount": "10", 
             "recipe": 3, 
             "ingredient": 4053
         }, 
@@ -480,7 +480,7 @@
     }, 
     {
         "fields": {
-            "amount": "11 cup", 
+            "amount": "11", 
             "recipe": 3, 
             "ingredient": 4053
         }, 
@@ -489,7 +489,7 @@
     }, 
     {
         "fields": {
-            "amount": "12 cup", 
+            "amount": "12", 
             "recipe": 3, 
             "ingredient": 4053
         }, 
@@ -498,7 +498,7 @@
     }, 
     {
         "fields": {
-            "amount": "13 cup", 
+            "amount": "13", 
             "recipe": 3, 
             "ingredient": 4053
         }, 
@@ -507,7 +507,7 @@
     }, 
     {
         "fields": {
-            "amount": "14 cup", 
+            "amount": "14", 
             "recipe": 3, 
             "ingredient": 4053
         }, 
@@ -525,7 +525,7 @@
             "rating_count": 2, 
             "steps": "[\"Take all the ingredients in front of you.\", \"Mix them and season with salt and pepper.\", \"Fry them in a frying pan for 20 minutes.\", \"Enjoy your delicious meal!\"]", 
             "servings": 2, 
-            "duration": "1:36:00", 
+            "duration": "3:23:00", 
             "image_url": "www.example.com/image.png"
         }, 
         "model": "main.recipe", 
@@ -533,7 +533,7 @@
     }, 
     {
         "fields": {
-            "amount": "15 cup", 
+            "amount": "15", 
             "recipe": 4, 
             "ingredient": 4053
         }, 
@@ -542,7 +542,7 @@
     }, 
     {
         "fields": {
-            "amount": "16 cup", 
+            "amount": "16", 
             "recipe": 4, 
             "ingredient": 4053
         }, 
@@ -551,7 +551,7 @@
     }, 
     {
         "fields": {
-            "amount": "17 cup", 
+            "amount": "17", 
             "recipe": 4, 
             "ingredient": 4053
         }, 
@@ -560,7 +560,7 @@
     }, 
     {
         "fields": {
-            "amount": "18 cup", 
+            "amount": "18", 
             "recipe": 4, 
             "ingredient": 4053
         }, 
@@ -569,7 +569,7 @@
     }, 
     {
         "fields": {
-            "amount": "19 cup", 
+            "amount": "19", 
             "recipe": 4, 
             "ingredient": 4053
         }, 
@@ -587,7 +587,7 @@
             "rating_count": 4, 
             "steps": "[\"Take all the ingredients in front of you.\", \"Mix them and season with salt and pepper.\", \"Fry them in a frying pan for 20 minutes.\", \"Enjoy your delicious meal!\"]", 
             "servings": 2, 
-            "duration": "1:36:00", 
+            "duration": "3:23:00", 
             "image_url": "www.example.com/image.png"
         }, 
         "model": "main.recipe", 
@@ -595,7 +595,7 @@
     }, 
     {
         "fields": {
-            "amount": "20 cup", 
+            "amount": "20", 
             "recipe": 5, 
             "ingredient": 4053
         }, 
@@ -604,7 +604,7 @@
     }, 
     {
         "fields": {
-            "amount": "21 cup", 
+            "amount": "21", 
             "recipe": 5, 
             "ingredient": 4053
         }, 
@@ -613,7 +613,7 @@
     }, 
     {
         "fields": {
-            "amount": "22 cup", 
+            "amount": "22", 
             "recipe": 5, 
             "ingredient": 4053
         }, 
@@ -622,7 +622,7 @@
     }, 
     {
         "fields": {
-            "amount": "23 cup", 
+            "amount": "23", 
             "recipe": 5, 
             "ingredient": 4053
         }, 
@@ -631,7 +631,7 @@
     }, 
     {
         "fields": {
-            "amount": "24 cup", 
+            "amount": "24", 
             "recipe": 5, 
             "ingredient": 4053
         }, 
@@ -649,7 +649,7 @@
             "rating_count": 6, 
             "steps": "[\"Take all the ingredients in front of you.\", \"Mix them and season with salt and pepper.\", \"Fry them in a frying pan for 20 minutes.\", \"Enjoy your delicious meal!\"]", 
             "servings": 2, 
-            "duration": "1:36:00", 
+            "duration": "3:23:00", 
             "image_url": "www.example.com/image.png"
         }, 
         "model": "main.recipe", 
@@ -803,7 +803,7 @@
     }, 
     {
         "fields": {
-            "amount": "20 cup", 
+            "amount": "20", 
             "recipe": 6, 
             "ingredient": 4053
         }, 
@@ -812,7 +812,7 @@
     }, 
     {
         "fields": {
-            "amount": "21 cup", 
+            "amount": "21", 
             "recipe": 6, 
             "ingredient": 4053
         }, 
@@ -821,7 +821,7 @@
     }, 
     {
         "fields": {
-            "amount": "22 cup", 
+            "amount": "22", 
             "recipe": 6, 
             "ingredient": 4053
         }, 
@@ -830,7 +830,7 @@
     }, 
     {
         "fields": {
-            "amount": "23 cup", 
+            "amount": "23", 
             "recipe": 6, 
             "ingredient": 4053
         }, 
@@ -839,7 +839,7 @@
     }, 
     {
         "fields": {
-            "amount": "24 cup", 
+            "amount": "24", 
             "recipe": 6, 
             "ingredient": 4053
         }, 
@@ -857,7 +857,7 @@
             "rating_count": 3, 
             "steps": "[\"Take all the ingredients in front of you.\", \"Mix them and season with salt and pepper.\", \"Fry them in a frying pan for 20 minutes.\", \"Enjoy your delicious meal!\"]", 
             "servings": 3, 
-            "duration": "2:24:00", 
+            "duration": "4:57:00", 
             "image_url": "www.example.com/image.png"
         }, 
         "model": "main.recipe", 
@@ -865,7 +865,7 @@
     }, 
     {
         "fields": {
-            "amount": "25 cup", 
+            "amount": "25", 
             "recipe": 7, 
             "ingredient": 4053
         }, 
@@ -874,7 +874,7 @@
     }, 
     {
         "fields": {
-            "amount": "26 cup", 
+            "amount": "26", 
             "recipe": 7, 
             "ingredient": 4053
         }, 
@@ -883,7 +883,7 @@
     }, 
     {
         "fields": {
-            "amount": "27 cup", 
+            "amount": "27", 
             "recipe": 7, 
             "ingredient": 4053
         }, 
@@ -892,7 +892,7 @@
     }, 
     {
         "fields": {
-            "amount": "28 cup", 
+            "amount": "28", 
             "recipe": 7, 
             "ingredient": 4053
         }, 
@@ -901,7 +901,7 @@
     }, 
     {
         "fields": {
-            "amount": "29 cup", 
+            "amount": "29", 
             "recipe": 7, 
             "ingredient": 4053
         }, 
@@ -919,7 +919,7 @@
             "rating_count": 6, 
             "steps": "[\"Take all the ingredients in front of you.\", \"Mix them and season with salt and pepper.\", \"Fry them in a frying pan for 20 minutes.\", \"Enjoy your delicious meal!\"]", 
             "servings": 3, 
-            "duration": "2:24:00", 
+            "duration": "4:57:00", 
             "image_url": "www.example.com/image.png"
         }, 
         "model": "main.recipe", 
@@ -927,7 +927,7 @@
     }, 
     {
         "fields": {
-            "amount": "30 cup", 
+            "amount": "30", 
             "recipe": 8, 
             "ingredient": 4053
         }, 
@@ -936,7 +936,7 @@
     }, 
     {
         "fields": {
-            "amount": "31 cup", 
+            "amount": "31", 
             "recipe": 8, 
             "ingredient": 4053
         }, 
@@ -945,7 +945,7 @@
     }, 
     {
         "fields": {
-            "amount": "32 cup", 
+            "amount": "32", 
             "recipe": 8, 
             "ingredient": 4053
         }, 
@@ -954,7 +954,7 @@
     }, 
     {
         "fields": {
-            "amount": "33 cup", 
+            "amount": "33", 
             "recipe": 8, 
             "ingredient": 4053
         }, 
@@ -963,7 +963,7 @@
     }, 
     {
         "fields": {
-            "amount": "34 cup", 
+            "amount": "34", 
             "recipe": 8, 
             "ingredient": 4053
         }, 
@@ -981,7 +981,7 @@
             "rating_count": 9, 
             "steps": "[\"Take all the ingredients in front of you.\", \"Mix them and season with salt and pepper.\", \"Fry them in a frying pan for 20 minutes.\", \"Enjoy your delicious meal!\"]", 
             "servings": 3, 
-            "duration": "2:24:00", 
+            "duration": "4:57:00", 
             "image_url": "www.example.com/image.png"
         }, 
         "model": "main.recipe", 
@@ -1137,7 +1137,7 @@
     }, 
     {
         "fields": {
-            "amount": "30 cup", 
+            "amount": "30", 
             "recipe": 9, 
             "ingredient": 4053
         }, 
@@ -1146,7 +1146,7 @@
     }, 
     {
         "fields": {
-            "amount": "31 cup", 
+            "amount": "31", 
             "recipe": 9, 
             "ingredient": 4053
         }, 
@@ -1155,7 +1155,7 @@
     }, 
     {
         "fields": {
-            "amount": "32 cup", 
+            "amount": "32", 
             "recipe": 9, 
             "ingredient": 4053
         }, 
@@ -1164,7 +1164,7 @@
     }, 
     {
         "fields": {
-            "amount": "33 cup", 
+            "amount": "33", 
             "recipe": 9, 
             "ingredient": 4053
         }, 
@@ -1173,7 +1173,7 @@
     }, 
     {
         "fields": {
-            "amount": "34 cup", 
+            "amount": "34", 
             "recipe": 9, 
             "ingredient": 4053
         }, 
@@ -1191,7 +1191,7 @@
             "rating_count": 4, 
             "steps": "[\"Take all the ingredients in front of you.\", \"Mix them and season with salt and pepper.\", \"Fry them in a frying pan for 20 minutes.\", \"Enjoy your delicious meal!\"]", 
             "servings": 4, 
-            "duration": "2:53:00", 
+            "duration": "3:24:00", 
             "image_url": "www.example.com/image.png"
         }, 
         "model": "main.recipe", 
@@ -1199,7 +1199,7 @@
     }, 
     {
         "fields": {
-            "amount": "35 cup", 
+            "amount": "35", 
             "recipe": 10, 
             "ingredient": 4053
         }, 
@@ -1208,7 +1208,7 @@
     }, 
     {
         "fields": {
-            "amount": "36 cup", 
+            "amount": "36", 
             "recipe": 10, 
             "ingredient": 4053
         }, 
@@ -1217,7 +1217,7 @@
     }, 
     {
         "fields": {
-            "amount": "37 cup", 
+            "amount": "37", 
             "recipe": 10, 
             "ingredient": 4053
         }, 
@@ -1226,7 +1226,7 @@
     }, 
     {
         "fields": {
-            "amount": "38 cup", 
+            "amount": "38", 
             "recipe": 10, 
             "ingredient": 4053
         }, 
@@ -1235,7 +1235,7 @@
     }, 
     {
         "fields": {
-            "amount": "39 cup", 
+            "amount": "39", 
             "recipe": 10, 
             "ingredient": 4053
         }, 
@@ -1253,7 +1253,7 @@
             "rating_count": 8, 
             "steps": "[\"Take all the ingredients in front of you.\", \"Mix them and season with salt and pepper.\", \"Fry them in a frying pan for 20 minutes.\", \"Enjoy your delicious meal!\"]", 
             "servings": 4, 
-            "duration": "2:53:00", 
+            "duration": "3:24:00", 
             "image_url": "www.example.com/image.png"
         }, 
         "model": "main.recipe", 
@@ -1261,7 +1261,7 @@
     }, 
     {
         "fields": {
-            "amount": "40 cup", 
+            "amount": "40", 
             "recipe": 11, 
             "ingredient": 4053
         }, 
@@ -1270,7 +1270,7 @@
     }, 
     {
         "fields": {
-            "amount": "41 cup", 
+            "amount": "41", 
             "recipe": 11, 
             "ingredient": 4053
         }, 
@@ -1279,7 +1279,7 @@
     }, 
     {
         "fields": {
-            "amount": "42 cup", 
+            "amount": "42", 
             "recipe": 11, 
             "ingredient": 4053
         }, 
@@ -1288,7 +1288,7 @@
     }, 
     {
         "fields": {
-            "amount": "43 cup", 
+            "amount": "43", 
             "recipe": 11, 
             "ingredient": 4053
         }, 
@@ -1297,7 +1297,7 @@
     }, 
     {
         "fields": {
-            "amount": "44 cup", 
+            "amount": "44", 
             "recipe": 11, 
             "ingredient": 4053
         }, 
@@ -1315,7 +1315,7 @@
             "rating_count": 12, 
             "steps": "[\"Take all the ingredients in front of you.\", \"Mix them and season with salt and pepper.\", \"Fry them in a frying pan for 20 minutes.\", \"Enjoy your delicious meal!\"]", 
             "servings": 4, 
-            "duration": "2:53:00", 
+            "duration": "3:24:00", 
             "image_url": "www.example.com/image.png"
         }, 
         "model": "main.recipe", 
@@ -1473,7 +1473,7 @@
     }, 
     {
         "fields": {
-            "amount": "40 cup", 
+            "amount": "40", 
             "recipe": 12, 
             "ingredient": 4053
         }, 
@@ -1482,7 +1482,7 @@
     }, 
     {
         "fields": {
-            "amount": "41 cup", 
+            "amount": "41", 
             "recipe": 12, 
             "ingredient": 4053
         }, 
@@ -1491,7 +1491,7 @@
     }, 
     {
         "fields": {
-            "amount": "42 cup", 
+            "amount": "42", 
             "recipe": 12, 
             "ingredient": 4053
         }, 
@@ -1500,7 +1500,7 @@
     }, 
     {
         "fields": {
-            "amount": "43 cup", 
+            "amount": "43", 
             "recipe": 12, 
             "ingredient": 4053
         }, 
@@ -1509,7 +1509,7 @@
     }, 
     {
         "fields": {
-            "amount": "44 cup", 
+            "amount": "44", 
             "recipe": 12, 
             "ingredient": 4053
         }, 
@@ -1527,7 +1527,7 @@
             "rating_count": 5, 
             "steps": "[\"Take all the ingredients in front of you.\", \"Mix them and season with salt and pepper.\", \"Fry them in a frying pan for 20 minutes.\", \"Enjoy your delicious meal!\"]", 
             "servings": 5, 
-            "duration": "3:43:00", 
+            "duration": "0:41:00", 
             "image_url": "www.example.com/image.png"
         }, 
         "model": "main.recipe", 
@@ -1535,7 +1535,7 @@
     }, 
     {
         "fields": {
-            "amount": "45 cup", 
+            "amount": "45", 
             "recipe": 13, 
             "ingredient": 4053
         }, 
@@ -1544,7 +1544,7 @@
     }, 
     {
         "fields": {
-            "amount": "46 cup", 
+            "amount": "46", 
             "recipe": 13, 
             "ingredient": 4053
         }, 
@@ -1553,7 +1553,7 @@
     }, 
     {
         "fields": {
-            "amount": "47 cup", 
+            "amount": "47", 
             "recipe": 13, 
             "ingredient": 4053
         }, 
@@ -1562,7 +1562,7 @@
     }, 
     {
         "fields": {
-            "amount": "48 cup", 
+            "amount": "48", 
             "recipe": 13, 
             "ingredient": 4053
         }, 
@@ -1571,7 +1571,7 @@
     }, 
     {
         "fields": {
-            "amount": "49 cup", 
+            "amount": "49", 
             "recipe": 13, 
             "ingredient": 4053
         }, 
@@ -1589,7 +1589,7 @@
             "rating_count": 10, 
             "steps": "[\"Take all the ingredients in front of you.\", \"Mix them and season with salt and pepper.\", \"Fry them in a frying pan for 20 minutes.\", \"Enjoy your delicious meal!\"]", 
             "servings": 5, 
-            "duration": "3:43:00", 
+            "duration": "0:41:00", 
             "image_url": "www.example.com/image.png"
         }, 
         "model": "main.recipe", 
@@ -1597,7 +1597,7 @@
     }, 
     {
         "fields": {
-            "amount": "50 cup", 
+            "amount": "50", 
             "recipe": 14, 
             "ingredient": 4053
         }, 
@@ -1606,7 +1606,7 @@
     }, 
     {
         "fields": {
-            "amount": "51 cup", 
+            "amount": "51", 
             "recipe": 14, 
             "ingredient": 4053
         }, 
@@ -1615,7 +1615,7 @@
     }, 
     {
         "fields": {
-            "amount": "52 cup", 
+            "amount": "52", 
             "recipe": 14, 
             "ingredient": 4053
         }, 
@@ -1624,7 +1624,7 @@
     }, 
     {
         "fields": {
-            "amount": "53 cup", 
+            "amount": "53", 
             "recipe": 14, 
             "ingredient": 4053
         }, 
@@ -1633,7 +1633,7 @@
     }, 
     {
         "fields": {
-            "amount": "54 cup", 
+            "amount": "54", 
             "recipe": 14, 
             "ingredient": 4053
         }, 
@@ -1651,7 +1651,7 @@
             "rating_count": 15, 
             "steps": "[\"Take all the ingredients in front of you.\", \"Mix them and season with salt and pepper.\", \"Fry them in a frying pan for 20 minutes.\", \"Enjoy your delicious meal!\"]", 
             "servings": 5, 
-            "duration": "3:43:00", 
+            "duration": "0:41:00", 
             "image_url": "www.example.com/image.png"
         }, 
         "model": "main.recipe", 
@@ -1811,7 +1811,7 @@
     }, 
     {
         "fields": {
-            "amount": "50 cup", 
+            "amount": "50", 
             "recipe": 15, 
             "ingredient": 4053
         }, 
@@ -1820,7 +1820,7 @@
     }, 
     {
         "fields": {
-            "amount": "51 cup", 
+            "amount": "51", 
             "recipe": 15, 
             "ingredient": 4053
         }, 
@@ -1829,7 +1829,7 @@
     }, 
     {
         "fields": {
-            "amount": "52 cup", 
+            "amount": "52", 
             "recipe": 15, 
             "ingredient": 4053
         }, 
@@ -1838,7 +1838,7 @@
     }, 
     {
         "fields": {
-            "amount": "53 cup", 
+            "amount": "53", 
             "recipe": 15, 
             "ingredient": 4053
         }, 
@@ -1847,7 +1847,7 @@
     }, 
     {
         "fields": {
-            "amount": "54 cup", 
+            "amount": "54", 
             "recipe": 15, 
             "ingredient": 4053
         }, 
@@ -1865,7 +1865,7 @@
             "rating_count": 6, 
             "steps": "[\"Take all the ingredients in front of you.\", \"Mix them and season with salt and pepper.\", \"Fry them in a frying pan for 20 minutes.\", \"Enjoy your delicious meal!\"]", 
             "servings": 6, 
-            "duration": "4:40:00", 
+            "duration": "0:16:00", 
             "image_url": "www.example.com/image.png"
         }, 
         "model": "main.recipe", 
@@ -1873,7 +1873,7 @@
     }, 
     {
         "fields": {
-            "amount": "55 cup", 
+            "amount": "55", 
             "recipe": 16, 
             "ingredient": 4053
         }, 
@@ -1882,7 +1882,7 @@
     }, 
     {
         "fields": {
-            "amount": "56 cup", 
+            "amount": "56", 
             "recipe": 16, 
             "ingredient": 4053
         }, 
@@ -1891,7 +1891,7 @@
     }, 
     {
         "fields": {
-            "amount": "57 cup", 
+            "amount": "57", 
             "recipe": 16, 
             "ingredient": 4053
         }, 
@@ -1900,7 +1900,7 @@
     }, 
     {
         "fields": {
-            "amount": "58 cup", 
+            "amount": "58", 
             "recipe": 16, 
             "ingredient": 4053
         }, 
@@ -1909,7 +1909,7 @@
     }, 
     {
         "fields": {
-            "amount": "59 cup", 
+            "amount": "59", 
             "recipe": 16, 
             "ingredient": 4053
         }, 
@@ -1927,7 +1927,7 @@
             "rating_count": 12, 
             "steps": "[\"Take all the ingredients in front of you.\", \"Mix them and season with salt and pepper.\", \"Fry them in a frying pan for 20 minutes.\", \"Enjoy your delicious meal!\"]", 
             "servings": 6, 
-            "duration": "4:40:00", 
+            "duration": "0:16:00", 
             "image_url": "www.example.com/image.png"
         }, 
         "model": "main.recipe", 
@@ -1935,7 +1935,7 @@
     }, 
     {
         "fields": {
-            "amount": "60 cup", 
+            "amount": "60", 
             "recipe": 17, 
             "ingredient": 4053
         }, 
@@ -1944,7 +1944,7 @@
     }, 
     {
         "fields": {
-            "amount": "61 cup", 
+            "amount": "61", 
             "recipe": 17, 
             "ingredient": 4053
         }, 
@@ -1953,7 +1953,7 @@
     }, 
     {
         "fields": {
-            "amount": "62 cup", 
+            "amount": "62", 
             "recipe": 17, 
             "ingredient": 4053
         }, 
@@ -1962,7 +1962,7 @@
     }, 
     {
         "fields": {
-            "amount": "63 cup", 
+            "amount": "63", 
             "recipe": 17, 
             "ingredient": 4053
         }, 
@@ -1971,7 +1971,7 @@
     }, 
     {
         "fields": {
-            "amount": "64 cup", 
+            "amount": "64", 
             "recipe": 17, 
             "ingredient": 4053
         }, 
@@ -1989,7 +1989,7 @@
             "rating_count": 18, 
             "steps": "[\"Take all the ingredients in front of you.\", \"Mix them and season with salt and pepper.\", \"Fry them in a frying pan for 20 minutes.\", \"Enjoy your delicious meal!\"]", 
             "servings": 6, 
-            "duration": "4:40:00", 
+            "duration": "0:16:00", 
             "image_url": "www.example.com/image.png"
         }, 
         "model": "main.recipe", 
@@ -2151,7 +2151,7 @@
     }, 
     {
         "fields": {
-            "amount": "60 cup", 
+            "amount": "60", 
             "recipe": 18, 
             "ingredient": 4053
         }, 
@@ -2160,7 +2160,7 @@
     }, 
     {
         "fields": {
-            "amount": "61 cup", 
+            "amount": "61", 
             "recipe": 18, 
             "ingredient": 4053
         }, 
@@ -2169,7 +2169,7 @@
     }, 
     {
         "fields": {
-            "amount": "62 cup", 
+            "amount": "62", 
             "recipe": 18, 
             "ingredient": 4053
         }, 
@@ -2178,7 +2178,7 @@
     }, 
     {
         "fields": {
-            "amount": "63 cup", 
+            "amount": "63", 
             "recipe": 18, 
             "ingredient": 4053
         }, 
@@ -2187,7 +2187,7 @@
     }, 
     {
         "fields": {
-            "amount": "64 cup", 
+            "amount": "64", 
             "recipe": 18, 
             "ingredient": 4053
         }, 
@@ -2205,7 +2205,7 @@
             "rating_count": 7, 
             "steps": "[\"Take all the ingredients in front of you.\", \"Mix them and season with salt and pepper.\", \"Fry them in a frying pan for 20 minutes.\", \"Enjoy your delicious meal!\"]", 
             "servings": 7, 
-            "duration": "3:36:00", 
+            "duration": "0:24:00", 
             "image_url": "www.example.com/image.png"
         }, 
         "model": "main.recipe", 
@@ -2213,7 +2213,7 @@
     }, 
     {
         "fields": {
-            "amount": "65 cup", 
+            "amount": "65", 
             "recipe": 19, 
             "ingredient": 4053
         }, 
@@ -2222,7 +2222,7 @@
     }, 
     {
         "fields": {
-            "amount": "66 cup", 
+            "amount": "66", 
             "recipe": 19, 
             "ingredient": 4053
         }, 
@@ -2231,7 +2231,7 @@
     }, 
     {
         "fields": {
-            "amount": "67 cup", 
+            "amount": "67", 
             "recipe": 19, 
             "ingredient": 4053
         }, 
@@ -2240,7 +2240,7 @@
     }, 
     {
         "fields": {
-            "amount": "68 cup", 
+            "amount": "68", 
             "recipe": 19, 
             "ingredient": 4053
         }, 
@@ -2249,7 +2249,7 @@
     }, 
     {
         "fields": {
-            "amount": "69 cup", 
+            "amount": "69", 
             "recipe": 19, 
             "ingredient": 4053
         }, 
@@ -2267,7 +2267,7 @@
             "rating_count": 14, 
             "steps": "[\"Take all the ingredients in front of you.\", \"Mix them and season with salt and pepper.\", \"Fry them in a frying pan for 20 minutes.\", \"Enjoy your delicious meal!\"]", 
             "servings": 7, 
-            "duration": "3:36:00", 
+            "duration": "0:24:00", 
             "image_url": "www.example.com/image.png"
         }, 
         "model": "main.recipe", 
@@ -2275,7 +2275,7 @@
     }, 
     {
         "fields": {
-            "amount": "70 cup", 
+            "amount": "70", 
             "recipe": 20, 
             "ingredient": 4053
         }, 
@@ -2284,7 +2284,7 @@
     }, 
     {
         "fields": {
-            "amount": "71 cup", 
+            "amount": "71", 
             "recipe": 20, 
             "ingredient": 4053
         }, 
@@ -2293,7 +2293,7 @@
     }, 
     {
         "fields": {
-            "amount": "72 cup", 
+            "amount": "72", 
             "recipe": 20, 
             "ingredient": 4053
         }, 
@@ -2302,7 +2302,7 @@
     }, 
     {
         "fields": {
-            "amount": "73 cup", 
+            "amount": "73", 
             "recipe": 20, 
             "ingredient": 4053
         }, 
@@ -2311,7 +2311,7 @@
     }, 
     {
         "fields": {
-            "amount": "74 cup", 
+            "amount": "74", 
             "recipe": 20, 
             "ingredient": 4053
         }, 
@@ -2329,7 +2329,7 @@
             "rating_count": 21, 
             "steps": "[\"Take all the ingredients in front of you.\", \"Mix them and season with salt and pepper.\", \"Fry them in a frying pan for 20 minutes.\", \"Enjoy your delicious meal!\"]", 
             "servings": 7, 
-            "duration": "3:36:00", 
+            "duration": "0:24:00", 
             "image_url": "www.example.com/image.png"
         }, 
         "model": "main.recipe", 
@@ -2493,7 +2493,7 @@
     }, 
     {
         "fields": {
-            "amount": "70 cup", 
+            "amount": "70", 
             "recipe": 21, 
             "ingredient": 4053
         }, 
@@ -2502,7 +2502,7 @@
     }, 
     {
         "fields": {
-            "amount": "71 cup", 
+            "amount": "71", 
             "recipe": 21, 
             "ingredient": 4053
         }, 
@@ -2511,7 +2511,7 @@
     }, 
     {
         "fields": {
-            "amount": "72 cup", 
+            "amount": "72", 
             "recipe": 21, 
             "ingredient": 4053
         }, 
@@ -2520,7 +2520,7 @@
     }, 
     {
         "fields": {
-            "amount": "73 cup", 
+            "amount": "73", 
             "recipe": 21, 
             "ingredient": 4053
         }, 
@@ -2529,7 +2529,7 @@
     }, 
     {
         "fields": {
-            "amount": "74 cup", 
+            "amount": "74", 
             "recipe": 21, 
             "ingredient": 4053
         }, 
@@ -2547,7 +2547,7 @@
             "rating_count": 8, 
             "steps": "[\"Take all the ingredients in front of you.\", \"Mix them and season with salt and pepper.\", \"Fry them in a frying pan for 20 minutes.\", \"Enjoy your delicious meal!\"]", 
             "servings": 8, 
-            "duration": "3:48:00", 
+            "duration": "4:24:00", 
             "image_url": "www.example.com/image.png"
         }, 
         "model": "main.recipe", 
@@ -2555,7 +2555,7 @@
     }, 
     {
         "fields": {
-            "amount": "75 cup", 
+            "amount": "75", 
             "recipe": 22, 
             "ingredient": 4053
         }, 
@@ -2564,7 +2564,7 @@
     }, 
     {
         "fields": {
-            "amount": "76 cup", 
+            "amount": "76", 
             "recipe": 22, 
             "ingredient": 4053
         }, 
@@ -2573,7 +2573,7 @@
     }, 
     {
         "fields": {
-            "amount": "77 cup", 
+            "amount": "77", 
             "recipe": 22, 
             "ingredient": 4053
         }, 
@@ -2582,7 +2582,7 @@
     }, 
     {
         "fields": {
-            "amount": "78 cup", 
+            "amount": "78", 
             "recipe": 22, 
             "ingredient": 4053
         }, 
@@ -2591,7 +2591,7 @@
     }, 
     {
         "fields": {
-            "amount": "79 cup", 
+            "amount": "79", 
             "recipe": 22, 
             "ingredient": 4053
         }, 
@@ -2609,7 +2609,7 @@
             "rating_count": 16, 
             "steps": "[\"Take all the ingredients in front of you.\", \"Mix them and season with salt and pepper.\", \"Fry them in a frying pan for 20 minutes.\", \"Enjoy your delicious meal!\"]", 
             "servings": 8, 
-            "duration": "3:48:00", 
+            "duration": "4:24:00", 
             "image_url": "www.example.com/image.png"
         }, 
         "model": "main.recipe", 
@@ -2617,7 +2617,7 @@
     }, 
     {
         "fields": {
-            "amount": "80 cup", 
+            "amount": "80", 
             "recipe": 23, 
             "ingredient": 4053
         }, 
@@ -2626,7 +2626,7 @@
     }, 
     {
         "fields": {
-            "amount": "81 cup", 
+            "amount": "81", 
             "recipe": 23, 
             "ingredient": 4053
         }, 
@@ -2635,7 +2635,7 @@
     }, 
     {
         "fields": {
-            "amount": "82 cup", 
+            "amount": "82", 
             "recipe": 23, 
             "ingredient": 4053
         }, 
@@ -2644,7 +2644,7 @@
     }, 
     {
         "fields": {
-            "amount": "83 cup", 
+            "amount": "83", 
             "recipe": 23, 
             "ingredient": 4053
         }, 
@@ -2653,7 +2653,7 @@
     }, 
     {
         "fields": {
-            "amount": "84 cup", 
+            "amount": "84", 
             "recipe": 23, 
             "ingredient": 4053
         }, 
@@ -2671,7 +2671,7 @@
             "rating_count": 24, 
             "steps": "[\"Take all the ingredients in front of you.\", \"Mix them and season with salt and pepper.\", \"Fry them in a frying pan for 20 minutes.\", \"Enjoy your delicious meal!\"]", 
             "servings": 8, 
-            "duration": "3:48:00", 
+            "duration": "4:24:00", 
             "image_url": "www.example.com/image.png"
         }, 
         "model": "main.recipe", 
@@ -2837,7 +2837,7 @@
     }, 
     {
         "fields": {
-            "amount": "80 cup", 
+            "amount": "80", 
             "recipe": 24, 
             "ingredient": 4053
         }, 
@@ -2846,7 +2846,7 @@
     }, 
     {
         "fields": {
-            "amount": "81 cup", 
+            "amount": "81", 
             "recipe": 24, 
             "ingredient": 4053
         }, 
@@ -2855,7 +2855,7 @@
     }, 
     {
         "fields": {
-            "amount": "82 cup", 
+            "amount": "82", 
             "recipe": 24, 
             "ingredient": 4053
         }, 
@@ -2864,7 +2864,7 @@
     }, 
     {
         "fields": {
-            "amount": "83 cup", 
+            "amount": "83", 
             "recipe": 24, 
             "ingredient": 4053
         }, 
@@ -2873,7 +2873,7 @@
     }, 
     {
         "fields": {
-            "amount": "84 cup", 
+            "amount": "84", 
             "recipe": 24, 
             "ingredient": 4053
         }, 
@@ -2891,7 +2891,7 @@
             "rating_count": 9, 
             "steps": "[\"Take all the ingredients in front of you.\", \"Mix them and season with salt and pepper.\", \"Fry them in a frying pan for 20 minutes.\", \"Enjoy your delicious meal!\"]", 
             "servings": 9, 
-            "duration": "4:26:00", 
+            "duration": "2:55:00", 
             "image_url": "www.example.com/image.png"
         }, 
         "model": "main.recipe", 
@@ -2899,7 +2899,7 @@
     }, 
     {
         "fields": {
-            "amount": "85 cup", 
+            "amount": "85", 
             "recipe": 25, 
             "ingredient": 4053
         }, 
@@ -2908,7 +2908,7 @@
     }, 
     {
         "fields": {
-            "amount": "86 cup", 
+            "amount": "86", 
             "recipe": 25, 
             "ingredient": 4053
         }, 
@@ -2917,7 +2917,7 @@
     }, 
     {
         "fields": {
-            "amount": "87 cup", 
+            "amount": "87", 
             "recipe": 25, 
             "ingredient": 4053
         }, 
@@ -2926,7 +2926,7 @@
     }, 
     {
         "fields": {
-            "amount": "88 cup", 
+            "amount": "88", 
             "recipe": 25, 
             "ingredient": 4053
         }, 
@@ -2935,7 +2935,7 @@
     }, 
     {
         "fields": {
-            "amount": "89 cup", 
+            "amount": "89", 
             "recipe": 25, 
             "ingredient": 4053
         }, 
@@ -2953,7 +2953,7 @@
             "rating_count": 18, 
             "steps": "[\"Take all the ingredients in front of you.\", \"Mix them and season with salt and pepper.\", \"Fry them in a frying pan for 20 minutes.\", \"Enjoy your delicious meal!\"]", 
             "servings": 9, 
-            "duration": "4:26:00", 
+            "duration": "2:55:00", 
             "image_url": "www.example.com/image.png"
         }, 
         "model": "main.recipe", 
@@ -2961,7 +2961,7 @@
     }, 
     {
         "fields": {
-            "amount": "90 cup", 
+            "amount": "90", 
             "recipe": 26, 
             "ingredient": 4053
         }, 
@@ -2970,7 +2970,7 @@
     }, 
     {
         "fields": {
-            "amount": "91 cup", 
+            "amount": "91", 
             "recipe": 26, 
             "ingredient": 4053
         }, 
@@ -2979,7 +2979,7 @@
     }, 
     {
         "fields": {
-            "amount": "92 cup", 
+            "amount": "92", 
             "recipe": 26, 
             "ingredient": 4053
         }, 
@@ -2988,7 +2988,7 @@
     }, 
     {
         "fields": {
-            "amount": "93 cup", 
+            "amount": "93", 
             "recipe": 26, 
             "ingredient": 4053
         }, 
@@ -2997,7 +2997,7 @@
     }, 
     {
         "fields": {
-            "amount": "94 cup", 
+            "amount": "94", 
             "recipe": 26, 
             "ingredient": 4053
         }, 
@@ -3015,7 +3015,7 @@
             "rating_count": 27, 
             "steps": "[\"Take all the ingredients in front of you.\", \"Mix them and season with salt and pepper.\", \"Fry them in a frying pan for 20 minutes.\", \"Enjoy your delicious meal!\"]", 
             "servings": 9, 
-            "duration": "4:26:00", 
+            "duration": "2:55:00", 
             "image_url": "www.example.com/image.png"
         }, 
         "model": "main.recipe", 
@@ -3183,7 +3183,7 @@
     }, 
     {
         "fields": {
-            "amount": "90 cup", 
+            "amount": "90", 
             "recipe": 27, 
             "ingredient": 4053
         }, 
@@ -3192,7 +3192,7 @@
     }, 
     {
         "fields": {
-            "amount": "91 cup", 
+            "amount": "91", 
             "recipe": 27, 
             "ingredient": 4053
         }, 
@@ -3201,7 +3201,7 @@
     }, 
     {
         "fields": {
-            "amount": "92 cup", 
+            "amount": "92", 
             "recipe": 27, 
             "ingredient": 4053
         }, 
@@ -3210,7 +3210,7 @@
     }, 
     {
         "fields": {
-            "amount": "93 cup", 
+            "amount": "93", 
             "recipe": 27, 
             "ingredient": 4053
         }, 
@@ -3219,7 +3219,7 @@
     }, 
     {
         "fields": {
-            "amount": "94 cup", 
+            "amount": "94", 
             "recipe": 27, 
             "ingredient": 4053
         }, 
@@ -3237,7 +3237,7 @@
             "rating_count": 10, 
             "steps": "[\"Take all the ingredients in front of you.\", \"Mix them and season with salt and pepper.\", \"Fry them in a frying pan for 20 minutes.\", \"Enjoy your delicious meal!\"]", 
             "servings": 10, 
-            "duration": "1:27:00", 
+            "duration": "2:38:00", 
             "image_url": "www.example.com/image.png"
         }, 
         "model": "main.recipe", 
@@ -3245,7 +3245,7 @@
     }, 
     {
         "fields": {
-            "amount": "95 cup", 
+            "amount": "95", 
             "recipe": 28, 
             "ingredient": 4053
         }, 
@@ -3254,7 +3254,7 @@
     }, 
     {
         "fields": {
-            "amount": "96 cup", 
+            "amount": "96", 
             "recipe": 28, 
             "ingredient": 4053
         }, 
@@ -3263,7 +3263,7 @@
     }, 
     {
         "fields": {
-            "amount": "97 cup", 
+            "amount": "97", 
             "recipe": 28, 
             "ingredient": 4053
         }, 
@@ -3272,7 +3272,7 @@
     }, 
     {
         "fields": {
-            "amount": "98 cup", 
+            "amount": "98", 
             "recipe": 28, 
             "ingredient": 4053
         }, 
@@ -3281,7 +3281,7 @@
     }, 
     {
         "fields": {
-            "amount": "99 cup", 
+            "amount": "99", 
             "recipe": 28, 
             "ingredient": 4053
         }, 
@@ -3299,7 +3299,7 @@
             "rating_count": 20, 
             "steps": "[\"Take all the ingredients in front of you.\", \"Mix them and season with salt and pepper.\", \"Fry them in a frying pan for 20 minutes.\", \"Enjoy your delicious meal!\"]", 
             "servings": 10, 
-            "duration": "1:27:00", 
+            "duration": "2:38:00", 
             "image_url": "www.example.com/image.png"
         }, 
         "model": "main.recipe", 
@@ -3307,7 +3307,7 @@
     }, 
     {
         "fields": {
-            "amount": "100 cup", 
+            "amount": "100", 
             "recipe": 29, 
             "ingredient": 4053
         }, 
@@ -3316,7 +3316,7 @@
     }, 
     {
         "fields": {
-            "amount": "101 cup", 
+            "amount": "101", 
             "recipe": 29, 
             "ingredient": 4053
         }, 
@@ -3325,7 +3325,7 @@
     }, 
     {
         "fields": {
-            "amount": "102 cup", 
+            "amount": "102", 
             "recipe": 29, 
             "ingredient": 4053
         }, 
@@ -3334,7 +3334,7 @@
     }, 
     {
         "fields": {
-            "amount": "103 cup", 
+            "amount": "103", 
             "recipe": 29, 
             "ingredient": 4053
         }, 
@@ -3343,7 +3343,7 @@
     }, 
     {
         "fields": {
-            "amount": "104 cup", 
+            "amount": "104", 
             "recipe": 29, 
             "ingredient": 4053
         }, 
@@ -3361,7 +3361,7 @@
             "rating_count": 30, 
             "steps": "[\"Take all the ingredients in front of you.\", \"Mix them and season with salt and pepper.\", \"Fry them in a frying pan for 20 minutes.\", \"Enjoy your delicious meal!\"]", 
             "servings": 10, 
-            "duration": "1:27:00", 
+            "duration": "2:38:00", 
             "image_url": "www.example.com/image.png"
         }, 
         "model": "main.recipe", 

@@ -61,9 +61,9 @@
 			<!-- Non-collapsing ingredient list for desktop -->
 			<div class="hidden-xs">
 				<h4>Ingredients</h4>
-				<ul>
+				<ul id="ingredients">
 					{% for ingredient in ingredients %}
-					<li><p>{{ ingredient.amount }} {{ ingredient.ingredient.name }}</p></li>
+					<li><p id="amount">{{ ingredient.amount }}</p> <p id="unit">{{ ingredient.ingredient.unit }}</p>s <p id="name">{{ ingredient.ingredient.name }}</p></li>
 					{% endfor %}
 				</ul>
 			</div>
@@ -72,7 +72,7 @@
 				<h4 class="collapse-header" data-toggle="collapse" href="#ingredients">Ingredients<span class="toggle"></span></h4>
 				<ul id="ingredients" class="collapse in">
 					{% for ingredient in ingredients %}
-					<li><p>{{ ingredient.amount }} {{ ingredient.name }}</p></li>
+					<li><p id="amount">{{ ingredient.amount }}</p> <p id="unit">{{ ingredient.ingredient.unit }}</p>s <p id="name">{{ ingredient.ingredient.name }}</p></li>
 					{% endfor %}
 				</ul>
 			</div>
@@ -101,33 +101,53 @@
 </div>
 
 <script type="text/javascript">
+	$(document).ready(function() {
+		var original_amounts = [];
+		var elements = document.getElementById('ingredients').getElementsByTagName('li');
+		for (var i=0; i < elements.length; i++) {
+			var amount = elements[i].firstChild;
+			original_amounts.push(amount.innerText);
+		}
 
-	$(document).on('submit', '#cook_recipe', function(e) {
-		e.preventDefault();
-		$.ajax({
-			type: "POST",
-			url: "{% url 'cook_recipe' recipe.id %}",
-			data: {
-				servings: $('#servings').val(),
-				csrfmiddlewaretoken: $('input[name=csrfmiddlewaretoken').val(),
-			},
-			// TODO: do something nice here instead of this
-			success:function() {
-				alert("Cooked this recipe");
-			}
+		$(document).on('submit', '#cook_recipe', function(e) {
+			e.preventDefault();
+			$.ajax({
+				type: "POST",
+				url: "{% url 'cook_recipe' recipe.id %}",
+				data: {
+					servings: $('#servings').val(),
+					csrfmiddlewaretoken: $('input[name=csrfmiddlewaretoken').val(),
+				},
+				// TODO: do something nice here instead of this
+				success:function() {
+					alert("Cooked this recipe");
+				}
+			});
 		});
-	});
 
-	$('#favourite').click(function() {
-		$.ajax({
-			type: "POST",
-			url: "{% url 'add_favourite' recipe.id %}",
-			data: {
-				csrfmiddlewaretoken: $('input[name=csrfmiddlewaretoken').val(),
-			},
-			// TODO: maybe something else than reload?
-			success:function() {
-				location.reload();
+		$('#favourite').click(function() {
+			$.ajax({
+				type: "POST",
+				url: "{% url 'add_favourite' recipe.id %}",
+				data: {
+					csrfmiddlewaretoken: $('input[name=csrfmiddlewaretoken').val(),
+				},
+				// TODO: maybe something else than reload?
+				success:function() {
+					location.reload();
+				}
+			});
+		});
+
+		$('#servings').change(function() {
+			var old_servings = "{{ recipe.servings }}";
+			var new_servings = $('#servings').val();
+			var ingredients = "{{ ingredients }}";
+			var elements = document.getElementById('ingredients').getElementsByTagName('li');
+			for (var i=0; i < elements.length; i++) {
+				var amount = elements[i].firstChild;
+				var old_amount = original_amounts[i];
+				amount.innerHTML = old_amount / old_servings * new_servings;
 			}
 		});
 	});

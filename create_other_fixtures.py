@@ -78,7 +78,7 @@ with open('main/fixtures/others_' + time + '.json', 'w') as outfile:
             data.append(entry)
 
         # Create the related HistoryRecipes
-        
+
         for j in range(1,4):
             entry = dict(
                 model = 'main.cookedrecipe',
@@ -121,7 +121,7 @@ with open('main/fixtures/others_' + time + '.json', 'w') as outfile:
                         recipe = key,
                         #ingredient = sample(xrange(1000), 1)[0],
                         ingredient = 4053,
-                        amount = str(k) + " cup"
+                        amount = str(k)
                     )
                 )
                 data.append(entry)
