@@ -22,9 +22,10 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', main.views.mainpage, name='mainpage'),
     url(r'^feed/$', main.views.feed, name='feed'),
+    url(r'^feed/(?P<feed_type>\w+)/$', main.views.feed, name='feed'),
     url(r'^accounts/login/$', auth_views.login, name='login'),
     url(r'^logout/$', auth_views.logout, name='logout'),
     url(r'^register/$', main.views.register, name='register'),
-    url(r'^recipes/(\d+)/$', main.views.recipe, name='recipe'),
+    url(r'^recipes/(?P<recipe_id>\d+)/$', main.views.recipe, name='recipe'),
     url(r'^recipes/new/$', main.views.new_recipe, name='new_recipe'),
 ]

@@ -12,9 +12,9 @@
 			<ul class="nav navbar-nav">
 				<li><a href="{% url 'feed' %}">Recipes</a></li>
 				{% if user.is_authenticated %}
-					<li><a href="/">Own Recipes</a></li>
-					<li><a href="/">Favourites</a></li>
-					<li><a href="/">History</a></li>
+					<li><a href="{% url 'feed' 'own_recipes' %}">Own Recipes</a></li>
+					<li><a href="{% url 'feed' 'favourites' %}">Favourites</a></li>
+					<li><a href="{% url 'feed' 'history' %}">History</a></li>
 					<li><a href="{% url 'new_recipe' %}">New Recipe</a></li>
 				{% endif %}
 			</ul>

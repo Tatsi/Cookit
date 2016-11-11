@@ -11,16 +11,33 @@ def mainpage(request):
 	context = {}
 	return render(request, 'mainpage.html', context)
 
-def feed(request):
-	# dummy implementation of recipes
-	array = []
-	for i in range(5):
-		array.append({'title': 'Pea soup a la Otaniemi '+str(i), 'author': 'user123', 'stars': '1'*i+'0'*(5-i), 'description': 'This is a delicious pea soup featuring goose liver. Exeptionally well suited for quick lounches.', 'id': i})
-	context = {'recipes': array}
+def feed(request, feed_type=None):
+	user = request.user
 
-	if request.user.is_authenticated():
-		user_acc = UserAccount.objects.get(user=request.user)
+	if feed_type is None:
+		# dummy implementation of recipes
+		recipes = []
+		for i in range(5):
+			recipes.append({'title': 'Pea soup a la Otaniemi '+str(i), 'author': 'user123', 'stars': '1'*i+'0'*(5-i), 'description': 'This is a delicious pea soup featuring goose liver. Exeptionally well suited for quick lounches.', 'id': i})
+	else:
+		if user.is_authenticated():
+			user_account = UserAccount.objects.get(user=user)
+			if feed_type == "own_recipes":
+				recipes = Recipe.objects.filter(creator=user_account)
+			elif feed_type == "favourites":
+				recipes = user_account.favourite_recipes.all()
+			elif feed_type == "history":
+				recipes = user_account.history_recipes.all()
+			else:
+				raise Http404()
+		else:
+			raise Http404()
 
+
+	context = {'recipes': recipes}
+
+	if user.is_authenticated():
+		user_acc = UserAccount.objects.get(user=user)
 		if request.method == 'POST':
 			form = IngredientsForm(request.POST)
 			if form.is_valid():
