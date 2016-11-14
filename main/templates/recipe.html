@@ -25,13 +25,7 @@
 			<p><span class="glyphicon glyphicon-user"></span> {{ recipe.creator.user.username }}</p>
 			<i>{{ recipe.description }}</i>
 			<div class="rating">
-			{% for star in stars %}
-				{% if star == "1" %}
-					<span class="glyphicon glyphicon-star vote-star"></span>
-				{% else %}
-					<span class="glyphicon glyphicon-star-empty vote-star"></span>
-				{% endif %}
-			{% endfor %}
+			{% include "vote_stars.html" with item=recipe %}
 			<p class="text-muted">{{ recipe.rating_count }} ratings</p>
 			</div>
 		</div>

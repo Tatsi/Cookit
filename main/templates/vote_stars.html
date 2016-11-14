@@ -1,0 +1,8 @@
+{% load customtags %}
+
+{% for star in item.average_rating|full_stars %}
+		<span class="glyphicon glyphicon-star vote-star"></span>
+{% endfor %}
+{% for star in item.average_rating|empty_stars %}
+		<span class="glyphicon glyphicon-star-empty vote-star"></span>
+{% endfor %}

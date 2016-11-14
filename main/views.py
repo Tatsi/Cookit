@@ -16,10 +16,12 @@ def feed(request, feed_type=None):
 	user_account = UserAccount.objects.get(user=user) if user.is_authenticated() else None
 
 	if feed_type is None:
-		# dummy implementation of recipes
-		recipes = []
-		for i in range(5):
-			recipes.append({'title': 'Pea soup a la Otaniemi '+str(i), 'creator': Recipe.objects.get(id=i).creator, 'stars': '1'*i+'0'*(5-i), 'description': 'This is a delicious pea soup featuring goose liver. Exeptionally well suited for quick lounches.', 'id': i})
+		if not user.is_authenticated():
+			recipes = Recipe.objects.all()
+		else:
+			recipes = Recipe.objects.all()
+		#for i in range(5):
+		#	recipes.append({'title': 'Pea soup a la Otaniemi '+str(i), 'creator': Recipe.objects.get(id=i).creator, 'stars': '1'*i+'0'*(5-i), 'description': 'This is a delicious pea soup featuring goose liver. Exeptionally well suited for quick lounches.', 'id': i})
 	else:
 		if user.is_authenticated():
 			if feed_type == "own_recipes":
