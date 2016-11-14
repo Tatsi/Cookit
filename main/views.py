@@ -19,7 +19,7 @@ def feed(request, feed_type=None):
 		if not user.is_authenticated():
 			recipes = Recipe.objects.all()
 		else:
-			recipes = Recipe.objects.all()
+			recipes = Recipe.objects.filter(ingredients__in=user_account.ingredients.all())
 	else:
 		if user.is_authenticated():
 			if feed_type == "own_recipes":
@@ -106,8 +106,7 @@ def recipe(request, recipe_id):
 		'favourite': favourite,
 		'time': {'hours': hours, 'minutes': minutes},
 		'ingredients': ingredients,
-		'instructions': steps,
-		'stars': stars,
+		'instructions': steps
 	}
 	return render(request, 'recipe.html', context)
 
