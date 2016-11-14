@@ -41,7 +41,7 @@ def feed(request, feed_type=None):
 
 	context = {'recipes': recipes}
 	# Convert all ingredients to a list and pass to template
-	context['all_ingredients'] = list(Ingredient.objects.all().values_list('name', flat=True))
+	context['all_ingredients'] = json.dumps(list(Ingredient.objects.all().values_list('name', flat=True)))
 
 	if user.is_authenticated():
 		if request.method == 'POST':
