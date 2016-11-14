@@ -20,8 +20,6 @@ def feed(request, feed_type=None):
 			recipes = Recipe.objects.all()
 		else:
 			recipes = Recipe.objects.all()
-		#for i in range(5):
-		#	recipes.append({'title': 'Pea soup a la Otaniemi '+str(i), 'creator': Recipe.objects.get(id=i).creator, 'stars': '1'*i+'0'*(5-i), 'description': 'This is a delicious pea soup featuring goose liver. Exeptionally well suited for quick lounches.', 'id': i})
 	else:
 		if user.is_authenticated():
 			if feed_type == "own_recipes":
@@ -42,6 +40,8 @@ def feed(request, feed_type=None):
 				recipe.favourite = True
 
 	context = {'recipes': recipes}
+	# Convert all ingredients to a list and pass to template
+	context['all_ingredients'] = list(Ingredient.objects.all().values_list('name', flat=True))
 
 	if user.is_authenticated():
 		if request.method == 'POST':
@@ -61,9 +61,6 @@ def feed(request, feed_type=None):
 							item.delete()
 		else:
 			form = IngredientsForm()
-
-		# Convert all ingredients to a list and pass to template
-		context['all_ingredients'] = list(Ingredient.objects.all().values_list('name', flat=True))
 
 		# Fetch ingredients the user has
 		context['my_ingredients'] = user_account.ingredients.all()
@@ -91,10 +88,6 @@ def recipe(request, recipe_id):
 			favourite = True
 	else:
 		favourite = False
-
-	# Round ratings for the stars
-	rating = int(round(recipe.average_rating))
-	stars = '1' * rating + '0' * (5-rating)
 
 	# Parse duration
 	duration = recipe.duration
