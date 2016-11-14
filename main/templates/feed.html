@@ -2,27 +2,33 @@
 
 {% block content %}
 {% if user.is_authenticated %}
-	<!-- Ingredient list -->
-	<div class="text-center ">
-		<h4>My ingredients</h4>
-		<div class="ingredients-list">
-			{% for item in my_ingredients %}
-				<h4><span class="label label-success ingredient-label">{{ item.name }}</span></h4>
-			{% endfor %}
+	<button class="btn" id=my-ingredients-button>My ingredients</button>
+	<div id="my-ingredients-modal">
+		<div class="modal-content">
+			<span id="close-modal">x</span>
+			<!-- Ingredient list -->
+			<div class="text-center ">
+				<h4>My ingredients</h4>
+				<div class="ingredients-list">
+					{% for item in my_ingredients %}
+						<h4><span class="label label-success ingredient-label">{{ item.name }}</span></h4>
+					{% endfor %}
+				</div>
+			</div>
+
+			<!-- Ingredient form -->
+			<form class="ingredients-form" method="post" id="main_form">
+				{% csrf_token %}
+				<div class="form-group">
+					<div class="col-sm-6 col-sm-offset-3 col-xs-10">
+						<input type="text" name="ingredient" class="form-control" id="ingredientInput" placeholder="Search for ingredients...">
+						<input type="hidden" name="delete" id="deleteInput">
+					</div>
+					<button type="submit" class="btn btn-primary">Submit</button>
+				</div>
+			</form>
 		</div>
 	</div>
-
-	<!-- Ingredient form -->
-	<form class="ingredients-form" method="post" id="main_form">
-		{% csrf_token %}
-		<div class="form-group">
-			<div class="col-sm-6 col-sm-offset-3 col-xs-10">
-				<input type="text" name="ingredient" class="form-control" id="ingredientInput" placeholder="Search for ingredients...">
-				<input type="hidden" name="delete" id="delelteInput">
-			</div>
-			<button type="submit" class="btn btn-primary">Submit</button>
-		</div>
-	</form>
 {% endif %}
 
 <!-- Feed -->
@@ -33,12 +39,34 @@
 </div>
 
 <script type="text/javascript">
-	var all_ingredients = {{all_ingredients|safe}};
-	$('#ingredientInput').typeahead({source: all_ingredients });
-	$('.ingredient-label').click(function() {
-		$('#ingredientInput').val($(this).text());
-		$('#delelteInput').val('delete');
-		$('#main_form').submit();
+	$(document).ready(function() {
+		var all_ingredients = {{all_ingredients|safe}};
+		$('#ingredientInput').typeahead({source: all_ingredients });
+		$('.ingredient-label').click(function() {
+			$('#ingredientInput').val($(this).text());
+			$('#deleteInput').val('delete');
+			$('#main_form').submit();
+		});
+
+		var modalButton = document.getElementById('my-ingredients-button');
+		var modal = document.getElementById('my-ingredients-modal');
+		var modalContent = document.getElementsByClassName('modal-content')[0];
+		var closeButton = document.getElementById('close-modal');
+
+		$('#my-ingredients-button').click(function() {
+			modal.style.display = 'block';
+		});
+
+		$('#close-modal').click(function() {
+			modal.style.display = 'none';
+		});
+
+		window.onclick = function(event) {
+			console.log(event.target);
+			if (event.target != modalButton && event.target != modalContent) {
+				modal.style.display = 'none';
+			}
+		};
 	});
 </script>
 {% endblock %}
