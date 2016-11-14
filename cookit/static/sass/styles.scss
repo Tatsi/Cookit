@@ -1,20 +1,39 @@
 $recipe-name-color: #1b7b34;
-$heading-color: #f24c4e;
-$navbar-color: #eab126;
+$heading-color: #f73d40;
+$navbar-color: #ffb500;
 $navbar-hover-color: #ffbf23;
 $light-grey: #eee;
 $dark-grey: #555;
 
 html {
-	background-color: $light-grey;
+	position: relative;
+	height: 100%;
+}
+
+html:after {
+    content : "";
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-image: url('../images/food2.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0.9;
 }
 
 body {
-  padding-top: 52px;
+	padding-top: 52px;
+	height: 100%;
 }
 
 .center-column {
-	background-color: #fff;
+	background-color: rgba(255, 255, 255, 0.8);
+	height: 100%;
+	overflow: auto;
 }
 
 // Common style for all the orange elements on the page
@@ -308,7 +327,7 @@ button.add-btn {
 		width: 500px;
 		position: absolute;
 		right: 20%;
-		top: 20%;
+		top: 40%;
 	}
 
 	#close-modal {
@@ -348,13 +367,14 @@ button.add-btn {
 #my-ingredients-button {
 	z-index: 1;
 	position: fixed;
-	top: 30%;
-	right: -58px;
-	width: 176px;
-	height: 60px;
-	font-size: 22px;
+	top: 48%;
+	right: -87px;
+	width: 240px;
+	height: 70px;
+	font-size: 24px;
 	-webkit-transform: rotate(-90deg);
 	-moz-transform: rotate(-90deg);
 	background-color: $heading-color;
 	color: #fff;
+	border: 1px solid #fff;
 }
