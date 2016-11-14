@@ -136,7 +136,6 @@
 		$('#servings').change(function() {
 			var old_servings = "{{ recipe.servings }}";
 			var new_servings = $('#servings').val();
-			var ingredients = "{{ ingredients }}";
 			var elements = document.getElementById('ingredients').getElementsByTagName('li');
 			for (var i=0; i < elements.length; i++) {
 				var amount = elements[i].firstChild;
