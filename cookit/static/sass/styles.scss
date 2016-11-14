@@ -298,14 +298,17 @@ button.add-btn {
 	display: none;
 	position: fixed;
 	z-index: 2;
-	right: 20px;
-	top: 20%;
-	width: 500px;
+	width: 100%;
+	height: 100%;
 	overflow: auto;
 
 	.modal-content {
 		padding: 20px;
 		border: 1px solid #888;
+		width: 500px;
+		position: absolute;
+		right: 20%;
+		top: 20%;
 	}
 
 	#close-modal {
