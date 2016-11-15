@@ -216,6 +216,11 @@ button.add-btn {
 		}
 		ul, ol {
 			padding-left: 20px;
+			li {
+				p {
+					vertical-align: top;
+				}
+			}
 		}
 	}
 	.time {
