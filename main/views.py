@@ -186,7 +186,7 @@ def new_recipe(request):
 			# Add the ingredients
 			ingredients = json.loads(form.cleaned_data['ingredients'])
 			for item in ingredients:
-				ingredient = Ingredient.objects.get(name=item)
+				ingredient = Ingredient.objects.filter(name=item)[0]
 				r_ingredient = RecipeIngredient.objects.create(recipe=recipe, ingredient=ingredient, amount="1")
 	else:
 		form = NewRecipeForm()
