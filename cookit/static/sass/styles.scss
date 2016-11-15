@@ -301,6 +301,9 @@ button.add-btn {
 	}
 	.instructions {
 		.form-group {
+			.amountInput {
+				width: 20%;
+			}
 			&.amount {
 				width: 80%;
 
