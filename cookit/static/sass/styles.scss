@@ -11,7 +11,7 @@ html {
 }
 
 html:after {
-    content : "";
+    content: "";
     display: block;
     position: fixed;
     top: 0;
@@ -166,6 +166,9 @@ button.add-btn {
 		h1 {
 			font-size: 1.0em;
 			margin: 5px;
+			span {
+				float: right;
+			}
 		}
 		h5 {
 			font-size: 0.7em;
@@ -202,6 +205,9 @@ button.add-btn {
 .recipe-page {
 	img {
 		width: 100%;
+	}
+	h2 {
+		margin-left: 15px;
 	}
 	.instructions {
 		p {
