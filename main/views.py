@@ -172,6 +172,7 @@ def new_recipe(request):
 			minutes = form.cleaned_data['minutes']
 			if minutes == None:
 				minutes = 0
+
 			data = {
 				'title': 		form.cleaned_data['title'],
 				'description':	form.cleaned_data['description'],
@@ -180,10 +181,17 @@ def new_recipe(request):
 				'duration':		datetime.timedelta(hours=hours, minutes=minutes),
 				'creator':		UserAccount.objects.get(user=request.user)
 			}
-			Recipe.objects.create(**data)
+			recipe = Recipe.objects.create(**data)
+
+			# Add the ingredients
+			ingredients = json.loads(form.cleaned_data['ingredients'])
+			for item in ingredients:
+				ingredient = Ingredient.objects.get(name=item)
+				r_ingredient = RecipeIngredient.objects.create(recipe=recipe, ingredient=ingredient, amount="1")
 	else:
 		form = NewRecipeForm()
 	context = {}
+	context['all_ingredients'] = json.dumps(list(Ingredient.objects.all().values_list('name', flat=True).distinct()))
 	return render(request, 'new_recipe.html', context)
 
 def register(request):

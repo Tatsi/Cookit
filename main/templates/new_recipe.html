@@ -40,33 +40,14 @@
 		<div class="row instructions">
 			<div class="col-md-5">
 				<!-- Non-collapsing ingredient list for desktop -->
-				<div class="hidden-xs">
+				<!--<div class="hidden-xs">-->
+				<div class="ingredient-container">
 					<h4>Ingredients</h4>
-					<ul>
-						{% for ingredient in ingredients %}
-						<li><p>{{ ingredient.amount }} {{ ingredient.name }}</p></li>
-						{% endfor %}
-					</ul>
-						<div class="form-group amount">
-							<input class="form-control" type="number" name="amount" placeholder="Amount">
-							<select class="form-control">
-								<option>Grams</option>
-								<option>Cups</option>
-								<option>Litres</option>
-								<option>Tbsp</option>
-								<option>Tsp</option>
-							</select>
-						</div>
-						<button class="btn add-btn"><span class="glyphicon glyphicon-plus"></span></button>
-						<select class="form-control" id="ingredient">
-							<option>Chicken</option>
-							<option>Pepper</option>
-							<option>Onion</option>
-							<option>Celery</option>
-							<option>Carrots</option>
-						</select>
+					<input type="text" class="form-control ingredientInput" placeholder="Search for ingredients..." autocomplete="off">
+					<button class="btn add-btn" id="addIngredientButton"><span class="glyphicon glyphicon-plus"></span></button>
 				</div>
 				<!-- Collapsing ingredient list for mobile -->
+				<!--
 				<div class="visible-xs">
 					<h4 class="collapse-header" data-toggle="collapse" href="#ingredients">Ingredients<span class="toggle"></span></h4>
 					<ul id="ingredients" class="collapse in">
@@ -94,56 +75,75 @@
 						</select>
 					</div>
 				</div>
+				-->
 			</div>
 			<div class="col-md-7">
 				<!-- Non-collapsing instruction list for desktop -->
-				<div class="hidden-xs step-container">
+				<!--<div class="hidden-xs step-container">-->
+				<div class="step-container">
 					<h4>Instructions</h4>
-					<ol>
-						{% for step in instructions %}
-						<li><p>{{ step }}</p></li>
-						{% endfor %}
-					</ol>
 					<div class="form-group">
-						<textarea class="form-control step-text" rows="3" cols="50" name="instruction" placeholder="Add step..."></textarea>
+						<textarea class="form-control step-text" rows="3" cols="50" placeholder="Add step..."></textarea>
 						<button class="btn add-btn" id="addStepButton"><span class="glyphicon glyphicon-plus"></span></button>
 					</div>
 				</div>
 				<!-- Collapsing instruction list for mobile -->
+				<!--
 				<div class="visible-xs">
 					<h4 class="collapse-header collapsed" data-toggle="collapse" href="#instructions">Instructions<span class="toggle"></span></h4>
-					<ol id="instructions" class="collapse">
-						{% for step in instructions %}
-						<li><p>{{ step }}</p></li>
-						{% endfor %}
-					</ol>
 					<div class="form-group">
 						<textarea class="form-control" rows="3" cols="50" name="instruction" placeholder="Add step..."></textarea>
 						<button class="btn add-btn"><span class="glyphicon glyphicon-plus"></span></button>
 					</div>
 				</div>
+				-->
 			</div>
 		</div>
 		<input type="hidden" name="steps" id="input-steps">
+		<input type="hidden" name="ingredients" id="input-ingredients">
 		<button type="submit" class="btn btn-primary">Submit</button>
 	</form>
 </div>
 
 <script type="text/javascript">
+	var all_ingredients = {{all_ingredients|safe}};
+
 	$('.step-container').on('click', '#addStepButton', function(evt) {
 		evt.preventDefault();
 		$(this).remove();
-		var newStep = '<div class="form-group"><textarea class="form-control step-text" rows="3" cols="50" name="instruction" placeholder="Add step..."></textarea><button class="btn add-btn" id="addStepButton"><span class="glyphicon glyphicon-plus"></span></button></div>';
-		$('.step-container').append(newStep);
+		var newItem = '<div class="form-group"><textarea class="form-control step-text" rows="3" cols="50" placeholder="Add step..."></textarea><button class="btn add-btn" id="addStepButton"><span class="glyphicon glyphicon-plus"></span></button></div>';
+		$('.step-container').append(newItem);
+	});
+
+	$('.ingredient-container').on('click', '#addIngredientButton', function(evt) {
+		evt.preventDefault();
+		var newItem = '<input type="text" class="form-control ingredientInput" placeholder="Search for ingredients..." autocomplete="off">';
+		$('#addIngredientButton').before(newItem);
+		$('.ingredientInput').typeahead({source: all_ingredients});
 	});
 
 	$('#new-recipe').submit(function() {
-		var steps = []
+		var steps = [];
+		var ingredients = [];
 		$('.step-text').each(function(idx) {
-			steps.push($(this).val());
+			var value = $(this).val();
+			if(value != '') {
+				steps.push(value);
+			}
 		});
+
+		$('.ingredientInput').each(function(idx) {
+			var value = $(this).val();
+			if(value != '') {
+				ingredients.push(value);
+			}
+		});
+
 		$('#input-steps').val(JSON.stringify(steps));
+		$('#input-ingredients').val(JSON.stringify(ingredients));
 	});
+
+	$('.ingredientInput').typeahead({source: all_ingredients });
 </script>
 
 {% endblock %}

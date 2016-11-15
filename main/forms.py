@@ -5,8 +5,8 @@ from django.contrib.auth.models import User
 class NewRecipeForm(forms.Form):
 	title = forms.CharField()
 	description = forms.CharField()
-	steps = forms.CharField(required=False) # Takes steps in JSON format?
-	ingredients = forms.CharField(required=False) # Takes ingredients in JSON format?
+	steps = forms.CharField(required=False)
+	ingredients = forms.CharField(required=False)
 	servings = forms.IntegerField()
 	hours = forms.IntegerField(required=False, initial=0) 
 	minutes = forms.IntegerField(required=False, initial=0)
