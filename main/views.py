@@ -42,7 +42,7 @@ def feed(request, feed_type=None):
 
 	context = {'recipes': recipes}
 	# Convert all ingredients to a list and pass to template
-	context['all_ingredients'] = json.dumps(list(Ingredient.objects.all().values_list('name', flat=True)))
+	context['all_ingredients'] = json.dumps(list(Ingredient.objects.all().values_list('name', flat=True).distinct()))
 
 	if user.is_authenticated():
 		# Fetch ingredients the user has
@@ -60,11 +60,11 @@ def add_my_ingredient(request):
 			form = IngredientsForm(request.POST)
 			if form.is_valid():
 				try:
-					ingredient = Ingredient.objects.get(name=form.cleaned_data['ingredient'])
+					ingredients = Ingredient.objects.filter(name=form.cleaned_data['ingredient'])
 				except Ingredient.DoesNotExist:
 					pass
 				else:
-					item = UserIngredient.objects.filter(user_account=user_account, ingredient=ingredient)
+					item = UserIngredient.objects.filter(user_account=user_account, ingredient__in=ingredients)
 					if not form.cleaned_data['delete']:
 						if not item.exists():
 							user_ingredient = UserIngredient.objects.create(user_account=user_account, ingredient=ingredient, amount='1')
