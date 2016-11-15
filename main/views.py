@@ -1,3 +1,4 @@
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.http import HttpResponse, HttpResponseRedirect, Http404
 from django.shortcuts import render
@@ -5,7 +6,7 @@ from django.urls import reverse
 from main.forms import RegisterForm, IngredientsForm, NewRecipeForm
 from main.models import Ingredient, UserAccount, UserIngredient, Recipe, RecipeIngredient, CookedRecipe
 from django.utils import dateparse
-import json
+import json, datetime
 
 def mainpage(request):
 	context = {}
@@ -150,16 +151,26 @@ def add_favourite(request, recipe_id):
 				user_account.favourite_recipes.remove(recipe)
 			return HttpResponse('')
 
+@login_required
 def new_recipe(request):
 	if request.method == 'POST':
 		form = NewRecipeForm(request.POST)
 		if form.is_valid():
-			# Dummy. Now we just print the data to console
-			# TODO: Save the recipe to DB
-			print(form.cleaned_data['title'])
-			print(form.cleaned_data['description'])
-			print(form.cleaned_data['servings'])
-			timedelta = str(form.cleaned_data['hours']) + ':' + str(form.cleaned_data['minutes']) + ':0'
+			hours = form.cleaned_data['hours']
+			if hours == None:
+				hours = 0
+			minutes = form.cleaned_data['minutes']
+			if minutes == None:
+				minutes = 0
+			data = {
+				'title': 		form.cleaned_data['title'],
+				'description':	form.cleaned_data['description'],
+				'servings':		form.cleaned_data['servings'],
+				'steps':		form.cleaned_data['steps'],
+				'duration':		datetime.timedelta(hours=hours, minutes=minutes),
+				'creator':		UserAccount.objects.get(user=request.user)
+			}
+			Recipe.objects.create(**data)
 	else:
 		form = NewRecipeForm()
 	context = {}

@@ -8,8 +8,13 @@ class NewRecipeForm(forms.Form):
 	steps = forms.CharField(required=False) # Takes steps in JSON format?
 	ingredients = forms.CharField(required=False) # Takes ingredients in JSON format?
 	servings = forms.IntegerField()
-	hours = forms.IntegerField() 
-	minutes = forms.IntegerField()
+	hours = forms.IntegerField(required=False, initial=0) 
+	minutes = forms.IntegerField(required=False, initial=0)
+
+	def clean(self):
+		if not "hours" in self.cleaned_data and not "minutes" in self.cleaned_data:
+			self.add_error("minutes", forms.ValidationError("Enter the duration!"))
+		return self.cleaned_data
 
 # Form for filtering recipes based on ingredients user has
 class IngredientsForm(forms.Form):
