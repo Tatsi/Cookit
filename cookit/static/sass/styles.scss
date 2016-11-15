@@ -2,7 +2,7 @@ $recipe-name-color: #1b7b34;
 $heading-color: #f73d40;
 $navbar-color: #ffb500;
 $navbar-hover-color: #ffbf23;
-$light-grey: #eee;
+$light-grey: #bbb;
 $dark-grey: #555;
 
 html {
@@ -31,7 +31,7 @@ body {
 }
 
 .center-column {
-	background-color: rgba(255, 255, 255, 0.8);
+	background-color: rgba(255, 255, 255, 0.9);
 	height: 100%;
 	overflow: auto;
 }
@@ -75,6 +75,10 @@ h1, h2 {
 }
 h4 {
 	color: $heading-color;
+}
+
+hr {
+	border-top: 1px solid $light-grey;
 }
 
 // Common styles for add buttons
@@ -313,6 +317,31 @@ button.add-btn {
 }
 
 // My ingredients modal
+// Mobile
+@media only screen and (max-width : 767px) {
+	.modal-content {
+		width: 100%;
+		bottom: 42px;
+		left: 0;
+	}
+	.ingredients-list {
+		max-height: 150px;
+	}
+}
+
+// Other devices
+@media only screen and (min-width : 768px) {
+	.modal-content {
+		width: 500px;
+		right: 50px;
+		top: 35%;
+	}
+	.ingredients-list {
+		max-height: 300px;
+	}
+}
+
+// All devices
 #my-ingredients-modal {
 	display: none;
 	position: fixed;
@@ -324,10 +353,7 @@ button.add-btn {
 	.modal-content {
 		padding: 20px;
 		border: 1px solid #888;
-		width: 500px;
-		position: absolute;
-		right: 20%;
-		top: 40%;
+		position: fixed;
 	}
 
 	#close-modal {
@@ -352,6 +378,7 @@ button.add-btn {
 			cursor: pointer;
 			border: 1px solid red;
 		}
+		overflow: auto;
 	}
 
 	.ingredients-form {
@@ -364,17 +391,38 @@ button.add-btn {
 	}
 }
 
-#my-ingredients-button {
-	z-index: 1;
-	position: fixed;
-	top: 48%;
-	right: -87px;
-	width: 240px;
-	height: 70px;
-	font-size: 24px;
-	-webkit-transform: rotate(-90deg);
-	-moz-transform: rotate(-90deg);
-	background-color: $heading-color;
-	color: #fff;
-	border: 1px solid #fff;
+// My ingredients button
+// Mobile
+@media only screen and (max-width : 767px) {
+	#my-ingredients-button {
+		z-index: 1;
+		position: fixed;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		font-size: 20px;
+		background-color: $heading-color;
+		color: #fff;
+		border: 1px solid #fff;
+	}
+}
+
+// Other devices
+@media only screen and (min-width : 768px) {
+	#my-ingredients-button {
+		z-index: 1;
+		position: fixed;
+		top: 48%;
+		right: -87px;
+		left: none;
+		bottom: none;
+		width: 240px;
+		height: 70px;
+		font-size: 24px;
+		-webkit-transform: rotate(-90deg);
+		-moz-transform: rotate(-90deg);
+		background-color: $heading-color;
+		color: #fff;
+		border: 1px solid #fff;
+	}
 }
