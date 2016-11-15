@@ -10,6 +10,8 @@ request_count = 10
 recipes_per_request = 10
 time = datetime.datetime.now().strftime("%Y-%m-%d_%H_%M_%S").encode('utf-8')
 data = []
+counter = 1
+
 
 with open('main/fixtures/ingredients_' + time + '.json', 'w') as outfile:
     for x in range(0, request_count):
@@ -45,9 +47,9 @@ with open('main/fixtures/ingredients_' + time + '.json', 'w') as outfile:
 
                     entry = dict(
                         model = 'main.ingredient',
-                        pk = ingredient_id,
+                        pk = counter,
                         fields = dict(
-                            ingredient_id = ingredient_id,
+                            ingredient_id = counter,
                             name = name,
                             default_amount = default_amount,
                             category = aisle,
@@ -58,6 +60,7 @@ with open('main/fixtures/ingredients_' + time + '.json', 'w') as outfile:
                         )
                     )
                     data.append(entry)
+                    counter += 1
 
     json.dump(data, outfile, indent = 4)
 
