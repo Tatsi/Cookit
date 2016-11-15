@@ -335,11 +335,10 @@ button.add-btn {
 @media only screen and (max-width : 767px) {
 	.modal-content {
 		width: 100%;
-		bottom: 42px;
 		left: 0;
 	}
 	.ingredients-list {
-		max-height: 150px;
+		max-height: 500px;
 	}
 }
 
@@ -363,6 +362,8 @@ button.add-btn {
 	width: 100%;
 	height: 100%;
 	overflow: auto;
+	background-color: rgba(0, 0, 0, 0.5);
+	left: 0;
 
 	.modal-content {
 		padding: 20px;
