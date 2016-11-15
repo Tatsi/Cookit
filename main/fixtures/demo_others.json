@@ -1,0 +1,4365 @@
+[
+    {
+        "fields": {
+            "username": "user1", 
+            "first_name": "", 
+            "last_name": "", 
+            "is_active": true, 
+            "is_superuser": true, 
+            "is_staff": true, 
+            "last_login": "2016-11-09T18:08:23.137Z", 
+            "groups": [], 
+            "user_permissions": [], 
+            "password": "pbkdf2_sha256$30000$qwdCTXISuS1t$CyHx8U8Q7b/JlX24lOqbUXm+n2BrwNfHVzqNL3GkWs4=", 
+            "email": "user1@cookit.com", 
+            "date_joined": "2016-11-09T18:08:13.734Z"
+        }, 
+        "model": "auth.user", 
+        "pk": 1
+    }, 
+    {
+        "fields": {
+            "favourite_recipes": [], 
+            "favourite_users": [], 
+            "user": 1
+        }, 
+        "model": "main.useraccount", 
+        "pk": 1
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "169g", 
+            "user_account": 1, 
+            "ingredient": 169
+        }, 
+        "model": "main.useringredient", 
+        "pk": 169
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "852g", 
+            "user_account": 1, 
+            "ingredient": 852
+        }, 
+        "model": "main.useringredient", 
+        "pk": 852
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "10g", 
+            "user_account": 1, 
+            "ingredient": 10
+        }, 
+        "model": "main.useringredient", 
+        "pk": 10
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "365g", 
+            "user_account": 1, 
+            "ingredient": 365
+        }, 
+        "model": "main.useringredient", 
+        "pk": 365
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "283g", 
+            "user_account": 1, 
+            "ingredient": 283
+        }, 
+        "model": "main.useringredient", 
+        "pk": 283
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "672g", 
+            "user_account": 1, 
+            "ingredient": 672
+        }, 
+        "model": "main.useringredient", 
+        "pk": 672
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "761g", 
+            "user_account": 1, 
+            "ingredient": 761
+        }, 
+        "model": "main.useringredient", 
+        "pk": 761
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "625g", 
+            "user_account": 1, 
+            "ingredient": 625
+        }, 
+        "model": "main.useringredient", 
+        "pk": 625
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "230g", 
+            "user_account": 1, 
+            "ingredient": 230
+        }, 
+        "model": "main.useringredient", 
+        "pk": 230
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "902g", 
+            "user_account": 1, 
+            "ingredient": 902
+        }, 
+        "model": "main.useringredient", 
+        "pk": 902
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "652g", 
+            "user_account": 1, 
+            "ingredient": 652
+        }, 
+        "model": "main.useringredient", 
+        "pk": 652
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "518g", 
+            "user_account": 1, 
+            "ingredient": 518
+        }, 
+        "model": "main.useringredient", 
+        "pk": 518
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "512g", 
+            "user_account": 1, 
+            "ingredient": 512
+        }, 
+        "model": "main.useringredient", 
+        "pk": 512
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "241g", 
+            "user_account": 1, 
+            "ingredient": 241
+        }, 
+        "model": "main.useringredient", 
+        "pk": 241
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "254g", 
+            "user_account": 1, 
+            "ingredient": 254
+        }, 
+        "model": "main.useringredient", 
+        "pk": 254
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "275g", 
+            "user_account": 1, 
+            "ingredient": 275
+        }, 
+        "model": "main.useringredient", 
+        "pk": 275
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "197g", 
+            "user_account": 1, 
+            "ingredient": 197
+        }, 
+        "model": "main.useringredient", 
+        "pk": 197
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "165g", 
+            "user_account": 1, 
+            "ingredient": 165
+        }, 
+        "model": "main.useringredient", 
+        "pk": 165
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "184g", 
+            "user_account": 1, 
+            "ingredient": 184
+        }, 
+        "model": "main.useringredient", 
+        "pk": 184
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "473g", 
+            "user_account": 1, 
+            "ingredient": 473
+        }, 
+        "model": "main.useringredient", 
+        "pk": 473
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "344g", 
+            "user_account": 1, 
+            "ingredient": 344
+        }, 
+        "model": "main.useringredient", 
+        "pk": 344
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "856g", 
+            "user_account": 1, 
+            "ingredient": 856
+        }, 
+        "model": "main.useringredient", 
+        "pk": 856
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "221g", 
+            "user_account": 1, 
+            "ingredient": 221
+        }, 
+        "model": "main.useringredient", 
+        "pk": 221
+    }, 
+    {
+        "fields": {
+            "cooking_time": "09:23:15", 
+            "cooking_date": "2016-02-02", 
+            "recipe": "0", 
+            "serving_count": "222", 
+            "user_account": 1
+        }, 
+        "model": "main.cookedrecipe", 
+        "pk": 221
+    }, 
+    {
+        "fields": {
+            "cooking_time": "09:23:15", 
+            "cooking_date": "2016-02-02", 
+            "recipe": "1", 
+            "serving_count": "222", 
+            "user_account": 1
+        }, 
+        "model": "main.cookedrecipe", 
+        "pk": 221
+    }, 
+    {
+        "fields": {
+            "cooking_time": "09:23:15", 
+            "cooking_date": "2016-02-02", 
+            "recipe": "2", 
+            "serving_count": "222", 
+            "user_account": 1
+        }, 
+        "model": "main.cookedrecipe", 
+        "pk": 221
+    }, 
+    {
+        "fields": {
+            "amount": "532g", 
+            "recipe": 1, 
+            "ingredient": 532
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 532
+    }, 
+    {
+        "fields": {
+            "amount": "907g", 
+            "recipe": 1, 
+            "ingredient": 907
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 907
+    }, 
+    {
+        "fields": {
+            "amount": "184g", 
+            "recipe": 1, 
+            "ingredient": 184
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 184
+    }, 
+    {
+        "fields": {
+            "amount": "528g", 
+            "recipe": 1, 
+            "ingredient": 528
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 528
+    }, 
+    {
+        "fields": {
+            "description": "This is one of my all-time favourite recipes. I just love Crispy Baked Chicken on weekends!", 
+            "creator": 1, 
+            "title": "Crispy Baked Chicken", 
+            "creation_time": "09:23:15", 
+            "creation_date": "2016-02-02", 
+            "average_rating": 2.23, 
+            "rating_count": 1, 
+            "steps": "[\"Wash the salad and other vegetables\", \"Start by slicing the vegetables and the meat.\", \"Heat sesame oil in a large skillet over medium heat; cook and stir carrot and zucchini in the hot oil until vegetables begin to soften, about 5 minutes. Stir in bean sprouts, bamboo shoots, and mushrooms. Cook and stir until carrots are tender, about 5 more minutes. Season to taste with salt and set vegetables aside.\", \"Boil the eggs for 8-9 minutes. Make sure not to boil them for any longer!\", \"Bake in preheated oven for 25 minutes. Uncover and sprinkle with cilantro and 1/4 cup Cheddar cheese. Bake until cheese is melted, 2 to 3 minutes.\", \"Fry them in a frying pan for 20 minutes.\"]", 
+            "servings": 1, 
+            "duration": "0:47:00", 
+            "image_url": "www.example.com/image.png"
+        }, 
+        "model": "main.recipe", 
+        "pk": 1
+    }, 
+    {
+        "fields": {
+            "amount": "538g", 
+            "recipe": 2, 
+            "ingredient": 538
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 542
+    }, 
+    {
+        "fields": {
+            "amount": "437g", 
+            "recipe": 2, 
+            "ingredient": 437
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 441
+    }, 
+    {
+        "fields": {
+            "amount": "380g", 
+            "recipe": 2, 
+            "ingredient": 380
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 384
+    }, 
+    {
+        "fields": {
+            "description": "This is one of my all-time favourite recipes. I just love Slow Cooker Belgian Chicken Booyah on weekends!", 
+            "creator": 1, 
+            "title": "Slow Cooker Belgian Chicken Booyah", 
+            "creation_time": "09:23:15", 
+            "creation_date": "2016-02-02", 
+            "average_rating": 1.23, 
+            "rating_count": 2, 
+            "steps": "[\"Wash the salad and other vegetables\", \"Start by slicing the vegetables and the meat.\", \"Heat sesame oil in a large skillet over medium heat; cook and stir carrot and zucchini in the hot oil until vegetables begin to soften, about 5 minutes. Stir in bean sprouts, bamboo shoots, and mushrooms. Cook and stir until carrots are tender, about 5 more minutes. Season to taste with salt and set vegetables aside.\", \"Boil the eggs for 8-9 minutes. Make sure not to boil them for any longer!\", \"Bake in preheated oven for 25 minutes. Uncover and sprinkle with cilantro and 1/4 cup Cheddar cheese. Bake until cheese is melted, 2 to 3 minutes.\", \"Fry them in a frying pan for 20 minutes.\"]", 
+            "servings": 1, 
+            "duration": "0:47:00", 
+            "image_url": "www.example.com/image.png"
+        }, 
+        "model": "main.recipe", 
+        "pk": 2
+    }, 
+    {
+        "fields": {
+            "amount": "228g", 
+            "recipe": 3, 
+            "ingredient": 228
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 236
+    }, 
+    {
+        "fields": {
+            "amount": "273g", 
+            "recipe": 3, 
+            "ingredient": 273
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 281
+    }, 
+    {
+        "fields": {
+            "amount": "282g", 
+            "recipe": 3, 
+            "ingredient": 282
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 290
+    }, 
+    {
+        "fields": {
+            "amount": "539g", 
+            "recipe": 3, 
+            "ingredient": 539
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 547
+    }, 
+    {
+        "fields": {
+            "amount": "685g", 
+            "recipe": 3, 
+            "ingredient": 685
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 693
+    }, 
+    {
+        "fields": {
+            "description": "This is one of my all-time favourite recipes. I just love Grilled Portobellos Sauteed in Wine on weekends!", 
+            "creator": 1, 
+            "title": "Grilled Portobellos Sauteed in Wine", 
+            "creation_time": "09:23:15", 
+            "creation_date": "2016-02-02", 
+            "average_rating": 1.23, 
+            "rating_count": 3, 
+            "steps": "[\"Wash the salad and other vegetables\", \"Start by slicing the vegetables and the meat.\", \"Heat sesame oil in a large skillet over medium heat; cook and stir carrot and zucchini in the hot oil until vegetables begin to soften, about 5 minutes. Stir in bean sprouts, bamboo shoots, and mushrooms. Cook and stir until carrots are tender, about 5 more minutes. Season to taste with salt and set vegetables aside.\", \"Boil the eggs for 8-9 minutes. Make sure not to boil them for any longer!\", \"Bake in preheated oven for 25 minutes. Uncover and sprinkle with cilantro and 1/4 cup Cheddar cheese. Bake until cheese is melted, 2 to 3 minutes.\", \"Fry them in a frying pan for 20 minutes.\"]", 
+            "servings": 1, 
+            "duration": "0:47:00", 
+            "image_url": "www.example.com/image.png"
+        }, 
+        "model": "main.recipe", 
+        "pk": 3
+    }, 
+    {
+        "fields": {
+            "username": "user2", 
+            "first_name": "", 
+            "last_name": "", 
+            "is_active": true, 
+            "is_superuser": false, 
+            "is_staff": false, 
+            "last_login": "2016-11-09T18:08:23.137Z", 
+            "groups": [], 
+            "user_permissions": [], 
+            "password": "pbkdf2_sha256$30000$qwdCTXISuS1t$CyHx8U8Q7b/JlX24lOqbUXm+n2BrwNfHVzqNL3GkWs4=", 
+            "email": "user2@cookit.com", 
+            "date_joined": "2016-11-09T18:08:13.734Z"
+        }, 
+        "model": "auth.user", 
+        "pk": 2
+    }, 
+    {
+        "fields": {
+            "favourite_recipes": [
+                1
+            ], 
+            "favourite_users": [
+                1
+            ], 
+            "user": 2
+        }, 
+        "model": "main.useraccount", 
+        "pk": 2
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "1352g", 
+            "user_account": 2, 
+            "ingredient": 676
+        }, 
+        "model": "main.useringredient", 
+        "pk": 706
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "1410g", 
+            "user_account": 2, 
+            "ingredient": 705
+        }, 
+        "model": "main.useringredient", 
+        "pk": 735
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "20g", 
+            "user_account": 2, 
+            "ingredient": 10
+        }, 
+        "model": "main.useringredient", 
+        "pk": 40
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "1316g", 
+            "user_account": 2, 
+            "ingredient": 658
+        }, 
+        "model": "main.useringredient", 
+        "pk": 688
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "630g", 
+            "user_account": 2, 
+            "ingredient": 315
+        }, 
+        "model": "main.useringredient", 
+        "pk": 345
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "1584g", 
+            "user_account": 2, 
+            "ingredient": 792
+        }, 
+        "model": "main.useringredient", 
+        "pk": 822
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "52g", 
+            "user_account": 2, 
+            "ingredient": 26
+        }, 
+        "model": "main.useringredient", 
+        "pk": 56
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "814g", 
+            "user_account": 2, 
+            "ingredient": 407
+        }, 
+        "model": "main.useringredient", 
+        "pk": 437
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "60g", 
+            "user_account": 2, 
+            "ingredient": 30
+        }, 
+        "model": "main.useringredient", 
+        "pk": 60
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "12g", 
+            "user_account": 2, 
+            "ingredient": 6
+        }, 
+        "model": "main.useringredient", 
+        "pk": 36
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "1514g", 
+            "user_account": 2, 
+            "ingredient": 757
+        }, 
+        "model": "main.useringredient", 
+        "pk": 787
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "376g", 
+            "user_account": 2, 
+            "ingredient": 188
+        }, 
+        "model": "main.useringredient", 
+        "pk": 218
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "108g", 
+            "user_account": 2, 
+            "ingredient": 54
+        }, 
+        "model": "main.useringredient", 
+        "pk": 84
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "1326g", 
+            "user_account": 2, 
+            "ingredient": 663
+        }, 
+        "model": "main.useringredient", 
+        "pk": 693
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "1454g", 
+            "user_account": 2, 
+            "ingredient": 727
+        }, 
+        "model": "main.useringredient", 
+        "pk": 757
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "446g", 
+            "user_account": 2, 
+            "ingredient": 223
+        }, 
+        "model": "main.useringredient", 
+        "pk": 253
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "1816g", 
+            "user_account": 2, 
+            "ingredient": 908
+        }, 
+        "model": "main.useringredient", 
+        "pk": 938
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "1186g", 
+            "user_account": 2, 
+            "ingredient": 593
+        }, 
+        "model": "main.useringredient", 
+        "pk": 623
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "540g", 
+            "user_account": 2, 
+            "ingredient": 270
+        }, 
+        "model": "main.useringredient", 
+        "pk": 300
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "1180g", 
+            "user_account": 2, 
+            "ingredient": 590
+        }, 
+        "model": "main.useringredient", 
+        "pk": 620
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "624g", 
+            "user_account": 2, 
+            "ingredient": 312
+        }, 
+        "model": "main.useringredient", 
+        "pk": 342
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "206g", 
+            "user_account": 2, 
+            "ingredient": 103
+        }, 
+        "model": "main.useringredient", 
+        "pk": 133
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "860g", 
+            "user_account": 2, 
+            "ingredient": 430
+        }, 
+        "model": "main.useringredient", 
+        "pk": 460
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "724g", 
+            "user_account": 2, 
+            "ingredient": 362
+        }, 
+        "model": "main.useringredient", 
+        "pk": 392
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "280g", 
+            "user_account": 2, 
+            "ingredient": 140
+        }, 
+        "model": "main.useringredient", 
+        "pk": 170
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "1710g", 
+            "user_account": 2, 
+            "ingredient": 855
+        }, 
+        "model": "main.useringredient", 
+        "pk": 885
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "1008g", 
+            "user_account": 2, 
+            "ingredient": 504
+        }, 
+        "model": "main.useringredient", 
+        "pk": 534
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "974g", 
+            "user_account": 2, 
+            "ingredient": 487
+        }, 
+        "model": "main.useringredient", 
+        "pk": 517
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "1166g", 
+            "user_account": 2, 
+            "ingredient": 583
+        }, 
+        "model": "main.useringredient", 
+        "pk": 613
+    }, 
+    {
+        "fields": {
+            "cooking_time": "09:23:15", 
+            "cooking_date": "2016-02-02", 
+            "recipe": "3", 
+            "serving_count": "584", 
+            "user_account": 2
+        }, 
+        "model": "main.cookedrecipe", 
+        "pk": 583
+    }, 
+    {
+        "fields": {
+            "cooking_time": "09:23:15", 
+            "cooking_date": "2016-02-02", 
+            "recipe": "4", 
+            "serving_count": "584", 
+            "user_account": 2
+        }, 
+        "model": "main.cookedrecipe", 
+        "pk": 583
+    }, 
+    {
+        "fields": {
+            "cooking_time": "09:23:15", 
+            "cooking_date": "2016-02-02", 
+            "recipe": "5", 
+            "serving_count": "584", 
+            "user_account": 2
+        }, 
+        "model": "main.cookedrecipe", 
+        "pk": 583
+    }, 
+    {
+        "fields": {
+            "amount": "761g", 
+            "recipe": 4, 
+            "ingredient": 761
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 795
+    }, 
+    {
+        "fields": {
+            "amount": "503g", 
+            "recipe": 4, 
+            "ingredient": 503
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 537
+    }, 
+    {
+        "fields": {
+            "amount": "44g", 
+            "recipe": 4, 
+            "ingredient": 44
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 78
+    }, 
+    {
+        "fields": {
+            "amount": "415g", 
+            "recipe": 4, 
+            "ingredient": 415
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 449
+    }, 
+    {
+        "fields": {
+            "amount": "735g", 
+            "recipe": 4, 
+            "ingredient": 735
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 769
+    }, 
+    {
+        "fields": {
+            "amount": "312g", 
+            "recipe": 4, 
+            "ingredient": 312
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 346
+    }, 
+    {
+        "fields": {
+            "description": "This is one of my all-time favourite recipes. I just love Overnight Asparagus Mushroom Strata on weekends!", 
+            "creator": 2, 
+            "title": "Overnight Asparagus Mushroom Strata", 
+            "creation_time": "09:23:15", 
+            "creation_date": "2016-02-02", 
+            "average_rating": 2.23, 
+            "rating_count": 2, 
+            "steps": "[\"In a large skillet, heat oil over medium high heat. Add coated chicken and saute for about 8 to 10 minutes each side, or until chicken is cooked through and juices run clear.\", \"Enjoy your delicious meal!\", \"Start by slicing the vegetables and the meat.\", \"Wash your hands and make sure your kitchen and tools are clean.\"]", 
+            "servings": 2, 
+            "duration": "4:08:00", 
+            "image_url": "www.example.com/image.png"
+        }, 
+        "model": "main.recipe", 
+        "pk": 4
+    }, 
+    {
+        "fields": {
+            "amount": "926g", 
+            "recipe": 5, 
+            "ingredient": 926
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 964
+    }, 
+    {
+        "fields": {
+            "amount": "49g", 
+            "recipe": 5, 
+            "ingredient": 49
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 87
+    }, 
+    {
+        "fields": {
+            "amount": "822g", 
+            "recipe": 5, 
+            "ingredient": 822
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 860
+    }, 
+    {
+        "fields": {
+            "description": "This is one of my all-time favourite recipes. I just love Cauliflower Au Gratin on weekends!", 
+            "creator": 2, 
+            "title": "Cauliflower Au Gratin", 
+            "creation_time": "09:23:15", 
+            "creation_date": "2016-02-02", 
+            "average_rating": 1.23, 
+            "rating_count": 4, 
+            "steps": "[\"In a large skillet, heat oil over medium high heat. Add coated chicken and saute for about 8 to 10 minutes each side, or until chicken is cooked through and juices run clear.\", \"Enjoy your delicious meal!\", \"Start by slicing the vegetables and the meat.\", \"Wash your hands and make sure your kitchen and tools are clean.\"]", 
+            "servings": 2, 
+            "duration": "4:08:00", 
+            "image_url": "www.example.com/image.png"
+        }, 
+        "model": "main.recipe", 
+        "pk": 5
+    }, 
+    {
+        "fields": {
+            "amount": "48g", 
+            "recipe": 6, 
+            "ingredient": 48
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 90
+    }, 
+    {
+        "fields": {
+            "amount": "12g", 
+            "recipe": 6, 
+            "ingredient": 12
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 54
+    }, 
+    {
+        "fields": {
+            "amount": "21g", 
+            "recipe": 6, 
+            "ingredient": 21
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 63
+    }, 
+    {
+        "fields": {
+            "description": "This is one of my all-time favourite recipes. I just love Bacon Wrapped Chicken on weekends!", 
+            "creator": 2, 
+            "title": "Bacon Wrapped Chicken", 
+            "creation_time": "09:23:15", 
+            "creation_date": "2016-02-02", 
+            "average_rating": 1.23, 
+            "rating_count": 6, 
+            "steps": "[\"In a large skillet, heat oil over medium high heat. Add coated chicken and saute for about 8 to 10 minutes each side, or until chicken is cooked through and juices run clear.\", \"Enjoy your delicious meal!\", \"Start by slicing the vegetables and the meat.\", \"Wash your hands and make sure your kitchen and tools are clean.\"]", 
+            "servings": 2, 
+            "duration": "4:08:00", 
+            "image_url": "www.example.com/image.png"
+        }, 
+        "model": "main.recipe", 
+        "pk": 6
+    }, 
+    {
+        "fields": {
+            "username": "user3", 
+            "first_name": "", 
+            "last_name": "", 
+            "is_active": true, 
+            "is_superuser": false, 
+            "is_staff": false, 
+            "last_login": "2016-11-09T18:08:23.137Z", 
+            "groups": [], 
+            "user_permissions": [], 
+            "password": "pbkdf2_sha256$30000$qwdCTXISuS1t$CyHx8U8Q7b/JlX24lOqbUXm+n2BrwNfHVzqNL3GkWs4=", 
+            "email": "user3@cookit.com", 
+            "date_joined": "2016-11-09T18:08:13.734Z"
+        }, 
+        "model": "auth.user", 
+        "pk": 3
+    }, 
+    {
+        "fields": {
+            "favourite_recipes": [
+                1, 
+                2
+            ], 
+            "favourite_users": [
+                1, 
+                2
+            ], 
+            "user": 3
+        }, 
+        "model": "main.useraccount", 
+        "pk": 3
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "186g", 
+            "user_account": 3, 
+            "ingredient": 62
+        }, 
+        "model": "main.useringredient", 
+        "pk": 122
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "1392g", 
+            "user_account": 3, 
+            "ingredient": 464
+        }, 
+        "model": "main.useringredient", 
+        "pk": 524
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "1371g", 
+            "user_account": 3, 
+            "ingredient": 457
+        }, 
+        "model": "main.useringredient", 
+        "pk": 517
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "2274g", 
+            "user_account": 3, 
+            "ingredient": 758
+        }, 
+        "model": "main.useringredient", 
+        "pk": 818
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "1242g", 
+            "user_account": 3, 
+            "ingredient": 414
+        }, 
+        "model": "main.useringredient", 
+        "pk": 474
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "1365g", 
+            "user_account": 3, 
+            "ingredient": 455
+        }, 
+        "model": "main.useringredient", 
+        "pk": 515
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "1038g", 
+            "user_account": 3, 
+            "ingredient": 346
+        }, 
+        "model": "main.useringredient", 
+        "pk": 406
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "1734g", 
+            "user_account": 3, 
+            "ingredient": 578
+        }, 
+        "model": "main.useringredient", 
+        "pk": 638
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "837g", 
+            "user_account": 3, 
+            "ingredient": 279
+        }, 
+        "model": "main.useringredient", 
+        "pk": 339
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "2487g", 
+            "user_account": 3, 
+            "ingredient": 829
+        }, 
+        "model": "main.useringredient", 
+        "pk": 889
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "1800g", 
+            "user_account": 3, 
+            "ingredient": 600
+        }, 
+        "model": "main.useringredient", 
+        "pk": 660
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "2550g", 
+            "user_account": 3, 
+            "ingredient": 850
+        }, 
+        "model": "main.useringredient", 
+        "pk": 910
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "1122g", 
+            "user_account": 3, 
+            "ingredient": 374
+        }, 
+        "model": "main.useringredient", 
+        "pk": 434
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "2001g", 
+            "user_account": 3, 
+            "ingredient": 667
+        }, 
+        "model": "main.useringredient", 
+        "pk": 727
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "819g", 
+            "user_account": 3, 
+            "ingredient": 273
+        }, 
+        "model": "main.useringredient", 
+        "pk": 333
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "183g", 
+            "user_account": 3, 
+            "ingredient": 61
+        }, 
+        "model": "main.useringredient", 
+        "pk": 121
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "2187g", 
+            "user_account": 3, 
+            "ingredient": 729
+        }, 
+        "model": "main.useringredient", 
+        "pk": 789
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "2010g", 
+            "user_account": 3, 
+            "ingredient": 670
+        }, 
+        "model": "main.useringredient", 
+        "pk": 730
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "1680g", 
+            "user_account": 3, 
+            "ingredient": 560
+        }, 
+        "model": "main.useringredient", 
+        "pk": 620
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "2682g", 
+            "user_account": 3, 
+            "ingredient": 894
+        }, 
+        "model": "main.useringredient", 
+        "pk": 954
+    }, 
+    {
+        "fields": {
+            "cooking_time": "09:23:15", 
+            "cooking_date": "2016-02-02", 
+            "recipe": "6", 
+            "serving_count": "895", 
+            "user_account": 3
+        }, 
+        "model": "main.cookedrecipe", 
+        "pk": 894
+    }, 
+    {
+        "fields": {
+            "cooking_time": "09:23:15", 
+            "cooking_date": "2016-02-02", 
+            "recipe": "7", 
+            "serving_count": "895", 
+            "user_account": 3
+        }, 
+        "model": "main.cookedrecipe", 
+        "pk": 894
+    }, 
+    {
+        "fields": {
+            "cooking_time": "09:23:15", 
+            "cooking_date": "2016-02-02", 
+            "recipe": "8", 
+            "serving_count": "895", 
+            "user_account": 3
+        }, 
+        "model": "main.cookedrecipe", 
+        "pk": 894
+    }, 
+    {
+        "fields": {
+            "amount": "897g", 
+            "recipe": 7, 
+            "ingredient": 897
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 965
+    }, 
+    {
+        "fields": {
+            "amount": "922g", 
+            "recipe": 7, 
+            "ingredient": 922
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 990
+    }, 
+    {
+        "fields": {
+            "amount": "84g", 
+            "recipe": 7, 
+            "ingredient": 84
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 152
+    }, 
+    {
+        "fields": {
+            "amount": "101g", 
+            "recipe": 7, 
+            "ingredient": 101
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 169
+    }, 
+    {
+        "fields": {
+            "amount": "875g", 
+            "recipe": 7, 
+            "ingredient": 875
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 943
+    }, 
+    {
+        "fields": {
+            "description": "This is one of my all-time favourite recipes. I just love Mom's Applesauce Pancakes on weekends!", 
+            "creator": 3, 
+            "title": "Mom's Applesauce Pancakes", 
+            "creation_time": "09:23:15", 
+            "creation_date": "2016-02-02", 
+            "average_rating": 4.23, 
+            "rating_count": 3, 
+            "steps": "[\"Stir cooked rice, green onions, soy sauce, and black pepper in the same skillet until the rice is hot. In a separate skillet over medium heat, melt butter and gently fry eggs, turning once, until the yolks are still slightly runny but the egg whites are firm, about 3 minutes per egg.\", \"Enjoy your delicious meal!\", \"Preheat oven to 375 degrees F (190 degrees C).\", \"Put it in the oven for 30 minutes.Add some vinegar\", \"Take all the ingredients in front of you.\"]", 
+            "servings": 3, 
+            "duration": "1:38:00", 
+            "image_url": "www.example.com/image.png"
+        }, 
+        "model": "main.recipe", 
+        "pk": 7
+    }, 
+    {
+        "fields": {
+            "amount": "145g", 
+            "recipe": 8, 
+            "ingredient": 145
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 217
+    }, 
+    {
+        "fields": {
+            "amount": "652g", 
+            "recipe": 8, 
+            "ingredient": 652
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 724
+    }, 
+    {
+        "fields": {
+            "amount": "935g", 
+            "recipe": 8, 
+            "ingredient": 935
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 1007
+    }, 
+    {
+        "fields": {
+            "description": "This is one of my all-time favourite recipes. I just love Slow Cooker Belgian Chicken Booyah on weekends!", 
+            "creator": 3, 
+            "title": "Slow Cooker Belgian Chicken Booyah", 
+            "creation_time": "09:23:15", 
+            "creation_date": "2016-02-02", 
+            "average_rating": 3.23, 
+            "rating_count": 6, 
+            "steps": "[\"Stir cooked rice, green onions, soy sauce, and black pepper in the same skillet until the rice is hot. In a separate skillet over medium heat, melt butter and gently fry eggs, turning once, until the yolks are still slightly runny but the egg whites are firm, about 3 minutes per egg.\", \"Enjoy your delicious meal!\", \"Preheat oven to 375 degrees F (190 degrees C).\", \"Put it in the oven for 30 minutes.Add some vinegar\", \"Take all the ingredients in front of you.\"]", 
+            "servings": 3, 
+            "duration": "1:38:00", 
+            "image_url": "www.example.com/image.png"
+        }, 
+        "model": "main.recipe", 
+        "pk": 8
+    }, 
+    {
+        "fields": {
+            "amount": "179g", 
+            "recipe": 9, 
+            "ingredient": 179
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 255
+    }, 
+    {
+        "fields": {
+            "amount": "412g", 
+            "recipe": 9, 
+            "ingredient": 412
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 488
+    }, 
+    {
+        "fields": {
+            "amount": "538g", 
+            "recipe": 9, 
+            "ingredient": 538
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 614
+    }, 
+    {
+        "fields": {
+            "amount": "396g", 
+            "recipe": 9, 
+            "ingredient": 396
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 472
+    }, 
+    {
+        "fields": {
+            "description": "This is one of my all-time favourite recipes. I just love Ham Casserole on weekends!", 
+            "creator": 3, 
+            "title": "Ham Casserole", 
+            "creation_time": "09:23:15", 
+            "creation_date": "2016-02-02", 
+            "average_rating": 4.23, 
+            "rating_count": 9, 
+            "steps": "[\"Stir cooked rice, green onions, soy sauce, and black pepper in the same skillet until the rice is hot. In a separate skillet over medium heat, melt butter and gently fry eggs, turning once, until the yolks are still slightly runny but the egg whites are firm, about 3 minutes per egg.\", \"Enjoy your delicious meal!\", \"Preheat oven to 375 degrees F (190 degrees C).\", \"Put it in the oven for 30 minutes.Add some vinegar\", \"Take all the ingredients in front of you.\"]", 
+            "servings": 3, 
+            "duration": "1:38:00", 
+            "image_url": "www.example.com/image.png"
+        }, 
+        "model": "main.recipe", 
+        "pk": 9
+    }, 
+    {
+        "fields": {
+            "username": "user4", 
+            "first_name": "", 
+            "last_name": "", 
+            "is_active": true, 
+            "is_superuser": false, 
+            "is_staff": false, 
+            "last_login": "2016-11-09T18:08:23.137Z", 
+            "groups": [], 
+            "user_permissions": [], 
+            "password": "pbkdf2_sha256$30000$qwdCTXISuS1t$CyHx8U8Q7b/JlX24lOqbUXm+n2BrwNfHVzqNL3GkWs4=", 
+            "email": "user4@cookit.com", 
+            "date_joined": "2016-11-09T18:08:13.734Z"
+        }, 
+        "model": "auth.user", 
+        "pk": 4
+    }, 
+    {
+        "fields": {
+            "favourite_recipes": [
+                1, 
+                2, 
+                3
+            ], 
+            "favourite_users": [
+                1, 
+                2, 
+                3
+            ], 
+            "user": 4
+        }, 
+        "model": "main.useraccount", 
+        "pk": 4
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "560g", 
+            "user_account": 4, 
+            "ingredient": 140
+        }, 
+        "model": "main.useringredient", 
+        "pk": 230
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "3796g", 
+            "user_account": 4, 
+            "ingredient": 949
+        }, 
+        "model": "main.useringredient", 
+        "pk": 1039
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "344g", 
+            "user_account": 4, 
+            "ingredient": 86
+        }, 
+        "model": "main.useringredient", 
+        "pk": 176
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "3704g", 
+            "user_account": 4, 
+            "ingredient": 926
+        }, 
+        "model": "main.useringredient", 
+        "pk": 1016
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "1028g", 
+            "user_account": 4, 
+            "ingredient": 257
+        }, 
+        "model": "main.useringredient", 
+        "pk": 347
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "412g", 
+            "user_account": 4, 
+            "ingredient": 103
+        }, 
+        "model": "main.useringredient", 
+        "pk": 193
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "100g", 
+            "user_account": 4, 
+            "ingredient": 25
+        }, 
+        "model": "main.useringredient", 
+        "pk": 115
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "976g", 
+            "user_account": 4, 
+            "ingredient": 244
+        }, 
+        "model": "main.useringredient", 
+        "pk": 334
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "604g", 
+            "user_account": 4, 
+            "ingredient": 151
+        }, 
+        "model": "main.useringredient", 
+        "pk": 241
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "3264g", 
+            "user_account": 4, 
+            "ingredient": 816
+        }, 
+        "model": "main.useringredient", 
+        "pk": 906
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "80g", 
+            "user_account": 4, 
+            "ingredient": 20
+        }, 
+        "model": "main.useringredient", 
+        "pk": 110
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "2564g", 
+            "user_account": 4, 
+            "ingredient": 641
+        }, 
+        "model": "main.useringredient", 
+        "pk": 731
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "1672g", 
+            "user_account": 4, 
+            "ingredient": 418
+        }, 
+        "model": "main.useringredient", 
+        "pk": 508
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "1196g", 
+            "user_account": 4, 
+            "ingredient": 299
+        }, 
+        "model": "main.useringredient", 
+        "pk": 389
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "300g", 
+            "user_account": 4, 
+            "ingredient": 75
+        }, 
+        "model": "main.useringredient", 
+        "pk": 165
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "3532g", 
+            "user_account": 4, 
+            "ingredient": 883
+        }, 
+        "model": "main.useringredient", 
+        "pk": 973
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "1444g", 
+            "user_account": 4, 
+            "ingredient": 361
+        }, 
+        "model": "main.useringredient", 
+        "pk": 451
+    }, 
+    {
+        "fields": {
+            "cooking_time": "09:23:15", 
+            "cooking_date": "2016-02-02", 
+            "recipe": "9", 
+            "serving_count": "362", 
+            "user_account": 4
+        }, 
+        "model": "main.cookedrecipe", 
+        "pk": 361
+    }, 
+    {
+        "fields": {
+            "cooking_time": "09:23:15", 
+            "cooking_date": "2016-02-02", 
+            "recipe": "10", 
+            "serving_count": "362", 
+            "user_account": 4
+        }, 
+        "model": "main.cookedrecipe", 
+        "pk": 361
+    }, 
+    {
+        "fields": {
+            "cooking_time": "09:23:15", 
+            "cooking_date": "2016-02-02", 
+            "recipe": "11", 
+            "serving_count": "362", 
+            "user_account": 4
+        }, 
+        "model": "main.cookedrecipe", 
+        "pk": 361
+    }, 
+    {
+        "fields": {
+            "amount": "806g", 
+            "recipe": 10, 
+            "ingredient": 806
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 908
+    }, 
+    {
+        "fields": {
+            "amount": "941g", 
+            "recipe": 10, 
+            "ingredient": 941
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 1043
+    }, 
+    {
+        "fields": {
+            "amount": "551g", 
+            "recipe": 10, 
+            "ingredient": 551
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 653
+    }, 
+    {
+        "fields": {
+            "amount": "731g", 
+            "recipe": 10, 
+            "ingredient": 731
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 833
+    }, 
+    {
+        "fields": {
+            "description": "This is one of my all-time favourite recipes. I just love French Veggie Loaf on weekends!", 
+            "creator": 4, 
+            "title": "French Veggie Loaf", 
+            "creation_time": "09:23:15", 
+            "creation_date": "2016-02-02", 
+            "average_rating": 4.23, 
+            "rating_count": 4, 
+            "steps": "[\"Wash your hands and make sure your kitchen and tools are clean.\", \"Enjoy your delicious meal!\", \"In a large skillet, heat oil over medium high heat. Add coated chicken and saute for about 8 to 10 minutes each side, or until chicken is cooked through and juices run clear.\"]", 
+            "servings": 4, 
+            "duration": "4:01:00", 
+            "image_url": "www.example.com/image.png"
+        }, 
+        "model": "main.recipe", 
+        "pk": 10
+    }, 
+    {
+        "fields": {
+            "amount": "26g", 
+            "recipe": 11, 
+            "ingredient": 26
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 132
+    }, 
+    {
+        "fields": {
+            "amount": "8g", 
+            "recipe": 11, 
+            "ingredient": 8
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 114
+    }, 
+    {
+        "fields": {
+            "amount": "839g", 
+            "recipe": 11, 
+            "ingredient": 839
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 945
+    }, 
+    {
+        "fields": {
+            "amount": "772g", 
+            "recipe": 11, 
+            "ingredient": 772
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 878
+    }, 
+    {
+        "fields": {
+            "amount": "715g", 
+            "recipe": 11, 
+            "ingredient": 715
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 821
+    }, 
+    {
+        "fields": {
+            "description": "This is one of my all-time favourite recipes. I just love Shrimp Scampi on weekends!", 
+            "creator": 4, 
+            "title": "Shrimp Scampi", 
+            "creation_time": "09:23:15", 
+            "creation_date": "2016-02-02", 
+            "average_rating": 4.23, 
+            "rating_count": 8, 
+            "steps": "[\"Wash your hands and make sure your kitchen and tools are clean.\", \"Enjoy your delicious meal!\", \"In a large skillet, heat oil over medium high heat. Add coated chicken and saute for about 8 to 10 minutes each side, or until chicken is cooked through and juices run clear.\"]", 
+            "servings": 4, 
+            "duration": "4:01:00", 
+            "image_url": "www.example.com/image.png"
+        }, 
+        "model": "main.recipe", 
+        "pk": 11
+    }, 
+    {
+        "fields": {
+            "amount": "567g", 
+            "recipe": 12, 
+            "ingredient": 567
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 677
+    }, 
+    {
+        "fields": {
+            "amount": "305g", 
+            "recipe": 12, 
+            "ingredient": 305
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 415
+    }, 
+    {
+        "fields": {
+            "amount": "648g", 
+            "recipe": 12, 
+            "ingredient": 648
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 758
+    }, 
+    {
+        "fields": {
+            "amount": "413g", 
+            "recipe": 12, 
+            "ingredient": 413
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 523
+    }, 
+    {
+        "fields": {
+            "description": "This is one of my all-time favourite recipes. I just love Cauliflower Au Gratin on weekends!", 
+            "creator": 4, 
+            "title": "Cauliflower Au Gratin", 
+            "creation_time": "09:23:15", 
+            "creation_date": "2016-02-02", 
+            "average_rating": 1.23, 
+            "rating_count": 12, 
+            "steps": "[\"Wash your hands and make sure your kitchen and tools are clean.\", \"Enjoy your delicious meal!\", \"In a large skillet, heat oil over medium high heat. Add coated chicken and saute for about 8 to 10 minutes each side, or until chicken is cooked through and juices run clear.\"]", 
+            "servings": 4, 
+            "duration": "4:01:00", 
+            "image_url": "www.example.com/image.png"
+        }, 
+        "model": "main.recipe", 
+        "pk": 12
+    }, 
+    {
+        "fields": {
+            "username": "user5", 
+            "first_name": "", 
+            "last_name": "", 
+            "is_active": true, 
+            "is_superuser": false, 
+            "is_staff": false, 
+            "last_login": "2016-11-09T18:08:23.137Z", 
+            "groups": [], 
+            "user_permissions": [], 
+            "password": "pbkdf2_sha256$30000$qwdCTXISuS1t$CyHx8U8Q7b/JlX24lOqbUXm+n2BrwNfHVzqNL3GkWs4=", 
+            "email": "user5@cookit.com", 
+            "date_joined": "2016-11-09T18:08:13.734Z"
+        }, 
+        "model": "auth.user", 
+        "pk": 5
+    }, 
+    {
+        "fields": {
+            "favourite_recipes": [
+                1, 
+                2, 
+                3, 
+                4
+            ], 
+            "favourite_users": [
+                1, 
+                2, 
+                3, 
+                4
+            ], 
+            "user": 5
+        }, 
+        "model": "main.useraccount", 
+        "pk": 5
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "2275g", 
+            "user_account": 5, 
+            "ingredient": 455
+        }, 
+        "model": "main.useringredient", 
+        "pk": 575
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "3650g", 
+            "user_account": 5, 
+            "ingredient": 730
+        }, 
+        "model": "main.useringredient", 
+        "pk": 850
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "2605g", 
+            "user_account": 5, 
+            "ingredient": 521
+        }, 
+        "model": "main.useringredient", 
+        "pk": 641
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "2735g", 
+            "user_account": 5, 
+            "ingredient": 547
+        }, 
+        "model": "main.useringredient", 
+        "pk": 667
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "45g", 
+            "user_account": 5, 
+            "ingredient": 9
+        }, 
+        "model": "main.useringredient", 
+        "pk": 129
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "2760g", 
+            "user_account": 5, 
+            "ingredient": 552
+        }, 
+        "model": "main.useringredient", 
+        "pk": 672
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "3470g", 
+            "user_account": 5, 
+            "ingredient": 694
+        }, 
+        "model": "main.useringredient", 
+        "pk": 814
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "3835g", 
+            "user_account": 5, 
+            "ingredient": 767
+        }, 
+        "model": "main.useringredient", 
+        "pk": 887
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "480g", 
+            "user_account": 5, 
+            "ingredient": 96
+        }, 
+        "model": "main.useringredient", 
+        "pk": 216
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "4300g", 
+            "user_account": 5, 
+            "ingredient": 860
+        }, 
+        "model": "main.useringredient", 
+        "pk": 980
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "3910g", 
+            "user_account": 5, 
+            "ingredient": 782
+        }, 
+        "model": "main.useringredient", 
+        "pk": 902
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "1535g", 
+            "user_account": 5, 
+            "ingredient": 307
+        }, 
+        "model": "main.useringredient", 
+        "pk": 427
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "20g", 
+            "user_account": 5, 
+            "ingredient": 4
+        }, 
+        "model": "main.useringredient", 
+        "pk": 124
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "4320g", 
+            "user_account": 5, 
+            "ingredient": 864
+        }, 
+        "model": "main.useringredient", 
+        "pk": 984
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "3220g", 
+            "user_account": 5, 
+            "ingredient": 644
+        }, 
+        "model": "main.useringredient", 
+        "pk": 764
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "2680g", 
+            "user_account": 5, 
+            "ingredient": 536
+        }, 
+        "model": "main.useringredient", 
+        "pk": 656
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "3325g", 
+            "user_account": 5, 
+            "ingredient": 665
+        }, 
+        "model": "main.useringredient", 
+        "pk": 785
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "1915g", 
+            "user_account": 5, 
+            "ingredient": 383
+        }, 
+        "model": "main.useringredient", 
+        "pk": 503
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "2450g", 
+            "user_account": 5, 
+            "ingredient": 490
+        }, 
+        "model": "main.useringredient", 
+        "pk": 610
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "3230g", 
+            "user_account": 5, 
+            "ingredient": 646
+        }, 
+        "model": "main.useringredient", 
+        "pk": 766
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "565g", 
+            "user_account": 5, 
+            "ingredient": 113
+        }, 
+        "model": "main.useringredient", 
+        "pk": 233
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "4010g", 
+            "user_account": 5, 
+            "ingredient": 802
+        }, 
+        "model": "main.useringredient", 
+        "pk": 922
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "4650g", 
+            "user_account": 5, 
+            "ingredient": 930
+        }, 
+        "model": "main.useringredient", 
+        "pk": 1050
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "4125g", 
+            "user_account": 5, 
+            "ingredient": 825
+        }, 
+        "model": "main.useringredient", 
+        "pk": 945
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "1885g", 
+            "user_account": 5, 
+            "ingredient": 377
+        }, 
+        "model": "main.useringredient", 
+        "pk": 497
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "4070g", 
+            "user_account": 5, 
+            "ingredient": 814
+        }, 
+        "model": "main.useringredient", 
+        "pk": 934
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "960g", 
+            "user_account": 5, 
+            "ingredient": 192
+        }, 
+        "model": "main.useringredient", 
+        "pk": 312
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "3415g", 
+            "user_account": 5, 
+            "ingredient": 683
+        }, 
+        "model": "main.useringredient", 
+        "pk": 803
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "155g", 
+            "user_account": 5, 
+            "ingredient": 31
+        }, 
+        "model": "main.useringredient", 
+        "pk": 151
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "3280g", 
+            "user_account": 5, 
+            "ingredient": 656
+        }, 
+        "model": "main.useringredient", 
+        "pk": 776
+    }, 
+    {
+        "fields": {
+            "cooking_time": "09:23:15", 
+            "cooking_date": "2016-02-02", 
+            "recipe": "12", 
+            "serving_count": "657", 
+            "user_account": 5
+        }, 
+        "model": "main.cookedrecipe", 
+        "pk": 656
+    }, 
+    {
+        "fields": {
+            "cooking_time": "09:23:15", 
+            "cooking_date": "2016-02-02", 
+            "recipe": "13", 
+            "serving_count": "657", 
+            "user_account": 5
+        }, 
+        "model": "main.cookedrecipe", 
+        "pk": 656
+    }, 
+    {
+        "fields": {
+            "cooking_time": "09:23:15", 
+            "cooking_date": "2016-02-02", 
+            "recipe": "14", 
+            "serving_count": "657", 
+            "user_account": 5
+        }, 
+        "model": "main.cookedrecipe", 
+        "pk": 656
+    }, 
+    {
+        "fields": {
+            "amount": "15g", 
+            "recipe": 13, 
+            "ingredient": 15
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 151
+    }, 
+    {
+        "fields": {
+            "amount": "8g", 
+            "recipe": 13, 
+            "ingredient": 8
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 144
+    }, 
+    {
+        "fields": {
+            "amount": "679g", 
+            "recipe": 13, 
+            "ingredient": 679
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 815
+    }, 
+    {
+        "fields": {
+            "amount": "287g", 
+            "recipe": 13, 
+            "ingredient": 287
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 423
+    }, 
+    {
+        "fields": {
+            "amount": "386g", 
+            "recipe": 13, 
+            "ingredient": 386
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 522
+    }, 
+    {
+        "fields": {
+            "description": "This is one of my all-time favourite recipes. I just love Chicken Parmigiana on weekends!", 
+            "creator": 5, 
+            "title": "Chicken Parmigiana", 
+            "creation_time": "09:23:15", 
+            "creation_date": "2016-02-02", 
+            "average_rating": 4.23, 
+            "rating_count": 5, 
+            "steps": "[\"Start by slicing the vegetables and the meat.\", \"Bake in preheated oven for 25 minutes. Uncover and sprinkle with cilantro and 1/4 cup Cheddar cheese. Bake until cheese is melted, 2 to 3 minutes.\", \"Enjoy your delicious meal!\", \"Take all the ingredients in front of you.\", \"Fry them in a frying pan for 20 minutes.\", \"Roll the pastry in big rolls.\"]", 
+            "servings": 5, 
+            "duration": "4:12:00", 
+            "image_url": "www.example.com/image.png"
+        }, 
+        "model": "main.recipe", 
+        "pk": 13
+    }, 
+    {
+        "fields": {
+            "amount": "500g", 
+            "recipe": 14, 
+            "ingredient": 500
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 640
+    }, 
+    {
+        "fields": {
+            "amount": "239g", 
+            "recipe": 14, 
+            "ingredient": 239
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 379
+    }, 
+    {
+        "fields": {
+            "amount": "294g", 
+            "recipe": 14, 
+            "ingredient": 294
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 434
+    }, 
+    {
+        "fields": {
+            "amount": "478g", 
+            "recipe": 14, 
+            "ingredient": 478
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 618
+    }, 
+    {
+        "fields": {
+            "description": "This is one of my all-time favourite recipes. I just love Cauliflower Au Gratin on weekends!", 
+            "creator": 5, 
+            "title": "Cauliflower Au Gratin", 
+            "creation_time": "09:23:15", 
+            "creation_date": "2016-02-02", 
+            "average_rating": 4.23, 
+            "rating_count": 10, 
+            "steps": "[\"Start by slicing the vegetables and the meat.\", \"Bake in preheated oven for 25 minutes. Uncover and sprinkle with cilantro and 1/4 cup Cheddar cheese. Bake until cheese is melted, 2 to 3 minutes.\", \"Enjoy your delicious meal!\", \"Take all the ingredients in front of you.\", \"Fry them in a frying pan for 20 minutes.\", \"Roll the pastry in big rolls.\"]", 
+            "servings": 5, 
+            "duration": "4:12:00", 
+            "image_url": "www.example.com/image.png"
+        }, 
+        "model": "main.recipe", 
+        "pk": 14
+    }, 
+    {
+        "fields": {
+            "amount": "3g", 
+            "recipe": 15, 
+            "ingredient": 3
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 147
+    }, 
+    {
+        "fields": {
+            "amount": "2g", 
+            "recipe": 15, 
+            "ingredient": 2
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 146
+    }, 
+    {
+        "fields": {
+            "amount": "187g", 
+            "recipe": 15, 
+            "ingredient": 187
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 331
+    }, 
+    {
+        "fields": {
+            "amount": "440g", 
+            "recipe": 15, 
+            "ingredient": 440
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 584
+    }, 
+    {
+        "fields": {
+            "description": "This is one of my all-time favourite recipes. I just love Zesty Apple Salad on weekends!", 
+            "creator": 5, 
+            "title": "Zesty Apple Salad", 
+            "creation_time": "09:23:15", 
+            "creation_date": "2016-02-02", 
+            "average_rating": 3.23, 
+            "rating_count": 15, 
+            "steps": "[\"Start by slicing the vegetables and the meat.\", \"Bake in preheated oven for 25 minutes. Uncover and sprinkle with cilantro and 1/4 cup Cheddar cheese. Bake until cheese is melted, 2 to 3 minutes.\", \"Enjoy your delicious meal!\", \"Take all the ingredients in front of you.\", \"Fry them in a frying pan for 20 minutes.\", \"Roll the pastry in big rolls.\"]", 
+            "servings": 5, 
+            "duration": "4:12:00", 
+            "image_url": "www.example.com/image.png"
+        }, 
+        "model": "main.recipe", 
+        "pk": 15
+    }, 
+    {
+        "fields": {
+            "username": "user6", 
+            "first_name": "", 
+            "last_name": "", 
+            "is_active": true, 
+            "is_superuser": false, 
+            "is_staff": false, 
+            "last_login": "2016-11-09T18:08:23.137Z", 
+            "groups": [], 
+            "user_permissions": [], 
+            "password": "pbkdf2_sha256$30000$qwdCTXISuS1t$CyHx8U8Q7b/JlX24lOqbUXm+n2BrwNfHVzqNL3GkWs4=", 
+            "email": "user6@cookit.com", 
+            "date_joined": "2016-11-09T18:08:13.734Z"
+        }, 
+        "model": "auth.user", 
+        "pk": 6
+    }, 
+    {
+        "fields": {
+            "favourite_recipes": [
+                1, 
+                2, 
+                3, 
+                4, 
+                5
+            ], 
+            "favourite_users": [
+                1, 
+                2, 
+                3, 
+                4, 
+                5
+            ], 
+            "user": 6
+        }, 
+        "model": "main.useraccount", 
+        "pk": 6
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "2724g", 
+            "user_account": 6, 
+            "ingredient": 454
+        }, 
+        "model": "main.useringredient", 
+        "pk": 604
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "840g", 
+            "user_account": 6, 
+            "ingredient": 140
+        }, 
+        "model": "main.useringredient", 
+        "pk": 290
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "3642g", 
+            "user_account": 6, 
+            "ingredient": 607
+        }, 
+        "model": "main.useringredient", 
+        "pk": 757
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "2490g", 
+            "user_account": 6, 
+            "ingredient": 415
+        }, 
+        "model": "main.useringredient", 
+        "pk": 565
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "2508g", 
+            "user_account": 6, 
+            "ingredient": 418
+        }, 
+        "model": "main.useringredient", 
+        "pk": 568
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "1920g", 
+            "user_account": 6, 
+            "ingredient": 320
+        }, 
+        "model": "main.useringredient", 
+        "pk": 470
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "3684g", 
+            "user_account": 6, 
+            "ingredient": 614
+        }, 
+        "model": "main.useringredient", 
+        "pk": 764
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "4572g", 
+            "user_account": 6, 
+            "ingredient": 762
+        }, 
+        "model": "main.useringredient", 
+        "pk": 912
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "1182g", 
+            "user_account": 6, 
+            "ingredient": 197
+        }, 
+        "model": "main.useringredient", 
+        "pk": 347
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "744g", 
+            "user_account": 6, 
+            "ingredient": 124
+        }, 
+        "model": "main.useringredient", 
+        "pk": 274
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "3342g", 
+            "user_account": 6, 
+            "ingredient": 557
+        }, 
+        "model": "main.useringredient", 
+        "pk": 707
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "3084g", 
+            "user_account": 6, 
+            "ingredient": 514
+        }, 
+        "model": "main.useringredient", 
+        "pk": 664
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "1668g", 
+            "user_account": 6, 
+            "ingredient": 278
+        }, 
+        "model": "main.useringredient", 
+        "pk": 428
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "4212g", 
+            "user_account": 6, 
+            "ingredient": 702
+        }, 
+        "model": "main.useringredient", 
+        "pk": 852
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "5496g", 
+            "user_account": 6, 
+            "ingredient": 916
+        }, 
+        "model": "main.useringredient", 
+        "pk": 1066
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "1632g", 
+            "user_account": 6, 
+            "ingredient": 272
+        }, 
+        "model": "main.useringredient", 
+        "pk": 422
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "1746g", 
+            "user_account": 6, 
+            "ingredient": 291
+        }, 
+        "model": "main.useringredient", 
+        "pk": 441
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "2676g", 
+            "user_account": 6, 
+            "ingredient": 446
+        }, 
+        "model": "main.useringredient", 
+        "pk": 596
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "1638g", 
+            "user_account": 6, 
+            "ingredient": 273
+        }, 
+        "model": "main.useringredient", 
+        "pk": 423
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "3348g", 
+            "user_account": 6, 
+            "ingredient": 558
+        }, 
+        "model": "main.useringredient", 
+        "pk": 708
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "3846g", 
+            "user_account": 6, 
+            "ingredient": 641
+        }, 
+        "model": "main.useringredient", 
+        "pk": 791
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "96g", 
+            "user_account": 6, 
+            "ingredient": 16
+        }, 
+        "model": "main.useringredient", 
+        "pk": 166
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "1146g", 
+            "user_account": 6, 
+            "ingredient": 191
+        }, 
+        "model": "main.useringredient", 
+        "pk": 341
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "2784g", 
+            "user_account": 6, 
+            "ingredient": 464
+        }, 
+        "model": "main.useringredient", 
+        "pk": 614
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "66g", 
+            "user_account": 6, 
+            "ingredient": 11
+        }, 
+        "model": "main.useringredient", 
+        "pk": 161
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "5556g", 
+            "user_account": 6, 
+            "ingredient": 926
+        }, 
+        "model": "main.useringredient", 
+        "pk": 1076
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "816g", 
+            "user_account": 6, 
+            "ingredient": 136
+        }, 
+        "model": "main.useringredient", 
+        "pk": 286
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "4842g", 
+            "user_account": 6, 
+            "ingredient": 807
+        }, 
+        "model": "main.useringredient", 
+        "pk": 957
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "4434g", 
+            "user_account": 6, 
+            "ingredient": 739
+        }, 
+        "model": "main.useringredient", 
+        "pk": 889
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "2946g", 
+            "user_account": 6, 
+            "ingredient": 491
+        }, 
+        "model": "main.useringredient", 
+        "pk": 641
+    }, 
+    {
+        "fields": {
+            "cooking_time": "09:23:15", 
+            "cooking_date": "2016-02-02", 
+            "recipe": "15", 
+            "serving_count": "492", 
+            "user_account": 6
+        }, 
+        "model": "main.cookedrecipe", 
+        "pk": 491
+    }, 
+    {
+        "fields": {
+            "cooking_time": "09:23:15", 
+            "cooking_date": "2016-02-02", 
+            "recipe": "16", 
+            "serving_count": "492", 
+            "user_account": 6
+        }, 
+        "model": "main.cookedrecipe", 
+        "pk": 491
+    }, 
+    {
+        "fields": {
+            "cooking_time": "09:23:15", 
+            "cooking_date": "2016-02-02", 
+            "recipe": "17", 
+            "serving_count": "492", 
+            "user_account": 6
+        }, 
+        "model": "main.cookedrecipe", 
+        "pk": 491
+    }, 
+    {
+        "fields": {
+            "amount": "683g", 
+            "recipe": 16, 
+            "ingredient": 683
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 853
+    }, 
+    {
+        "fields": {
+            "amount": "834g", 
+            "recipe": 16, 
+            "ingredient": 834
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 1004
+    }, 
+    {
+        "fields": {
+            "amount": "548g", 
+            "recipe": 16, 
+            "ingredient": 548
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 718
+    }, 
+    {
+        "fields": {
+            "amount": "664g", 
+            "recipe": 16, 
+            "ingredient": 664
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 834
+    }, 
+    {
+        "fields": {
+            "amount": "406g", 
+            "recipe": 16, 
+            "ingredient": 406
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 576
+    }, 
+    {
+        "fields": {
+            "amount": "128g", 
+            "recipe": 16, 
+            "ingredient": 128
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 298
+    }, 
+    {
+        "fields": {
+            "description": "This is one of my all-time favourite recipes. I just love Mom's Applesauce Pancakes on weekends!", 
+            "creator": 6, 
+            "title": "Mom's Applesauce Pancakes", 
+            "creation_time": "09:23:15", 
+            "creation_date": "2016-02-02", 
+            "average_rating": 2.23, 
+            "rating_count": 6, 
+            "steps": "[\"In a large glass bowl, stir together the vinegar, oil, soy sauce, lime juice, lemon juice, sherry, mustard, and honey. Mix in the garlic, brown sugar, lemon pepper, oregano, rosemary, and salt. Place the chicken in the mixture. Cover, and marinate in the refrigerator 8 hours or overnight.\", \"To serve, divide hot cooked rice mixture between 3 serving bowls and top each bowl with 1/3 of the vegetable mixture and a fried egg. Serve sweet red chili sauce on the side for mixing into bibimbap.\", \"Spoon a rounded 1/2 cup bean mixture down the center of each tortilla. Fold sides over filling and roll up. Place enchiladas seam side down in baking dish; spoon salsa over each tortilla. Cover baking dish with aluminum foil.\", \"Wash your hands and make sure your kitchen and tools are clean.\", \"Pour beaten eggs into a shallow dish or bowl. In another shallow dish or bowl, mix together the grated Parmesan cheese and bread crumbs. Dip chicken breasts into beaten egg, then into bread crumb mixture to coat.\", \"Wash the salad and other vegetables\"]", 
+            "servings": 6, 
+            "duration": "4:44:00", 
+            "image_url": "www.example.com/image.png"
+        }, 
+        "model": "main.recipe", 
+        "pk": 16
+    }, 
+    {
+        "fields": {
+            "amount": "8g", 
+            "recipe": 17, 
+            "ingredient": 8
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 182
+    }, 
+    {
+        "fields": {
+            "amount": "761g", 
+            "recipe": 17, 
+            "ingredient": 761
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 935
+    }, 
+    {
+        "fields": {
+            "amount": "445g", 
+            "recipe": 17, 
+            "ingredient": 445
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 619
+    }, 
+    {
+        "fields": {
+            "amount": "556g", 
+            "recipe": 17, 
+            "ingredient": 556
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 730
+    }, 
+    {
+        "fields": {
+            "description": "This is one of my all-time favourite recipes. I just love Slow Cooker Belgian Chicken Booyah on weekends!", 
+            "creator": 6, 
+            "title": "Slow Cooker Belgian Chicken Booyah", 
+            "creation_time": "09:23:15", 
+            "creation_date": "2016-02-02", 
+            "average_rating": 2.23, 
+            "rating_count": 12, 
+            "steps": "[\"In a large glass bowl, stir together the vinegar, oil, soy sauce, lime juice, lemon juice, sherry, mustard, and honey. Mix in the garlic, brown sugar, lemon pepper, oregano, rosemary, and salt. Place the chicken in the mixture. Cover, and marinate in the refrigerator 8 hours or overnight.\", \"To serve, divide hot cooked rice mixture between 3 serving bowls and top each bowl with 1/3 of the vegetable mixture and a fried egg. Serve sweet red chili sauce on the side for mixing into bibimbap.\", \"Spoon a rounded 1/2 cup bean mixture down the center of each tortilla. Fold sides over filling and roll up. Place enchiladas seam side down in baking dish; spoon salsa over each tortilla. Cover baking dish with aluminum foil.\", \"Wash your hands and make sure your kitchen and tools are clean.\", \"Pour beaten eggs into a shallow dish or bowl. In another shallow dish or bowl, mix together the grated Parmesan cheese and bread crumbs. Dip chicken breasts into beaten egg, then into bread crumb mixture to coat.\", \"Wash the salad and other vegetables\"]", 
+            "servings": 6, 
+            "duration": "4:44:00", 
+            "image_url": "www.example.com/image.png"
+        }, 
+        "model": "main.recipe", 
+        "pk": 17
+    }, 
+    {
+        "fields": {
+            "amount": "104g", 
+            "recipe": 18, 
+            "ingredient": 104
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 282
+    }, 
+    {
+        "fields": {
+            "amount": "289g", 
+            "recipe": 18, 
+            "ingredient": 289
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 467
+    }, 
+    {
+        "fields": {
+            "amount": "533g", 
+            "recipe": 18, 
+            "ingredient": 533
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 711
+    }, 
+    {
+        "fields": {
+            "description": "This is one of my all-time favourite recipes. I just love Chicken Parmigiana on weekends!", 
+            "creator": 6, 
+            "title": "Chicken Parmigiana", 
+            "creation_time": "09:23:15", 
+            "creation_date": "2016-02-02", 
+            "average_rating": 4.23, 
+            "rating_count": 18, 
+            "steps": "[\"In a large glass bowl, stir together the vinegar, oil, soy sauce, lime juice, lemon juice, sherry, mustard, and honey. Mix in the garlic, brown sugar, lemon pepper, oregano, rosemary, and salt. Place the chicken in the mixture. Cover, and marinate in the refrigerator 8 hours or overnight.\", \"To serve, divide hot cooked rice mixture between 3 serving bowls and top each bowl with 1/3 of the vegetable mixture and a fried egg. Serve sweet red chili sauce on the side for mixing into bibimbap.\", \"Spoon a rounded 1/2 cup bean mixture down the center of each tortilla. Fold sides over filling and roll up. Place enchiladas seam side down in baking dish; spoon salsa over each tortilla. Cover baking dish with aluminum foil.\", \"Wash your hands and make sure your kitchen and tools are clean.\", \"Pour beaten eggs into a shallow dish or bowl. In another shallow dish or bowl, mix together the grated Parmesan cheese and bread crumbs. Dip chicken breasts into beaten egg, then into bread crumb mixture to coat.\", \"Wash the salad and other vegetables\"]", 
+            "servings": 6, 
+            "duration": "4:44:00", 
+            "image_url": "www.example.com/image.png"
+        }, 
+        "model": "main.recipe", 
+        "pk": 18
+    }, 
+    {
+        "fields": {
+            "username": "user7", 
+            "first_name": "", 
+            "last_name": "", 
+            "is_active": true, 
+            "is_superuser": false, 
+            "is_staff": false, 
+            "last_login": "2016-11-09T18:08:23.137Z", 
+            "groups": [], 
+            "user_permissions": [], 
+            "password": "pbkdf2_sha256$30000$qwdCTXISuS1t$CyHx8U8Q7b/JlX24lOqbUXm+n2BrwNfHVzqNL3GkWs4=", 
+            "email": "user7@cookit.com", 
+            "date_joined": "2016-11-09T18:08:13.734Z"
+        }, 
+        "model": "auth.user", 
+        "pk": 7
+    }, 
+    {
+        "fields": {
+            "favourite_recipes": [
+                1, 
+                2, 
+                3, 
+                4, 
+                5, 
+                6
+            ], 
+            "favourite_users": [
+                1, 
+                2, 
+                3, 
+                4, 
+                5, 
+                6
+            ], 
+            "user": 7
+        }, 
+        "model": "main.useraccount", 
+        "pk": 7
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "5551g", 
+            "user_account": 7, 
+            "ingredient": 793
+        }, 
+        "model": "main.useringredient", 
+        "pk": 973
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "6300g", 
+            "user_account": 7, 
+            "ingredient": 900
+        }, 
+        "model": "main.useringredient", 
+        "pk": 1080
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "553g", 
+            "user_account": 7, 
+            "ingredient": 79
+        }, 
+        "model": "main.useringredient", 
+        "pk": 259
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "6405g", 
+            "user_account": 7, 
+            "ingredient": 915
+        }, 
+        "model": "main.useringredient", 
+        "pk": 1095
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "1673g", 
+            "user_account": 7, 
+            "ingredient": 239
+        }, 
+        "model": "main.useringredient", 
+        "pk": 419
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "2352g", 
+            "user_account": 7, 
+            "ingredient": 336
+        }, 
+        "model": "main.useringredient", 
+        "pk": 516
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "2744g", 
+            "user_account": 7, 
+            "ingredient": 392
+        }, 
+        "model": "main.useringredient", 
+        "pk": 572
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "3955g", 
+            "user_account": 7, 
+            "ingredient": 565
+        }, 
+        "model": "main.useringredient", 
+        "pk": 745
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "2310g", 
+            "user_account": 7, 
+            "ingredient": 330
+        }, 
+        "model": "main.useringredient", 
+        "pk": 510
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "1449g", 
+            "user_account": 7, 
+            "ingredient": 207
+        }, 
+        "model": "main.useringredient", 
+        "pk": 387
+    }, 
+    {
+        "fields": {
+            "cooking_time": "09:23:15", 
+            "cooking_date": "2016-02-02", 
+            "recipe": "18", 
+            "serving_count": "208", 
+            "user_account": 7
+        }, 
+        "model": "main.cookedrecipe", 
+        "pk": 207
+    }, 
+    {
+        "fields": {
+            "cooking_time": "09:23:15", 
+            "cooking_date": "2016-02-02", 
+            "recipe": "19", 
+            "serving_count": "208", 
+            "user_account": 7
+        }, 
+        "model": "main.cookedrecipe", 
+        "pk": 207
+    }, 
+    {
+        "fields": {
+            "cooking_time": "09:23:15", 
+            "cooking_date": "2016-02-02", 
+            "recipe": "20", 
+            "serving_count": "208", 
+            "user_account": 7
+        }, 
+        "model": "main.cookedrecipe", 
+        "pk": 207
+    }, 
+    {
+        "fields": {
+            "amount": "260g", 
+            "recipe": 19, 
+            "ingredient": 260
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 464
+    }, 
+    {
+        "fields": {
+            "amount": "450g", 
+            "recipe": 19, 
+            "ingredient": 450
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 654
+    }, 
+    {
+        "fields": {
+            "amount": "787g", 
+            "recipe": 19, 
+            "ingredient": 787
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 991
+    }, 
+    {
+        "fields": {
+            "amount": "89g", 
+            "recipe": 19, 
+            "ingredient": 89
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 293
+    }, 
+    {
+        "fields": {
+            "amount": "597g", 
+            "recipe": 19, 
+            "ingredient": 597
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 801
+    }, 
+    {
+        "fields": {
+            "description": "This is one of my all-time favourite recipes. I just love Crispy Baked Chicken on weekends!", 
+            "creator": 7, 
+            "title": "Crispy Baked Chicken", 
+            "creation_time": "09:23:15", 
+            "creation_date": "2016-02-02", 
+            "average_rating": 1.23, 
+            "rating_count": 7, 
+            "steps": "[\"Preheat the grill for high heat.\", \"Stir cooked rice, green onions, soy sauce, and black pepper in the same skillet until the rice is hot. In a separate skillet over medium heat, melt butter and gently fry eggs, turning once, until the yolks are still slightly runny but the egg whites are firm, about 3 minutes per egg.\", \"Fry them in a frying pan for 20 minutes.\", \"Heat sesame oil in a large skillet over medium heat; cook and stir carrot and zucchini in the hot oil until vegetables begin to soften, about 5 minutes. Stir in bean sprouts, bamboo shoots, and mushrooms. Cook and stir until carrots are tender, about 5 more minutes. Season to taste with salt and set vegetables aside.\"]", 
+            "servings": 7, 
+            "duration": "3:46:00", 
+            "image_url": "www.example.com/image.png"
+        }, 
+        "model": "main.recipe", 
+        "pk": 19
+    }, 
+    {
+        "fields": {
+            "amount": "725g", 
+            "recipe": 20, 
+            "ingredient": 725
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 933
+    }, 
+    {
+        "fields": {
+            "amount": "608g", 
+            "recipe": 20, 
+            "ingredient": 608
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 816
+    }, 
+    {
+        "fields": {
+            "amount": "494g", 
+            "recipe": 20, 
+            "ingredient": 494
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 702
+    }, 
+    {
+        "fields": {
+            "description": "This is one of my all-time favourite recipes. I just love Black Bean and Rice Enchiladas on weekends!", 
+            "creator": 7, 
+            "title": "Black Bean and Rice Enchiladas", 
+            "creation_time": "09:23:15", 
+            "creation_date": "2016-02-02", 
+            "average_rating": 2.23, 
+            "rating_count": 14, 
+            "steps": "[\"Preheat the grill for high heat.\", \"Stir cooked rice, green onions, soy sauce, and black pepper in the same skillet until the rice is hot. In a separate skillet over medium heat, melt butter and gently fry eggs, turning once, until the yolks are still slightly runny but the egg whites are firm, about 3 minutes per egg.\", \"Fry them in a frying pan for 20 minutes.\", \"Heat sesame oil in a large skillet over medium heat; cook and stir carrot and zucchini in the hot oil until vegetables begin to soften, about 5 minutes. Stir in bean sprouts, bamboo shoots, and mushrooms. Cook and stir until carrots are tender, about 5 more minutes. Season to taste with salt and set vegetables aside.\"]", 
+            "servings": 7, 
+            "duration": "3:46:00", 
+            "image_url": "www.example.com/image.png"
+        }, 
+        "model": "main.recipe", 
+        "pk": 20
+    }, 
+    {
+        "fields": {
+            "amount": "443g", 
+            "recipe": 21, 
+            "ingredient": 443
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 655
+    }, 
+    {
+        "fields": {
+            "amount": "634g", 
+            "recipe": 21, 
+            "ingredient": 634
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 846
+    }, 
+    {
+        "fields": {
+            "amount": "1g", 
+            "recipe": 21, 
+            "ingredient": 1
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 213
+    }, 
+    {
+        "fields": {
+            "description": "This is one of my all-time favourite recipes. I just love Great Pumpkin Dessert on weekends!", 
+            "creator": 7, 
+            "title": "Great Pumpkin Dessert", 
+            "creation_time": "09:23:15", 
+            "creation_date": "2016-02-02", 
+            "average_rating": 2.23, 
+            "rating_count": 21, 
+            "steps": "[\"Preheat the grill for high heat.\", \"Stir cooked rice, green onions, soy sauce, and black pepper in the same skillet until the rice is hot. In a separate skillet over medium heat, melt butter and gently fry eggs, turning once, until the yolks are still slightly runny but the egg whites are firm, about 3 minutes per egg.\", \"Fry them in a frying pan for 20 minutes.\", \"Heat sesame oil in a large skillet over medium heat; cook and stir carrot and zucchini in the hot oil until vegetables begin to soften, about 5 minutes. Stir in bean sprouts, bamboo shoots, and mushrooms. Cook and stir until carrots are tender, about 5 more minutes. Season to taste with salt and set vegetables aside.\"]", 
+            "servings": 7, 
+            "duration": "3:46:00", 
+            "image_url": "www.example.com/image.png"
+        }, 
+        "model": "main.recipe", 
+        "pk": 21
+    }, 
+    {
+        "fields": {
+            "username": "user8", 
+            "first_name": "", 
+            "last_name": "", 
+            "is_active": true, 
+            "is_superuser": false, 
+            "is_staff": false, 
+            "last_login": "2016-11-09T18:08:23.137Z", 
+            "groups": [], 
+            "user_permissions": [], 
+            "password": "pbkdf2_sha256$30000$qwdCTXISuS1t$CyHx8U8Q7b/JlX24lOqbUXm+n2BrwNfHVzqNL3GkWs4=", 
+            "email": "user8@cookit.com", 
+            "date_joined": "2016-11-09T18:08:13.734Z"
+        }, 
+        "model": "auth.user", 
+        "pk": 8
+    }, 
+    {
+        "fields": {
+            "favourite_recipes": [
+                1, 
+                2, 
+                3, 
+                4, 
+                5, 
+                6, 
+                7
+            ], 
+            "favourite_users": [
+                1, 
+                2, 
+                3, 
+                4, 
+                5, 
+                6, 
+                7
+            ], 
+            "user": 8
+        }, 
+        "model": "main.useraccount", 
+        "pk": 8
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "2616g", 
+            "user_account": 8, 
+            "ingredient": 327
+        }, 
+        "model": "main.useringredient", 
+        "pk": 537
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "2008g", 
+            "user_account": 8, 
+            "ingredient": 251
+        }, 
+        "model": "main.useringredient", 
+        "pk": 461
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "7208g", 
+            "user_account": 8, 
+            "ingredient": 901
+        }, 
+        "model": "main.useringredient", 
+        "pk": 1111
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "3776g", 
+            "user_account": 8, 
+            "ingredient": 472
+        }, 
+        "model": "main.useringredient", 
+        "pk": 682
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "1008g", 
+            "user_account": 8, 
+            "ingredient": 126
+        }, 
+        "model": "main.useringredient", 
+        "pk": 336
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "3752g", 
+            "user_account": 8, 
+            "ingredient": 469
+        }, 
+        "model": "main.useringredient", 
+        "pk": 679
+    }, 
+    {
+        "fields": {
+            "cooking_time": "09:23:15", 
+            "cooking_date": "2016-02-02", 
+            "recipe": "21", 
+            "serving_count": "470", 
+            "user_account": 8
+        }, 
+        "model": "main.cookedrecipe", 
+        "pk": 469
+    }, 
+    {
+        "fields": {
+            "cooking_time": "09:23:15", 
+            "cooking_date": "2016-02-02", 
+            "recipe": "22", 
+            "serving_count": "470", 
+            "user_account": 8
+        }, 
+        "model": "main.cookedrecipe", 
+        "pk": 469
+    }, 
+    {
+        "fields": {
+            "cooking_time": "09:23:15", 
+            "cooking_date": "2016-02-02", 
+            "recipe": "23", 
+            "serving_count": "470", 
+            "user_account": 8
+        }, 
+        "model": "main.cookedrecipe", 
+        "pk": 469
+    }, 
+    {
+        "fields": {
+            "amount": "196g", 
+            "recipe": 22, 
+            "ingredient": 196
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 434
+    }, 
+    {
+        "fields": {
+            "amount": "381g", 
+            "recipe": 22, 
+            "ingredient": 381
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 619
+    }, 
+    {
+        "fields": {
+            "amount": "594g", 
+            "recipe": 22, 
+            "ingredient": 594
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 832
+    }, 
+    {
+        "fields": {
+            "amount": "179g", 
+            "recipe": 22, 
+            "ingredient": 179
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 417
+    }, 
+    {
+        "fields": {
+            "amount": "27g", 
+            "recipe": 22, 
+            "ingredient": 27
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 265
+    }, 
+    {
+        "fields": {
+            "description": "This is one of my all-time favourite recipes. I just love Overnight Asparagus Mushroom Strata on weekends!", 
+            "creator": 8, 
+            "title": "Overnight Asparagus Mushroom Strata", 
+            "creation_time": "09:23:15", 
+            "creation_date": "2016-02-02", 
+            "average_rating": 2.23, 
+            "rating_count": 8, 
+            "steps": "[\"Preheat the grill for high heat.\", \"Boil the eggs for 8-9 minutes. Make sure not to boil them for any longer!\", \"Wash your hands and make sure your kitchen and tools are clean.\", \"Season the ingredients with pepper.\", \"Stir cooked rice, green onions, soy sauce, and black pepper in the same skillet until the rice is hot. In a separate skillet over medium heat, melt butter and gently fry eggs, turning once, until the yolks are still slightly runny but the egg whites are firm, about 3 minutes per egg.\", \"Preheat oven to 375 degrees F (190 degrees C).\"]", 
+            "servings": 8, 
+            "duration": "2:23:00", 
+            "image_url": "www.example.com/image.png"
+        }, 
+        "model": "main.recipe", 
+        "pk": 22
+    }, 
+    {
+        "fields": {
+            "amount": "426g", 
+            "recipe": 23, 
+            "ingredient": 426
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 668
+    }, 
+    {
+        "fields": {
+            "amount": "411g", 
+            "recipe": 23, 
+            "ingredient": 411
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 653
+    }, 
+    {
+        "fields": {
+            "amount": "695g", 
+            "recipe": 23, 
+            "ingredient": 695
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 937
+    }, 
+    {
+        "fields": {
+            "description": "This is one of my all-time favourite recipes. I just love French Veggie Loaf on weekends!", 
+            "creator": 8, 
+            "title": "French Veggie Loaf", 
+            "creation_time": "09:23:15", 
+            "creation_date": "2016-02-02", 
+            "average_rating": 4.23, 
+            "rating_count": 16, 
+            "steps": "[\"Preheat the grill for high heat.\", \"Boil the eggs for 8-9 minutes. Make sure not to boil them for any longer!\", \"Wash your hands and make sure your kitchen and tools are clean.\", \"Season the ingredients with pepper.\", \"Stir cooked rice, green onions, soy sauce, and black pepper in the same skillet until the rice is hot. In a separate skillet over medium heat, melt butter and gently fry eggs, turning once, until the yolks are still slightly runny but the egg whites are firm, about 3 minutes per egg.\", \"Preheat oven to 375 degrees F (190 degrees C).\"]", 
+            "servings": 8, 
+            "duration": "2:23:00", 
+            "image_url": "www.example.com/image.png"
+        }, 
+        "model": "main.recipe", 
+        "pk": 23
+    }, 
+    {
+        "fields": {
+            "amount": "185g", 
+            "recipe": 24, 
+            "ingredient": 185
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 431
+    }, 
+    {
+        "fields": {
+            "amount": "181g", 
+            "recipe": 24, 
+            "ingredient": 181
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 427
+    }, 
+    {
+        "fields": {
+            "amount": "770g", 
+            "recipe": 24, 
+            "ingredient": 770
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 1016
+    }, 
+    {
+        "fields": {
+            "description": "This is one of my all-time favourite recipes. I just love Shrimp Scampi on weekends!", 
+            "creator": 8, 
+            "title": "Shrimp Scampi", 
+            "creation_time": "09:23:15", 
+            "creation_date": "2016-02-02", 
+            "average_rating": 4.23, 
+            "rating_count": 24, 
+            "steps": "[\"Preheat the grill for high heat.\", \"Boil the eggs for 8-9 minutes. Make sure not to boil them for any longer!\", \"Wash your hands and make sure your kitchen and tools are clean.\", \"Season the ingredients with pepper.\", \"Stir cooked rice, green onions, soy sauce, and black pepper in the same skillet until the rice is hot. In a separate skillet over medium heat, melt butter and gently fry eggs, turning once, until the yolks are still slightly runny but the egg whites are firm, about 3 minutes per egg.\", \"Preheat oven to 375 degrees F (190 degrees C).\"]", 
+            "servings": 8, 
+            "duration": "2:23:00", 
+            "image_url": "www.example.com/image.png"
+        }, 
+        "model": "main.recipe", 
+        "pk": 24
+    }, 
+    {
+        "fields": {
+            "username": "user9", 
+            "first_name": "", 
+            "last_name": "", 
+            "is_active": true, 
+            "is_superuser": false, 
+            "is_staff": false, 
+            "last_login": "2016-11-09T18:08:23.137Z", 
+            "groups": [], 
+            "user_permissions": [], 
+            "password": "pbkdf2_sha256$30000$qwdCTXISuS1t$CyHx8U8Q7b/JlX24lOqbUXm+n2BrwNfHVzqNL3GkWs4=", 
+            "email": "user9@cookit.com", 
+            "date_joined": "2016-11-09T18:08:13.734Z"
+        }, 
+        "model": "auth.user", 
+        "pk": 9
+    }, 
+    {
+        "fields": {
+            "favourite_recipes": [
+                1, 
+                2, 
+                3, 
+                4, 
+                5, 
+                6, 
+                7, 
+                8
+            ], 
+            "favourite_users": [
+                1, 
+                2, 
+                3, 
+                4, 
+                5, 
+                6, 
+                7, 
+                8
+            ], 
+            "user": 9
+        }, 
+        "model": "main.useraccount", 
+        "pk": 9
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "5067g", 
+            "user_account": 9, 
+            "ingredient": 563
+        }, 
+        "model": "main.useringredient", 
+        "pk": 803
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "2394g", 
+            "user_account": 9, 
+            "ingredient": 266
+        }, 
+        "model": "main.useringredient", 
+        "pk": 506
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "7425g", 
+            "user_account": 9, 
+            "ingredient": 825
+        }, 
+        "model": "main.useringredient", 
+        "pk": 1065
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "8442g", 
+            "user_account": 9, 
+            "ingredient": 938
+        }, 
+        "model": "main.useringredient", 
+        "pk": 1178
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "171g", 
+            "user_account": 9, 
+            "ingredient": 19
+        }, 
+        "model": "main.useringredient", 
+        "pk": 259
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "882g", 
+            "user_account": 9, 
+            "ingredient": 98
+        }, 
+        "model": "main.useringredient", 
+        "pk": 338
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "2061g", 
+            "user_account": 9, 
+            "ingredient": 229
+        }, 
+        "model": "main.useringredient", 
+        "pk": 469
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "4068g", 
+            "user_account": 9, 
+            "ingredient": 452
+        }, 
+        "model": "main.useringredient", 
+        "pk": 692
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "2052g", 
+            "user_account": 9, 
+            "ingredient": 228
+        }, 
+        "model": "main.useringredient", 
+        "pk": 468
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "3132g", 
+            "user_account": 9, 
+            "ingredient": 348
+        }, 
+        "model": "main.useringredient", 
+        "pk": 588
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "4104g", 
+            "user_account": 9, 
+            "ingredient": 456
+        }, 
+        "model": "main.useringredient", 
+        "pk": 696
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "4329g", 
+            "user_account": 9, 
+            "ingredient": 481
+        }, 
+        "model": "main.useringredient", 
+        "pk": 721
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "5193g", 
+            "user_account": 9, 
+            "ingredient": 577
+        }, 
+        "model": "main.useringredient", 
+        "pk": 817
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "2943g", 
+            "user_account": 9, 
+            "ingredient": 327
+        }, 
+        "model": "main.useringredient", 
+        "pk": 567
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "1584g", 
+            "user_account": 9, 
+            "ingredient": 176
+        }, 
+        "model": "main.useringredient", 
+        "pk": 416
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "5931g", 
+            "user_account": 9, 
+            "ingredient": 659
+        }, 
+        "model": "main.useringredient", 
+        "pk": 899
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "5445g", 
+            "user_account": 9, 
+            "ingredient": 605
+        }, 
+        "model": "main.useringredient", 
+        "pk": 845
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "7317g", 
+            "user_account": 9, 
+            "ingredient": 813
+        }, 
+        "model": "main.useringredient", 
+        "pk": 1053
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "5220g", 
+            "user_account": 9, 
+            "ingredient": 580
+        }, 
+        "model": "main.useringredient", 
+        "pk": 820
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "6030g", 
+            "user_account": 9, 
+            "ingredient": 670
+        }, 
+        "model": "main.useringredient", 
+        "pk": 910
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "5013g", 
+            "user_account": 9, 
+            "ingredient": 557
+        }, 
+        "model": "main.useringredient", 
+        "pk": 797
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "5823g", 
+            "user_account": 9, 
+            "ingredient": 647
+        }, 
+        "model": "main.useringredient", 
+        "pk": 887
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "1179g", 
+            "user_account": 9, 
+            "ingredient": 131
+        }, 
+        "model": "main.useringredient", 
+        "pk": 371
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "2961g", 
+            "user_account": 9, 
+            "ingredient": 329
+        }, 
+        "model": "main.useringredient", 
+        "pk": 569
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "3096g", 
+            "user_account": 9, 
+            "ingredient": 344
+        }, 
+        "model": "main.useringredient", 
+        "pk": 584
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "207g", 
+            "user_account": 9, 
+            "ingredient": 23
+        }, 
+        "model": "main.useringredient", 
+        "pk": 263
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "4815g", 
+            "user_account": 9, 
+            "ingredient": 535
+        }, 
+        "model": "main.useringredient", 
+        "pk": 775
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "2457g", 
+            "user_account": 9, 
+            "ingredient": 273
+        }, 
+        "model": "main.useringredient", 
+        "pk": 513
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "693g", 
+            "user_account": 9, 
+            "ingredient": 77
+        }, 
+        "model": "main.useringredient", 
+        "pk": 317
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "6579g", 
+            "user_account": 9, 
+            "ingredient": 731
+        }, 
+        "model": "main.useringredient", 
+        "pk": 971
+    }, 
+    {
+        "fields": {
+            "cooking_time": "09:23:15", 
+            "cooking_date": "2016-02-02", 
+            "recipe": "24", 
+            "serving_count": "732", 
+            "user_account": 9
+        }, 
+        "model": "main.cookedrecipe", 
+        "pk": 731
+    }, 
+    {
+        "fields": {
+            "cooking_time": "09:23:15", 
+            "cooking_date": "2016-02-02", 
+            "recipe": "25", 
+            "serving_count": "732", 
+            "user_account": 9
+        }, 
+        "model": "main.cookedrecipe", 
+        "pk": 731
+    }, 
+    {
+        "fields": {
+            "cooking_time": "09:23:15", 
+            "cooking_date": "2016-02-02", 
+            "recipe": "26", 
+            "serving_count": "732", 
+            "user_account": 9
+        }, 
+        "model": "main.cookedrecipe", 
+        "pk": 731
+    }, 
+    {
+        "fields": {
+            "amount": "203g", 
+            "recipe": 25, 
+            "ingredient": 203
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 475
+    }, 
+    {
+        "fields": {
+            "amount": "44g", 
+            "recipe": 25, 
+            "ingredient": 44
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 316
+    }, 
+    {
+        "fields": {
+            "amount": "418g", 
+            "recipe": 25, 
+            "ingredient": 418
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 690
+    }, 
+    {
+        "fields": {
+            "amount": "619g", 
+            "recipe": 25, 
+            "ingredient": 619
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 891
+    }, 
+    {
+        "fields": {
+            "description": "This is one of my all-time favourite recipes. I just love Skillet Pork Chops with Potatoes and Onion on weekends!", 
+            "creator": 9, 
+            "title": "Skillet Pork Chops with Potatoes and Onion", 
+            "creation_time": "09:23:15", 
+            "creation_date": "2016-02-02", 
+            "average_rating": 1.23, 
+            "rating_count": 9, 
+            "steps": "[\"Fry them in a frying pan for 20 minutes.\", \"Mix them and season with salt and pepper.\", \"Start by slicing the vegetables and the meat.\", \"Pour tomato sauce into a lightly greased 9x13 inch baking dish. Add chicken, then place a slice of Monterey Jack cheese over each breast, and bake in the preheated oven for 20 minutes or until cheese is completely melted.\", \"Heat sesame oil in a large skillet over medium heat; cook and stir carrot and zucchini in the hot oil until vegetables begin to soften, about 5 minutes. Stir in bean sprouts, bamboo shoots, and mushrooms. Cook and stir until carrots are tender, about 5 more minutes. Season to taste with salt and set vegetables aside.\", \"Put it in the oven for 30 minutes.Add some vinegar\"]", 
+            "servings": 9, 
+            "duration": "1:53:00", 
+            "image_url": "www.example.com/image.png"
+        }, 
+        "model": "main.recipe", 
+        "pk": 25
+    }, 
+    {
+        "fields": {
+            "amount": "293g", 
+            "recipe": 26, 
+            "ingredient": 293
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 569
+    }, 
+    {
+        "fields": {
+            "amount": "623g", 
+            "recipe": 26, 
+            "ingredient": 623
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 899
+    }, 
+    {
+        "fields": {
+            "amount": "500g", 
+            "recipe": 26, 
+            "ingredient": 500
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 776
+    }, 
+    {
+        "fields": {
+            "amount": "468g", 
+            "recipe": 26, 
+            "ingredient": 468
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 744
+    }, 
+    {
+        "fields": {
+            "amount": "548g", 
+            "recipe": 26, 
+            "ingredient": 548
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 824
+    }, 
+    {
+        "fields": {
+            "description": "This is one of my all-time favourite recipes. I just love Shrimp Francesca on weekends!", 
+            "creator": 9, 
+            "title": "Shrimp Francesca", 
+            "creation_time": "09:23:15", 
+            "creation_date": "2016-02-02", 
+            "average_rating": 3.23, 
+            "rating_count": 18, 
+            "steps": "[\"Fry them in a frying pan for 20 minutes.\", \"Mix them and season with salt and pepper.\", \"Start by slicing the vegetables and the meat.\", \"Pour tomato sauce into a lightly greased 9x13 inch baking dish. Add chicken, then place a slice of Monterey Jack cheese over each breast, and bake in the preheated oven for 20 minutes or until cheese is completely melted.\", \"Heat sesame oil in a large skillet over medium heat; cook and stir carrot and zucchini in the hot oil until vegetables begin to soften, about 5 minutes. Stir in bean sprouts, bamboo shoots, and mushrooms. Cook and stir until carrots are tender, about 5 more minutes. Season to taste with salt and set vegetables aside.\", \"Put it in the oven for 30 minutes.Add some vinegar\"]", 
+            "servings": 9, 
+            "duration": "1:53:00", 
+            "image_url": "www.example.com/image.png"
+        }, 
+        "model": "main.recipe", 
+        "pk": 26
+    }, 
+    {
+        "fields": {
+            "amount": "716g", 
+            "recipe": 27, 
+            "ingredient": 716
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 996
+    }, 
+    {
+        "fields": {
+            "amount": "183g", 
+            "recipe": 27, 
+            "ingredient": 183
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 463
+    }, 
+    {
+        "fields": {
+            "amount": "727g", 
+            "recipe": 27, 
+            "ingredient": 727
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 1007
+    }, 
+    {
+        "fields": {
+            "amount": "342g", 
+            "recipe": 27, 
+            "ingredient": 342
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 622
+    }, 
+    {
+        "fields": {
+            "amount": "894g", 
+            "recipe": 27, 
+            "ingredient": 894
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 1174
+    }, 
+    {
+        "fields": {
+            "amount": "52g", 
+            "recipe": 27, 
+            "ingredient": 52
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 332
+    }, 
+    {
+        "fields": {
+            "description": "This is one of my all-time favourite recipes. I just love Scrambled Eggs Done Right on weekends!", 
+            "creator": 9, 
+            "title": "Scrambled Eggs Done Right", 
+            "creation_time": "09:23:15", 
+            "creation_date": "2016-02-02", 
+            "average_rating": 3.23, 
+            "rating_count": 27, 
+            "steps": "[\"Fry them in a frying pan for 20 minutes.\", \"Mix them and season with salt and pepper.\", \"Start by slicing the vegetables and the meat.\", \"Pour tomato sauce into a lightly greased 9x13 inch baking dish. Add chicken, then place a slice of Monterey Jack cheese over each breast, and bake in the preheated oven for 20 minutes or until cheese is completely melted.\", \"Heat sesame oil in a large skillet over medium heat; cook and stir carrot and zucchini in the hot oil until vegetables begin to soften, about 5 minutes. Stir in bean sprouts, bamboo shoots, and mushrooms. Cook and stir until carrots are tender, about 5 more minutes. Season to taste with salt and set vegetables aside.\", \"Put it in the oven for 30 minutes.Add some vinegar\"]", 
+            "servings": 9, 
+            "duration": "1:53:00", 
+            "image_url": "www.example.com/image.png"
+        }, 
+        "model": "main.recipe", 
+        "pk": 27
+    }, 
+    {
+        "fields": {
+            "username": "user10", 
+            "first_name": "", 
+            "last_name": "", 
+            "is_active": true, 
+            "is_superuser": false, 
+            "is_staff": false, 
+            "last_login": "2016-11-09T18:08:23.137Z", 
+            "groups": [], 
+            "user_permissions": [], 
+            "password": "pbkdf2_sha256$30000$qwdCTXISuS1t$CyHx8U8Q7b/JlX24lOqbUXm+n2BrwNfHVzqNL3GkWs4=", 
+            "email": "user10@cookit.com", 
+            "date_joined": "2016-11-09T18:08:13.734Z"
+        }, 
+        "model": "auth.user", 
+        "pk": 10
+    }, 
+    {
+        "fields": {
+            "favourite_recipes": [
+                1, 
+                2, 
+                3, 
+                4, 
+                5, 
+                6, 
+                7, 
+                8, 
+                9
+            ], 
+            "favourite_users": [
+                1, 
+                2, 
+                3, 
+                4, 
+                5, 
+                6, 
+                7, 
+                8, 
+                9
+            ], 
+            "user": 10
+        }, 
+        "model": "main.useraccount", 
+        "pk": 10
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "3510g", 
+            "user_account": 10, 
+            "ingredient": 351
+        }, 
+        "model": "main.useringredient", 
+        "pk": 621
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "9090g", 
+            "user_account": 10, 
+            "ingredient": 909
+        }, 
+        "model": "main.useringredient", 
+        "pk": 1179
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "5080g", 
+            "user_account": 10, 
+            "ingredient": 508
+        }, 
+        "model": "main.useringredient", 
+        "pk": 778
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "8510g", 
+            "user_account": 10, 
+            "ingredient": 851
+        }, 
+        "model": "main.useringredient", 
+        "pk": 1121
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "2660g", 
+            "user_account": 10, 
+            "ingredient": 266
+        }, 
+        "model": "main.useringredient", 
+        "pk": 536
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "610g", 
+            "user_account": 10, 
+            "ingredient": 61
+        }, 
+        "model": "main.useringredient", 
+        "pk": 331
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": "3430g", 
+            "user_account": 10, 
+            "ingredient": 343
+        }, 
+        "model": "main.useringredient", 
+        "pk": 613
+    }, 
+    {
+        "fields": {
+            "cooking_time": "09:23:15", 
+            "cooking_date": "2016-02-02", 
+            "recipe": "27", 
+            "serving_count": "344", 
+            "user_account": 10
+        }, 
+        "model": "main.cookedrecipe", 
+        "pk": 343
+    }, 
+    {
+        "fields": {
+            "cooking_time": "09:23:15", 
+            "cooking_date": "2016-02-02", 
+            "recipe": "28", 
+            "serving_count": "344", 
+            "user_account": 10
+        }, 
+        "model": "main.cookedrecipe", 
+        "pk": 343
+    }, 
+    {
+        "fields": {
+            "cooking_time": "09:23:15", 
+            "cooking_date": "2016-02-02", 
+            "recipe": "29", 
+            "serving_count": "344", 
+            "user_account": 10
+        }, 
+        "model": "main.cookedrecipe", 
+        "pk": 343
+    }, 
+    {
+        "fields": {
+            "amount": "454g", 
+            "recipe": 28, 
+            "ingredient": 454
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 760
+    }, 
+    {
+        "fields": {
+            "amount": "160g", 
+            "recipe": 28, 
+            "ingredient": 160
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 466
+    }, 
+    {
+        "fields": {
+            "amount": "572g", 
+            "recipe": 28, 
+            "ingredient": 572
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 878
+    }, 
+    {
+        "fields": {
+            "amount": "267g", 
+            "recipe": 28, 
+            "ingredient": 267
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 573
+    }, 
+    {
+        "fields": {
+            "description": "This is one of my all-time favourite recipes. I just love Chicken Parmigiana on weekends!", 
+            "creator": 10, 
+            "title": "Chicken Parmigiana", 
+            "creation_time": "09:23:15", 
+            "creation_date": "2016-02-02", 
+            "average_rating": 3.23, 
+            "rating_count": 10, 
+            "steps": "[\"Preheat the grill for high heat.\", \"Wash your hands and make sure your kitchen and tools are clean.\", \"Heat sesame oil in a large skillet over medium heat; cook and stir carrot and zucchini in the hot oil until vegetables begin to soften, about 5 minutes. Stir in bean sprouts, bamboo shoots, and mushrooms. Cook and stir until carrots are tender, about 5 more minutes. Season to taste with salt and set vegetables aside.\", \"Mash the ingredients into a paste. Add some water if it gets too thick\"]", 
+            "servings": 10, 
+            "duration": "4:20:00", 
+            "image_url": "www.example.com/image.png"
+        }, 
+        "model": "main.recipe", 
+        "pk": 28
+    }, 
+    {
+        "fields": {
+            "amount": "176g", 
+            "recipe": 29, 
+            "ingredient": 176
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 486
+    }, 
+    {
+        "fields": {
+            "amount": "543g", 
+            "recipe": 29, 
+            "ingredient": 543
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 853
+    }, 
+    {
+        "fields": {
+            "amount": "886g", 
+            "recipe": 29, 
+            "ingredient": 886
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 1196
+    }, 
+    {
+        "fields": {
+            "amount": "480g", 
+            "recipe": 29, 
+            "ingredient": 480
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 790
+    }, 
+    {
+        "fields": {
+            "description": "This is one of my all-time favourite recipes. I just love Sunday Vegetarian Strata on weekends!", 
+            "creator": 10, 
+            "title": "Sunday Vegetarian Strata", 
+            "creation_time": "09:23:15", 
+            "creation_date": "2016-02-02", 
+            "average_rating": 3.23, 
+            "rating_count": 20, 
+            "steps": "[\"Preheat the grill for high heat.\", \"Wash your hands and make sure your kitchen and tools are clean.\", \"Heat sesame oil in a large skillet over medium heat; cook and stir carrot and zucchini in the hot oil until vegetables begin to soften, about 5 minutes. Stir in bean sprouts, bamboo shoots, and mushrooms. Cook and stir until carrots are tender, about 5 more minutes. Season to taste with salt and set vegetables aside.\", \"Mash the ingredients into a paste. Add some water if it gets too thick\"]", 
+            "servings": 10, 
+            "duration": "4:20:00", 
+            "image_url": "www.example.com/image.png"
+        }, 
+        "model": "main.recipe", 
+        "pk": 29
+    }, 
+    {
+        "fields": {
+            "amount": "720g", 
+            "recipe": 30, 
+            "ingredient": 720
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 1034
+    }, 
+    {
+        "fields": {
+            "amount": "556g", 
+            "recipe": 30, 
+            "ingredient": 556
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 870
+    }, 
+    {
+        "fields": {
+            "amount": "372g", 
+            "recipe": 30, 
+            "ingredient": 372
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 686
+    }, 
+    {
+        "fields": {
+            "amount": "442g", 
+            "recipe": 30, 
+            "ingredient": 442
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 756
+    }, 
+    {
+        "fields": {
+            "amount": "320g", 
+            "recipe": 30, 
+            "ingredient": 320
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 634
+    }, 
+    {
+        "fields": {
+            "description": "This is one of my all-time favourite recipes. I just love Ham Casserole on weekends!", 
+            "creator": 10, 
+            "title": "Ham Casserole", 
+            "creation_time": "09:23:15", 
+            "creation_date": "2016-02-02", 
+            "average_rating": 4.23, 
+            "rating_count": 30, 
+            "steps": "[\"Preheat the grill for high heat.\", \"Wash your hands and make sure your kitchen and tools are clean.\", \"Heat sesame oil in a large skillet over medium heat; cook and stir carrot and zucchini in the hot oil until vegetables begin to soften, about 5 minutes. Stir in bean sprouts, bamboo shoots, and mushrooms. Cook and stir until carrots are tender, about 5 more minutes. Season to taste with salt and set vegetables aside.\", \"Mash the ingredients into a paste. Add some water if it gets too thick\"]", 
+            "servings": 10, 
+            "duration": "4:20:00", 
+            "image_url": "www.example.com/image.png"
+        }, 
+        "model": "main.recipe", 
+        "pk": 30
+    }
+]

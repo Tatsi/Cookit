@@ -45,6 +45,17 @@ def feed(request, feed_type=None):
 	context['all_ingredients'] = json.dumps(list(Ingredient.objects.all().values_list('name', flat=True)))
 
 	if user.is_authenticated():
+		# Fetch ingredients the user has
+		context['my_ingredients'] = user_account.ingredients.all()
+
+	# TODO: Update the filter and return the list of matching recipes
+	return render(request, 'feed.html', context)
+
+def add_my_ingredient(request):
+	user = request.user
+
+	if user.is_authenticated():
+		user_account = UserAccount.objects.get(user=user)
 		if request.method == 'POST':
 			form = IngredientsForm(request.POST)
 			if form.is_valid():
@@ -63,11 +74,8 @@ def feed(request, feed_type=None):
 		else:
 			form = IngredientsForm()
 
-		# Fetch ingredients the user has
-		context['my_ingredients'] = user_account.ingredients.all()
+		return HttpResponse('')
 
-	# TODO: Update the filter and return the list of matching recipes
-	return render(request, 'feed.html', context)
 
 def recipe(request, recipe_id):
 	# Get recipe from db
