@@ -66,7 +66,7 @@ with open('main/fixtures/others_' + time + '.json', 'w') as outfile:
         # Create the related UserIngredients
         max_user_ingredients_per_user = 30
         ingredient_count = randint(5, max_user_ingredients_per_user)
-        random_ingredients = sample(xrange(950), ingredient_count)
+        random_ingredients = sample(xrange(1, 950), ingredient_count)
         for x in random_ingredients:
             entry = dict(
                 model = 'main.useringredient',
@@ -74,7 +74,7 @@ with open('main/fixtures/others_' + time + '.json', 'w') as outfile:
                 fields = dict(
                     user_account = i,
                     ingredient = x,
-                    amount = str(i * x) + "g",
+                    amount = randint(4, 20),
                     infinite = False
                 )
             )
@@ -165,7 +165,7 @@ with open('main/fixtures/others_' + time + '.json', 'w') as outfile:
             # ingredients = range((i-1) * 10 + (j-1) * 5, (i-1) * 10 + (j-1) * 5 + 5 )
             key = (i-1) * 3 + j
             average_rating = randint(1,4) + 0.23
-            ingredients = sample(xrange(950), randint(3,6))
+            ingredients = sample(xrange(1, 950), randint(3,6))
             # Create the related RecipeIngredient fixtures
             for k in ingredients:
                 entry = dict(
@@ -175,7 +175,7 @@ with open('main/fixtures/others_' + time + '.json', 'w') as outfile:
                         recipe = key,
                         #ingredient = sample(xrange(1000), 1)[0],
                         ingredient = k,
-                        amount = str(k) + "g"
+                        amount = randint(2, 20)
                     )
                 )
                 data.append(entry)
@@ -199,9 +199,6 @@ with open('main/fixtures/others_' + time + '.json', 'w') as outfile:
                 )
             )
             data.append(entry)
-
-
-
 
     json.dump(data, outfile, indent = 4)
 
