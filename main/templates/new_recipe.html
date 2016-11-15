@@ -97,7 +97,7 @@
 			</div>
 			<div class="col-md-7">
 				<!-- Non-collapsing instruction list for desktop -->
-				<div class="hidden-xs">
+				<div class="hidden-xs step-container">
 					<h4>Instructions</h4>
 					<ol>
 						{% for step in instructions %}
@@ -105,8 +105,8 @@
 						{% endfor %}
 					</ol>
 					<div class="form-group">
-						<textarea class="form-control" rows="3" cols="50" name="instruction" placeholder="Add step..."></textarea>
-						<button class="btn add-btn"><span class="glyphicon glyphicon-plus"></span></button>
+						<textarea class="form-control step-text" rows="3" cols="50" name="instruction" placeholder="Add step..."></textarea>
+						<button class="btn add-btn" id="addStepButton"><span class="glyphicon glyphicon-plus"></span></button>
 					</div>
 				</div>
 				<!-- Collapsing instruction list for mobile -->
@@ -124,8 +124,26 @@
 				</div>
 			</div>
 		</div>
+		<input type="hidden" name="steps" id="input-steps">
 		<button type="submit" class="btn btn-primary">Submit</button>
 	</form>
 </div>
+
+<script type="text/javascript">
+	$('.step-container').on('click', '#addStepButton', function(evt) {
+		evt.preventDefault();
+		$(this).remove();
+		var newStep = '<div class="form-group"><textarea class="form-control step-text" rows="3" cols="50" name="instruction" placeholder="Add step..."></textarea><button class="btn add-btn" id="addStepButton"><span class="glyphicon glyphicon-plus"></span></button></div>';
+		$('.step-container').append(newStep);
+	});
+
+	$('#new-recipe').submit(function() {
+		var steps = []
+		$('.step-text').each(function(idx) {
+			steps.push($(this).val());
+		});
+		$('#input-steps').val(JSON.stringify(steps));
+	});
+</script>
 
 {% endblock %}

@@ -5,17 +5,15 @@
 
 <div class="recipe-page">
 	<div class="row">
-		<div class="col-md-6">
-			<h2>{{ recipe.title }}
-			{% if user.is_authenticated %}
-				{% if favourite %}
-					<span class="fa fa-heart" id="favourite"></span>
-				{% else %}
-					<span class="fa fa-heart-o" id="favourite"></span>
-				{% endif %}
+		<h2>{{ recipe.title }}
+		{% if user.is_authenticated %}
+			{% if favourite %}
+				<span class="fa fa-heart" id="favourite"></span>
+			{% else %}
+				<span class="fa fa-heart-o" id="favourite"></span>
 			{% endif %}
-			</h2>
-		</div>
+		{% endif %}
+		</h2>
 	</div>
 	<div class="row">
 		<div class="col-md-6">
