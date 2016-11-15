@@ -20,12 +20,12 @@
 			<form class="ingredients-form" method="post" id="main_form">
 				{% csrf_token %}
 				<div class="form-group">
-					<div class="col-sm-6 col-xs-8">
+					<div class="col-sm-8 col-xs-8">
 						<input type="text" name="ingredient" class="form-control" id="ingredientInput" placeholder="Search for ingredients..." autocomplete="off">
 						<!-- <input type="hidden" name="delete" id="deleteInput"> -->
 					</div>
-					<button type="submit" class="btn btn-info">Add</button>
-					<button class="btn btn-primary" id="apply-button">Apply</button>
+					<button type="submit" class="btn shadow-element">Add</button>
+					<button class="btn" id="apply-btn">Apply</button>
 				</div>
 			</form>
 		</div>
@@ -109,7 +109,7 @@
 			CloseModal();
 		});
 
-		$('#apply-button').click(function() {
+		$('#apply-btn').click(function() {
 			CloseModal();
 		});
 

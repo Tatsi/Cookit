@@ -1,5 +1,6 @@
 $recipe-name-color: #1b7b34;
 $heading-color: #f73d40;
+$heading-hover-color: #fb5a5d;
 $navbar-color: #ffb500;
 $navbar-hover-color: #ffbf23;
 $light-grey: #bbb;
@@ -91,7 +92,7 @@ button.add-btn {
 	font-size: 18px;
 	margin-left: 10px;
 
-	&:hover {
+	&:hover, &:focus, &:active {
 		background-color: $navbar-hover-color;
 		color: #fff;
 	}
@@ -398,6 +399,22 @@ button.add-btn {
 
 	.ingredients-form {
 		margin-top: 15px;
+		.shadow-element {
+			&:hover, &:focus, &:active {
+				background-color: $navbar-hover-color;
+				color: #fff;
+			}
+		}
+		#apply-btn {
+			box-shadow: 2px 2px 3px #888888;
+			background-color: $heading-color;
+			color: #fff;
+
+			&:hover, &:focus, &:active {
+				background-color: $heading-hover-color;
+				color: #fff;
+			}
+		}
 	}
 
 	.typeahead.dropdown-menu {
