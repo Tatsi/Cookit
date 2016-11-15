@@ -60,6 +60,8 @@ def add_my_ingredient(request):
 			form = IngredientsForm(request.POST)
 			if form.is_valid():
 				try:
+					# TODO: Ingredients should not contain many ingredients with the same name
+					# This is only in the demo phase
 					ingredients = Ingredient.objects.filter(name=form.cleaned_data['ingredient'])
 				except Ingredient.DoesNotExist:
 					pass
@@ -67,7 +69,7 @@ def add_my_ingredient(request):
 					item = UserIngredient.objects.filter(user_account=user_account, ingredient__in=ingredients)
 					if not form.cleaned_data['delete']:
 						if not item.exists():
-							user_ingredient = UserIngredient.objects.create(user_account=user_account, ingredient=ingredient, amount='1')
+							user_ingredient = UserIngredient.objects.create(user_account=user_account, ingredient=ingredients[0], amount='1')
 					else:
 						if item.exists():
 							item.delete()

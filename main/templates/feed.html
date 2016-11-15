@@ -77,6 +77,8 @@
 
 		$('.ingredient-label').click(function() {
 			var ingredient_name = $(this).text();
+			var elem = $('span:contains("' + ingredient_name + '")')[0].parentElement
+			elem.parentElement.removeChild(elem);
 			$.ajax({
 				type: "POST",
 				url: "{% url 'add_my_ingredient' %}",
@@ -86,7 +88,6 @@
 					delete: true,
 				},
 				success: function() {
-					$('span:contains("' + ingredient_name + '")').css('display', 'none')
 				}
 			});
 		});
