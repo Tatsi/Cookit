@@ -108,7 +108,7 @@
 				url: "{% url 'cook_recipe' recipe.id %}",
 				data: {
 					servings: $('#servings').val(),
-					csrfmiddlewaretoken: $('input[name=csrfmiddlewaretoken').val(),
+					csrfmiddlewaretoken: $('input[name=csrfmiddlewaretoken]').val(),
 				},
 				// TODO: do something nice here instead of this
 				success:function() {
@@ -122,7 +122,7 @@
 				type: "POST",
 				url: "{% url 'add_favourite' recipe.id %}",
 				data: {
-					csrfmiddlewaretoken: $('input[name=csrfmiddlewaretoken').val(),
+					csrfmiddlewaretoken: $('input[name=csrfmiddlewaretoken]').val(),
 				},
 				// TODO: maybe something else than reload?
 				success:function() {

@@ -20,7 +20,7 @@ def feed(request, feed_type=None):
 		if not user.is_authenticated():
 			recipes = Recipe.objects.all()
 		else:
-			recipes = Recipe.objects.filter(ingredients__in=user_account.ingredients.all())
+			recipes = Recipe.objects.filter(ingredients__in=user_account.ingredients.all()).distinct()
 	else:
 		if user.is_authenticated():
 			if feed_type == "own_recipes":

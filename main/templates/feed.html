@@ -56,7 +56,7 @@
 					type: "POST",
 					url: "{% url 'add_my_ingredient' %}",
 					data: {
-						csrfmiddlewaretoken: $('input[name=csrfmiddlewaretoken').val(),
+						csrfmiddlewaretoken: $('input[name=csrfmiddlewaretoken]').val(),
 						ingredient: ingredient_name,
 					},
 					success: function() {
@@ -83,7 +83,7 @@
 				type: "POST",
 				url: "{% url 'add_my_ingredient' %}",
 				data: {
-					csrfmiddlewaretoken: $('input[name=csrfmiddlewaretoken').val(),
+					csrfmiddlewaretoken: $('input[name=csrfmiddlewaretoken]').val(),
 					ingredient: ingredient_name,
 					delete: true,
 				},
