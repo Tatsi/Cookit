@@ -45,7 +45,7 @@
 					<h4>Ingredients</h4>
 					<input type="text" class="form-control ingredientInput" placeholder="Search for ingredients..." autocomplete="off">
 					<input type="number" class="form-control amountInput" placeholder="Amount..." autocomplete="off">
-					<span id="unit"></span>
+					<span class="amount_unit"></span>
 					<button class="btn add-btn" id="addIngredientButton"><span class="glyphicon glyphicon-plus"></span></button>
 
 				</div>
@@ -108,6 +108,8 @@
 
 		newItem = '<input type="number" class="form-control amountInput" placeholder="Amount..." autocomplete="off">';
 		$('#addIngredientButton').before(newItem);
+		newItem = '<span class="amount_unit"></span>'
+		$('#addIngredientButton').before(newItem);
 	});
 
 	$('#new-recipe').submit(function() {
@@ -140,8 +142,10 @@
 	$('.ingredientInput').typeahead({source: all_ingredients });
 
 	// Update ingredient unit after input changes
-	$('.ingredientInput').on('change input propertychange paste', function() {
-		var name = $('.ingredientInput').val();
+	$('.ingredient-container').on('change input propertychange paste', '.ingredientInput', function() {
+		var $unit = $(this).nextAll('.amount_unit:first');
+		console.log($unit)
+		var name = $(this).val();
 		var result = $.grep(all_ingredients, function(item){ 
 			return item.name == name; 
 		});
@@ -149,14 +153,14 @@
 		// Remove console output when all clean. 
 		if (result.length == 0) {
 			console.log("Not found");
-			$('#unit').empty();
+			$unit.empty();
 		} else if (result.length == 1) {
 		  	var unit = result[0].unit;
-		  	$('#unit').text(unit);
+		  	$unit.text(unit);
 
 		} else {
 		  	console.log("Multiple matches");
-			$('#unit').empty();
+			$unit.empty();
 		}
 	})
 </script>
