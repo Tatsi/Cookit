@@ -55,23 +55,20 @@ def user(request, user_id=None):
 	if user_id is None:
 		raise Http404()
 
-	user = request.user
-	user_account = UserAccount.objects.get(user=user) if user.is_authenticated() else None
-
 	viewed_user = User.objects.get(id=user_id)
-	viewed_user_account = UserAccount.objects.get(user=viewed_user)
-	
+	viewed_user_account = UserAccount.objects.get(user=viewed_user)	
 
 	recipes = Recipe.objects.filter(creator=viewed_user_account)
 	context = {'recipes': recipes, 'viewed_user': viewed_user, 'viewed_user_account': viewed_user_account}
 
-	if not user.is_authenticated():
-		context['user'] = user_id
-		context['user_account'] = user_account
+	user = request.user
+	user_account = UserAccount.objects.get(user=user) if user.is_authenticated() else None
+
+	context['user'] = user
+
+	if user.is_authenticated():	
 		if viewed_user_account in user_account.favourite_users.all():
-				context['favourite_user'] = True
-	#else:
-	#	context = {'user': user_id, 'user_account': user_account}
+			context['favourite_user'] = True
 
 	return render(request, 'user.html', context)
 
@@ -183,6 +180,28 @@ def add_favourite(request, recipe_id):
 				user_account.favourite_recipes.add(recipe)
 			else:
 				user_account.favourite_recipes.remove(recipe)
+			return HttpResponse('')
+
+def add_favourite_user(request, user_id):
+	# Get user from db
+	try:
+		favourite_user = UserAccount.objects.get(id=user_id)
+	except Recipe.DoesNotExist:
+		raise Http404("No User Account found for ID %s.".format(user_id))
+
+	user = request.user
+	user_account = UserAccount.objects.get(user=user) if user.is_authenticated() else None
+
+	if request.method == "POST":
+		if user_account:
+			try:
+				user_account.favourite_users.get(id=user_id)
+			except UserAccount.DoesNotExist:
+				print "added"
+				user_account.favourite_users.add(user_id)
+			else:
+				print "removed"
+				user_account.favourite_users.remove(user_id)
 			return HttpResponse('')
 
 @login_required
