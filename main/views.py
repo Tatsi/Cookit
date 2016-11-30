@@ -197,10 +197,8 @@ def add_favourite_user(request, user_id):
 			try:
 				user_account.favourite_users.get(id=user_id)
 			except UserAccount.DoesNotExist:
-				print "added"
 				user_account.favourite_users.add(user_id)
 			else:
-				print "removed"
 				user_account.favourite_users.remove(user_id)
 			return HttpResponse('')
 
