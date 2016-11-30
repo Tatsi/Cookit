@@ -45,6 +45,7 @@
 					<h4>Ingredients</h4>
 					<input type="text" class="form-control ingredientInput" placeholder="Search for ingredients..." autocomplete="off">
 					<input type="number" class="form-control amountInput" placeholder="Amount..." autocomplete="off">
+					<span id="unit"></span>
 					<button class="btn add-btn" id="addIngredientButton"><span class="glyphicon glyphicon-plus"></span></button>
 
 				</div>
@@ -137,6 +138,27 @@
 	});
 
 	$('.ingredientInput').typeahead({source: all_ingredients });
+
+	// Update ingredient unit after input changes
+	$('.ingredientInput').on('change input propertychange paste', function() {
+		var name = $('.ingredientInput').val();
+		var result = $.grep(all_ingredients, function(item){ 
+			return item.name == name; 
+		});
+
+		// Remove console output when all clean. 
+		if (result.length == 0) {
+			console.log("Not found");
+			$('#unit').empty();
+		} else if (result.length == 1) {
+		  	var unit = result[0].unit;
+		  	$('#unit').text(unit);
+
+		} else {
+		  	console.log("Multiple matches");
+			$('#unit').empty();
+		}
+	})
 </script>
 
 {% endblock %}

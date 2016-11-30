@@ -215,7 +215,7 @@ def new_recipe(request):
 	else:
 		form = NewRecipeForm()
 	context = {}
-	context['all_ingredients'] = json.dumps(list(Ingredient.objects.all().values_list('name', flat=True).distinct()))
+	context['all_ingredients'] = json.dumps(list(Ingredient.objects.all().values('name', 'unit').distinct()))
 	return render(request, 'new_recipe.html', context)
 
 def register(request):
