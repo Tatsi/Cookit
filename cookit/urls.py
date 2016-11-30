@@ -27,6 +27,7 @@ urlpatterns = [
     url(r'^accounts/login/$', auth_views.login, name='login'),
     url(r'^logout/$', auth_views.logout, name='logout'),
     url(r'^register/$', main.views.register, name='register'),
+    url(r'^user/(?P<user_id>\d+)/$', main.views.user, name='user'),
     url(r'^recipes/(?P<recipe_id>\d+)/$', main.views.recipe, name='recipe'),
     url(r'^recipes/(?P<recipe_id>\d+)/cook/$', main.views.cook_recipe, name='cook_recipe'),
     url(r'^recipes/(?P<recipe_id>\d+)/favourite/$', main.views.add_favourite, name='add_favourite'),

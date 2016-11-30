@@ -1,0 +1,23 @@
+{% extends "base/base.html" %}
+
+{% block content %}
+<div class="row">
+	<h2>{{ viewed_user.username }}
+	{% if user.is_authenticated %}
+		{% if favourite_user %}
+			<span class="fa fa-heart" id="favourite"></span>
+		{% else %}
+			<span class="fa fa-heart-o" id="favourite"></span>
+		{% endif %}
+	{% endif %}
+	</h2>
+</div>
+
+<!-- Users recipes-->
+<div class="row feed">
+{% for item in recipes %}
+{% include "recipe_card.html" with item=item %}
+{% endfor %}
+</div>
+
+{% endblock %}

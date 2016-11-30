@@ -51,6 +51,30 @@ def feed(request, feed_type=None):
 	# TODO: Update the filter and return the list of matching recipes
 	return render(request, 'feed.html', context)
 
+def user(request, user_id=None):
+	if user_id is None:
+		raise Http404()
+
+	user = request.user
+	user_account = UserAccount.objects.get(user=user) if user.is_authenticated() else None
+
+	viewed_user = User.objects.get(id=user_id)
+	viewed_user_account = UserAccount.objects.get(user=viewed_user)
+	
+
+	recipes = Recipe.objects.filter(creator=viewed_user_account)
+	context = {'recipes': recipes, 'viewed_user': viewed_user, 'viewed_user_account': viewed_user_account}
+
+	if not user.is_authenticated():
+		context['user'] = user_id
+		context['user_account'] = user_account
+		if viewed_user_account in user_account.favourite_users.all():
+				context['favourite_user'] = True
+	#else:
+	#	context = {'user': user_id, 'user_account': user_account}
+
+	return render(request, 'user.html', context)
+
 def add_my_ingredient(request):
 	user = request.user
 

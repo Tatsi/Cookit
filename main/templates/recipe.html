@@ -20,7 +20,7 @@
 			<img src="{% static 'images/chickensoup.jpg' %}">
 		</div>
 		<div class="col-md-6">
-			<p><span class="glyphicon glyphicon-user"></span> {{ recipe.creator.user.username }}</p>
+			<p><span class="glyphicon glyphicon-user"></span><a href="{% url 'user' recipe.creator.user.id %}">{{ recipe.creator.user.username }}</a></p>
 			<i>{{ recipe.description }}</i>
 			<div class="rating">
 			{% include "vote_stars.html" with item=recipe %}
