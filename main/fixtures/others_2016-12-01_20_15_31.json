@@ -1,0 +1,3655 @@
+[
+    {
+        "fields": {
+            "username": "user1", 
+            "first_name": "", 
+            "last_name": "", 
+            "is_active": true, 
+            "is_superuser": true, 
+            "is_staff": true, 
+            "last_login": "2016-11-09T18:08:23.137Z", 
+            "groups": [], 
+            "user_permissions": [], 
+            "password": "pbkdf2_sha256$30000$qwdCTXISuS1t$CyHx8U8Q7b/JlX24lOqbUXm+n2BrwNfHVzqNL3GkWs4=", 
+            "email": "user1@cookit.com", 
+            "date_joined": "2016-11-09T18:08:13.734Z"
+        }, 
+        "model": "auth.user", 
+        "pk": 1
+    }, 
+    {
+        "fields": {
+            "favourite_recipes": [], 
+            "favourite_users": [], 
+            "description": "Internationally renowned, multi-Michelin starred chef Gordon Ramsay has opened a string of successful restaurants across the globe, from the UK and France to Singapore and Hong Kong, to the United States. Gordon has also become a star of the small screen both in the UK and internationally, with shows such as Kitchen Nightmares, Hell's Kitchen, Hotel Hell and MasterChef US.", 
+            "user": 1
+        }, 
+        "model": "main.useraccount", 
+        "pk": 1
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": 5, 
+            "user_account": 1, 
+            "ingredient": 228
+        }, 
+        "model": "main.useringredient", 
+        "pk": 228
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": 16, 
+            "user_account": 1, 
+            "ingredient": 796
+        }, 
+        "model": "main.useringredient", 
+        "pk": 796
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": 15, 
+            "user_account": 1, 
+            "ingredient": 633
+        }, 
+        "model": "main.useringredient", 
+        "pk": 633
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": 19, 
+            "user_account": 1, 
+            "ingredient": 680
+        }, 
+        "model": "main.useringredient", 
+        "pk": 680
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": 12, 
+            "user_account": 1, 
+            "ingredient": 371
+        }, 
+        "model": "main.useringredient", 
+        "pk": 371
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": 13, 
+            "user_account": 1, 
+            "ingredient": 199
+        }, 
+        "model": "main.useringredient", 
+        "pk": 199
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": 18, 
+            "user_account": 1, 
+            "ingredient": 19
+        }, 
+        "model": "main.useringredient", 
+        "pk": 19
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": 19, 
+            "user_account": 1, 
+            "ingredient": 416
+        }, 
+        "model": "main.useringredient", 
+        "pk": 416
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": 5, 
+            "user_account": 1, 
+            "ingredient": 947
+        }, 
+        "model": "main.useringredient", 
+        "pk": 947
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": 4, 
+            "user_account": 1, 
+            "ingredient": 70
+        }, 
+        "model": "main.useringredient", 
+        "pk": 70
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": 13, 
+            "user_account": 1, 
+            "ingredient": 423
+        }, 
+        "model": "main.useringredient", 
+        "pk": 423
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": 19, 
+            "user_account": 1, 
+            "ingredient": 389
+        }, 
+        "model": "main.useringredient", 
+        "pk": 389
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": 17, 
+            "user_account": 1, 
+            "ingredient": 188
+        }, 
+        "model": "main.useringredient", 
+        "pk": 188
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": 13, 
+            "user_account": 1, 
+            "ingredient": 176
+        }, 
+        "model": "main.useringredient", 
+        "pk": 176
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": 5, 
+            "user_account": 1, 
+            "ingredient": 147
+        }, 
+        "model": "main.useringredient", 
+        "pk": 147
+    }, 
+    {
+        "fields": {
+            "cooking_time": "09:23:15", 
+            "cooking_date": "2016-02-02", 
+            "recipe": "0", 
+            "serving_count": "148", 
+            "user_account": 1
+        }, 
+        "model": "main.cookedrecipe", 
+        "pk": 147
+    }, 
+    {
+        "fields": {
+            "cooking_time": "09:23:15", 
+            "cooking_date": "2016-02-02", 
+            "recipe": "1", 
+            "serving_count": "148", 
+            "user_account": 1
+        }, 
+        "model": "main.cookedrecipe", 
+        "pk": 147
+    }, 
+    {
+        "fields": {
+            "cooking_time": "09:23:15", 
+            "cooking_date": "2016-02-02", 
+            "recipe": "2", 
+            "serving_count": "148", 
+            "user_account": 1
+        }, 
+        "model": "main.cookedrecipe", 
+        "pk": 147
+    }, 
+    {
+        "fields": {
+            "amount": 14, 
+            "recipe": 1, 
+            "ingredient": 31
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 31
+    }, 
+    {
+        "fields": {
+            "amount": 12, 
+            "recipe": 1, 
+            "ingredient": 548
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 548
+    }, 
+    {
+        "fields": {
+            "amount": 20, 
+            "recipe": 1, 
+            "ingredient": 432
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 432
+    }, 
+    {
+        "fields": {
+            "amount": 2, 
+            "recipe": 1, 
+            "ingredient": 939
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 939
+    }, 
+    {
+        "fields": {
+            "amount": 14, 
+            "recipe": 1, 
+            "ingredient": 620
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 620
+    }, 
+    {
+        "fields": {
+            "description": "This is one of my all-time favourite recipes. I just love Ham Casserole on weekends!", 
+            "creator": 1, 
+            "title": "Ham Casserole", 
+            "creation_time": "09:23:15", 
+            "creation_date": "2016-02-02", 
+            "average_rating": 2.23, 
+            "rating_count": 1, 
+            "steps": "[\"Wash the salad and other vegetables\", \"In a large glass bowl, stir together the vinegar, oil, soy sauce, lime juice, lemon juice, sherry, mustard, and honey. Mix in the garlic, brown sugar, lemon pepper, oregano, rosemary, and salt. Place the chicken in the mixture. Cover, and marinate in the refrigerator 8 hours or overnight.\", \"Pour tomato sauce into a lightly greased 9x13 inch baking dish. Add chicken, then place a slice of Monterey Jack cheese over each breast, and bake in the preheated oven for 20 minutes or until cheese is completely melted.\"]", 
+            "servings": 1, 
+            "duration": "0:53:00", 
+            "image_url": "www.example.com/image.png"
+        }, 
+        "model": "main.recipe", 
+        "pk": 1
+    }, 
+    {
+        "fields": {
+            "amount": 6, 
+            "recipe": 2, 
+            "ingredient": 942
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 946
+    }, 
+    {
+        "fields": {
+            "amount": 2, 
+            "recipe": 2, 
+            "ingredient": 313
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 317
+    }, 
+    {
+        "fields": {
+            "amount": 3, 
+            "recipe": 2, 
+            "ingredient": 775
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 779
+    }, 
+    {
+        "fields": {
+            "amount": 17, 
+            "recipe": 2, 
+            "ingredient": 58
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 62
+    }, 
+    {
+        "fields": {
+            "amount": 15, 
+            "recipe": 2, 
+            "ingredient": 299
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 303
+    }, 
+    {
+        "fields": {
+            "amount": 18, 
+            "recipe": 2, 
+            "ingredient": 163
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 167
+    }, 
+    {
+        "fields": {
+            "description": "This is one of my all-time favourite recipes. I just love The Best Parmesan Chicken Bake on weekends!", 
+            "creator": 1, 
+            "title": "The Best Parmesan Chicken Bake", 
+            "creation_time": "09:23:15", 
+            "creation_date": "2016-02-02", 
+            "average_rating": 2.23, 
+            "rating_count": 2, 
+            "steps": "[\"Wash the salad and other vegetables\", \"In a large glass bowl, stir together the vinegar, oil, soy sauce, lime juice, lemon juice, sherry, mustard, and honey. Mix in the garlic, brown sugar, lemon pepper, oregano, rosemary, and salt. Place the chicken in the mixture. Cover, and marinate in the refrigerator 8 hours or overnight.\", \"Pour tomato sauce into a lightly greased 9x13 inch baking dish. Add chicken, then place a slice of Monterey Jack cheese over each breast, and bake in the preheated oven for 20 minutes or until cheese is completely melted.\"]", 
+            "servings": 1, 
+            "duration": "0:53:00", 
+            "image_url": "www.example.com/image.png"
+        }, 
+        "model": "main.recipe", 
+        "pk": 2
+    }, 
+    {
+        "fields": {
+            "amount": 10, 
+            "recipe": 3, 
+            "ingredient": 723
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 731
+    }, 
+    {
+        "fields": {
+            "amount": 7, 
+            "recipe": 3, 
+            "ingredient": 204
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 212
+    }, 
+    {
+        "fields": {
+            "amount": 2, 
+            "recipe": 3, 
+            "ingredient": 340
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 348
+    }, 
+    {
+        "fields": {
+            "amount": 6, 
+            "recipe": 3, 
+            "ingredient": 886
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 894
+    }, 
+    {
+        "fields": {
+            "amount": 7, 
+            "recipe": 3, 
+            "ingredient": 909
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 917
+    }, 
+    {
+        "fields": {
+            "amount": 19, 
+            "recipe": 3, 
+            "ingredient": 627
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 635
+    }, 
+    {
+        "fields": {
+            "description": "This is one of my all-time favourite recipes. I just love Lasagna Roll Ups on weekends!", 
+            "creator": 1, 
+            "title": "Lasagna Roll Ups", 
+            "creation_time": "09:23:15", 
+            "creation_date": "2016-02-02", 
+            "average_rating": 3.23, 
+            "rating_count": 3, 
+            "steps": "[\"Wash the salad and other vegetables\", \"In a large glass bowl, stir together the vinegar, oil, soy sauce, lime juice, lemon juice, sherry, mustard, and honey. Mix in the garlic, brown sugar, lemon pepper, oregano, rosemary, and salt. Place the chicken in the mixture. Cover, and marinate in the refrigerator 8 hours or overnight.\", \"Pour tomato sauce into a lightly greased 9x13 inch baking dish. Add chicken, then place a slice of Monterey Jack cheese over each breast, and bake in the preheated oven for 20 minutes or until cheese is completely melted.\"]", 
+            "servings": 1, 
+            "duration": "0:53:00", 
+            "image_url": "www.example.com/image.png"
+        }, 
+        "model": "main.recipe", 
+        "pk": 3
+    }, 
+    {
+        "fields": {
+            "username": "user2", 
+            "first_name": "", 
+            "last_name": "", 
+            "is_active": true, 
+            "is_superuser": false, 
+            "is_staff": false, 
+            "last_login": "2016-11-09T18:08:23.137Z", 
+            "groups": [], 
+            "user_permissions": [], 
+            "password": "pbkdf2_sha256$30000$qwdCTXISuS1t$CyHx8U8Q7b/JlX24lOqbUXm+n2BrwNfHVzqNL3GkWs4=", 
+            "email": "user2@cookit.com", 
+            "date_joined": "2016-11-09T18:08:13.734Z"
+        }, 
+        "model": "auth.user", 
+        "pk": 2
+    }, 
+    {
+        "fields": {
+            "favourite_recipes": [
+                1
+            ], 
+            "favourite_users": [
+                1
+            ], 
+            "description": "Internationally renowned, multi-Michelin starred chef Gordon Ramsay has opened a string of successful restaurants across the globe, from the UK and France to Singapore and Hong Kong, to the United States. Gordon has also become a star of the small screen both in the UK and internationally, with shows such as Kitchen Nightmares, Hell's Kitchen, Hotel Hell and MasterChef US.", 
+            "user": 2
+        }, 
+        "model": "main.useraccount", 
+        "pk": 2
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": 19, 
+            "user_account": 2, 
+            "ingredient": 783
+        }, 
+        "model": "main.useringredient", 
+        "pk": 813
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": 15, 
+            "user_account": 2, 
+            "ingredient": 193
+        }, 
+        "model": "main.useringredient", 
+        "pk": 223
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": 14, 
+            "user_account": 2, 
+            "ingredient": 297
+        }, 
+        "model": "main.useringredient", 
+        "pk": 327
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": 15, 
+            "user_account": 2, 
+            "ingredient": 777
+        }, 
+        "model": "main.useringredient", 
+        "pk": 807
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": 4, 
+            "user_account": 2, 
+            "ingredient": 300
+        }, 
+        "model": "main.useringredient", 
+        "pk": 330
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": 7, 
+            "user_account": 2, 
+            "ingredient": 181
+        }, 
+        "model": "main.useringredient", 
+        "pk": 211
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": 17, 
+            "user_account": 2, 
+            "ingredient": 551
+        }, 
+        "model": "main.useringredient", 
+        "pk": 581
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": 14, 
+            "user_account": 2, 
+            "ingredient": 873
+        }, 
+        "model": "main.useringredient", 
+        "pk": 903
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": 12, 
+            "user_account": 2, 
+            "ingredient": 734
+        }, 
+        "model": "main.useringredient", 
+        "pk": 764
+    }, 
+    {
+        "fields": {
+            "cooking_time": "09:23:15", 
+            "cooking_date": "2016-02-02", 
+            "recipe": "3", 
+            "serving_count": "735", 
+            "user_account": 2
+        }, 
+        "model": "main.cookedrecipe", 
+        "pk": 734
+    }, 
+    {
+        "fields": {
+            "cooking_time": "09:23:15", 
+            "cooking_date": "2016-02-02", 
+            "recipe": "4", 
+            "serving_count": "735", 
+            "user_account": 2
+        }, 
+        "model": "main.cookedrecipe", 
+        "pk": 734
+    }, 
+    {
+        "fields": {
+            "cooking_time": "09:23:15", 
+            "cooking_date": "2016-02-02", 
+            "recipe": "5", 
+            "serving_count": "735", 
+            "user_account": 2
+        }, 
+        "model": "main.cookedrecipe", 
+        "pk": 734
+    }, 
+    {
+        "fields": {
+            "amount": 8, 
+            "recipe": 4, 
+            "ingredient": 869
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 903
+    }, 
+    {
+        "fields": {
+            "amount": 7, 
+            "recipe": 4, 
+            "ingredient": 234
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 268
+    }, 
+    {
+        "fields": {
+            "amount": 13, 
+            "recipe": 4, 
+            "ingredient": 484
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 518
+    }, 
+    {
+        "fields": {
+            "amount": 16, 
+            "recipe": 4, 
+            "ingredient": 163
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 197
+    }, 
+    {
+        "fields": {
+            "description": "This is one of my all-time favourite recipes. I just love Sunday Vegetarian Strata on weekends!", 
+            "creator": 2, 
+            "title": "Sunday Vegetarian Strata", 
+            "creation_time": "09:23:15", 
+            "creation_date": "2016-02-02", 
+            "average_rating": 1.23, 
+            "rating_count": 2, 
+            "steps": "[\"Heat sesame oil in a large skillet over medium heat; cook and stir carrot and zucchini in the hot oil until vegetables begin to soften, about 5 minutes. Stir in bean sprouts, bamboo shoots, and mushrooms. Cook and stir until carrots are tender, about 5 more minutes. Season to taste with salt and set vegetables aside.\", \"In a large skillet, heat oil over medium high heat. Add coated chicken and saute for about 8 to 10 minutes each side, or until chicken is cooked through and juices run clear.\", \"To serve, divide hot cooked rice mixture between 3 serving bowls and top each bowl with 1/3 of the vegetable mixture and a fried egg. Serve sweet red chili sauce on the side for mixing into bibimbap.\", \"Take all the ingredients in front of you.\"]", 
+            "servings": 2, 
+            "duration": "4:45:00", 
+            "image_url": "www.example.com/image.png"
+        }, 
+        "model": "main.recipe", 
+        "pk": 4
+    }, 
+    {
+        "fields": {
+            "amount": 14, 
+            "recipe": 5, 
+            "ingredient": 337
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 375
+    }, 
+    {
+        "fields": {
+            "amount": 15, 
+            "recipe": 5, 
+            "ingredient": 434
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 472
+    }, 
+    {
+        "fields": {
+            "amount": 5, 
+            "recipe": 5, 
+            "ingredient": 320
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 358
+    }, 
+    {
+        "fields": {
+            "description": "This is one of my all-time favourite recipes. I just love Skillet Pork Chops with Potatoes and Onion on weekends!", 
+            "creator": 2, 
+            "title": "Skillet Pork Chops with Potatoes and Onion", 
+            "creation_time": "09:23:15", 
+            "creation_date": "2016-02-02", 
+            "average_rating": 3.23, 
+            "rating_count": 4, 
+            "steps": "[\"Heat sesame oil in a large skillet over medium heat; cook and stir carrot and zucchini in the hot oil until vegetables begin to soften, about 5 minutes. Stir in bean sprouts, bamboo shoots, and mushrooms. Cook and stir until carrots are tender, about 5 more minutes. Season to taste with salt and set vegetables aside.\", \"In a large skillet, heat oil over medium high heat. Add coated chicken and saute for about 8 to 10 minutes each side, or until chicken is cooked through and juices run clear.\", \"To serve, divide hot cooked rice mixture between 3 serving bowls and top each bowl with 1/3 of the vegetable mixture and a fried egg. Serve sweet red chili sauce on the side for mixing into bibimbap.\", \"Take all the ingredients in front of you.\"]", 
+            "servings": 2, 
+            "duration": "4:45:00", 
+            "image_url": "www.example.com/image.png"
+        }, 
+        "model": "main.recipe", 
+        "pk": 5
+    }, 
+    {
+        "fields": {
+            "amount": 2, 
+            "recipe": 6, 
+            "ingredient": 526
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 568
+    }, 
+    {
+        "fields": {
+            "amount": 3, 
+            "recipe": 6, 
+            "ingredient": 924
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 966
+    }, 
+    {
+        "fields": {
+            "amount": 20, 
+            "recipe": 6, 
+            "ingredient": 34
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 76
+    }, 
+    {
+        "fields": {
+            "description": "This is one of my all-time favourite recipes. I just love Crispy Baked Chicken on weekends!", 
+            "creator": 2, 
+            "title": "Crispy Baked Chicken", 
+            "creation_time": "09:23:15", 
+            "creation_date": "2016-02-02", 
+            "average_rating": 2.23, 
+            "rating_count": 6, 
+            "steps": "[\"Heat sesame oil in a large skillet over medium heat; cook and stir carrot and zucchini in the hot oil until vegetables begin to soften, about 5 minutes. Stir in bean sprouts, bamboo shoots, and mushrooms. Cook and stir until carrots are tender, about 5 more minutes. Season to taste with salt and set vegetables aside.\", \"In a large skillet, heat oil over medium high heat. Add coated chicken and saute for about 8 to 10 minutes each side, or until chicken is cooked through and juices run clear.\", \"To serve, divide hot cooked rice mixture between 3 serving bowls and top each bowl with 1/3 of the vegetable mixture and a fried egg. Serve sweet red chili sauce on the side for mixing into bibimbap.\", \"Take all the ingredients in front of you.\"]", 
+            "servings": 2, 
+            "duration": "4:45:00", 
+            "image_url": "www.example.com/image.png"
+        }, 
+        "model": "main.recipe", 
+        "pk": 6
+    }, 
+    {
+        "fields": {
+            "username": "user3", 
+            "first_name": "", 
+            "last_name": "", 
+            "is_active": true, 
+            "is_superuser": false, 
+            "is_staff": false, 
+            "last_login": "2016-11-09T18:08:23.137Z", 
+            "groups": [], 
+            "user_permissions": [], 
+            "password": "pbkdf2_sha256$30000$qwdCTXISuS1t$CyHx8U8Q7b/JlX24lOqbUXm+n2BrwNfHVzqNL3GkWs4=", 
+            "email": "user3@cookit.com", 
+            "date_joined": "2016-11-09T18:08:13.734Z"
+        }, 
+        "model": "auth.user", 
+        "pk": 3
+    }, 
+    {
+        "fields": {
+            "favourite_recipes": [
+                1, 
+                2
+            ], 
+            "favourite_users": [
+                1, 
+                2
+            ], 
+            "description": "Internationally renowned, multi-Michelin starred chef Gordon Ramsay has opened a string of successful restaurants across the globe, from the UK and France to Singapore and Hong Kong, to the United States. Gordon has also become a star of the small screen both in the UK and internationally, with shows such as Kitchen Nightmares, Hell's Kitchen, Hotel Hell and MasterChef US.", 
+            "user": 3
+        }, 
+        "model": "main.useraccount", 
+        "pk": 3
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": 5, 
+            "user_account": 3, 
+            "ingredient": 203
+        }, 
+        "model": "main.useringredient", 
+        "pk": 263
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": 5, 
+            "user_account": 3, 
+            "ingredient": 406
+        }, 
+        "model": "main.useringredient", 
+        "pk": 466
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": 14, 
+            "user_account": 3, 
+            "ingredient": 726
+        }, 
+        "model": "main.useringredient", 
+        "pk": 786
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": 9, 
+            "user_account": 3, 
+            "ingredient": 394
+        }, 
+        "model": "main.useringredient", 
+        "pk": 454
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": 16, 
+            "user_account": 3, 
+            "ingredient": 795
+        }, 
+        "model": "main.useringredient", 
+        "pk": 855
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": 20, 
+            "user_account": 3, 
+            "ingredient": 870
+        }, 
+        "model": "main.useringredient", 
+        "pk": 930
+    }, 
+    {
+        "fields": {
+            "cooking_time": "09:23:15", 
+            "cooking_date": "2016-02-02", 
+            "recipe": "6", 
+            "serving_count": "871", 
+            "user_account": 3
+        }, 
+        "model": "main.cookedrecipe", 
+        "pk": 870
+    }, 
+    {
+        "fields": {
+            "cooking_time": "09:23:15", 
+            "cooking_date": "2016-02-02", 
+            "recipe": "7", 
+            "serving_count": "871", 
+            "user_account": 3
+        }, 
+        "model": "main.cookedrecipe", 
+        "pk": 870
+    }, 
+    {
+        "fields": {
+            "cooking_time": "09:23:15", 
+            "cooking_date": "2016-02-02", 
+            "recipe": "8", 
+            "serving_count": "871", 
+            "user_account": 3
+        }, 
+        "model": "main.cookedrecipe", 
+        "pk": 870
+    }, 
+    {
+        "fields": {
+            "amount": 16, 
+            "recipe": 7, 
+            "ingredient": 498
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 566
+    }, 
+    {
+        "fields": {
+            "amount": 12, 
+            "recipe": 7, 
+            "ingredient": 312
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 380
+    }, 
+    {
+        "fields": {
+            "amount": 16, 
+            "recipe": 7, 
+            "ingredient": 632
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 700
+    }, 
+    {
+        "fields": {
+            "amount": 17, 
+            "recipe": 7, 
+            "ingredient": 353
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 421
+    }, 
+    {
+        "fields": {
+            "description": "This is one of my all-time favourite recipes. I just love Zesty Apple Salad on weekends!", 
+            "creator": 3, 
+            "title": "Zesty Apple Salad", 
+            "creation_time": "09:23:15", 
+            "creation_date": "2016-02-02", 
+            "average_rating": 1.23, 
+            "rating_count": 3, 
+            "steps": "[\"Fry them in a frying pan for 20 minutes.\", \"Wash the salad and other vegetables\", \"Heat the water and add some salt to it.\"]", 
+            "servings": 3, 
+            "duration": "4:29:00", 
+            "image_url": "www.example.com/image.png"
+        }, 
+        "model": "main.recipe", 
+        "pk": 7
+    }, 
+    {
+        "fields": {
+            "amount": 11, 
+            "recipe": 8, 
+            "ingredient": 577
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 649
+    }, 
+    {
+        "fields": {
+            "amount": 3, 
+            "recipe": 8, 
+            "ingredient": 686
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 758
+    }, 
+    {
+        "fields": {
+            "amount": 13, 
+            "recipe": 8, 
+            "ingredient": 607
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 679
+    }, 
+    {
+        "fields": {
+            "amount": 10, 
+            "recipe": 8, 
+            "ingredient": 797
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 869
+    }, 
+    {
+        "fields": {
+            "description": "This is one of my all-time favourite recipes. I just love Mom's Applesauce Pancakes on weekends!", 
+            "creator": 3, 
+            "title": "Mom's Applesauce Pancakes", 
+            "creation_time": "09:23:15", 
+            "creation_date": "2016-02-02", 
+            "average_rating": 3.23, 
+            "rating_count": 6, 
+            "steps": "[\"Fry them in a frying pan for 20 minutes.\", \"Wash the salad and other vegetables\", \"Heat the water and add some salt to it.\"]", 
+            "servings": 3, 
+            "duration": "4:29:00", 
+            "image_url": "www.example.com/image.png"
+        }, 
+        "model": "main.recipe", 
+        "pk": 8
+    }, 
+    {
+        "fields": {
+            "amount": 4, 
+            "recipe": 9, 
+            "ingredient": 858
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 934
+    }, 
+    {
+        "fields": {
+            "amount": 9, 
+            "recipe": 9, 
+            "ingredient": 334
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 410
+    }, 
+    {
+        "fields": {
+            "amount": 10, 
+            "recipe": 9, 
+            "ingredient": 162
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 238
+    }, 
+    {
+        "fields": {
+            "amount": 6, 
+            "recipe": 9, 
+            "ingredient": 697
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 773
+    }, 
+    {
+        "fields": {
+            "amount": 15, 
+            "recipe": 9, 
+            "ingredient": 270
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 346
+    }, 
+    {
+        "fields": {
+            "amount": 6, 
+            "recipe": 9, 
+            "ingredient": 172
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 248
+    }, 
+    {
+        "fields": {
+            "description": "This is one of my all-time favourite recipes. I just love Overnight Asparagus Mushroom Strata on weekends!", 
+            "creator": 3, 
+            "title": "Overnight Asparagus Mushroom Strata", 
+            "creation_time": "09:23:15", 
+            "creation_date": "2016-02-02", 
+            "average_rating": 2.23, 
+            "rating_count": 9, 
+            "steps": "[\"Fry them in a frying pan for 20 minutes.\", \"Wash the salad and other vegetables\", \"Heat the water and add some salt to it.\"]", 
+            "servings": 3, 
+            "duration": "4:29:00", 
+            "image_url": "www.example.com/image.png"
+        }, 
+        "model": "main.recipe", 
+        "pk": 9
+    }, 
+    {
+        "fields": {
+            "username": "user4", 
+            "first_name": "", 
+            "last_name": "", 
+            "is_active": true, 
+            "is_superuser": false, 
+            "is_staff": false, 
+            "last_login": "2016-11-09T18:08:23.137Z", 
+            "groups": [], 
+            "user_permissions": [], 
+            "password": "pbkdf2_sha256$30000$qwdCTXISuS1t$CyHx8U8Q7b/JlX24lOqbUXm+n2BrwNfHVzqNL3GkWs4=", 
+            "email": "user4@cookit.com", 
+            "date_joined": "2016-11-09T18:08:13.734Z"
+        }, 
+        "model": "auth.user", 
+        "pk": 4
+    }, 
+    {
+        "fields": {
+            "favourite_recipes": [
+                1, 
+                2, 
+                3
+            ], 
+            "favourite_users": [
+                1, 
+                2, 
+                3
+            ], 
+            "description": "Internationally renowned, multi-Michelin starred chef Gordon Ramsay has opened a string of successful restaurants across the globe, from the UK and France to Singapore and Hong Kong, to the United States. Gordon has also become a star of the small screen both in the UK and internationally, with shows such as Kitchen Nightmares, Hell's Kitchen, Hotel Hell and MasterChef US.", 
+            "user": 4
+        }, 
+        "model": "main.useraccount", 
+        "pk": 4
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": 6, 
+            "user_account": 4, 
+            "ingredient": 890
+        }, 
+        "model": "main.useringredient", 
+        "pk": 980
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": 8, 
+            "user_account": 4, 
+            "ingredient": 294
+        }, 
+        "model": "main.useringredient", 
+        "pk": 384
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": 8, 
+            "user_account": 4, 
+            "ingredient": 49
+        }, 
+        "model": "main.useringredient", 
+        "pk": 139
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": 20, 
+            "user_account": 4, 
+            "ingredient": 517
+        }, 
+        "model": "main.useringredient", 
+        "pk": 607
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": 5, 
+            "user_account": 4, 
+            "ingredient": 668
+        }, 
+        "model": "main.useringredient", 
+        "pk": 758
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": 9, 
+            "user_account": 4, 
+            "ingredient": 410
+        }, 
+        "model": "main.useringredient", 
+        "pk": 500
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": 19, 
+            "user_account": 4, 
+            "ingredient": 33
+        }, 
+        "model": "main.useringredient", 
+        "pk": 123
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": 9, 
+            "user_account": 4, 
+            "ingredient": 287
+        }, 
+        "model": "main.useringredient", 
+        "pk": 377
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": 8, 
+            "user_account": 4, 
+            "ingredient": 534
+        }, 
+        "model": "main.useringredient", 
+        "pk": 624
+    }, 
+    {
+        "fields": {
+            "cooking_time": "09:23:15", 
+            "cooking_date": "2016-02-02", 
+            "recipe": "9", 
+            "serving_count": "535", 
+            "user_account": 4
+        }, 
+        "model": "main.cookedrecipe", 
+        "pk": 534
+    }, 
+    {
+        "fields": {
+            "cooking_time": "09:23:15", 
+            "cooking_date": "2016-02-02", 
+            "recipe": "10", 
+            "serving_count": "535", 
+            "user_account": 4
+        }, 
+        "model": "main.cookedrecipe", 
+        "pk": 534
+    }, 
+    {
+        "fields": {
+            "cooking_time": "09:23:15", 
+            "cooking_date": "2016-02-02", 
+            "recipe": "11", 
+            "serving_count": "535", 
+            "user_account": 4
+        }, 
+        "model": "main.cookedrecipe", 
+        "pk": 534
+    }, 
+    {
+        "fields": {
+            "amount": 7, 
+            "recipe": 10, 
+            "ingredient": 822
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 924
+    }, 
+    {
+        "fields": {
+            "amount": 16, 
+            "recipe": 10, 
+            "ingredient": 18
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 120
+    }, 
+    {
+        "fields": {
+            "amount": 6, 
+            "recipe": 10, 
+            "ingredient": 861
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 963
+    }, 
+    {
+        "fields": {
+            "amount": 14, 
+            "recipe": 10, 
+            "ingredient": 19
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 121
+    }, 
+    {
+        "fields": {
+            "amount": 3, 
+            "recipe": 10, 
+            "ingredient": 864
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 966
+    }, 
+    {
+        "fields": {
+            "amount": 9, 
+            "recipe": 10, 
+            "ingredient": 707
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 809
+    }, 
+    {
+        "fields": {
+            "description": "This is one of my all-time favourite recipes. I just love Chicken Parmigiana on weekends!", 
+            "creator": 4, 
+            "title": "Chicken Parmigiana", 
+            "creation_time": "09:23:15", 
+            "creation_date": "2016-02-02", 
+            "average_rating": 2.23, 
+            "rating_count": 4, 
+            "steps": "[\"Wash your hands and make sure your kitchen and tools are clean.\", \"Lightly oil the grill grate. Discard marinade, and place chicken on the grill. Cook 6 to 8 minutes per side, until juices run clear.\", \"Enjoy your delicious meal!\", \"Preheat oven to 375 degrees F (190 degrees C).\"]", 
+            "servings": 4, 
+            "duration": "0:48:00", 
+            "image_url": "www.example.com/image.png"
+        }, 
+        "model": "main.recipe", 
+        "pk": 10
+    }, 
+    {
+        "fields": {
+            "amount": 14, 
+            "recipe": 11, 
+            "ingredient": 809
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 915
+    }, 
+    {
+        "fields": {
+            "amount": 6, 
+            "recipe": 11, 
+            "ingredient": 8
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 114
+    }, 
+    {
+        "fields": {
+            "amount": 3, 
+            "recipe": 11, 
+            "ingredient": 383
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 489
+    }, 
+    {
+        "fields": {
+            "amount": 14, 
+            "recipe": 11, 
+            "ingredient": 271
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 377
+    }, 
+    {
+        "fields": {
+            "amount": 12, 
+            "recipe": 11, 
+            "ingredient": 457
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 563
+    }, 
+    {
+        "fields": {
+            "amount": 18, 
+            "recipe": 11, 
+            "ingredient": 426
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 532
+    }, 
+    {
+        "fields": {
+            "description": "This is one of my all-time favourite recipes. I just love The Best Parmesan Chicken Bake on weekends!", 
+            "creator": 4, 
+            "title": "The Best Parmesan Chicken Bake", 
+            "creation_time": "09:23:15", 
+            "creation_date": "2016-02-02", 
+            "average_rating": 4.23, 
+            "rating_count": 8, 
+            "steps": "[\"Wash your hands and make sure your kitchen and tools are clean.\", \"Lightly oil the grill grate. Discard marinade, and place chicken on the grill. Cook 6 to 8 minutes per side, until juices run clear.\", \"Enjoy your delicious meal!\", \"Preheat oven to 375 degrees F (190 degrees C).\"]", 
+            "servings": 4, 
+            "duration": "0:48:00", 
+            "image_url": "www.example.com/image.png"
+        }, 
+        "model": "main.recipe", 
+        "pk": 11
+    }, 
+    {
+        "fields": {
+            "amount": 18, 
+            "recipe": 12, 
+            "ingredient": 949
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 1059
+    }, 
+    {
+        "fields": {
+            "amount": 10, 
+            "recipe": 12, 
+            "ingredient": 215
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 325
+    }, 
+    {
+        "fields": {
+            "amount": 8, 
+            "recipe": 12, 
+            "ingredient": 194
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 304
+    }, 
+    {
+        "fields": {
+            "amount": 20, 
+            "recipe": 12, 
+            "ingredient": 186
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 296
+    }, 
+    {
+        "fields": {
+            "amount": 14, 
+            "recipe": 12, 
+            "ingredient": 286
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 396
+    }, 
+    {
+        "fields": {
+            "description": "This is one of my all-time favourite recipes. I just love Chicken Parmigiana on weekends!", 
+            "creator": 4, 
+            "title": "Chicken Parmigiana", 
+            "creation_time": "09:23:15", 
+            "creation_date": "2016-02-02", 
+            "average_rating": 1.23, 
+            "rating_count": 12, 
+            "steps": "[\"Wash your hands and make sure your kitchen and tools are clean.\", \"Lightly oil the grill grate. Discard marinade, and place chicken on the grill. Cook 6 to 8 minutes per side, until juices run clear.\", \"Enjoy your delicious meal!\", \"Preheat oven to 375 degrees F (190 degrees C).\"]", 
+            "servings": 4, 
+            "duration": "0:48:00", 
+            "image_url": "www.example.com/image.png"
+        }, 
+        "model": "main.recipe", 
+        "pk": 12
+    }, 
+    {
+        "fields": {
+            "username": "user5", 
+            "first_name": "", 
+            "last_name": "", 
+            "is_active": true, 
+            "is_superuser": false, 
+            "is_staff": false, 
+            "last_login": "2016-11-09T18:08:23.137Z", 
+            "groups": [], 
+            "user_permissions": [], 
+            "password": "pbkdf2_sha256$30000$qwdCTXISuS1t$CyHx8U8Q7b/JlX24lOqbUXm+n2BrwNfHVzqNL3GkWs4=", 
+            "email": "user5@cookit.com", 
+            "date_joined": "2016-11-09T18:08:13.734Z"
+        }, 
+        "model": "auth.user", 
+        "pk": 5
+    }, 
+    {
+        "fields": {
+            "favourite_recipes": [
+                1, 
+                2, 
+                3, 
+                4
+            ], 
+            "favourite_users": [
+                1, 
+                2, 
+                3, 
+                4
+            ], 
+            "description": "Internationally renowned, multi-Michelin starred chef Gordon Ramsay has opened a string of successful restaurants across the globe, from the UK and France to Singapore and Hong Kong, to the United States. Gordon has also become a star of the small screen both in the UK and internationally, with shows such as Kitchen Nightmares, Hell's Kitchen, Hotel Hell and MasterChef US.", 
+            "user": 5
+        }, 
+        "model": "main.useraccount", 
+        "pk": 5
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": 20, 
+            "user_account": 5, 
+            "ingredient": 446
+        }, 
+        "model": "main.useringredient", 
+        "pk": 566
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": 14, 
+            "user_account": 5, 
+            "ingredient": 166
+        }, 
+        "model": "main.useringredient", 
+        "pk": 286
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": 19, 
+            "user_account": 5, 
+            "ingredient": 667
+        }, 
+        "model": "main.useringredient", 
+        "pk": 787
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": 17, 
+            "user_account": 5, 
+            "ingredient": 919
+        }, 
+        "model": "main.useringredient", 
+        "pk": 1039
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": 5, 
+            "user_account": 5, 
+            "ingredient": 601
+        }, 
+        "model": "main.useringredient", 
+        "pk": 721
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": 16, 
+            "user_account": 5, 
+            "ingredient": 212
+        }, 
+        "model": "main.useringredient", 
+        "pk": 332
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": 9, 
+            "user_account": 5, 
+            "ingredient": 546
+        }, 
+        "model": "main.useringredient", 
+        "pk": 666
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": 6, 
+            "user_account": 5, 
+            "ingredient": 824
+        }, 
+        "model": "main.useringredient", 
+        "pk": 944
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": 16, 
+            "user_account": 5, 
+            "ingredient": 396
+        }, 
+        "model": "main.useringredient", 
+        "pk": 516
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": 18, 
+            "user_account": 5, 
+            "ingredient": 555
+        }, 
+        "model": "main.useringredient", 
+        "pk": 675
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": 19, 
+            "user_account": 5, 
+            "ingredient": 206
+        }, 
+        "model": "main.useringredient", 
+        "pk": 326
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": 5, 
+            "user_account": 5, 
+            "ingredient": 704
+        }, 
+        "model": "main.useringredient", 
+        "pk": 824
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": 5, 
+            "user_account": 5, 
+            "ingredient": 149
+        }, 
+        "model": "main.useringredient", 
+        "pk": 269
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": 5, 
+            "user_account": 5, 
+            "ingredient": 352
+        }, 
+        "model": "main.useringredient", 
+        "pk": 472
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": 4, 
+            "user_account": 5, 
+            "ingredient": 855
+        }, 
+        "model": "main.useringredient", 
+        "pk": 975
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": 18, 
+            "user_account": 5, 
+            "ingredient": 505
+        }, 
+        "model": "main.useringredient", 
+        "pk": 625
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": 8, 
+            "user_account": 5, 
+            "ingredient": 455
+        }, 
+        "model": "main.useringredient", 
+        "pk": 575
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": 20, 
+            "user_account": 5, 
+            "ingredient": 298
+        }, 
+        "model": "main.useringredient", 
+        "pk": 418
+    }, 
+    {
+        "fields": {
+            "cooking_time": "09:23:15", 
+            "cooking_date": "2016-02-02", 
+            "recipe": "12", 
+            "serving_count": "299", 
+            "user_account": 5
+        }, 
+        "model": "main.cookedrecipe", 
+        "pk": 298
+    }, 
+    {
+        "fields": {
+            "cooking_time": "09:23:15", 
+            "cooking_date": "2016-02-02", 
+            "recipe": "13", 
+            "serving_count": "299", 
+            "user_account": 5
+        }, 
+        "model": "main.cookedrecipe", 
+        "pk": 298
+    }, 
+    {
+        "fields": {
+            "cooking_time": "09:23:15", 
+            "cooking_date": "2016-02-02", 
+            "recipe": "14", 
+            "serving_count": "299", 
+            "user_account": 5
+        }, 
+        "model": "main.cookedrecipe", 
+        "pk": 298
+    }, 
+    {
+        "fields": {
+            "amount": 16, 
+            "recipe": 13, 
+            "ingredient": 413
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 549
+    }, 
+    {
+        "fields": {
+            "amount": 9, 
+            "recipe": 13, 
+            "ingredient": 906
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 1042
+    }, 
+    {
+        "fields": {
+            "amount": 7, 
+            "recipe": 13, 
+            "ingredient": 678
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 814
+    }, 
+    {
+        "fields": {
+            "amount": 9, 
+            "recipe": 13, 
+            "ingredient": 51
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 187
+    }, 
+    {
+        "fields": {
+            "description": "This is one of my all-time favourite recipes. I just love Ham Casserole on weekends!", 
+            "creator": 5, 
+            "title": "Ham Casserole", 
+            "creation_time": "09:23:15", 
+            "creation_date": "2016-02-02", 
+            "average_rating": 3.23, 
+            "rating_count": 5, 
+            "steps": "[\"Season the ingredients with pepper.\", \"Preheat oven to 375 degrees F (190 degrees C).\", \"Roll the pastry in big rolls.\", \"Mash the ingredients into a paste. Add some water if it gets too thick\"]", 
+            "servings": 5, 
+            "duration": "3:13:00", 
+            "image_url": "www.example.com/image.png"
+        }, 
+        "model": "main.recipe", 
+        "pk": 13
+    }, 
+    {
+        "fields": {
+            "amount": 3, 
+            "recipe": 14, 
+            "ingredient": 486
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 626
+    }, 
+    {
+        "fields": {
+            "amount": 4, 
+            "recipe": 14, 
+            "ingredient": 783
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 923
+    }, 
+    {
+        "fields": {
+            "amount": 4, 
+            "recipe": 14, 
+            "ingredient": 276
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 416
+    }, 
+    {
+        "fields": {
+            "description": "This is one of my all-time favourite recipes. I just love French Veggie Loaf on weekends!", 
+            "creator": 5, 
+            "title": "French Veggie Loaf", 
+            "creation_time": "09:23:15", 
+            "creation_date": "2016-02-02", 
+            "average_rating": 2.23, 
+            "rating_count": 10, 
+            "steps": "[\"Season the ingredients with pepper.\", \"Preheat oven to 375 degrees F (190 degrees C).\", \"Roll the pastry in big rolls.\", \"Mash the ingredients into a paste. Add some water if it gets too thick\"]", 
+            "servings": 5, 
+            "duration": "3:13:00", 
+            "image_url": "www.example.com/image.png"
+        }, 
+        "model": "main.recipe", 
+        "pk": 14
+    }, 
+    {
+        "fields": {
+            "amount": 12, 
+            "recipe": 15, 
+            "ingredient": 10
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 154
+    }, 
+    {
+        "fields": {
+            "amount": 5, 
+            "recipe": 15, 
+            "ingredient": 712
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 856
+    }, 
+    {
+        "fields": {
+            "amount": 12, 
+            "recipe": 15, 
+            "ingredient": 691
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 835
+    }, 
+    {
+        "fields": {
+            "amount": 19, 
+            "recipe": 15, 
+            "ingredient": 804
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 948
+    }, 
+    {
+        "fields": {
+            "description": "This is one of my all-time favourite recipes. I just love Vegetarian Bibimbap on weekends!", 
+            "creator": 5, 
+            "title": "Vegetarian Bibimbap", 
+            "creation_time": "09:23:15", 
+            "creation_date": "2016-02-02", 
+            "average_rating": 4.23, 
+            "rating_count": 15, 
+            "steps": "[\"Season the ingredients with pepper.\", \"Preheat oven to 375 degrees F (190 degrees C).\", \"Roll the pastry in big rolls.\", \"Mash the ingredients into a paste. Add some water if it gets too thick\"]", 
+            "servings": 5, 
+            "duration": "3:13:00", 
+            "image_url": "www.example.com/image.png"
+        }, 
+        "model": "main.recipe", 
+        "pk": 15
+    }, 
+    {
+        "fields": {
+            "username": "user6", 
+            "first_name": "", 
+            "last_name": "", 
+            "is_active": true, 
+            "is_superuser": false, 
+            "is_staff": false, 
+            "last_login": "2016-11-09T18:08:23.137Z", 
+            "groups": [], 
+            "user_permissions": [], 
+            "password": "pbkdf2_sha256$30000$qwdCTXISuS1t$CyHx8U8Q7b/JlX24lOqbUXm+n2BrwNfHVzqNL3GkWs4=", 
+            "email": "user6@cookit.com", 
+            "date_joined": "2016-11-09T18:08:13.734Z"
+        }, 
+        "model": "auth.user", 
+        "pk": 6
+    }, 
+    {
+        "fields": {
+            "favourite_recipes": [
+                1, 
+                2, 
+                3, 
+                4, 
+                5
+            ], 
+            "favourite_users": [
+                1, 
+                2, 
+                3, 
+                4, 
+                5
+            ], 
+            "description": "Internationally renowned, multi-Michelin starred chef Gordon Ramsay has opened a string of successful restaurants across the globe, from the UK and France to Singapore and Hong Kong, to the United States. Gordon has also become a star of the small screen both in the UK and internationally, with shows such as Kitchen Nightmares, Hell's Kitchen, Hotel Hell and MasterChef US.", 
+            "user": 6
+        }, 
+        "model": "main.useraccount", 
+        "pk": 6
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": 9, 
+            "user_account": 6, 
+            "ingredient": 326
+        }, 
+        "model": "main.useringredient", 
+        "pk": 476
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": 8, 
+            "user_account": 6, 
+            "ingredient": 860
+        }, 
+        "model": "main.useringredient", 
+        "pk": 1010
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": 8, 
+            "user_account": 6, 
+            "ingredient": 932
+        }, 
+        "model": "main.useringredient", 
+        "pk": 1082
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": 17, 
+            "user_account": 6, 
+            "ingredient": 480
+        }, 
+        "model": "main.useringredient", 
+        "pk": 630
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": 19, 
+            "user_account": 6, 
+            "ingredient": 251
+        }, 
+        "model": "main.useringredient", 
+        "pk": 401
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": 19, 
+            "user_account": 6, 
+            "ingredient": 217
+        }, 
+        "model": "main.useringredient", 
+        "pk": 367
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": 20, 
+            "user_account": 6, 
+            "ingredient": 204
+        }, 
+        "model": "main.useringredient", 
+        "pk": 354
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": 10, 
+            "user_account": 6, 
+            "ingredient": 946
+        }, 
+        "model": "main.useringredient", 
+        "pk": 1096
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": 19, 
+            "user_account": 6, 
+            "ingredient": 795
+        }, 
+        "model": "main.useringredient", 
+        "pk": 945
+    }, 
+    {
+        "fields": {
+            "cooking_time": "09:23:15", 
+            "cooking_date": "2016-02-02", 
+            "recipe": "15", 
+            "serving_count": "796", 
+            "user_account": 6
+        }, 
+        "model": "main.cookedrecipe", 
+        "pk": 795
+    }, 
+    {
+        "fields": {
+            "cooking_time": "09:23:15", 
+            "cooking_date": "2016-02-02", 
+            "recipe": "16", 
+            "serving_count": "796", 
+            "user_account": 6
+        }, 
+        "model": "main.cookedrecipe", 
+        "pk": 795
+    }, 
+    {
+        "fields": {
+            "cooking_time": "09:23:15", 
+            "cooking_date": "2016-02-02", 
+            "recipe": "17", 
+            "serving_count": "796", 
+            "user_account": 6
+        }, 
+        "model": "main.cookedrecipe", 
+        "pk": 795
+    }, 
+    {
+        "fields": {
+            "amount": 9, 
+            "recipe": 16, 
+            "ingredient": 440
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 610
+    }, 
+    {
+        "fields": {
+            "amount": 17, 
+            "recipe": 16, 
+            "ingredient": 896
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 1066
+    }, 
+    {
+        "fields": {
+            "amount": 4, 
+            "recipe": 16, 
+            "ingredient": 905
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 1075
+    }, 
+    {
+        "fields": {
+            "amount": 6, 
+            "recipe": 16, 
+            "ingredient": 121
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 291
+    }, 
+    {
+        "fields": {
+            "description": "This is one of my all-time favourite recipes. I just love French Veggie Loaf on weekends!", 
+            "creator": 6, 
+            "title": "French Veggie Loaf", 
+            "creation_time": "09:23:15", 
+            "creation_date": "2016-02-02", 
+            "average_rating": 3.23, 
+            "rating_count": 6, 
+            "steps": "[\"To serve, divide hot cooked rice mixture between 3 serving bowls and top each bowl with 1/3 of the vegetable mixture and a fried egg. Serve sweet red chili sauce on the side for mixing into bibimbap.\", \"Pour beaten eggs into a shallow dish or bowl. In another shallow dish or bowl, mix together the grated Parmesan cheese and bread crumbs. Dip chicken breasts into beaten egg, then into bread crumb mixture to coat.\", \"In a large glass bowl, stir together the vinegar, oil, soy sauce, lime juice, lemon juice, sherry, mustard, and honey. Mix in the garlic, brown sugar, lemon pepper, oregano, rosemary, and salt. Place the chicken in the mixture. Cover, and marinate in the refrigerator 8 hours or overnight.\", \"Wash the salad and other vegetables\"]", 
+            "servings": 6, 
+            "duration": "3:30:00", 
+            "image_url": "www.example.com/image.png"
+        }, 
+        "model": "main.recipe", 
+        "pk": 16
+    }, 
+    {
+        "fields": {
+            "amount": 8, 
+            "recipe": 17, 
+            "ingredient": 39
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 213
+    }, 
+    {
+        "fields": {
+            "amount": 7, 
+            "recipe": 17, 
+            "ingredient": 386
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 560
+    }, 
+    {
+        "fields": {
+            "amount": 10, 
+            "recipe": 17, 
+            "ingredient": 758
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 932
+    }, 
+    {
+        "fields": {
+            "amount": 9, 
+            "recipe": 17, 
+            "ingredient": 2
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 176
+    }, 
+    {
+        "fields": {
+            "amount": 14, 
+            "recipe": 17, 
+            "ingredient": 303
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 477
+    }, 
+    {
+        "fields": {
+            "description": "This is one of my all-time favourite recipes. I just love Vegetarian Bibimbap on weekends!", 
+            "creator": 6, 
+            "title": "Vegetarian Bibimbap", 
+            "creation_time": "09:23:15", 
+            "creation_date": "2016-02-02", 
+            "average_rating": 2.23, 
+            "rating_count": 12, 
+            "steps": "[\"To serve, divide hot cooked rice mixture between 3 serving bowls and top each bowl with 1/3 of the vegetable mixture and a fried egg. Serve sweet red chili sauce on the side for mixing into bibimbap.\", \"Pour beaten eggs into a shallow dish or bowl. In another shallow dish or bowl, mix together the grated Parmesan cheese and bread crumbs. Dip chicken breasts into beaten egg, then into bread crumb mixture to coat.\", \"In a large glass bowl, stir together the vinegar, oil, soy sauce, lime juice, lemon juice, sherry, mustard, and honey. Mix in the garlic, brown sugar, lemon pepper, oregano, rosemary, and salt. Place the chicken in the mixture. Cover, and marinate in the refrigerator 8 hours or overnight.\", \"Wash the salad and other vegetables\"]", 
+            "servings": 6, 
+            "duration": "3:30:00", 
+            "image_url": "www.example.com/image.png"
+        }, 
+        "model": "main.recipe", 
+        "pk": 17
+    }, 
+    {
+        "fields": {
+            "amount": 13, 
+            "recipe": 18, 
+            "ingredient": 14
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 192
+    }, 
+    {
+        "fields": {
+            "amount": 11, 
+            "recipe": 18, 
+            "ingredient": 34
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 212
+    }, 
+    {
+        "fields": {
+            "amount": 20, 
+            "recipe": 18, 
+            "ingredient": 91
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 269
+    }, 
+    {
+        "fields": {
+            "amount": 17, 
+            "recipe": 18, 
+            "ingredient": 166
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 344
+    }, 
+    {
+        "fields": {
+            "amount": 6, 
+            "recipe": 18, 
+            "ingredient": 217
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 395
+    }, 
+    {
+        "fields": {
+            "description": "This is one of my all-time favourite recipes. I just love Mom's Applesauce Pancakes on weekends!", 
+            "creator": 6, 
+            "title": "Mom's Applesauce Pancakes", 
+            "creation_time": "09:23:15", 
+            "creation_date": "2016-02-02", 
+            "average_rating": 1.23, 
+            "rating_count": 18, 
+            "steps": "[\"To serve, divide hot cooked rice mixture between 3 serving bowls and top each bowl with 1/3 of the vegetable mixture and a fried egg. Serve sweet red chili sauce on the side for mixing into bibimbap.\", \"Pour beaten eggs into a shallow dish or bowl. In another shallow dish or bowl, mix together the grated Parmesan cheese and bread crumbs. Dip chicken breasts into beaten egg, then into bread crumb mixture to coat.\", \"In a large glass bowl, stir together the vinegar, oil, soy sauce, lime juice, lemon juice, sherry, mustard, and honey. Mix in the garlic, brown sugar, lemon pepper, oregano, rosemary, and salt. Place the chicken in the mixture. Cover, and marinate in the refrigerator 8 hours or overnight.\", \"Wash the salad and other vegetables\"]", 
+            "servings": 6, 
+            "duration": "3:30:00", 
+            "image_url": "www.example.com/image.png"
+        }, 
+        "model": "main.recipe", 
+        "pk": 18
+    }, 
+    {
+        "fields": {
+            "username": "user7", 
+            "first_name": "", 
+            "last_name": "", 
+            "is_active": true, 
+            "is_superuser": false, 
+            "is_staff": false, 
+            "last_login": "2016-11-09T18:08:23.137Z", 
+            "groups": [], 
+            "user_permissions": [], 
+            "password": "pbkdf2_sha256$30000$qwdCTXISuS1t$CyHx8U8Q7b/JlX24lOqbUXm+n2BrwNfHVzqNL3GkWs4=", 
+            "email": "user7@cookit.com", 
+            "date_joined": "2016-11-09T18:08:13.734Z"
+        }, 
+        "model": "auth.user", 
+        "pk": 7
+    }, 
+    {
+        "fields": {
+            "favourite_recipes": [
+                1, 
+                2, 
+                3, 
+                4, 
+                5, 
+                6
+            ], 
+            "favourite_users": [
+                1, 
+                2, 
+                3, 
+                4, 
+                5, 
+                6
+            ], 
+            "description": "Internationally renowned, multi-Michelin starred chef Gordon Ramsay has opened a string of successful restaurants across the globe, from the UK and France to Singapore and Hong Kong, to the United States. Gordon has also become a star of the small screen both in the UK and internationally, with shows such as Kitchen Nightmares, Hell's Kitchen, Hotel Hell and MasterChef US.", 
+            "user": 7
+        }, 
+        "model": "main.useraccount", 
+        "pk": 7
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": 13, 
+            "user_account": 7, 
+            "ingredient": 142
+        }, 
+        "model": "main.useringredient", 
+        "pk": 322
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": 4, 
+            "user_account": 7, 
+            "ingredient": 529
+        }, 
+        "model": "main.useringredient", 
+        "pk": 709
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": 9, 
+            "user_account": 7, 
+            "ingredient": 922
+        }, 
+        "model": "main.useringredient", 
+        "pk": 1102
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": 5, 
+            "user_account": 7, 
+            "ingredient": 897
+        }, 
+        "model": "main.useringredient", 
+        "pk": 1077
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": 12, 
+            "user_account": 7, 
+            "ingredient": 717
+        }, 
+        "model": "main.useringredient", 
+        "pk": 897
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": 8, 
+            "user_account": 7, 
+            "ingredient": 840
+        }, 
+        "model": "main.useringredient", 
+        "pk": 1020
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": 19, 
+            "user_account": 7, 
+            "ingredient": 404
+        }, 
+        "model": "main.useringredient", 
+        "pk": 584
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": 20, 
+            "user_account": 7, 
+            "ingredient": 219
+        }, 
+        "model": "main.useringredient", 
+        "pk": 399
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": 10, 
+            "user_account": 7, 
+            "ingredient": 420
+        }, 
+        "model": "main.useringredient", 
+        "pk": 600
+    }, 
+    {
+        "fields": {
+            "cooking_time": "09:23:15", 
+            "cooking_date": "2016-02-02", 
+            "recipe": "18", 
+            "serving_count": "421", 
+            "user_account": 7
+        }, 
+        "model": "main.cookedrecipe", 
+        "pk": 420
+    }, 
+    {
+        "fields": {
+            "cooking_time": "09:23:15", 
+            "cooking_date": "2016-02-02", 
+            "recipe": "19", 
+            "serving_count": "421", 
+            "user_account": 7
+        }, 
+        "model": "main.cookedrecipe", 
+        "pk": 420
+    }, 
+    {
+        "fields": {
+            "cooking_time": "09:23:15", 
+            "cooking_date": "2016-02-02", 
+            "recipe": "20", 
+            "serving_count": "421", 
+            "user_account": 7
+        }, 
+        "model": "main.cookedrecipe", 
+        "pk": 420
+    }, 
+    {
+        "fields": {
+            "amount": 12, 
+            "recipe": 19, 
+            "ingredient": 821
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 1025
+    }, 
+    {
+        "fields": {
+            "amount": 20, 
+            "recipe": 19, 
+            "ingredient": 188
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 392
+    }, 
+    {
+        "fields": {
+            "amount": 15, 
+            "recipe": 19, 
+            "ingredient": 647
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 851
+    }, 
+    {
+        "fields": {
+            "amount": 17, 
+            "recipe": 19, 
+            "ingredient": 20
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 224
+    }, 
+    {
+        "fields": {
+            "description": "This is one of my all-time favourite recipes. I just love Grilled Portobellos Sauteed in Wine on weekends!", 
+            "creator": 7, 
+            "title": "Grilled Portobellos Sauteed in Wine", 
+            "creation_time": "09:23:15", 
+            "creation_date": "2016-02-02", 
+            "average_rating": 1.23, 
+            "rating_count": 7, 
+            "steps": "[\"Stir cooked rice, green onions, soy sauce, and black pepper in the same skillet until the rice is hot. In a separate skillet over medium heat, melt butter and gently fry eggs, turning once, until the yolks are still slightly runny but the egg whites are firm, about 3 minutes per egg.\", \"Bake in preheated oven for 25 minutes. Uncover and sprinkle with cilantro and 1/4 cup Cheddar cheese. Bake until cheese is melted, 2 to 3 minutes.\", \"Pour tomato sauce into a lightly greased 9x13 inch baking dish. Add chicken, then place a slice of Monterey Jack cheese over each breast, and bake in the preheated oven for 20 minutes or until cheese is completely melted.\", \"Spoon a rounded 1/2 cup bean mixture down the center of each tortilla. Fold sides over filling and roll up. Place enchiladas seam side down in baking dish; spoon salsa over each tortilla. Cover baking dish with aluminum foil.\", \"Fry them in a frying pan for 20 minutes.\"]", 
+            "servings": 7, 
+            "duration": "3:57:00", 
+            "image_url": "www.example.com/image.png"
+        }, 
+        "model": "main.recipe", 
+        "pk": 19
+    }, 
+    {
+        "fields": {
+            "amount": 3, 
+            "recipe": 20, 
+            "ingredient": 940
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 1148
+    }, 
+    {
+        "fields": {
+            "amount": 15, 
+            "recipe": 20, 
+            "ingredient": 505
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 713
+    }, 
+    {
+        "fields": {
+            "amount": 18, 
+            "recipe": 20, 
+            "ingredient": 330
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 538
+    }, 
+    {
+        "fields": {
+            "amount": 10, 
+            "recipe": 20, 
+            "ingredient": 798
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 1006
+    }, 
+    {
+        "fields": {
+            "description": "This is one of my all-time favourite recipes. I just love Black Bean and Rice Enchiladas on weekends!", 
+            "creator": 7, 
+            "title": "Black Bean and Rice Enchiladas", 
+            "creation_time": "09:23:15", 
+            "creation_date": "2016-02-02", 
+            "average_rating": 1.23, 
+            "rating_count": 14, 
+            "steps": "[\"Stir cooked rice, green onions, soy sauce, and black pepper in the same skillet until the rice is hot. In a separate skillet over medium heat, melt butter and gently fry eggs, turning once, until the yolks are still slightly runny but the egg whites are firm, about 3 minutes per egg.\", \"Bake in preheated oven for 25 minutes. Uncover and sprinkle with cilantro and 1/4 cup Cheddar cheese. Bake until cheese is melted, 2 to 3 minutes.\", \"Pour tomato sauce into a lightly greased 9x13 inch baking dish. Add chicken, then place a slice of Monterey Jack cheese over each breast, and bake in the preheated oven for 20 minutes or until cheese is completely melted.\", \"Spoon a rounded 1/2 cup bean mixture down the center of each tortilla. Fold sides over filling and roll up. Place enchiladas seam side down in baking dish; spoon salsa over each tortilla. Cover baking dish with aluminum foil.\", \"Fry them in a frying pan for 20 minutes.\"]", 
+            "servings": 7, 
+            "duration": "3:57:00", 
+            "image_url": "www.example.com/image.png"
+        }, 
+        "model": "main.recipe", 
+        "pk": 20
+    }, 
+    {
+        "fields": {
+            "amount": 12, 
+            "recipe": 21, 
+            "ingredient": 604
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 816
+    }, 
+    {
+        "fields": {
+            "amount": 17, 
+            "recipe": 21, 
+            "ingredient": 649
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 861
+    }, 
+    {
+        "fields": {
+            "amount": 14, 
+            "recipe": 21, 
+            "ingredient": 846
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 1058
+    }, 
+    {
+        "fields": {
+            "amount": 7, 
+            "recipe": 21, 
+            "ingredient": 797
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 1009
+    }, 
+    {
+        "fields": {
+            "description": "This is one of my all-time favourite recipes. I just love Black Bean and Rice Enchiladas on weekends!", 
+            "creator": 7, 
+            "title": "Black Bean and Rice Enchiladas", 
+            "creation_time": "09:23:15", 
+            "creation_date": "2016-02-02", 
+            "average_rating": 2.23, 
+            "rating_count": 21, 
+            "steps": "[\"Stir cooked rice, green onions, soy sauce, and black pepper in the same skillet until the rice is hot. In a separate skillet over medium heat, melt butter and gently fry eggs, turning once, until the yolks are still slightly runny but the egg whites are firm, about 3 minutes per egg.\", \"Bake in preheated oven for 25 minutes. Uncover and sprinkle with cilantro and 1/4 cup Cheddar cheese. Bake until cheese is melted, 2 to 3 minutes.\", \"Pour tomato sauce into a lightly greased 9x13 inch baking dish. Add chicken, then place a slice of Monterey Jack cheese over each breast, and bake in the preheated oven for 20 minutes or until cheese is completely melted.\", \"Spoon a rounded 1/2 cup bean mixture down the center of each tortilla. Fold sides over filling and roll up. Place enchiladas seam side down in baking dish; spoon salsa over each tortilla. Cover baking dish with aluminum foil.\", \"Fry them in a frying pan for 20 minutes.\"]", 
+            "servings": 7, 
+            "duration": "3:57:00", 
+            "image_url": "www.example.com/image.png"
+        }, 
+        "model": "main.recipe", 
+        "pk": 21
+    }, 
+    {
+        "fields": {
+            "username": "user8", 
+            "first_name": "", 
+            "last_name": "", 
+            "is_active": true, 
+            "is_superuser": false, 
+            "is_staff": false, 
+            "last_login": "2016-11-09T18:08:23.137Z", 
+            "groups": [], 
+            "user_permissions": [], 
+            "password": "pbkdf2_sha256$30000$qwdCTXISuS1t$CyHx8U8Q7b/JlX24lOqbUXm+n2BrwNfHVzqNL3GkWs4=", 
+            "email": "user8@cookit.com", 
+            "date_joined": "2016-11-09T18:08:13.734Z"
+        }, 
+        "model": "auth.user", 
+        "pk": 8
+    }, 
+    {
+        "fields": {
+            "favourite_recipes": [
+                1, 
+                2, 
+                3, 
+                4, 
+                5, 
+                6, 
+                7
+            ], 
+            "favourite_users": [
+                1, 
+                2, 
+                3, 
+                4, 
+                5, 
+                6, 
+                7
+            ], 
+            "description": "Internationally renowned, multi-Michelin starred chef Gordon Ramsay has opened a string of successful restaurants across the globe, from the UK and France to Singapore and Hong Kong, to the United States. Gordon has also become a star of the small screen both in the UK and internationally, with shows such as Kitchen Nightmares, Hell's Kitchen, Hotel Hell and MasterChef US.", 
+            "user": 8
+        }, 
+        "model": "main.useraccount", 
+        "pk": 8
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": 4, 
+            "user_account": 8, 
+            "ingredient": 581
+        }, 
+        "model": "main.useringredient", 
+        "pk": 791
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": 6, 
+            "user_account": 8, 
+            "ingredient": 25
+        }, 
+        "model": "main.useringredient", 
+        "pk": 235
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": 16, 
+            "user_account": 8, 
+            "ingredient": 642
+        }, 
+        "model": "main.useringredient", 
+        "pk": 852
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": 20, 
+            "user_account": 8, 
+            "ingredient": 413
+        }, 
+        "model": "main.useringredient", 
+        "pk": 623
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": 17, 
+            "user_account": 8, 
+            "ingredient": 919
+        }, 
+        "model": "main.useringredient", 
+        "pk": 1129
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": 12, 
+            "user_account": 8, 
+            "ingredient": 851
+        }, 
+        "model": "main.useringredient", 
+        "pk": 1061
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": 4, 
+            "user_account": 8, 
+            "ingredient": 108
+        }, 
+        "model": "main.useringredient", 
+        "pk": 318
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": 17, 
+            "user_account": 8, 
+            "ingredient": 450
+        }, 
+        "model": "main.useringredient", 
+        "pk": 660
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": 14, 
+            "user_account": 8, 
+            "ingredient": 558
+        }, 
+        "model": "main.useringredient", 
+        "pk": 768
+    }, 
+    {
+        "fields": {
+            "cooking_time": "09:23:15", 
+            "cooking_date": "2016-02-02", 
+            "recipe": "21", 
+            "serving_count": "559", 
+            "user_account": 8
+        }, 
+        "model": "main.cookedrecipe", 
+        "pk": 558
+    }, 
+    {
+        "fields": {
+            "cooking_time": "09:23:15", 
+            "cooking_date": "2016-02-02", 
+            "recipe": "22", 
+            "serving_count": "559", 
+            "user_account": 8
+        }, 
+        "model": "main.cookedrecipe", 
+        "pk": 558
+    }, 
+    {
+        "fields": {
+            "cooking_time": "09:23:15", 
+            "cooking_date": "2016-02-02", 
+            "recipe": "23", 
+            "serving_count": "559", 
+            "user_account": 8
+        }, 
+        "model": "main.cookedrecipe", 
+        "pk": 558
+    }, 
+    {
+        "fields": {
+            "amount": 15, 
+            "recipe": 22, 
+            "ingredient": 498
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 736
+    }, 
+    {
+        "fields": {
+            "amount": 5, 
+            "recipe": 22, 
+            "ingredient": 93
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 331
+    }, 
+    {
+        "fields": {
+            "amount": 16, 
+            "recipe": 22, 
+            "ingredient": 254
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 492
+    }, 
+    {
+        "fields": {
+            "amount": 4, 
+            "recipe": 22, 
+            "ingredient": 561
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 799
+    }, 
+    {
+        "fields": {
+            "amount": 6, 
+            "recipe": 22, 
+            "ingredient": 705
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 943
+    }, 
+    {
+        "fields": {
+            "amount": 13, 
+            "recipe": 22, 
+            "ingredient": 274
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 512
+    }, 
+    {
+        "fields": {
+            "description": "This is one of my all-time favourite recipes. I just love Crispy Baked Chicken on weekends!", 
+            "creator": 8, 
+            "title": "Crispy Baked Chicken", 
+            "creation_time": "09:23:15", 
+            "creation_date": "2016-02-02", 
+            "average_rating": 1.23, 
+            "rating_count": 8, 
+            "steps": "[\"Mix them and season with salt and pepper.\", \"Mash the ingredients into a paste. Add some water if it gets too thick\", \"Put it in the oven for 30 minutes.Add some vinegar\"]", 
+            "servings": 8, 
+            "duration": "1:51:00", 
+            "image_url": "www.example.com/image.png"
+        }, 
+        "model": "main.recipe", 
+        "pk": 22
+    }, 
+    {
+        "fields": {
+            "amount": 10, 
+            "recipe": 23, 
+            "ingredient": 522
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 764
+    }, 
+    {
+        "fields": {
+            "amount": 17, 
+            "recipe": 23, 
+            "ingredient": 580
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 822
+    }, 
+    {
+        "fields": {
+            "amount": 20, 
+            "recipe": 23, 
+            "ingredient": 903
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 1145
+    }, 
+    {
+        "fields": {
+            "amount": 7, 
+            "recipe": 23, 
+            "ingredient": 43
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 285
+    }, 
+    {
+        "fields": {
+            "amount": 9, 
+            "recipe": 23, 
+            "ingredient": 815
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 1057
+    }, 
+    {
+        "fields": {
+            "description": "This is one of my all-time favourite recipes. I just love Shrimp Francesca on weekends!", 
+            "creator": 8, 
+            "title": "Shrimp Francesca", 
+            "creation_time": "09:23:15", 
+            "creation_date": "2016-02-02", 
+            "average_rating": 1.23, 
+            "rating_count": 16, 
+            "steps": "[\"Mix them and season with salt and pepper.\", \"Mash the ingredients into a paste. Add some water if it gets too thick\", \"Put it in the oven for 30 minutes.Add some vinegar\"]", 
+            "servings": 8, 
+            "duration": "1:51:00", 
+            "image_url": "www.example.com/image.png"
+        }, 
+        "model": "main.recipe", 
+        "pk": 23
+    }, 
+    {
+        "fields": {
+            "amount": 14, 
+            "recipe": 24, 
+            "ingredient": 364
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 610
+    }, 
+    {
+        "fields": {
+            "amount": 18, 
+            "recipe": 24, 
+            "ingredient": 269
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 515
+    }, 
+    {
+        "fields": {
+            "amount": 7, 
+            "recipe": 24, 
+            "ingredient": 258
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 504
+    }, 
+    {
+        "fields": {
+            "description": "This is one of my all-time favourite recipes. I just love Bacon Wrapped Chicken on weekends!", 
+            "creator": 8, 
+            "title": "Bacon Wrapped Chicken", 
+            "creation_time": "09:23:15", 
+            "creation_date": "2016-02-02", 
+            "average_rating": 4.23, 
+            "rating_count": 24, 
+            "steps": "[\"Mix them and season with salt and pepper.\", \"Mash the ingredients into a paste. Add some water if it gets too thick\", \"Put it in the oven for 30 minutes.Add some vinegar\"]", 
+            "servings": 8, 
+            "duration": "1:51:00", 
+            "image_url": "www.example.com/image.png"
+        }, 
+        "model": "main.recipe", 
+        "pk": 24
+    }, 
+    {
+        "fields": {
+            "username": "user9", 
+            "first_name": "", 
+            "last_name": "", 
+            "is_active": true, 
+            "is_superuser": false, 
+            "is_staff": false, 
+            "last_login": "2016-11-09T18:08:23.137Z", 
+            "groups": [], 
+            "user_permissions": [], 
+            "password": "pbkdf2_sha256$30000$qwdCTXISuS1t$CyHx8U8Q7b/JlX24lOqbUXm+n2BrwNfHVzqNL3GkWs4=", 
+            "email": "user9@cookit.com", 
+            "date_joined": "2016-11-09T18:08:13.734Z"
+        }, 
+        "model": "auth.user", 
+        "pk": 9
+    }, 
+    {
+        "fields": {
+            "favourite_recipes": [
+                1, 
+                2, 
+                3, 
+                4, 
+                5, 
+                6, 
+                7, 
+                8
+            ], 
+            "favourite_users": [
+                1, 
+                2, 
+                3, 
+                4, 
+                5, 
+                6, 
+                7, 
+                8
+            ], 
+            "description": "Internationally renowned, multi-Michelin starred chef Gordon Ramsay has opened a string of successful restaurants across the globe, from the UK and France to Singapore and Hong Kong, to the United States. Gordon has also become a star of the small screen both in the UK and internationally, with shows such as Kitchen Nightmares, Hell's Kitchen, Hotel Hell and MasterChef US.", 
+            "user": 9
+        }, 
+        "model": "main.useraccount", 
+        "pk": 9
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": 6, 
+            "user_account": 9, 
+            "ingredient": 547
+        }, 
+        "model": "main.useringredient", 
+        "pk": 787
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": 16, 
+            "user_account": 9, 
+            "ingredient": 67
+        }, 
+        "model": "main.useringredient", 
+        "pk": 307
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": 16, 
+            "user_account": 9, 
+            "ingredient": 68
+        }, 
+        "model": "main.useringredient", 
+        "pk": 308
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": 17, 
+            "user_account": 9, 
+            "ingredient": 88
+        }, 
+        "model": "main.useringredient", 
+        "pk": 328
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": 5, 
+            "user_account": 9, 
+            "ingredient": 838
+        }, 
+        "model": "main.useringredient", 
+        "pk": 1078
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": 8, 
+            "user_account": 9, 
+            "ingredient": 581
+        }, 
+        "model": "main.useringredient", 
+        "pk": 821
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": 6, 
+            "user_account": 9, 
+            "ingredient": 897
+        }, 
+        "model": "main.useringredient", 
+        "pk": 1137
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": 16, 
+            "user_account": 9, 
+            "ingredient": 109
+        }, 
+        "model": "main.useringredient", 
+        "pk": 349
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": 19, 
+            "user_account": 9, 
+            "ingredient": 546
+        }, 
+        "model": "main.useringredient", 
+        "pk": 786
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": 15, 
+            "user_account": 9, 
+            "ingredient": 927
+        }, 
+        "model": "main.useringredient", 
+        "pk": 1167
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": 5, 
+            "user_account": 9, 
+            "ingredient": 665
+        }, 
+        "model": "main.useringredient", 
+        "pk": 905
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": 6, 
+            "user_account": 9, 
+            "ingredient": 20
+        }, 
+        "model": "main.useringredient", 
+        "pk": 260
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": 18, 
+            "user_account": 9, 
+            "ingredient": 690
+        }, 
+        "model": "main.useringredient", 
+        "pk": 930
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": 7, 
+            "user_account": 9, 
+            "ingredient": 13
+        }, 
+        "model": "main.useringredient", 
+        "pk": 253
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": 16, 
+            "user_account": 9, 
+            "ingredient": 794
+        }, 
+        "model": "main.useringredient", 
+        "pk": 1034
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": 16, 
+            "user_account": 9, 
+            "ingredient": 813
+        }, 
+        "model": "main.useringredient", 
+        "pk": 1053
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": 11, 
+            "user_account": 9, 
+            "ingredient": 729
+        }, 
+        "model": "main.useringredient", 
+        "pk": 969
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": 19, 
+            "user_account": 9, 
+            "ingredient": 433
+        }, 
+        "model": "main.useringredient", 
+        "pk": 673
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": 7, 
+            "user_account": 9, 
+            "ingredient": 541
+        }, 
+        "model": "main.useringredient", 
+        "pk": 781
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": 12, 
+            "user_account": 9, 
+            "ingredient": 506
+        }, 
+        "model": "main.useringredient", 
+        "pk": 746
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": 4, 
+            "user_account": 9, 
+            "ingredient": 687
+        }, 
+        "model": "main.useringredient", 
+        "pk": 927
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": 16, 
+            "user_account": 9, 
+            "ingredient": 198
+        }, 
+        "model": "main.useringredient", 
+        "pk": 438
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": 7, 
+            "user_account": 9, 
+            "ingredient": 162
+        }, 
+        "model": "main.useringredient", 
+        "pk": 402
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": 15, 
+            "user_account": 9, 
+            "ingredient": 122
+        }, 
+        "model": "main.useringredient", 
+        "pk": 362
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": 13, 
+            "user_account": 9, 
+            "ingredient": 117
+        }, 
+        "model": "main.useringredient", 
+        "pk": 357
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": 6, 
+            "user_account": 9, 
+            "ingredient": 929
+        }, 
+        "model": "main.useringredient", 
+        "pk": 1169
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": 7, 
+            "user_account": 9, 
+            "ingredient": 947
+        }, 
+        "model": "main.useringredient", 
+        "pk": 1187
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": 15, 
+            "user_account": 9, 
+            "ingredient": 667
+        }, 
+        "model": "main.useringredient", 
+        "pk": 907
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": 12, 
+            "user_account": 9, 
+            "ingredient": 462
+        }, 
+        "model": "main.useringredient", 
+        "pk": 702
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": 19, 
+            "user_account": 9, 
+            "ingredient": 548
+        }, 
+        "model": "main.useringredient", 
+        "pk": 788
+    }, 
+    {
+        "fields": {
+            "cooking_time": "09:23:15", 
+            "cooking_date": "2016-02-02", 
+            "recipe": "24", 
+            "serving_count": "549", 
+            "user_account": 9
+        }, 
+        "model": "main.cookedrecipe", 
+        "pk": 548
+    }, 
+    {
+        "fields": {
+            "cooking_time": "09:23:15", 
+            "cooking_date": "2016-02-02", 
+            "recipe": "25", 
+            "serving_count": "549", 
+            "user_account": 9
+        }, 
+        "model": "main.cookedrecipe", 
+        "pk": 548
+    }, 
+    {
+        "fields": {
+            "cooking_time": "09:23:15", 
+            "cooking_date": "2016-02-02", 
+            "recipe": "26", 
+            "serving_count": "549", 
+            "user_account": 9
+        }, 
+        "model": "main.cookedrecipe", 
+        "pk": 548
+    }, 
+    {
+        "fields": {
+            "amount": 2, 
+            "recipe": 25, 
+            "ingredient": 791
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 1063
+    }, 
+    {
+        "fields": {
+            "amount": 12, 
+            "recipe": 25, 
+            "ingredient": 921
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 1193
+    }, 
+    {
+        "fields": {
+            "amount": 13, 
+            "recipe": 25, 
+            "ingredient": 146
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 418
+    }, 
+    {
+        "fields": {
+            "amount": 4, 
+            "recipe": 25, 
+            "ingredient": 271
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 543
+    }, 
+    {
+        "fields": {
+            "amount": 7, 
+            "recipe": 25, 
+            "ingredient": 653
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 925
+    }, 
+    {
+        "fields": {
+            "amount": 9, 
+            "recipe": 25, 
+            "ingredient": 701
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 973
+    }, 
+    {
+        "fields": {
+            "description": "This is one of my all-time favourite recipes. I just love Ray's Chicken on weekends!", 
+            "creator": 9, 
+            "title": "Ray's Chicken", 
+            "creation_time": "09:23:15", 
+            "creation_date": "2016-02-02", 
+            "average_rating": 1.23, 
+            "rating_count": 9, 
+            "steps": "[\"Spoon a rounded 1/2 cup bean mixture down the center of each tortilla. Fold sides over filling and roll up. Place enchiladas seam side down in baking dish; spoon salsa over each tortilla. Cover baking dish with aluminum foil.\", \"Boil the eggs for 8-9 minutes. Make sure not to boil them for any longer!\", \"Start by slicing the vegetables and the meat.\"]", 
+            "servings": 9, 
+            "duration": "2:44:00", 
+            "image_url": "www.example.com/image.png"
+        }, 
+        "model": "main.recipe", 
+        "pk": 25
+    }, 
+    {
+        "fields": {
+            "amount": 9, 
+            "recipe": 26, 
+            "ingredient": 725
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 1001
+    }, 
+    {
+        "fields": {
+            "amount": 16, 
+            "recipe": 26, 
+            "ingredient": 593
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 869
+    }, 
+    {
+        "fields": {
+            "amount": 18, 
+            "recipe": 26, 
+            "ingredient": 337
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 613
+    }, 
+    {
+        "fields": {
+            "amount": 8, 
+            "recipe": 26, 
+            "ingredient": 214
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 490
+    }, 
+    {
+        "fields": {
+            "amount": 4, 
+            "recipe": 26, 
+            "ingredient": 934
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 1210
+    }, 
+    {
+        "fields": {
+            "description": "This is one of my all-time favourite recipes. I just love Grilled Portobellos Sauteed in Wine on weekends!", 
+            "creator": 9, 
+            "title": "Grilled Portobellos Sauteed in Wine", 
+            "creation_time": "09:23:15", 
+            "creation_date": "2016-02-02", 
+            "average_rating": 3.23, 
+            "rating_count": 18, 
+            "steps": "[\"Spoon a rounded 1/2 cup bean mixture down the center of each tortilla. Fold sides over filling and roll up. Place enchiladas seam side down in baking dish; spoon salsa over each tortilla. Cover baking dish with aluminum foil.\", \"Boil the eggs for 8-9 minutes. Make sure not to boil them for any longer!\", \"Start by slicing the vegetables and the meat.\"]", 
+            "servings": 9, 
+            "duration": "2:44:00", 
+            "image_url": "www.example.com/image.png"
+        }, 
+        "model": "main.recipe", 
+        "pk": 26
+    }, 
+    {
+        "fields": {
+            "amount": 18, 
+            "recipe": 27, 
+            "ingredient": 54
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 334
+    }, 
+    {
+        "fields": {
+            "amount": 4, 
+            "recipe": 27, 
+            "ingredient": 431
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 711
+    }, 
+    {
+        "fields": {
+            "amount": 3, 
+            "recipe": 27, 
+            "ingredient": 421
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 701
+    }, 
+    {
+        "fields": {
+            "amount": 13, 
+            "recipe": 27, 
+            "ingredient": 767
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 1047
+    }, 
+    {
+        "fields": {
+            "description": "This is one of my all-time favourite recipes. I just love Overnight Asparagus Mushroom Strata on weekends!", 
+            "creator": 9, 
+            "title": "Overnight Asparagus Mushroom Strata", 
+            "creation_time": "09:23:15", 
+            "creation_date": "2016-02-02", 
+            "average_rating": 3.23, 
+            "rating_count": 27, 
+            "steps": "[\"Spoon a rounded 1/2 cup bean mixture down the center of each tortilla. Fold sides over filling and roll up. Place enchiladas seam side down in baking dish; spoon salsa over each tortilla. Cover baking dish with aluminum foil.\", \"Boil the eggs for 8-9 minutes. Make sure not to boil them for any longer!\", \"Start by slicing the vegetables and the meat.\"]", 
+            "servings": 9, 
+            "duration": "2:44:00", 
+            "image_url": "www.example.com/image.png"
+        }, 
+        "model": "main.recipe", 
+        "pk": 27
+    }, 
+    {
+        "fields": {
+            "username": "user10", 
+            "first_name": "", 
+            "last_name": "", 
+            "is_active": true, 
+            "is_superuser": false, 
+            "is_staff": false, 
+            "last_login": "2016-11-09T18:08:23.137Z", 
+            "groups": [], 
+            "user_permissions": [], 
+            "password": "pbkdf2_sha256$30000$qwdCTXISuS1t$CyHx8U8Q7b/JlX24lOqbUXm+n2BrwNfHVzqNL3GkWs4=", 
+            "email": "user10@cookit.com", 
+            "date_joined": "2016-11-09T18:08:13.734Z"
+        }, 
+        "model": "auth.user", 
+        "pk": 10
+    }, 
+    {
+        "fields": {
+            "favourite_recipes": [
+                1, 
+                2, 
+                3, 
+                4, 
+                5, 
+                6, 
+                7, 
+                8, 
+                9
+            ], 
+            "favourite_users": [
+                1, 
+                2, 
+                3, 
+                4, 
+                5, 
+                6, 
+                7, 
+                8, 
+                9
+            ], 
+            "description": "Internationally renowned, multi-Michelin starred chef Gordon Ramsay has opened a string of successful restaurants across the globe, from the UK and France to Singapore and Hong Kong, to the United States. Gordon has also become a star of the small screen both in the UK and internationally, with shows such as Kitchen Nightmares, Hell's Kitchen, Hotel Hell and MasterChef US.", 
+            "user": 10
+        }, 
+        "model": "main.useraccount", 
+        "pk": 10
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": 20, 
+            "user_account": 10, 
+            "ingredient": 489
+        }, 
+        "model": "main.useringredient", 
+        "pk": 759
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": 8, 
+            "user_account": 10, 
+            "ingredient": 724
+        }, 
+        "model": "main.useringredient", 
+        "pk": 994
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": 9, 
+            "user_account": 10, 
+            "ingredient": 250
+        }, 
+        "model": "main.useringredient", 
+        "pk": 520
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": 6, 
+            "user_account": 10, 
+            "ingredient": 446
+        }, 
+        "model": "main.useringredient", 
+        "pk": 716
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": 8, 
+            "user_account": 10, 
+            "ingredient": 212
+        }, 
+        "model": "main.useringredient", 
+        "pk": 482
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": 16, 
+            "user_account": 10, 
+            "ingredient": 437
+        }, 
+        "model": "main.useringredient", 
+        "pk": 707
+    }, 
+    {
+        "fields": {
+            "infinite": false, 
+            "amount": 12, 
+            "user_account": 10, 
+            "ingredient": 254
+        }, 
+        "model": "main.useringredient", 
+        "pk": 524
+    }, 
+    {
+        "fields": {
+            "cooking_time": "09:23:15", 
+            "cooking_date": "2016-02-02", 
+            "recipe": "27", 
+            "serving_count": "255", 
+            "user_account": 10
+        }, 
+        "model": "main.cookedrecipe", 
+        "pk": 254
+    }, 
+    {
+        "fields": {
+            "cooking_time": "09:23:15", 
+            "cooking_date": "2016-02-02", 
+            "recipe": "28", 
+            "serving_count": "255", 
+            "user_account": 10
+        }, 
+        "model": "main.cookedrecipe", 
+        "pk": 254
+    }, 
+    {
+        "fields": {
+            "cooking_time": "09:23:15", 
+            "cooking_date": "2016-02-02", 
+            "recipe": "29", 
+            "serving_count": "255", 
+            "user_account": 10
+        }, 
+        "model": "main.cookedrecipe", 
+        "pk": 254
+    }, 
+    {
+        "fields": {
+            "amount": 9, 
+            "recipe": 28, 
+            "ingredient": 152
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 458
+    }, 
+    {
+        "fields": {
+            "amount": 9, 
+            "recipe": 28, 
+            "ingredient": 810
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 1116
+    }, 
+    {
+        "fields": {
+            "amount": 11, 
+            "recipe": 28, 
+            "ingredient": 603
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 909
+    }, 
+    {
+        "fields": {
+            "amount": 10, 
+            "recipe": 28, 
+            "ingredient": 598
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 904
+    }, 
+    {
+        "fields": {
+            "description": "This is one of my all-time favourite recipes. I just love The Best Parmesan Chicken Bake on weekends!", 
+            "creator": 10, 
+            "title": "The Best Parmesan Chicken Bake", 
+            "creation_time": "09:23:15", 
+            "creation_date": "2016-02-02", 
+            "average_rating": 1.23, 
+            "rating_count": 10, 
+            "steps": "[\"Preheat oven to 375 degrees F (190 degrees C).\", \"To serve, divide hot cooked rice mixture between 3 serving bowls and top each bowl with 1/3 of the vegetable mixture and a fried egg. Serve sweet red chili sauce on the side for mixing into bibimbap.\", \"In a large skillet, heat oil over medium high heat. Add coated chicken and saute for about 8 to 10 minutes each side, or until chicken is cooked through and juices run clear.\", \"Mix them and season with salt and pepper.\", \"Wash the salad and other vegetables\"]", 
+            "servings": 10, 
+            "duration": "2:51:00", 
+            "image_url": "www.example.com/image.png"
+        }, 
+        "model": "main.recipe", 
+        "pk": 28
+    }, 
+    {
+        "fields": {
+            "amount": 15, 
+            "recipe": 29, 
+            "ingredient": 118
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 428
+    }, 
+    {
+        "fields": {
+            "amount": 7, 
+            "recipe": 29, 
+            "ingredient": 132
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 442
+    }, 
+    {
+        "fields": {
+            "amount": 11, 
+            "recipe": 29, 
+            "ingredient": 465
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 775
+    }, 
+    {
+        "fields": {
+            "description": "This is one of my all-time favourite recipes. I just love Cauliflower Au Gratin on weekends!", 
+            "creator": 10, 
+            "title": "Cauliflower Au Gratin", 
+            "creation_time": "09:23:15", 
+            "creation_date": "2016-02-02", 
+            "average_rating": 4.23, 
+            "rating_count": 20, 
+            "steps": "[\"Preheat oven to 375 degrees F (190 degrees C).\", \"To serve, divide hot cooked rice mixture between 3 serving bowls and top each bowl with 1/3 of the vegetable mixture and a fried egg. Serve sweet red chili sauce on the side for mixing into bibimbap.\", \"In a large skillet, heat oil over medium high heat. Add coated chicken and saute for about 8 to 10 minutes each side, or until chicken is cooked through and juices run clear.\", \"Mix them and season with salt and pepper.\", \"Wash the salad and other vegetables\"]", 
+            "servings": 10, 
+            "duration": "2:51:00", 
+            "image_url": "www.example.com/image.png"
+        }, 
+        "model": "main.recipe", 
+        "pk": 29
+    }, 
+    {
+        "fields": {
+            "amount": 8, 
+            "recipe": 30, 
+            "ingredient": 630
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 944
+    }, 
+    {
+        "fields": {
+            "amount": 15, 
+            "recipe": 30, 
+            "ingredient": 307
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 621
+    }, 
+    {
+        "fields": {
+            "amount": 16, 
+            "recipe": 30, 
+            "ingredient": 493
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 807
+    }, 
+    {
+        "fields": {
+            "amount": 13, 
+            "recipe": 30, 
+            "ingredient": 372
+        }, 
+        "model": "main.recipeingredient", 
+        "pk": 686
+    }, 
+    {
+        "fields": {
+            "description": "This is one of my all-time favourite recipes. I just love Shrimp Francesca on weekends!", 
+            "creator": 10, 
+            "title": "Shrimp Francesca", 
+            "creation_time": "09:23:15", 
+            "creation_date": "2016-02-02", 
+            "average_rating": 3.23, 
+            "rating_count": 30, 
+            "steps": "[\"Preheat oven to 375 degrees F (190 degrees C).\", \"To serve, divide hot cooked rice mixture between 3 serving bowls and top each bowl with 1/3 of the vegetable mixture and a fried egg. Serve sweet red chili sauce on the side for mixing into bibimbap.\", \"In a large skillet, heat oil over medium high heat. Add coated chicken and saute for about 8 to 10 minutes each side, or until chicken is cooked through and juices run clear.\", \"Mix them and season with salt and pepper.\", \"Wash the salad and other vegetables\"]", 
+            "servings": 10, 
+            "duration": "2:51:00", 
+            "image_url": "www.example.com/image.png"
+        }, 
+        "model": "main.recipe", 
+        "pk": 30
+    }
+]
