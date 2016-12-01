@@ -1,9 +1,9 @@
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.http import HttpResponse, HttpResponseRedirect, Http404
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.urls import reverse
-from main.forms import RegisterForm, IngredientsForm, NewRecipeForm
+from main.forms import RegisterForm, IngredientsForm, NewRecipeForm, SettingsForm
 from main.models import Ingredient, UserAccount, UserIngredient, Recipe, RecipeIngredient, CookedRecipe
 from django.utils import dateparse
 import json, datetime
@@ -72,6 +72,26 @@ def user(request, user_id=None):
 
 	return render(request, 'user.html', context)
 
+@login_required
+def settings(request):
+	user = request.user
+	user_account = UserAccount.objects.get(user=user) if user.is_authenticated() else None
+
+	if request.method == "POST":
+		form = SettingsForm(request.POST, instance=user_account)
+		if form.is_valid():
+			#form = form.save(commit=False)
+			#form.user = request.user
+			form.save()
+			return redirect('user', user_id=user.id)
+	else:
+		form = SettingsForm()
+
+	context = {'user': user, 'user_account': user_account}
+
+	return render(request, 'settings.html', context)
+
+@login_required
 def add_my_ingredient(request):
 	user = request.user
 
@@ -142,6 +162,7 @@ def recipe(request, recipe_id):
 	}
 	return render(request, 'recipe.html', context)
 
+@login_required
 def cook_recipe(request, recipe_id):
 	# Get recipe from db
 	try:
@@ -162,6 +183,7 @@ def cook_recipe(request, recipe_id):
 			)
 			return HttpResponse('')
 
+@login_required
 def add_favourite(request, recipe_id):
 	# Get recipe from db
 	try:
@@ -182,6 +204,7 @@ def add_favourite(request, recipe_id):
 				user_account.favourite_recipes.remove(recipe)
 			return HttpResponse('')
 
+@login_required
 def add_favourite_user(request, user_id):
 	# Get user from db
 	try:

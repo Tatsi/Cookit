@@ -1,5 +1,6 @@
 from django import forms
 from django.contrib.auth.models import User
+from .models import UserAccount
 
 # Form for submitting new recipes
 class NewRecipeForm(forms.Form):
@@ -20,6 +21,12 @@ class NewRecipeForm(forms.Form):
 class IngredientsForm(forms.Form):
 	ingredient = forms.CharField(max_length=100)
 	delete = forms.BooleanField(required=False)
+
+# Form for updating user settings
+class SettingsForm(forms.ModelForm):
+	class Meta:
+		model = UserAccount
+		fields = ['description',]
 
 # Form for user account registration
 class RegisterForm(forms.Form):

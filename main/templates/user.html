@@ -5,7 +5,9 @@
 <div class="row">
 	<h2>{{ viewed_user.username }}
 	{% if user.is_authenticated %}
-		{% if favourite_user %}
+		{% if viewed_user.id == user.id %}
+			<a href="{% url 'settings' %}">Profile Settings</a>
+		{% elif favourite_user %}
 			<span class="fa fa-heart" id="favourite"></span>
 		{% else %}
 			<span class="fa fa-heart-o" id="favourite"></span>
@@ -14,32 +16,24 @@
 	</h2>
 </div>
 
-<!-- Users recipes-->
-<div class="row feed">
-{% for item in recipes %}
-{% include "recipe_card.html" with item=item %}
-{% endfor %}
-</div>
-
-
-
 <script type="text/javascript">
 	function getCookie(name) {
-    var cookieValue = null;
-    if (document.cookie && document.cookie !== '') {
-        var cookies = document.cookie.split(';');
-        for (var i = 0; i < cookies.length; i++) {
-            var cookie = jQuery.trim(cookies[i]);
-            // Does this cookie string begin with the name we want?
-            if (cookie.substring(0, name.length + 1) === (name + '=')) {
-                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
-                break;
-            }
-        }
-    }
-    return cookieValue;
-}
-var csrftoken = getCookie('csrftoken');
+		var cookieValue = null;
+		if (document.cookie && document.cookie !== '') {
+			var cookies = document.cookie.split(';');
+			for (var i = 0; i < cookies.length; i++) {
+				var cookie = jQuery.trim(cookies[i]);
+				// Does this cookie string begin with the name we want?
+				if (cookie.substring(0, name.length + 1) === (name + '=')) {
+					cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+					break;
+				}
+			}
+		}
+		return cookieValue;
+	}
+
+	var csrftoken = getCookie('csrftoken');
 
 	$('#favourite').click(function() {
 		$.ajax({
@@ -55,4 +49,22 @@ var csrftoken = getCookie('csrftoken');
 		});
 	});
 </script>
+
+<!-- Users info-->
+
+<!-- Users info-->
+<div>
+	<h3>Description</h3>
+	{{ viewed_user_account.description }}
+</div>
+
+<!-- Users recipes-->
+<h3>Recipes</h3>
+<div class="row feed">
+	{% for item in recipes %}
+		{% include "recipe_card.html" with item=item %}
+	{% endfor %}
+</div>
+
+
 {% endblock %}

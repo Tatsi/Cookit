@@ -21,6 +21,7 @@ import main.views
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', main.views.mainpage, name='mainpage'),
+    url(r'^settings/$', main.views.settings, name='settings'),
     url(r'^feed/$', main.views.feed, name='feed'),
     url(r'^feed/add_my_ingredient/$', main.views.add_my_ingredient, name='add_my_ingredient'),
     url(r'^feed/(?P<feed_type>\w+)/$', main.views.feed, name='feed'),
