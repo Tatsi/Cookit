@@ -56,9 +56,8 @@ with open('main/fixtures/others_' + time + '.json', 'w') as outfile:
             fields = dict(
                 user = i,
                 favourite_users = favourite_users,
-                favourite_recipes = favourite_recipes
-                #history_recipes = history_recipes
-                #ingredients = ingredients
+                favourite_recipes = favourite_recipes,
+                description = """Internationally renowned, multi-Michelin starred chef Gordon Ramsay has opened a string of successful restaurants across the globe, from the UK and France to Singapore and Hong Kong, to the United States. Gordon has also become a star of the small screen both in the UK and internationally, with shows such as Kitchen Nightmares, Hell's Kitchen, Hotel Hell and MasterChef US.""",
             )
         )
         data.append(entry)
