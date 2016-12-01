@@ -7,6 +7,7 @@ class UserAccount(models.Model):
     favourite_users = models.ManyToManyField('self')
     cooked_recipes = models.ManyToManyField('Recipe', through='CookedRecipe')
     ingredients = models.ManyToManyField('Ingredient', through='UserIngredient')
+    description = models.CharField(max_length=100000, blank=True)
 
 class Recipe(models.Model):
     title = models.CharField(max_length=300)
