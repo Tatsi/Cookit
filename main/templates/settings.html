@@ -1,0 +1,19 @@
+{% extends "base/base.html" %}
+{% load static %}
+
+{% block content %}
+
+<!-- Users info-->
+<form id="settings-form" method="post">
+	{% csrf_token %}
+	<div>
+		<h3>Description<h3>
+		<textarea id="description" name="description" rows="3" cols="50" placeholder="Tell something about yourself...">{{ user_account.description }}</textarea>
+	</div>
+	<div>
+		<h3>Profile picture<h3>
+		TODO
+	</div>
+	<button type="submit" class="btn btn-primary">Update changes</button>
+</form>
+{% endblock %}
