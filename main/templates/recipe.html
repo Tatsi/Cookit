@@ -14,7 +14,7 @@
 			{% endif %}
 			{% if recipe.creator.user.id == user.id %}
 				<div class="recipe-tools pull-right">
-					<span class="fa fa-pencil" data-toggle="tooltip" data-container="body" title="Edit recipe"></span>
+					<a href="{% url 'edit_recipe' recipe.id %}"><span class="fa fa-pencil" data-toggle="tooltip" data-container="body" title="Edit recipe"></span></a>
 					<span class="fa fa-trash" data-toggle="tooltip" data-container="body" title="Remove recipe"></span>
 				</div>
 			{% endif %}
@@ -165,6 +165,7 @@
 			return cookieValue;
 		}
 
+		// Delete recipe
 		$('.fa-trash').click(function() {
 			$.ajax({
 				url: "{% url 'remove_recipe' recipe.id %}",

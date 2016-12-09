@@ -274,7 +274,55 @@ def edit_recipe(request, recipe_id):
 		return HttpResponseForbidden("You have no permission to edit this recipe.")
 
 	if request.method == "POST":
-		pass
+		form = NewRecipeForm(request.POST)
+		if form.is_valid():
+			hours = form.cleaned_data['hours']
+			if hours == None:
+				hours = 0
+			minutes = form.cleaned_data['minutes']
+			if minutes == None:
+				minutes = 0
+
+			data = {
+				'title': 		form.cleaned_data['title'],
+				'description':	form.cleaned_data['description'],
+				'servings':		form.cleaned_data['servings'],
+				'steps':		form.cleaned_data['steps'],
+				'duration':		datetime.timedelta(hours=hours, minutes=minutes),
+				'creator':		UserAccount.objects.get(user=request.user)
+			}
+			Recipe.objects.filter(id=recipe.id).update(**data)
+
+			# Add the ingredients
+			ingredients = json.loads(form.cleaned_data['ingredients'])
+			for item in ingredients:
+				ingredient = Ingredient.objects.filter(name=item[0])[0]
+				try:
+					RecipeIngredient.objects.filter(recipe=recipe, ingredient=ingredient).update(amount=item[1])
+				except RecipeIngredient.DoesNotExist:
+					RecipeIngredient.objects.create(recipe=recipe, ingredient=ingredient, amount=item[1])
+	else:
+		form = NewRecipeForm()
+
+	# Filter ingredients
+	ingredients = RecipeIngredient.objects.filter(recipe=recipe)
+
+	# Parse duration
+	duration = recipe.duration
+	seconds = duration.seconds
+	hours, seconds = divmod(seconds, 3600)
+	minutes, seconds = divmod(seconds, 60)
+
+	# Parse steps
+	steps = json.loads(recipe.steps)
+
+	context = {}
+	context['recipe'] = recipe
+	context['ingredients'] = ingredients
+	context['time'] = {'hours': hours, 'minutes': minutes}
+	context['steps'] = steps
+	context['all_ingredients'] = json.dumps(list(Ingredient.objects.all().values('name', 'unit').distinct()))
+	return render(request, 'new_recipe.html', context)
 
 @login_required
 def remove_recipe(request, recipe_id):

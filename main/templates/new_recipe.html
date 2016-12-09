@@ -8,7 +8,7 @@
 		{% csrf_token %}
 		<div class="row">
 			<div class="col-md-6">
-				<h2><input type="text" name="title" placeholder="Enter title..."></input></h2>
+				<h2><input type="text" name="title" placeholder="Enter title..." value="{{ recipe.title }}"></h2>
 			</div>
 		</div>
 		<div class="row">
@@ -21,19 +21,19 @@
 			<div class="col-md-5">
 				<div class="form-group">
 					<span class="glyphicon glyphicon-time"></span>
-					<input class="form-control" type="number" id="hours" name="hours" min="0">
-					<label class="form-label" for="hours">h</label>
-					<input class="form-control" type="number" id="minutes" name="minutes" min="0" max="59">
+					<input class="form-control" type="number" id="hours" name="hours" min="0" value="{{ time.hours }}">
+					<label class="form-label" for="hours" >h</label>
+					<input class="form-control" type="number" id="minutes" name="minutes" min="0" max="59" value="{{ time.minutes }}">
 					<label class="form-label" for="minutes">min</label>
 				</div>
 				<div class="form-group">
 					<span class="fa fa-users"></span>
-					<input class="form-control" type="number" id="servings" name="servings" min="1">
+					<input class="form-control" type="number" id="servings" name="servings" min="1" value="{{ recipe.servings }}">
 					<label class="form-label" for="servings">servings</label>
 				</div>
 			</div>
 			<div class="col-md-7">
-				<textarea class="form-control" id="description" rows="3" cols="50" name="description" placeholder="A short, optional description of your recipe..." form="new-recipe"></textarea>
+				<textarea class="form-control" id="description" rows="3" cols="50" name="description" placeholder="A short, optional description of your recipe..." form="new-recipe">{{ recipe.description }}</textarea>
 			</div>
 		</div>
 		<hr class="hidden-xs">
@@ -43,6 +43,11 @@
 				<!--<div class="hidden-xs">-->
 				<div class="ingredient-container form-group">
 					<h4>Ingredients</h4>
+					{% for ingredient in ingredients %}
+						<input type="text" class="form-control ingredientInput" placeholder="Search for ingredients..." autocomplete="off" value="{{ ingredient.ingredient.name }}">
+						<input type="number" class="form-control amountInput" placeholder="Amount..." autocomplete="off" value="{{ ingredient.amount }}">
+						<span class="amount_unit">{{ ingredient.ingredient.unit }}</span>
+					{% endfor %}
 					<input type="text" class="form-control ingredientInput" placeholder="Search for ingredients..." autocomplete="off">
 					<input type="number" class="form-control amountInput" placeholder="Amount..." autocomplete="off">
 					<span class="amount_unit"></span>
@@ -66,6 +71,9 @@
 				<!--<div class="hidden-xs step-container">-->
 				<div class="step-container">
 					<h4>Instructions</h4>
+					{% for step in steps %}
+						<textarea class="form-control step-text" rows="3" cols="50" placeholder="Add step...">{{ step }}</textarea>
+					{% endfor %}
 					<div class="form-group">
 						<textarea class="form-control step-text" rows="3" cols="50" placeholder="Add step..."></textarea>
 						<button class="btn add-btn" id="addStepButton"><span class="glyphicon glyphicon-plus"></span></button>
@@ -146,11 +154,11 @@
 		var $unit = $(this).nextAll('.amount_unit:first');
 		console.log($unit)
 		var name = $(this).val();
-		var result = $.grep(all_ingredients, function(item){ 
-			return item.name == name; 
+		var result = $.grep(all_ingredients, function(item){
+			return item.name == name;
 		});
 
-		// Remove console output when all clean. 
+		// Remove console output when all clean.
 		if (result.length == 0) {
 			console.log("Not found");
 			$unit.empty();
