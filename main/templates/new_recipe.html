@@ -4,7 +4,7 @@
 {% block content %}
 
 <div class="new-recipe-page">
-	<form class="form-inline" id="new-recipe" method="post">
+	<form class="form-inline" id="new-recipe">
 		{% csrf_token %}
 		<div class="row">
 			<div class="col-md-6">
@@ -41,18 +41,24 @@
 			<div class="col-md-5">
 				<!-- Non-collapsing ingredient list for desktop -->
 				<!--<div class="hidden-xs">-->
-				<div class="ingredient-container form-group">
-					<h4>Ingredients</h4>
+				<h4>Ingredients</h4>
+				<div class="ingredient-container">
 					{% for ingredient in ingredients %}
-						<input type="text" class="form-control ingredientInput" placeholder="Search for ingredients..." autocomplete="off" value="{{ ingredient.ingredient.name }}">
-						<input type="number" class="form-control amountInput" placeholder="Amount..." autocomplete="off" value="{{ ingredient.amount }}">
-						<span class="amount_unit">{{ ingredient.ingredient.unit }}</span>
+						<div class="ingredient-row">
+							<input type="text" class="form-control ingredientInput" placeholder="Search for ingredients..." autocomplete="off" value="{{ ingredient.ingredient.name }}">
+							<input type="number" class="form-control amountInput" placeholder="Amount..." autocomplete="off" value="{{ ingredient.amount }}">
+							<span class="amount_unit">{{ ingredient.ingredient.unit }}</span>
+							<span class="fa fa-remove fa-lg"></span>
+						</div>
 					{% endfor %}
-					<input type="text" class="form-control ingredientInput" placeholder="Search for ingredients..." autocomplete="off">
-					<input type="number" class="form-control amountInput" placeholder="Amount..." autocomplete="off">
-					<span class="amount_unit"></span>
-					<button class="btn add-btn" id="addIngredientButton"><span class="glyphicon glyphicon-plus"></span></button>
-
+					<div class="form-group">
+						<div class="ingredient-row">
+							<input type="text" class="form-control ingredientInput" placeholder="Search for ingredients..." autocomplete="off">
+							<input type="number" class="form-control amountInput" placeholder="Amount..." autocomplete="off">
+							<span class="amount_unit"></span>
+						</div>
+						<button class="btn add-btn" id="addIngredientButton"><span class="glyphicon glyphicon-plus"></span></button>
+					</div>
 				</div>
 				<!-- Collapsing ingredient list for mobile -->
 				{% comment %}
@@ -94,7 +100,9 @@
 		</div>
 		<input type="hidden" name="steps" id="input-steps">
 		<input type="hidden" name="ingredients" id="input-ingredients">
-		<button type="submit" class="btn btn-primary">Submit</button>
+		<button id="save" class="btn btn-primary">Save</button>
+		<button id="saveClose" class="btn btn-primary">Save and close</button>
+		<button id="cancel" class="btn btn-default">Cancel</button>
 	</form>
 </div>
 
@@ -110,17 +118,26 @@
 
 	$('.ingredient-container').on('click', '#addIngredientButton', function(evt) {
 		evt.preventDefault();
-		var newItem = '<input type="text" class="form-control ingredientInput" placeholder="Search for ingredients..." autocomplete="off">';
-		$('#addIngredientButton').before(newItem);
-		$('.ingredientInput').typeahead({source: all_ingredients});
+		// Add remove button for this row
+		$(this).prev().append($('<span class="fa fa-remove fa-lg"></span>'));
 
-		newItem = '<input type="number" class="form-control amountInput" placeholder="Amount..." autocomplete="off">';
-		$('#addIngredientButton').before(newItem);
-		newItem = '<span class="amount_unit"></span>'
-		$('#addIngredientButton').before(newItem);
+		// Create a new ingredient row
+		var newContainer = $('<div>', {"class": "ingredient-row"});
+
+		var nameInput = $('<input type="text" class="form-control ingredientInput" placeholder="Search for ingredients..." autocomplete="off">');
+		$(newContainer).append(nameInput);
+		$(nameInput).typeahead({source: all_ingredients});
+
+		var amountInput = $('<input type="number" class="form-control amountInput" placeholder="Amount..." autocomplete="off">');
+		$(newContainer).append(amountInput);
+		var unit = $('<span class="amount_unit"></span>');
+		$(newContainer).append(unit);
+
+		$('#addIngredientButton').before(newContainer);
 	});
 
-	$('#new-recipe').submit(function() {
+	function submitRecipe(type) {
+		var buttonText = $(this).find("button[type=submit]:focus").text();
 		var steps = [];
 		var ingredients = [];
 		$('.step-text').each(function(idx) {
@@ -145,7 +162,38 @@
 		});
 		$('#input-steps').val(JSON.stringify(steps));
 		$('#input-ingredients').val(JSON.stringify(ingredients));
+
+		var data = $('#new-recipe').serialize();
+
+		$.ajax({
+			type: "POST",
+			url: "{% url 'edit_recipe' recipe.id %}",
+			data: data,
+			success: function() {
+				if (type == "exit") {
+					window.location = "{% url 'recipe' recipe.id %}";
+				} else {
+					location.reload();
+				}
+			}
+		});
+	};
+
+	$(document).on("click", "#save", function(e) {
+		e.preventDefault();
+		submitRecipe("save");
 	});
+
+	$(document).on("click", "#saveClose", function(e) {
+		e.preventDefault();
+		submitRecipe("exit");
+	});
+
+	$(document).on("click", "#cancel", function(e) {
+		e.preventDefault();
+		window.location = "{% url 'recipe' recipe.id %}";
+	});
+
 
 	$('.ingredientInput').typeahead({source: all_ingredients });
 
@@ -171,6 +219,12 @@
 			$unit.empty();
 		}
 	})
+
+	// Remove ingredient
+	$(document).on("click", ".fa-remove", function() {
+		$(this)[0].parentElement.remove();
+	})
+
 </script>
 
 {% endblock %}

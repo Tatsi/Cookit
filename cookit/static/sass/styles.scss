@@ -302,6 +302,14 @@ button.add-btn {
 			margin-left: 30px;
 		}
 	}
+	.ingredient-container {
+		.ingredient-row {
+			display: inline;
+		}
+		.add-btn {
+			display: inline;
+		}
+	}
 	.instructions {
 		.form-group {
 			.amountInput {

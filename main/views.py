@@ -293,14 +293,33 @@ def edit_recipe(request, recipe_id):
 			}
 			Recipe.objects.filter(id=recipe.id).update(**data)
 
-			# Add the ingredients
-			ingredients = json.loads(form.cleaned_data['ingredients'])
-			for item in ingredients:
+			# Get old ingredients
+			old_ingredients = RecipeIngredient.objects.filter(recipe=recipe)
+			print old_ingredients
+			new_ingredients = json.loads(form.cleaned_data['ingredients'])
+			print new_ingredients
+
+			# If ingredients are not in new ingredients, delete them
+			found = False
+			for old_ingredient in old_ingredients:
+				for new_ingredient in new_ingredients:
+					if old_ingredient.ingredient.name == new_ingredient[0]:
+						found = True
+					found = False
+
+				if found is False:
+					old_ingredient.delete()
+
+			# Update or create new ingredients
+			for item in new_ingredients:
 				ingredient = Ingredient.objects.filter(name=item[0])[0]
 				try:
-					RecipeIngredient.objects.filter(recipe=recipe, ingredient=ingredient).update(amount=item[1])
+					recipe_ingredient = RecipeIngredient.objects.get(recipe=recipe, ingredient=ingredient)
+					RecipeIngredient.objects.filter(id=recipe_ingredient.id).update(amount=item[1])
 				except RecipeIngredient.DoesNotExist:
 					RecipeIngredient.objects.create(recipe=recipe, ingredient=ingredient, amount=item[1])
+
+			return HttpResponse('')
 	else:
 		form = NewRecipeForm()
 
