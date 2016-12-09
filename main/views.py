@@ -261,8 +261,6 @@ def new_recipe(request):
 	else:
 		form = NewRecipeForm()
 	context = {}
-	context['recipe'] = {}
-	context['recipe']['id'] = 0
 	context['all_ingredients'] = json.dumps(list(Ingredient.objects.all().values('name', 'unit').distinct()))
 	return render(request, 'new_recipe.html', context)
 
@@ -343,7 +341,6 @@ def edit_recipe(request, recipe_id):
 
 	# Was the recipe just saved? (for showing alert)
 	saved = request.GET.get('saved', False)
-	print saved
 
 	context = {}
 	context['saved'] = saved

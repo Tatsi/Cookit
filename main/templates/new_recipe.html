@@ -179,7 +179,7 @@
 
 			var recipeId = "{{ recipe.id }}";
 			// If recipeId = 0, the recipe has not been created -> create
-			if (recipeId == 0) {
+			if (!recipeId) {
 				$.ajax({
 					type: "POST",
 					url: "{% url 'new_recipe' %}",

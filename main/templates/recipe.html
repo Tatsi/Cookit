@@ -132,7 +132,6 @@
 					servings: $('#servings').val(),
 					csrfmiddlewaretoken: $('input[name=csrfmiddlewaretoken]').val(),
 				},
-				// TODO: do something nice here instead of this
 				success: function() {
 					$('.alert-success#cooked').removeClass("hidden");
 					setTimeout(function() {

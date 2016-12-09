@@ -30,10 +30,10 @@ urlpatterns = [
     url(r'^register/$', main.views.register, name='register'),
     url(r'^user/(?P<user_id>\d+)/$', main.views.user, name='user'),
     url(r'^user/(?P<user_id>\d+)/favourite/$', main.views.add_favourite_user, name='add_favourite_user'),
-    url(r'^recipes/(?P<recipe_id>\d+)/$', main.views.recipe, name='recipe'),
+    url(r'^recipes/(?P<recipe_id>\d*)/$', main.views.recipe, name='recipe'),
     url(r'^recipes/(?P<recipe_id>\d+)/cook/$', main.views.cook_recipe, name='cook_recipe'),
     url(r'^recipes/(?P<recipe_id>\d+)/favourite/$', main.views.add_favourite, name='add_favourite'),
     url(r'^recipes/(?P<recipe_id>\d+)/remove/$', main.views.remove_recipe, name='remove_recipe'),
-    url(r'^recipes/(?P<recipe_id>\d+)/edit/$', main.views.edit_recipe, name='edit_recipe'),
+    url(r'^recipes/(?P<recipe_id>\d*)/edit/$', main.views.edit_recipe, name='edit_recipe'),
     url(r'^recipes/new/$', main.views.new_recipe, name='new_recipe'),
 ]
