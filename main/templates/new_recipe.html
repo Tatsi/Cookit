@@ -4,6 +4,9 @@
 {% block content %}
 
 <div class="new-recipe-page">
+	<div class="row">
+		<div class="alert alert-success hidden" role="alert">This recipe was saved succesfully!</div>
+	</div>
 	<form class="form-inline" id="new-recipe">
 		{% csrf_token %}
 		<div class="row">

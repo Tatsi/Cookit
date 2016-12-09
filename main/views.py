@@ -153,7 +153,11 @@ def recipe(request, recipe_id):
 	# Filter ingredients
 	ingredients = RecipeIngredient.objects.filter(recipe=recipe)
 
+	# Was the recipe just saved? (for showing alert)
+	saved = request.GET.get('saved', False)
+
 	context = {
+		'saved': saved,
 		'recipe': recipe,
 		'favourite': favourite,
 		'time': {'hours': hours, 'minutes': minutes},
@@ -295,9 +299,7 @@ def edit_recipe(request, recipe_id):
 
 			# Get old ingredients
 			old_ingredients = RecipeIngredient.objects.filter(recipe=recipe)
-			print old_ingredients
 			new_ingredients = json.loads(form.cleaned_data['ingredients'])
-			print new_ingredients
 
 			# If ingredients are not in new ingredients, delete them
 			found = False
@@ -335,7 +337,12 @@ def edit_recipe(request, recipe_id):
 	# Parse steps
 	steps = json.loads(recipe.steps)
 
+	# Was the recipe just saved? (for showing alert)
+	saved = request.GET.get('saved', False)
+	print saved
+
 	context = {}
+	context['saved'] = saved
 	context['recipe'] = recipe
 	context['ingredients'] = ingredients
 	context['time'] = {'hours': hours, 'minutes': minutes}

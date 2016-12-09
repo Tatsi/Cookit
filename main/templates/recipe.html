@@ -5,6 +5,12 @@
 
 <div class="recipe-page">
 	<div class="row">
+		<div class="alert alert-success hidden" id="cooked" role="alert">This recipe was added to your cooking history!</div>
+	</div>
+	<div class="row">
+		<div class="alert alert-success hidden" id="saved" role="alert">This recipe was saved succesfully!</div>
+	</div>
+	<div class="row">
 		<h2>{{ recipe.title }}
 		{% if user.is_authenticated %}
 			{% if favourite %}
@@ -100,6 +106,16 @@
 
 <script type="text/javascript">
 	$(document).ready(function() {
+		// Show alert for saved recipe if saved = true
+		var saved = "{{ saved }}";
+		if (saved == true) {
+			$('.alert-success#saved').removeClass("hidden");
+			setTimeout(function() {
+				$('.alert-success#saved').fadeOut();
+				$('.alert-success#saved').addClass("hidden");
+			}, 5000);
+		}
+
 		var original_amounts = [];
 		var elements = document.getElementById('ingredients').getElementsByTagName('li');
 		for (var i=0; i < elements.length; i++) {
@@ -117,8 +133,11 @@
 					csrfmiddlewaretoken: $('input[name=csrfmiddlewaretoken]').val(),
 				},
 				// TODO: do something nice here instead of this
-				success:function() {
-					alert("Cooked this recipe");
+				success: function() {
+					$('.alert-success#cooked').removeClass("hidden");
+					setTimeout(function() {
+						$('.alert-success#cooked').fadeOut();
+					}, 5000);
 				}
 			});
 		});
@@ -131,7 +150,7 @@
 					csrfmiddlewaretoken: $('input[name=csrfmiddlewaretoken]').val(),
 				},
 				// TODO: maybe something else than reload?
-				success:function() {
+				success: function() {
 					location.reload();
 				}
 			});
