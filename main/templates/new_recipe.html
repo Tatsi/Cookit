@@ -110,123 +110,156 @@
 </div>
 
 <script type="text/javascript">
-	var all_ingredients = {{all_ingredients|safe}};
-
-	$('.step-container').on('click', '#addStepButton', function(evt) {
-		evt.preventDefault();
-		$(this).remove();
-		var newItem = '<div class="form-group"><textarea class="form-control step-text" rows="3" cols="50" placeholder="Add step..."></textarea><button class="btn add-btn" id="addStepButton"><span class="glyphicon glyphicon-plus"></span></button></div>';
-		$('.step-container').append(newItem);
-	});
-
-	$('.ingredient-container').on('click', '#addIngredientButton', function(evt) {
-		evt.preventDefault();
-		// Add remove button for this row
-		$(this).prev().append($('<span class="fa fa-remove fa-lg"></span>'));
-
-		// Create a new ingredient row
-		var newContainer = $('<div>', {"class": "ingredient-row"});
-
-		var nameInput = $('<input type="text" class="form-control ingredientInput" placeholder="Search for ingredients..." autocomplete="off">');
-		$(newContainer).append(nameInput);
-		$(nameInput).typeahead({source: all_ingredients});
-
-		var amountInput = $('<input type="number" class="form-control amountInput" placeholder="Amount..." autocomplete="off">');
-		$(newContainer).append(amountInput);
-		var unit = $('<span class="amount_unit"></span>');
-		$(newContainer).append(unit);
-
-		$('#addIngredientButton').before(newContainer);
-	});
-
-	function submitRecipe(type) {
-		var buttonText = $(this).find("button[type=submit]:focus").text();
-		var steps = [];
-		var ingredients = [];
-		$('.step-text').each(function(idx) {
-			var value = $(this).val();
-			if(value != '') {
-				steps.push(value);
-			}
-		});
-
-		$('.ingredientInput').each(function(idx) {
-			var name = $(this).val();
-			if(name != '') {
-				var item = []
-				var amount = $('.amountInput').eq(idx).val();
-				if(amount=='') {
-					amount = "1";
-				}
-				item.push(name);
-				item.push(amount);
-				ingredients.push(item);
-			}
-		});
-		$('#input-steps').val(JSON.stringify(steps));
-		$('#input-ingredients').val(JSON.stringify(ingredients));
-
-		var data = $('#new-recipe').serialize();
-
-		$.ajax({
-			type: "POST",
-			url: "{% url 'edit_recipe' recipe.id %}",
-			data: data,
-			success: function() {
-				if (type == "exit") {
-					window.location = "{% url 'recipe' recipe.id %}";
-				} else {
-					location.reload();
-				}
-			}
-		});
-	};
-
-	$(document).on("click", "#save", function(e) {
-		e.preventDefault();
-		submitRecipe("save");
-	});
-
-	$(document).on("click", "#saveClose", function(e) {
-		e.preventDefault();
-		submitRecipe("exit");
-	});
-
-	$(document).on("click", "#cancel", function(e) {
-		e.preventDefault();
-		window.location = "{% url 'recipe' recipe.id %}";
-	});
-
-
-	$('.ingredientInput').typeahead({source: all_ingredients });
-
-	// Update ingredient unit after input changes
-	$('.ingredient-container').on('change input propertychange paste', '.ingredientInput', function() {
-		var $unit = $(this).nextAll('.amount_unit:first');
-		console.log($unit)
-		var name = $(this).val();
-		var result = $.grep(all_ingredients, function(item){
-			return item.name == name;
-		});
-
-		// Remove console output when all clean.
-		if (result.length == 0) {
-			console.log("Not found");
-			$unit.empty();
-		} else if (result.length == 1) {
-		  	var unit = result[0].unit;
-		  	$unit.text(unit);
-
-		} else {
-		  	console.log("Multiple matches");
-			$unit.empty();
+	$(document).ready(function(){
+		var saved = "{{ saved }}";
+		if (saved == true) {
+			$('.alert-success').removeClass("hidden");
+			setTimeout(function() {
+				$('.alert-success').fadeOut();
+				$('.alert-success').addClass("hidden");
+			}, 5000);
 		}
-	})
+		var all_ingredients = {{all_ingredients|safe}};
 
-	// Remove ingredient
-	$(document).on("click", ".fa-remove", function() {
-		$(this)[0].parentElement.remove();
-	})
+		$('.step-container').on('click', '#addStepButton', function(evt) {
+			evt.preventDefault();
+			$(this).remove();
+			var newItem = '<div class="form-group"><textarea class="form-control step-text" rows="3" cols="50" placeholder="Add step..."></textarea><button class="btn add-btn" id="addStepButton"><span class="glyphicon glyphicon-plus"></span></button></div>';
+			$('.step-container').append(newItem);
+		});
+
+		$('.ingredient-container').on('click', '#addIngredientButton', function(evt) {
+			evt.preventDefault();
+			// Add remove button for this row
+			$(this).prev().append($('<span class="fa fa-remove fa-lg"></span>'));
+
+			// Create a new ingredient row
+			var newContainer = $('<div>', {"class": "ingredient-row"});
+
+			var nameInput = $('<input type="text" class="form-control ingredientInput" placeholder="Search for ingredients..." autocomplete="off">');
+			$(newContainer).append(nameInput);
+			$(nameInput).typeahead({source: all_ingredients});
+
+			var amountInput = $('<input type="number" class="form-control amountInput" placeholder="Amount..." autocomplete="off">');
+			$(newContainer).append(amountInput);
+			var unit = $('<span class="amount_unit"></span>');
+			$(newContainer).append(unit);
+
+			$('#addIngredientButton').before(newContainer);
+		});
+
+		function submitRecipe(type) {
+			var buttonText = $(this).find("button[type=submit]:focus").text();
+			var steps = [];
+			var ingredients = [];
+			$('.step-text').each(function(idx) {
+				var value = $(this).val();
+				if(value != '') {
+					steps.push(value);
+				}
+			});
+
+			$('.ingredientInput').each(function(idx) {
+				var name = $(this).val();
+				if(name != '') {
+					var item = []
+					var amount = $('.amountInput').eq(idx).val();
+					if(amount=='') {
+						amount = "1";
+					}
+					item.push(name);
+					item.push(amount);
+					ingredients.push(item);
+				}
+			});
+			$('#input-steps').val(JSON.stringify(steps));
+			$('#input-ingredients').val(JSON.stringify(ingredients));
+
+			var data = $('#new-recipe').serialize();
+
+			var recipeId = "{{ recipe.id }}";
+			// If recipeId = 0, the recipe has not been created -> create
+			if (recipeId == 0) {
+				$.ajax({
+					type: "POST",
+					url: "{% url 'new_recipe' %}",
+					data: data,
+					success: function(data) {
+						if (type == "exit") {
+							var url = "{% url 'feed' %}";
+							window.location.href = url + "?saved=1";
+						} else {
+							var url = "{% url 'edit_recipe' 0 %}".replace('0', data.id);
+							window.location.href = url + "?saved=1";
+						}
+					}
+				});
+			}
+			// Else the recipe will be edited
+			else {
+				$.ajax({
+					type: "POST",
+					url: "{% url 'edit_recipe' recipe.id %}",
+					data: data,
+					success: function() {
+						if (type == "exit") {
+							var url = "{% url 'recipe' recipe.id %}";
+							window.location.href = url + "?saved=1";
+						} else {
+							var url = "{% url 'edit_recipe' recipe.id %}"
+							window.location.href = url + "?saved=1";
+						}
+					}
+				});
+			}
+		};
+
+		$(document).on("click", "#save", function(e) {
+			e.preventDefault();
+			submitRecipe("save");
+		});
+
+		$(document).on("click", "#saveClose", function(e) {
+			e.preventDefault();
+			submitRecipe("exit");
+		});
+
+		$(document).on("click", "#cancel", function(e) {
+			e.preventDefault();
+			window.location = "{% url 'recipe' recipe.id %}";
+		});
+
+
+		$('.ingredientInput').typeahead({source: all_ingredients });
+
+		// Update ingredient unit after input changes
+		$('.ingredient-container').on('change input propertychange paste', '.ingredientInput', function() {
+			var $unit = $(this).nextAll('.amount_unit:first');
+			console.log($unit)
+			var name = $(this).val();
+			var result = $.grep(all_ingredients, function(item){
+				return item.name == name;
+			});
+
+			// Remove console output when all clean.
+			if (result.length == 0) {
+				console.log("Not found");
+				$unit.empty();
+			} else if (result.length == 1) {
+				var unit = result[0].unit;
+				$unit.text(unit);
+
+			} else {
+				console.log("Multiple matches");
+				$unit.empty();
+			}
+		})
+
+		// Remove ingredient
+		$(document).on("click", ".fa-remove", function() {
+			$(this)[0].parentElement.remove();
+		})
+	});
 
 </script>
 

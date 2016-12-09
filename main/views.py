@@ -1,6 +1,6 @@
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
-from django.http import HttpResponse, HttpResponseRedirect, Http404, HttpResponseForbidden
+from django.http import HttpResponse, HttpResponseRedirect, Http404, HttpResponseForbidden, JsonResponse
 from django.shortcuts import render, redirect
 from django.urls import reverse
 from main.forms import RegisterForm, IngredientsForm, NewRecipeForm, SettingsForm
@@ -256,9 +256,13 @@ def new_recipe(request):
 			for item in ingredients:
 				ingredient = Ingredient.objects.filter(name=item[0])[0]
 				r_ingredient = RecipeIngredient.objects.create(recipe=recipe, ingredient=ingredient, amount=item[1])
+			return JsonResponse({"id": recipe.id})
+
 	else:
 		form = NewRecipeForm()
 	context = {}
+	context['recipe'] = {}
+	context['recipe']['id'] = 0
 	context['all_ingredients'] = json.dumps(list(Ingredient.objects.all().values('name', 'unit').distinct()))
 	return render(request, 'new_recipe.html', context)
 
