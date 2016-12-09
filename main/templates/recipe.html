@@ -8,9 +8,15 @@
 		<h2>{{ recipe.title }}
 		{% if user.is_authenticated %}
 			{% if favourite %}
-				<span class="fa fa-heart" id="favourite"></span>
+				<span class="fa fa-heart" id="favourite" data-toggle="tooltip" data-container="body" title="Remove from favourites"></span>
 			{% else %}
-				<span class="fa fa-heart-o" id="favourite"></span>
+				<span class="fa fa-heart-o" id="favourite" data-toggle="tooltip" data-container="body" title="Add to favourites"></span>
+			{% endif %}
+			{% if recipe.creator.user.id == user.id %}
+				<div class="recipe-tools pull-right">
+					<span class="fa fa-pencil" data-toggle="tooltip" data-container="body" title="Edit recipe"></span>
+					<span class="fa fa-trash" data-toggle="tooltip" data-container="body" title="Remove recipe"></span>
+				</div>
 			{% endif %}
 		{% endif %}
 		</h2>
@@ -141,6 +147,38 @@
 				amount.innerHTML = old_amount / old_servings * new_servings;
 			}
 		});
+
+		// Function for getting the csrf token from cookie
+		function getCookie(name) {
+			var cookieValue = null;
+			if (document.cookie && document.cookie !== '') {
+				var cookies = document.cookie.split(';');
+				for (var i = 0; i < cookies.length; i++) {
+					var cookie = jQuery.trim(cookies[i]);
+					// Does this cookie string begin with the name we want?
+					if (cookie.substring(0, name.length + 1) === (name + '=')) {
+						cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+						break;
+					}
+				}
+			}
+			return cookieValue;
+		}
+
+		$('.fa-trash').click(function() {
+			$.ajax({
+				url: "{% url 'remove_recipe' recipe.id %}",
+				type: 'DELETE',
+				beforeSend: function(xhr) {
+					xhr.setRequestHeader("X-CSRFToken", getCookie("csrftoken"));
+				},
+				success: function(response){
+                    window.location = "{% url 'feed' 'own_recipes' %}";
+                }
+			});
+		});
+
+		$('[data-toggle="tooltip"]').tooltip();
 	});
 </script>
 

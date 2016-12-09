@@ -1,6 +1,6 @@
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
-from django.http import HttpResponse, HttpResponseRedirect, Http404
+from django.http import HttpResponse, HttpResponseRedirect, Http404, HttpResponseForbidden
 from django.shortcuts import render, redirect
 from django.urls import reverse
 from main.forms import RegisterForm, IngredientsForm, NewRecipeForm, SettingsForm
@@ -56,7 +56,7 @@ def user(request, user_id=None):
 		raise Http404()
 
 	viewed_user = User.objects.get(id=user_id)
-	viewed_user_account = UserAccount.objects.get(user=viewed_user)	
+	viewed_user_account = UserAccount.objects.get(user=viewed_user)
 
 	recipes = Recipe.objects.filter(creator=viewed_user_account)
 	context = {'recipes': recipes, 'viewed_user': viewed_user, 'viewed_user_account': viewed_user_account}
@@ -66,7 +66,7 @@ def user(request, user_id=None):
 
 	context['user'] = user
 
-	if user.is_authenticated():	
+	if user.is_authenticated():
 		if viewed_user_account in user_account.favourite_users.all():
 			context['favourite_user'] = True
 
@@ -257,6 +257,44 @@ def new_recipe(request):
 	context = {}
 	context['all_ingredients'] = json.dumps(list(Ingredient.objects.all().values('name', 'unit').distinct()))
 	return render(request, 'new_recipe.html', context)
+
+@login_required
+def edit_recipe(request, recipe_id):
+	# Get recipe from db
+	try:
+		recipe = Recipe.objects.get(id=recipe_id)
+	except Recipe.DoesNotExist:
+		raise Http404("No Recipe found for ID %s.".format(recipe_id))
+
+	user = request.user
+	user_account = UserAccount.objects.get(user=user)
+
+	# If recipe is not user's own, return 403
+	if user_account != recipe.creator:
+		return HttpResponseForbidden("You have no permission to edit this recipe.")
+
+	if request.method == "POST":
+		pass
+
+@login_required
+def remove_recipe(request, recipe_id):
+	# Get recipe from db
+	try:
+		recipe = Recipe.objects.get(id=recipe_id)
+	except Recipe.DoesNotExist:
+		raise Http404("No Recipe found for ID %s.".format(recipe_id))
+
+	user = request.user
+	user_account = UserAccount.objects.get(user=user)
+
+	# If recipe is not user's own, return 403
+	if user_account != recipe.creator:
+		return HttpResponseForbidden("You have no permission to remove this recipe.")
+
+	# Delete decipe
+	recipe.delete()
+
+	return HttpResponse('')
 
 def register(request):
 	if request.method == 'POST':
