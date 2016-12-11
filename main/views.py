@@ -239,13 +239,14 @@ def new_recipe(request):
 				hours = 0
 			minutes = form.cleaned_data['minutes']
 			if minutes == None:
-				minutes = 0
+				minutes = 0			
 
 			data = {
 				'title': 		form.cleaned_data['title'],
 				'description':	form.cleaned_data['description'],
 				'servings':		form.cleaned_data['servings'],
 				'steps':		form.cleaned_data['steps'],
+				'image':		form.cleaned_data['image'],
 				'duration':		datetime.timedelta(hours=hours, minutes=minutes),
 				'creator':		UserAccount.objects.get(user=request.user)
 			}

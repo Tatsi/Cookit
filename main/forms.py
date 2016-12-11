@@ -11,6 +11,7 @@ class NewRecipeForm(forms.Form):
 	servings = forms.IntegerField()
 	hours = forms.IntegerField(required=False, initial=0) 
 	minutes = forms.IntegerField(required=False, initial=0)
+	image = forms.ImageField(required=False)
 
 	def clean(self):
 		if not "hours" in self.cleaned_data and not "minutes" in self.cleaned_data:

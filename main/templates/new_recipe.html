@@ -16,8 +16,11 @@
 		</div>
 		<div class="row">
 			<div class="col-md-12">
-				<img src="{% static 'images/chickensoup.jpg' %}" class="img-thumbnail">
-				<button class="btn btn-default"><span class="glyphicon glyphicon-plus"></span></button>
+				<div id="upload" class="dropzone">
+					<div class="dz-default dz-message"></div>
+				</div>
+				<!--img src="{% static 'images/chickensoup.jpg' %}" class="img-thumbnail" -->
+				<!--button class="btn btn-default"><span class="glyphicon glyphicon-plus"></span></button -->
 			</div>
 		</div>
 		<div class="time row">
@@ -111,6 +114,33 @@
 
 <script type="text/javascript">
 	$(document).ready(function(){
+		// Init dropzone
+		Dropzone.autoDiscover = false;
+		//Dropzone.acceptedFiles= "image/*";
+		Dropzone.autoProcessQueue = false;
+		//Dropzone.maxFiles = 1;
+		
+		//Dropzone.paramName = "image";
+
+		$("#upload").dropzone({
+			autoProcessQueue: false,
+			url: "{% url 'new_recipe' %}",
+			acceptedFiles: "image/*",
+			maxFiles: 1,
+			maxFilesize: 8,
+			paramName: "image",
+			addRemoveLinks: true,
+			success: function (file, response) {
+				var imgName = response;
+				file.previewElement.classList.add("dz-success");
+				console.log("Successfully uploaded :" + imgName);
+			},
+			error: function (file, response) {
+				file.previewElement.classList.add("dz-error");
+			}
+		});
+
+
 		var saved = "{{ saved }}";
 		if (saved == true) {
 			$('.alert-success').removeClass("hidden");
