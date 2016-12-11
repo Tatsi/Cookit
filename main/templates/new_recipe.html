@@ -208,7 +208,7 @@
 			var data = $('#new-recipe').serialize();
 
 			var recipeId = "{{ recipe.id }}";
-			// If recipeId = 0, the recipe has not been created -> create
+			// If recipeId is undefined, the recipe has not been created -> create
 			if (!recipeId) {
 				$.ajax({
 					type: "POST",
@@ -216,7 +216,7 @@
 					data: data,
 					success: function(data) {
 						if (type == "exit") {
-							var url = "{% url 'feed' %}";
+							var url = "{% url 'recipe' 0 %}".replace('0', data.id);
 							window.location.href = url + "?saved=1";
 						} else {
 							var url = "{% url 'edit_recipe' 0 %}".replace('0', data.id);
