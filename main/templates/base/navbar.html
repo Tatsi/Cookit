@@ -33,9 +33,9 @@
 				<li class="visible-xs">
 					<form id="searchForm">
 						<div class="input-group mobile-search">
-							<input id="searchQuery" type="text" class="form-control" placeholder="Search" />
+							<input id="searchQueryMobile" type="text" class="form-control" placeholder="Search" />
 							<div class="input-group-btn">
-								<a class="btn btn-default searchBtn"><span class="glyphicon glyphicon-search"></span></a>
+								<button class="btn btn-default searchBtn" href="{% url 'search' %}"><span class="glyphicon glyphicon-search"></span></button>
 							</div>
 						</div>
 					</form>
@@ -71,8 +71,8 @@
 <script type="text/javascript">
 	$(document).ready(function() {
 		function submitSearch() {
-			var searchQuery = $('#searchQuery').val();
-			var url = $('.searchBtn').attr('href') + '?searchQuery=' + searchQuery
+			var searchQuery = $('#searchQuery').val() || $('#searchQueryMobile').val();
+			var url = $('.searchBtn').attr('href') + '?searchQuery=' + searchQuery;
 			if (searchQuery != '') {
 				window.location.href = url;
 			}
