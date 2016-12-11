@@ -1,0 +1,24 @@
+{% extends "base/base.html" %}
+{% load static %}
+
+{% block content %}
+
+<div class="search-results">
+	<div class="row">
+		<h2>Search results for: {{ search_query }}</h2>
+	</div>
+
+	{% if recipes %}
+		<div class="row feed">
+		{% for item in recipes %}
+		{% include "recipe_card.html" with item=item %}
+		{% endfor %}
+		</div>
+	{% else %}
+		<div class="row">
+			<div class="alert alert-warning" role="alert">No results for <strong>{{ search_query }}</strong></div>
+		</div>
+	{% endif %}
+</div>
+
+{% endblock %}

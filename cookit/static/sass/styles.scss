@@ -67,14 +67,12 @@ body {
 // Common styles for headings
 h1, h2 {
 	color: $recipe-name-color;
+	margin-left: 15px;
 
 	span {
 		margin-left: 20px;
 		color: $heading-color;
 		cursor: pointer;
-	}
-	.recipe-tools span {
-		color: $dark-grey;
 	}
 }
 h4 {
@@ -136,8 +134,9 @@ button.add-btn {
 		border: 1px solid #ccc;
 		transition: all 0.35s, border-radius 0s;
 
-		&:hover {
+		&.focus {
 			width: 250px;
+			cursor: pointer;
 		}
 		input {
 			padding-right: 20px;
@@ -204,18 +203,25 @@ button.add-btn {
 	}
 }
 
-// Styles for recipe page
 @media (min-width: 768px) {
 	.recipe-page {
 		padding: 20px;
 	}
+	.search-results {
+		padding: 20px;
+	}
 }
+// Styles for recipe page
 .recipe-page {
 	img {
 		width: 100%;
 	}
 	h2 {
-		margin-left: 15px;
+		// margin-left: 15px;
+
+		.recipe-tools span {
+			color: $dark-grey;
+		}
 	}
 	.instructions {
 		p {
@@ -275,8 +281,12 @@ button.add-btn {
 	textarea {
 		resize: none;
 	}
-	h2 input {
-		border: none;
+	h2 {
+		margin-left: 0;
+
+		input {
+			border: none;
+		}
 	}
 	img {
 		max-width: 20%;

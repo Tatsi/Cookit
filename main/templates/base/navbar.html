@@ -21,20 +21,21 @@
 			<ul class="nav navbar-nav navbar-right">
 				<!-- for desktop view -->
 				<li class="hidden-xs">
-					<form action="">
+					<form id="searchForm">
+						{% csrf_token %}
 						<div class="form-group desktop-search">
-							<input type="text" class="form-control" placeholder="Search" />
-							<a href="/"><span class="glyphicon glyphicon-search"></span></a>
+							<input id="searchQuery" type="text" class="form-control" placeholder="Search" />
+							<a class="searchBtn" href="{% url 'search' %}"><span class="glyphicon glyphicon-search"></span></a>
 						</div>
 					</form>
 				</li>
 				<!-- for mobile view -->
 				<li class="visible-xs">
-					<form action="">
+					<form id="searchForm">
 						<div class="input-group mobile-search">
-							<input type="text" class="form-control" placeholder="Search" />
+							<input id="searchQueryMobile" type="text" class="form-control" placeholder="Search" />
 							<div class="input-group-btn">
-								<button class="btn btn-default"><i class="glyphicon glyphicon-search"></i></button>
+								<button class="btn btn-default searchBtn" href="{% url 'search' %}"><span class="glyphicon glyphicon-search"></span></button>
 							</div>
 						</div>
 					</form>
@@ -66,3 +67,46 @@
 		</div>
 	</div>
 </nav>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		function submitSearch() {
+			var searchQuery = $('#searchQuery').val() || $('#searchQueryMobile').val();
+			var url = $('.searchBtn').attr('href') + '?searchQuery=' + searchQuery;
+			if (searchQuery != '') {
+				window.location.href = url;
+			}
+		}
+
+		$(document).on("keydown", function(e) {
+			if (e.keyCode == 13) {
+				e.preventDefault();
+				submitSearch();
+			}
+		})
+
+		$(document).on("click", ".searchBtn", function(e) {
+			e.preventDefault();
+			submitSearch();
+		});
+
+		$(document).on("focus", "#searchQuery", function() {
+			$('.desktop-search').addClass('focus');
+		});
+
+		$(document).on("blur", "#searchQuery", function() {
+			$('.desktop-search').removeClass('focus');
+		});
+
+		$(document).on({
+			mouseenter: function () {
+				$('.desktop-search').addClass('focus');
+			},
+			mouseleave: function () {
+				if (!$("#searchQuery").is(":focus")) {
+					$('.desktop-search').removeClass('focus');
+				}
+			}
+		}, ".desktop-search");
+	});
+</script>

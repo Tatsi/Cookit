@@ -12,6 +12,16 @@ def mainpage(request):
 	context = {}
 	return render(request, 'mainpage.html', context)
 
+def search(request):
+	search_query = request.GET.get('searchQuery')
+	context = {}
+	context['search_query'] = search_query
+	recipes = Recipe.objects.filter(title__contains=search_query)
+
+	context['recipes'] = recipes
+	print context['recipes']
+	return render(request, 'search.html', context)
+
 def feed(request, feed_type=None):
 	user = request.user
 	user_account = UserAccount.objects.get(user=user) if user.is_authenticated() else None
