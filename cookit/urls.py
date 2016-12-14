@@ -14,6 +14,8 @@ Including another URLconf
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
 from django.conf.urls import url
+from django.conf.urls.static import static
+from django.conf import settings
 from django.contrib import admin
 from django.contrib.auth import views as auth_views
 import main.views
@@ -29,6 +31,7 @@ urlpatterns = [
     url(r'^accounts/login/$', auth_views.login, name='login'),
     url(r'^logout/$', auth_views.logout, name='logout'),
     url(r'^register/$', main.views.register, name='register'),
+    #url(r'^upload_recipe_image/(?P<recipe_id>\d+)/$', main.views.upload_recipe_image, name='upload_recipe_image'),
     url(r'^user/(?P<user_id>\d+)/$', main.views.user, name='user'),
     url(r'^user/(?P<user_id>\d+)/favourite/$', main.views.add_favourite_user, name='add_favourite_user'),
     url(r'^recipes/(?P<recipe_id>\d*)/$', main.views.recipe, name='recipe'),
@@ -38,3 +41,6 @@ urlpatterns = [
     url(r'^recipes/(?P<recipe_id>\d*)/edit/$', main.views.edit_recipe, name='edit_recipe'),
     url(r'^recipes/new/$', main.views.new_recipe, name='new_recipe'),
 ]
+
+if settings.DEBUG is True:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
