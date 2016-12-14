@@ -71,10 +71,8 @@
 			contentType: false,
 			success: function(data) { 
 				// Redirect
-				$.ajax({
-					type: "GET",
-					url: "{% url 'user' user_account.id %}"
-				});
+				var url = "{% url 'user' user.id %}";
+				window.location.href = url;
 			}
 		});
 

@@ -112,8 +112,8 @@ def settings(request):
 				print "url: " + image.image.url
 				print "path: " + image.image.path
 				print "name: " + image.image.name
-			print "redirecting"
-			return redirect('user', user_id=user.id)
+			#print "redirecting"
+			#return redirect('user', user_id=user.id)
 	else:
 		form = SettingsForm()
 
