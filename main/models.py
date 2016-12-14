@@ -14,13 +14,11 @@ class Recipe(models.Model):
     description = models.CharField(max_length=500)
     servings = models.IntegerField()
     duration = models.DurationField()
-    #image_url = models.CharField(max_length=600)
     steps = models.CharField(max_length=10000, blank=True)
     creator = models.ForeignKey(UserAccount, on_delete=models.CASCADE)
     ingredients = models.ManyToManyField('Ingredient', through='RecipeIngredient')
     rating_count = models.BigIntegerField(default=0)
     average_rating = models.DecimalField(max_digits=10, decimal_places=9, default=0)
-    #image = models.ImageField(upload_to='images')
     creation_date = models.DateField((u"Creation Date"), auto_now_add=True, blank=True)
     creation_time = models.TimeField((u"Creation Time"), auto_now_add=True, blank=True)
 
