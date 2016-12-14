@@ -29,7 +29,9 @@
 	</div>
 	<div class="row">
 		<div class="col-md-6">
-			<img src="{% static 'images/chickensoup.jpg' %}">
+			{% for recipeimage in images %}
+				<img src="{{ MEDIA_ROOT }}{{ recipeimage.image.url }}" alt="Image"/>
+			{% endfor %}
 		</div>
 		<div class="col-md-6">
 			<p><span class="glyphicon glyphicon-user"></span><a href="{% url 'user' recipe.creator.user.id %}">{{ recipe.creator.user.username }}</a></p>

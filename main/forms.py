@@ -1,6 +1,6 @@
 from django import forms
 from django.contrib.auth.models import User
-from .models import UserAccount
+from .models import UserAccount, RecipeImage
 
 # Form for submitting new recipes
 class NewRecipeForm(forms.Form):
@@ -11,7 +11,7 @@ class NewRecipeForm(forms.Form):
 	servings = forms.IntegerField()
 	hours = forms.IntegerField(required=False, initial=0) 
 	minutes = forms.IntegerField(required=False, initial=0)
-	image = forms.ImageField(required=False)
+	#image = forms.ImageField()
 
 	def clean(self):
 		if not "hours" in self.cleaned_data and not "minutes" in self.cleaned_data:
@@ -28,6 +28,10 @@ class SettingsForm(forms.ModelForm):
 	class Meta:
 		model = UserAccount
 		fields = ['description',]
+
+#class RecipeImageForm(forms.ModelForm):
+#	class Meta:
+#		model = RecipeImage
 
 # Form for user account registration
 class RegisterForm(forms.Form):

@@ -7,7 +7,7 @@
 	<div class="row">
 		<div class="alert alert-success hidden" role="alert">This recipe was saved succesfully!</div>
 	</div>
-	<form class="form-inline" id="new-recipe">
+	<form class="form-inline" id="new-recipe" enctype="multipart/form-data">
 		{% csrf_token %}
 		<div class="row">
 			<div class="col-md-6">
@@ -15,12 +15,13 @@
 			</div>
 		</div>
 		<div class="row">
+			{% for recipeimage in images %}
+				<img src="{{ MEDIA_ROOT }}{{ recipeimage.image.url }}" alt="Image"/>
+			{% endfor %}
 			<div class="col-md-12">
 				<div id="upload" class="dropzone">
 					<div class="dz-default dz-message"></div>
 				</div>
-				<!--img src="{% static 'images/chickensoup.jpg' %}" class="img-thumbnail" -->
-				<!--button class="btn btn-default"><span class="glyphicon glyphicon-plus"></span></button -->
 			</div>
 		</div>
 		<div class="time row">
@@ -113,26 +114,31 @@
 </div>
 
 <script type="text/javascript">
+	var dropzone;
 	$(document).ready(function(){
 		// Init dropzone
 		Dropzone.autoDiscover = false;
-		//Dropzone.acceptedFiles= "image/*";
-		Dropzone.autoProcessQueue = false;
-		//Dropzone.maxFiles = 1;
-		
-		//Dropzone.paramName = "image";
 
 		$("#upload").dropzone({
 			autoProcessQueue: false,
-			url: "{% url 'new_recipe' %}",
+			url: "/",
 			acceptedFiles: "image/*",
-			maxFiles: 1,
-			maxFilesize: 8,
+			maxFiles: 5,
+			maxFilesize: 4,
 			paramName: "image",
+			uploadMultiple: true,
 			addRemoveLinks: true,
+			init: function() {
+				dropzone = this;
+			},
+			accept: function(file, done) {
+					//$('new-recipe').append(file);
+					done();
+			},
 			success: function (file, response) {
+				//alert(file);
 				var imgName = response;
-				file.previewElement.classList.add("dz-success");
+				//file.previewElement.classList.add("dz-success");
 				console.log("Successfully uploaded :" + imgName);
 			},
 			error: function (file, response) {
@@ -205,7 +211,15 @@
 			$('#input-steps').val(JSON.stringify(steps));
 			$('#input-ingredients').val(JSON.stringify(ingredients));
 
-			var data = $('#new-recipe').serialize();
+			//Serialize form data
+			var data = new FormData( $('#new-recipe').get(0) );
+
+			//Append images to form data
+			var images = dropzone.getQueuedFiles();
+			for(i = 0; i < images.length; i++)
+			{
+				data.append('image', images[i]);
+			}
 
 			var recipeId = "{{ recipe.id }}";
 			// If recipeId = 0, the recipe has not been created -> create
@@ -214,6 +228,8 @@
 					type: "POST",
 					url: "{% url 'new_recipe' %}",
 					data: data,
+					processData: false,
+					contentType: false,
 					success: function(data) {
 						if (type == "exit") {
 							var url = "{% url 'feed' %}";
@@ -231,6 +247,8 @@
 					type: "POST",
 					url: "{% url 'edit_recipe' recipe.id %}",
 					data: data,
+					processData: false,
+					contentType: false,
 					success: function() {
 						if (type == "exit") {
 							var url = "{% url 'recipe' recipe.id %}";

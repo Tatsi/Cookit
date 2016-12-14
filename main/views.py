@@ -4,7 +4,7 @@ from django.http import HttpResponse, HttpResponseRedirect, Http404, HttpRespons
 from django.shortcuts import render, redirect
 from django.urls import reverse
 from main.forms import RegisterForm, IngredientsForm, NewRecipeForm, SettingsForm
-from main.models import Ingredient, UserAccount, UserIngredient, Recipe, RecipeIngredient, CookedRecipe
+from main.models import Ingredient, UserAccount, UserIngredient, Recipe, RecipeIngredient, CookedRecipe, RecipeImage
 from django.utils import dateparse
 import json, datetime
 
@@ -50,7 +50,14 @@ def feed(request, feed_type=None):
 			if recipe in user_account.favourite_recipes.all():
 				recipe.favourite = True
 
+	# Add images of each recipe to context
+	images = []
+	for recipe in recipes:
+		images.append(RecipeImage.objects.filter(recipe=recipe))
+		
 	context = {'recipes': recipes}
+	images = {'images': images}
+
 	# Convert all ingredients to a list and pass to template
 	context['all_ingredients'] = json.dumps(list(Ingredient.objects.all().values_list('name', flat=True).distinct()))
 
@@ -163,6 +170,10 @@ def recipe(request, recipe_id):
 	# Filter ingredients
 	ingredients = RecipeIngredient.objects.filter(recipe=recipe)
 
+	# Filter images
+	images = RecipeImage.objects.filter(recipe=recipe)
+	#print images
+
 	# Was the recipe just saved? (for showing alert)
 	saved = request.GET.get('saved', False)
 
@@ -172,7 +183,8 @@ def recipe(request, recipe_id):
 		'favourite': favourite,
 		'time': {'hours': hours, 'minutes': minutes},
 		'ingredients': ingredients,
-		'instructions': steps
+		'instructions': steps,
+		'images': images
 	}
 	return render(request, 'recipe.html', context)
 
@@ -196,6 +208,19 @@ def cook_recipe(request, recipe_id):
 				serving_count = servings
 			)
 			return HttpResponse('')
+
+@login_required
+def upload_recipe_image(request, recipe_name):
+	if request.method == "POST":
+		recipe = Recipe.objects.get(id=recipe_id)
+		form = RecipeImageForm(request, recipe=recipe_id)
+		if form.is_valid():
+			#form = form.save(commit=False)
+			#form.user = request.user
+			form.save()
+			# return redirect('user', user_id=user.id)
+	else:
+		return HttpResponse('')
 
 @login_required
 def add_favourite(request, recipe_id):
@@ -242,7 +267,11 @@ def add_favourite_user(request, user_id):
 @login_required
 def new_recipe(request):
 	if request.method == 'POST':
+		#print "request:"
+		#print request.POST
+
 		form = NewRecipeForm(request.POST)
+
 		if form.is_valid():
 			hours = form.cleaned_data['hours']
 			if hours == None:
@@ -256,11 +285,22 @@ def new_recipe(request):
 				'description':	form.cleaned_data['description'],
 				'servings':		form.cleaned_data['servings'],
 				'steps':		form.cleaned_data['steps'],
-				'image':		form.cleaned_data['image'],
 				'duration':		datetime.timedelta(hours=hours, minutes=minutes),
 				'creator':		UserAccount.objects.get(user=request.user)
 			}
 			recipe = Recipe.objects.create(**data)
+
+			# Store images
+			request_images = request.FILES.getlist('image')
+
+			for img in request_images:
+				print "Saving image "
+				image = RecipeImage(recipe=recipe, image=img)
+				image.save()
+				print "done."
+				print "url: " + image.image.url
+				print "path: " + image.image.path
+				print "name: " + image.image.name
 
 			# Add the ingredients
 			ingredients = json.loads(form.cleaned_data['ingredients'])
@@ -325,6 +365,18 @@ def edit_recipe(request, recipe_id):
 				if found is False:
 					old_ingredient.delete()
 
+			# Store new images
+			request_images = request.FILES.getlist('image')
+
+			for img in request_images:
+				print "Saving image "
+				image = RecipeImage(recipe=recipe, image=img)
+				image.save()
+				print "done."
+				print "url: " + image.image.url
+				print "path: " + image.image.path
+				print "name: " + image.image.name
+
 			# Update or create new ingredients
 			for item in new_ingredients:
 				ingredient = Ingredient.objects.filter(name=item[0])[0]
@@ -340,6 +392,9 @@ def edit_recipe(request, recipe_id):
 
 	# Filter ingredients
 	ingredients = RecipeIngredient.objects.filter(recipe=recipe)
+
+	# Filter images
+	images = RecipeImage.objects.filter(recipe=recipe)
 
 	# Parse duration
 	duration = recipe.duration
@@ -357,6 +412,7 @@ def edit_recipe(request, recipe_id):
 	context['saved'] = saved
 	context['recipe'] = recipe
 	context['ingredients'] = ingredients
+	context['images'] = images
 	context['time'] = {'hours': hours, 'minutes': minutes}
 	context['steps'] = steps
 	context['all_ingredients'] = json.dumps(list(Ingredient.objects.all().values('name', 'unit').distinct()))
