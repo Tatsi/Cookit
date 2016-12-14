@@ -4,7 +4,7 @@ from django.http import HttpResponse, HttpResponseRedirect, Http404, HttpRespons
 from django.shortcuts import render, redirect
 from django.urls import reverse
 from main.forms import RegisterForm, IngredientsForm, NewRecipeForm, SettingsForm
-from main.models import Ingredient, UserAccount, UserIngredient, Recipe, RecipeIngredient, CookedRecipe, RecipeImage
+from main.models import Ingredient, UserAccount, UserIngredient, Recipe, RecipeIngredient, CookedRecipe, RecipeImage, UserImage
 from django.utils import dateparse
 import json, datetime
 
@@ -81,7 +81,10 @@ def user(request, user_id=None):
 	user = request.user
 	user_account = UserAccount.objects.get(user=user) if user.is_authenticated() else None
 
+	images = UserImage.objects.filter(user_account=viewed_user_account)
+
 	context['user'] = user
+	context['images'] = images
 
 	if user.is_authenticated():
 		if viewed_user_account in user_account.favourite_users.all():
@@ -97,14 +100,25 @@ def settings(request):
 	if request.method == "POST":
 		form = SettingsForm(request.POST, instance=user_account)
 		if form.is_valid():
-			#form = form.save(commit=False)
-			#form.user = request.user
 			form.save()
+
+			# Store new images TODO allow only one image
+			request_images = request.FILES.getlist('image')
+			for img in request_images:
+				print "Saving user profile image.."
+				image = UserImage(user_account=user_account, image=img)
+				image.save()
+				print "done!"
+				print "url: " + image.image.url
+				print "path: " + image.image.path
+				print "name: " + image.image.name
+			print "redirecting"
 			return redirect('user', user_id=user.id)
 	else:
 		form = SettingsForm()
 
-	context = {'user': user, 'user_account': user_account}
+	images = UserImage.objects.filter(user_account=user_account)
+	context = {'user': user, 'user_account': user_account, 'images': images}
 
 	return render(request, 'settings.html', context)
 

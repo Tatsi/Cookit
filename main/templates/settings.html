@@ -4,7 +4,7 @@
 {% block content %}
 
 <!-- Users info-->
-<form id="settings-form" method="post">
+<form id="settings-form" method="post" enctype="multipart/form-data">
 	{% csrf_token %}
 	<div>
 		<h3>Description<h3>
@@ -12,8 +12,73 @@
 	</div>
 	<div>
 		<h3>Profile picture<h3>
-		TODO
+		{% for userimage in images %}
+			<img src="{{ MEDIA_ROOT }}{{ userimage.image.url }}" alt="Image"/>
+		{% endfor %}
+		<div class="col-md-12">
+			<div id="upload" class="dropzone">
+				<div class="dz-default dz-message"></div>
+			</div>
+		</div>
 	</div>
-	<button type="submit" class="btn btn-primary">Update changes</button>
 </form>
+<button id="save" class="btn btn-primary">Update changes</button>
+
+<script type="text/javascript">
+	var dropzone;
+	$(document).ready(function() {
+		// Init dropzone
+		Dropzone.autoDiscover = false;
+
+		$("#upload").dropzone({
+			autoProcessQueue: false,
+			url: "/",
+			acceptedFiles: "image/*",
+			maxFiles: 1,
+			maxFilesize: 4,
+			paramName: "image",
+			uploadMultiple: true,
+			addRemoveLinks: true,
+			init: function() {
+				dropzone = this;
+			},
+			error: function (file, response) {
+				file.previewElement.classList.add("dz-error");
+			}
+		});
+
+		$(document).on("click", "#save", function(e) {
+			e.preventDefault();
+			submitRecipe();
+		});
+	});
+	function submitRecipe() {
+		//Serialize form data
+		var data = new FormData( $('#settings-form').get(0) );
+
+		//Append images to form data
+		var images = dropzone.getQueuedFiles();
+		for(i = 0; i < images.length; i++)
+		{
+			data.append('image', images[i]);
+		}
+
+		$.ajax({
+			type: "POST",
+			url: "{% url 'settings' %}",
+			data: data,
+			processData: false,
+			contentType: false,
+			success: function(data) { 
+				// Redirect
+				$.ajax({
+					type: "GET",
+					url: "{% url 'user' user_account.id %}"
+				});
+			}
+		});
+
+		
+	};
+</script>
 {% endblock %}

@@ -54,7 +54,9 @@
 
 <!-- Users info: Image and description -->
 <div>
-	<img src="{% static 'images/chickensoup.jpg' %}">
+	{% for userimage in images %}
+		<img src="{{ MEDIA_ROOT }}{{ userimage.image.url }}" alt="Image"/>
+	{% endfor %}
 	{{ viewed_user_account.description }}
 </div>
 
