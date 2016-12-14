@@ -54,7 +54,7 @@ def feed(request, feed_type=None):
 	images = []
 	for recipe in recipes:
 		images.append(RecipeImage.objects.filter(recipe=recipe))
-		
+
 	context = {'recipes': recipes}
 	images = {'images': images}
 
@@ -63,7 +63,7 @@ def feed(request, feed_type=None):
 
 	if user.is_authenticated():
 		# Fetch ingredients the user has
-		context['my_ingredients'] = user_account.ingredients.all()
+		context['my_ingredients'] = UserIngredient.objects.filter(user_account=user_account)
 
 	# TODO: Update the filter and return the list of matching recipes
 	return render(request, 'feed.html', context)
@@ -131,20 +131,24 @@ def add_my_ingredient(request):
 		if request.method == 'POST':
 			form = IngredientsForm(request.POST)
 			if form.is_valid():
+				name = form.cleaned_data['ingredient_name']
+				amount = form.cleaned_data['ingredient_amount']
 				try:
 					# TODO: Ingredients should not contain many ingredients with the same name
 					# This is only in the demo phase
-					ingredients = Ingredient.objects.filter(name=form.cleaned_data['ingredient'])
+					ingredients = Ingredient.objects.filter(name=name)
 				except Ingredient.DoesNotExist:
 					pass
 				else:
 					item = UserIngredient.objects.filter(user_account=user_account, ingredient__in=ingredients)
 					if not form.cleaned_data['delete']:
 						if not item.exists():
-							user_ingredient = UserIngredient.objects.create(user_account=user_account, ingredient=ingredients[0], amount='1')
+							user_ingredient = UserIngredient.objects.create(user_account=user_account, ingredient=ingredients[0], amount=amount)
 					else:
 						if item.exists():
 							item.delete()
+			else:
+				print form.errors
 		else:
 			form = IngredientsForm()
 
@@ -292,7 +296,7 @@ def new_recipe(request):
 				hours = 0
 			minutes = form.cleaned_data['minutes']
 			if minutes == None:
-				minutes = 0			
+				minutes = 0
 
 			data = {
 				'title': 		form.cleaned_data['title'],

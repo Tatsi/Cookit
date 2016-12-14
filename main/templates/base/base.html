@@ -13,10 +13,140 @@
 		<script src="https://use.fontawesome.com/2483007207.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-3-typeahead/4.0.2/bootstrap3-typeahead.min.js"></script>
 		<script src="{% static 'dropzone/dropzone.js' %}"></script>
+		<script type="text/javascript">
+	$(document).ready(function() {
+		var all_ingredients = {{all_ingredients|safe}};
+		$('#ingredientInput').typeahead({source: all_ingredients });
+
+		$(document).on('submit', '#main_form', function(e) {
+			e.preventDefault();
+			var ingredient_name = $('#ingredientInput').val();
+			var ingredient_amount = $('#ingredientAmountInput').val();
+			// If ingredient is already there do nothing
+			if ($('span:contains("' + ingredient_name + '")').length > 0) {
+				// Clear input
+				$('#ingredientInput').val('');
+			} else {
+				$.ajax({
+					type: "POST",
+					url: "{% url 'add_my_ingredient' %}",
+					data: {
+						csrfmiddlewaretoken: $('input[name=csrfmiddlewaretoken]').val(),
+						ingredient_name: ingredient_name,
+						ingredient_amount: ingredient_amount,
+					},
+					success: function() {
+						// Add element to list
+						var list = document.getElementsByClassName('ingredients-list')[0];
+						var entry = document.createElement('h4');
+						var amountLabel = document.createElement('span');
+						var unitLabel = document.createElement('span');
+						var nameLabel = document.createElement('span');
+						var removeButton = document.createElement('span');
+						var text = ingredient_amount + ' ';
+						amountLabel.appendChild(document.createTextNode(text));
+						text = "unit "
+						unitLabel.appendChild(document.createTextNode(text));
+						text = ingredient_name;
+						nameLabel.appendChild(document.createTextNode(text));
+						removeButton.setAttribute('class', 'fa fa-remove pull-right')
+						entry.appendChild(amountLabel);
+						entry.appendChild(unitLabel);
+						entry.appendChild(nameLabel);
+						entry.appendChild(removeButton);
+						list.appendChild(entry);
+						// Clear input
+						$('#ingredientInput').val('');
+						$('#ingredientAmountInput').val('');
+					}
+				});
+			}
+		});
+
+		$(document).on("click", '.ingredients-list .fa-remove', function() {
+			console.log("clicked");
+			var ingredient_name = $(this).prev().text();
+			console.log(ingredient_name);
+			var elem = $('span:contains("' + ingredient_name + '")')[0].parentElement
+			elem.parentElement.removeChild(elem);
+			$.ajax({
+				type: "POST",
+				url: "{% url 'add_my_ingredient' %}",
+				data: {
+					csrfmiddlewaretoken: $('input[name=csrfmiddlewaretoken]').val(),
+					ingredient_name: ingredient_name,
+					delete: true,
+				},
+				success: function() {
+				}
+			});
+		});
+
+		var modalButton = document.getElementById('my-ingredients-button');
+		var modal = document.getElementById('my-ingredients-modal');
+		var closeButton = document.getElementById('close-modal');
+
+		function CloseModal() {
+			modal.style.display = 'none';
+			location.reload();
+		}
+
+		$('#my-ingredients-button').click(function() {
+			modal.style.display = 'block';
+		});
+
+		$('#close-modal').click(function() {
+			CloseModal();
+		});
+
+		$('#apply-btn').click(function() {
+			CloseModal();
+		});
+
+		window.onclick = function(event) {
+			if (event.target == modal) {
+				CloseModal();
+			}
+		};
+	});
+</script>
 	</head>
 	<body>
 		{% include "base/navbar.html" %}
-			<div class="col-lg-8 col-lg-offset-2 container center-column">
+			{% if user.is_authenticated %}
+				<div class="col-lg-2 my-ingredients">
+					<button class="btn" id="my-ingredients-button">My ingredients</button>
+					<div id="my-ingredients-modal">
+						<div class="content">
+							<!-- Ingredient list -->
+							<div class="ingredients-list">
+								{% for item in my_ingredients %}
+									<h4>
+										<span>{{ item.amount }}</span>
+										<span>{{ item.ingredient.unit_short }}</span>
+										<span>{{ item.ingredient.name }}</span>
+										<span class="fa fa-remove pull-right"></span>
+									</h4>
+								{% endfor %}
+							</div>
+
+							<!-- Ingredient form -->
+							<form class="ingredients-form" method="post" id="main_form">
+								{% csrf_token %}
+								<div class="form-group">
+									<div class="col-sm-8 col-xs-8">
+										<input type="text" name="ingredient" class="form-control" id="ingredientInput" placeholder="Search for ingredients..." autocomplete="off">
+										<input type="number" name="ingredientAmount" class="form-control" id="ingredientAmountInput" placeholder="Amount" autocomplete="off">
+									</div>
+									<button type="submit" class="btn shadow-element">Add</button>
+									<button class="btn" id="apply-btn">Apply</button>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			{% endif %}
+			<div class="col-lg-8 container center-column">
 				{% block content %}
 				{% endblock %}
 			</div>

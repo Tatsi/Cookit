@@ -69,7 +69,7 @@
 				<h4>Ingredients</h4>
 				<ul id="ingredients">
 					{% for ingredient in ingredients %}
-					<li><p id="amount">{{ ingredient.amount }}</p> <p id="unit">{{ ingredient.ingredient.unit }}</p>s <p id="name">{{ ingredient.ingredient.name }}</p></li>
+					<li><p id="amount">{{ ingredient.amount }}</p> <p id="unit">{{ ingredient.ingredient.unit_short }}</p>s <p id="name">{{ ingredient.ingredient.name }}</p></li>
 					{% endfor %}
 				</ul>
 			</div>
@@ -78,7 +78,7 @@
 				<h4 class="collapse-header" data-toggle="collapse" href="#ingredients">Ingredients<span class="toggle"></span></h4>
 				<ul id="ingredients" class="collapse in">
 					{% for ingredient in ingredients %}
-					<li><p id="amount">{{ ingredient.amount }}</p> <p id="unit">{{ ingredient.ingredient.unit }}</p>s <p id="name">{{ ingredient.ingredient.name }}</p></li>
+					<li><p id="amount">{{ ingredient.amount }}</p> <p id="unit">{{ ingredient.ingredient.unit_short }}</p>s <p id="name">{{ ingredient.ingredient.name }}</p></li>
 					{% endfor %}
 				</ul>
 			</div>

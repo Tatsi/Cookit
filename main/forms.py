@@ -9,7 +9,7 @@ class NewRecipeForm(forms.Form):
 	steps = forms.CharField(required=False)
 	ingredients = forms.CharField(required=False)
 	servings = forms.IntegerField()
-	hours = forms.IntegerField(required=False, initial=0) 
+	hours = forms.IntegerField(required=False, initial=0)
 	minutes = forms.IntegerField(required=False, initial=0)
 
 	def clean(self):
@@ -19,7 +19,8 @@ class NewRecipeForm(forms.Form):
 
 # Form for filtering recipes based on ingredients user has
 class IngredientsForm(forms.Form):
-	ingredient = forms.CharField(max_length=100)
+	ingredient_name = forms.CharField(max_length=100)
+	ingredient_amount = forms.DecimalField(min_value=0, required=False)
 	delete = forms.BooleanField(required=False)
 
 # Form for updating user settings
