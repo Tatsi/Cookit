@@ -10,6 +10,7 @@ from random import sample, randint
 time = datetime.datetime.now().strftime("%Y-%m-%d_%H_%M_%S").encode('utf-8')
 data = []
 
+
 with open('main/fixtures/others_' + time + '.json', 'w') as outfile:
     for i in range(1, 11):
         username = "user" + str(i)
@@ -49,7 +50,7 @@ with open('main/fixtures/others_' + time + '.json', 'w') as outfile:
         history_recipes = range(10 * (i-1) + 1, 8 + 10 * (i - 1) + 1 )
         ingredients = range(10 * (i-1) + 1, 8 + 10 * (i - 1) + 1 )
 
-        # Create the actual User Accounts
+        # Create the actual User Account
         entry = dict(
             model = 'main.useraccount',
             pk = i,
@@ -61,6 +62,19 @@ with open('main/fixtures/others_' + time + '.json', 'w') as outfile:
             )
         )
         data.append(entry)
+
+        # Create 0-1 userimage for the user
+        for x in range(0, randint(0,1)):
+            image_url = "userimages/" + str(randint(1, 5)) + ".jpg"
+            entry = dict(
+                model = 'main.userimage',
+                pk = key,
+                fields = dict(
+                    user_account = key,
+                    image = image_url
+                )
+            )
+            data.append(entry)
 
         # Create the related UserIngredients
         max_user_ingredients_per_user = 30
@@ -98,7 +112,6 @@ with open('main/fixtures/others_' + time + '.json', 'w') as outfile:
         hours = randint(0, 4)
         minutes = randint(0, 59)
         duration = datetime.timedelta(hours=hours, minutes=minutes)
-        image_url = "www.example.com/image.png"
         steps = [
             "Take all the ingredients in front of you.",
             "Start by slicing the vegetables and the meat.",
@@ -161,7 +174,6 @@ with open('main/fixtures/others_' + time + '.json', 'w') as outfile:
         for j in range(1,4):
             title = recipe_names[randint(0, len(recipe_names)-1)]
             description = "This is one of my all-time favourite recipes. I just love " + title + " on weekends!"
-            # ingredients = range((i-1) * 10 + (j-1) * 5, (i-1) * 10 + (j-1) * 5 + 5 )
             key = (i-1) * 3 + j
             average_rating = randint(1,4) + 0.23
             ingredients = sample(xrange(1, 950), randint(3,6))
@@ -198,6 +210,20 @@ with open('main/fixtures/others_' + time + '.json', 'w') as outfile:
                 )
             )
             data.append(entry)
+
+             # Create 0-5 images for this recipe
+            number_of_images = randint(0, 5)
+            for n in range(1, number_of_images):
+                image_url = "recipeimages/" + str(randint(1, 10)) + ".jpg"
+                entry = dict(
+                    model = 'main.recipeimage',
+                    pk = 5 * key + n - 1,
+                    fields = dict(
+                        recipe = key,
+                        image = image_url
+                    )
+                )
+                data.append(entry)
 
     json.dump(data, outfile, indent = 4)
 
