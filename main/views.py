@@ -4,9 +4,11 @@ from django.http import HttpResponse, HttpResponseRedirect, Http404, HttpRespons
 from django.shortcuts import render, redirect
 from django.urls import reverse
 from main.forms import RegisterForm, IngredientsForm, NewRecipeForm, SettingsForm
-from main.models import Ingredient, UserAccount, UserIngredient, Recipe, RecipeIngredient, CookedRecipe, RecipeImage, UserImage
+from main.models import Ingredient, UserAccount, UserIngredient, Recipe, RecipeIngredient, CookedRecipe, RecipeImage, UserImage, RatedRecipe
 from django.utils import dateparse
 import json, datetime
+from django.views.decorators.csrf import csrf_exempt
+from django.http import JsonResponse
 
 def mainpage(request):
 	context = {}
@@ -19,7 +21,7 @@ def search(request):
 	recipes = Recipe.objects.filter(title__contains=search_query)
 
 	context['recipes'] = recipes
-	print context['recipes']
+	#print context['recipes']
 	return render(request, 'search.html', context)
 
 def feed(request, feed_type=None):
@@ -54,7 +56,7 @@ def feed(request, feed_type=None):
 	images = []
 	for recipe in recipes:
 		images.append(RecipeImage.objects.filter(recipe=recipe))
-		
+
 	context = {'recipes': recipes}
 	images = {'images': images}
 
@@ -63,7 +65,7 @@ def feed(request, feed_type=None):
 
 	if user.is_authenticated():
 		# Fetch ingredients the user has
-		context['my_ingredients'] = user_account.ingredients.all()
+		context['my_ingredients'] = UserIngredient.objects.filter(user_account=user_account)
 
 	# TODO: Update the filter and return the list of matching recipes
 	return render(request, 'feed.html', context)
@@ -105,13 +107,13 @@ def settings(request):
 			# Store new images TODO allow only one image
 			request_images = request.FILES.getlist('image')
 			for img in request_images:
-				print "Saving user profile image.."
+				#print "Saving user profile image.."
 				image = UserImage(user_account=user_account, image=img)
 				image.save()
-				print "done!"
-				print "url: " + image.image.url
-				print "path: " + image.image.path
-				print "name: " + image.image.name
+				# print "done!"
+				# print "url: " + image.image.url
+				# print "path: " + image.image.path
+				# print "name: " + image.image.name
 			#print "redirecting"
 			#return redirect('user', user_id=user.id)
 	else:
@@ -131,20 +133,25 @@ def add_my_ingredient(request):
 		if request.method == 'POST':
 			form = IngredientsForm(request.POST)
 			if form.is_valid():
+				name = form.cleaned_data['ingredient_name']
+				amount = form.cleaned_data['ingredient_amount']
 				try:
 					# TODO: Ingredients should not contain many ingredients with the same name
 					# This is only in the demo phase
-					ingredients = Ingredient.objects.filter(name=form.cleaned_data['ingredient'])
+					ingredients = Ingredient.objects.filter(name=name)
 				except Ingredient.DoesNotExist:
 					pass
 				else:
 					item = UserIngredient.objects.filter(user_account=user_account, ingredient__in=ingredients)
 					if not form.cleaned_data['delete']:
 						if not item.exists():
-							user_ingredient = UserIngredient.objects.create(user_account=user_account, ingredient=ingredients[0], amount='1')
+							user_ingredient = UserIngredient.objects.create(user_account=user_account, ingredient=ingredients[0], amount=amount)
 					else:
 						if item.exists():
 							item.delete()
+			else:
+				pass
+				#print form.errors
 		else:
 			form = IngredientsForm()
 
@@ -169,6 +176,12 @@ def recipe(request, recipe_id):
 			favourite = False
 		else:
 			favourite = True
+		try:
+			rated_recipe = RatedRecipe.objects.get(recipe=recipe, user_account=user_account)
+		except RatedRecipe.DoesNotExist:
+			user_rating = None
+		else:
+			user_rating = rated_recipe.user_rating
 	else:
 		favourite = False
 
@@ -198,9 +211,36 @@ def recipe(request, recipe_id):
 		'time': {'hours': hours, 'minutes': minutes},
 		'ingredients': ingredients,
 		'instructions': steps,
-		'images': images
+		'images': images,
+		'user_rating': user_rating,
+		'all_ingredients': [""] # REMOVE WHEN BASE IS FIXED!!
 	}
 	return render(request, 'recipe.html', context)
+
+@login_required
+@csrf_exempt
+def rate_recipe(request):
+	user = request.user
+	user_account = UserAccount.objects.get(user=user) if user.is_authenticated() else None
+	if request.method == "POST":
+		rating = request.POST.get("rating")
+		recipe_id = request.POST.get("id")
+		try:
+			recipe = Recipe.objects.get(id=recipe_id)
+		except Recipe.DoesNotExist:
+			return JsonResponse({'status':'Recipe not found'})
+		else:
+			recipe = Recipe.objects.get(id=recipe_id)
+			try:
+				rated_recipe = RatedRecipe.objects.get(recipe=recipe, user_account=user_account)
+			except RatedRecipe.DoesNotExist:
+				r_recipe = RatedRecipe.objects.create(recipe=recipe, user_account=user_account, user_rating=rating)
+			else:
+				rated_recipe.user_rating = rating
+				rated_recipe.save()
+			return JsonResponse({'status':'success'})
+
+		return JsonResponse({'status':'success'})
 
 @login_required
 def cook_recipe(request, recipe_id):
@@ -292,7 +332,7 @@ def new_recipe(request):
 				hours = 0
 			minutes = form.cleaned_data['minutes']
 			if minutes == None:
-				minutes = 0			
+				minutes = 0
 
 			data = {
 				'title': 		form.cleaned_data['title'],
@@ -308,13 +348,13 @@ def new_recipe(request):
 			request_images = request.FILES.getlist('image')
 
 			for img in request_images:
-				print "Saving image "
+				#print "Saving image "
 				image = RecipeImage(recipe=recipe, image=img)
 				image.save()
-				print "done."
-				print "url: " + image.image.url
-				print "path: " + image.image.path
-				print "name: " + image.image.name
+				# print "done."
+				# print "url: " + image.image.url
+				# print "path: " + image.image.path
+				# print "name: " + image.image.name
 
 			# Add the ingredients
 			ingredients = json.loads(form.cleaned_data['ingredients'])
@@ -383,13 +423,13 @@ def edit_recipe(request, recipe_id):
 			request_images = request.FILES.getlist('image')
 
 			for img in request_images:
-				print "Saving image "
+				#print "Saving image "
 				image = RecipeImage(recipe=recipe, image=img)
 				image.save()
-				print "done."
-				print "url: " + image.image.url
-				print "path: " + image.image.path
-				print "name: " + image.image.name
+				# print "done."
+				# print "url: " + image.image.url
+				# print "path: " + image.image.path
+				# print "name: " + image.image.name
 
 			# Update or create new ingredients
 			for item in new_ingredients:

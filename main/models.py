@@ -8,6 +8,7 @@ class UserAccount(models.Model):
     cooked_recipes = models.ManyToManyField('Recipe', through='CookedRecipe')
     ingredients = models.ManyToManyField('Ingredient', through='UserIngredient')
     description = models.CharField(max_length=100000, blank=True)
+    recipe_ratings = models.ManyToManyField('Recipe', through='RatedRecipe', related_name='useraccount_ratings')
 
 class Recipe(models.Model):
     title = models.CharField(max_length=300)
@@ -29,6 +30,12 @@ class RecipeImage(models.Model):
 class UserImage(models.Model):
     user_account = models.ForeignKey(UserAccount)
     image = models.ImageField(upload_to='userimages')
+
+# Intermediary for rating recipes
+class RatedRecipe(models.Model):
+    recipe = models.ForeignKey(Recipe)
+    user_account = models.ForeignKey(UserAccount)
+    user_rating = models.IntegerField(null=True)
 
 class CookedRecipe(models.Model):
     recipe = models.ForeignKey(Recipe)

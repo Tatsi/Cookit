@@ -36,9 +36,14 @@
 		<div class="col-md-6">
 			<p><span class="glyphicon glyphicon-user"></span><a href="{% url 'user' recipe.creator.user.id %}">{{ recipe.creator.user.username }}</a></p>
 			<i>{{ recipe.description }}</i>
-			<div class="rating">
+			<div class="rating_box">
+			{%comment%}
 			{% include "vote_stars.html" with item=recipe %}
+			{%endcomment%}
+			<label for="user_rating_input" class="control-label">Rating</label>
+			<input id="user_rating_input">
 			<p class="text-muted">{{ recipe.rating_count }} ratings</p>
+			<p>User: {{user_rating}}</p>
 			</div>
 		</div>
 	</div>
@@ -69,7 +74,7 @@
 				<h4>Ingredients</h4>
 				<ul id="ingredients">
 					{% for ingredient in ingredients %}
-					<li><p id="amount">{{ ingredient.amount }}</p> <p id="unit">{{ ingredient.ingredient.unit }}</p>s <p id="name">{{ ingredient.ingredient.name }}</p></li>
+					<li><p id="amount">{{ ingredient.amount }}</p> <p id="unit">{{ ingredient.ingredient.unit_short }}</p>s <p id="name">{{ ingredient.ingredient.name }}</p></li>
 					{% endfor %}
 				</ul>
 			</div>
@@ -78,7 +83,7 @@
 				<h4 class="collapse-header" data-toggle="collapse" href="#ingredients">Ingredients<span class="toggle"></span></h4>
 				<ul id="ingredients" class="collapse in">
 					{% for ingredient in ingredients %}
-					<li><p id="amount">{{ ingredient.amount }}</p> <p id="unit">{{ ingredient.ingredient.unit }}</p>s <p id="name">{{ ingredient.ingredient.name }}</p></li>
+					<li><p id="amount">{{ ingredient.amount }}</p> <p id="unit">{{ ingredient.ingredient.unit_short }}</p>s <p id="name">{{ ingredient.ingredient.name }}</p></li>
 					{% endfor %}
 				</ul>
 			</div>
@@ -200,6 +205,22 @@
 		});
 
 		$('[data-toggle="tooltip"]').tooltip();
+
+		// Initialize rating
+		$("#user_rating_input").rating({min:0, max:5, step: 1.0, stars: 5, showClear: false, showCaption: false, size: 'sm'});
+		var rating = {{recipe.rating_count}}
+		$('#user_rating_input').rating('update', rating);
+
+		$('#user_rating_input').on('rating.change', function(event, value, caption) {
+		    console.log(value);
+		    $.ajax({
+		      type: "POST",
+		      url: '{% url "rate_recipe" %}',
+		      data: {'rating': value,
+		  			'id': {{recipe.id}}}
+		    });
+		});
+
 	});
 </script>
 
