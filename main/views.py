@@ -431,18 +431,6 @@ def edit_recipe(request, recipe_id):
 				if found is False:
 					old_ingredient.delete()
 
-			# Store new images
-			request_images = request.FILES.getlist('image')
-
-			for img in request_images:
-				#print "Saving image "
-				image = RecipeImage(recipe=recipe, image=img)
-				image.save()
-				# print "done."
-				# print "url: " + image.image.url
-				# print "path: " + image.image.path
-				# print "name: " + image.image.name
-
 			# Remove removed images
 			removed_images = request.POST.getlist('removeimage')
 			for img_id in removed_images:
@@ -450,6 +438,24 @@ def edit_recipe(request, recipe_id):
 				image = RecipeImage.objects.get(id=img_id)
 				image.delete()
 				print "Removed image " + str(img_id)
+
+			# Store new images
+			request_images = request.FILES.getlist('image')
+			
+			for img in request_images:
+				#print "Saving image "
+				
+				image_count = RecipeImage.objects.filter(recipe=recipe).count()
+				print image_count
+				if image_count < 5:
+					image = RecipeImage(recipe=recipe, image=img)
+					image.save()
+					# print "done."
+					# print "url: " + image.image.url
+					# print "path: " + image.image.path
+					# print "name: " + image.image.name
+				else:
+					break
 
 			# Update or create new ingredients
 			for item in new_ingredients:

@@ -15,21 +15,24 @@
 			</div>
 		</div>
 		<div class="row">
-			<script> var removedImages = []; </script>
+			<script> var removedImages = []; var imageCount = 0; </script>
 			{% for recipeimage in images %}
 				<div id="recipeImage{{ recipeimage.id }}">
 					<img src="{{ MEDIA_ROOT }}{{ recipeimage.image.url }}" alt="Image"/>
-					<button class="btn rm-btn" id="removeImageButton{{ recipeimage.id }}"><span class="glyphicon glyphicon-plus"></span></button>
+					<button class="removeImageButton" id="removeImageButton{{ recipeimage.id }}"><span class="glyphicon glyphicon-plus"></span></button>
 					<script>
+						imageCount++;
 						$( "#removeImageButton{{ recipeimage.id }}" ).click(function() {
 							removedImages.push("{{ recipeimage.id }}");
 							$( "#recipeImage{{ recipeimage.id }}" ).remove();
 							$( this ).remove();
+							$( "#upload" ).show();
 						});
 					</script>
 				</div>
 			{% endfor %}
-			<div class="col-md-12">
+			<div>
+				<p id="imageInfo">You may add up to <b id="imageCount"></b> more images for this recipe.</p>
 				<div id="upload" class="dropzone">
 					<div class="dz-default dz-message"></div>
 				</div>
@@ -127,6 +130,13 @@
 <script type="text/javascript">
 	var dropzone;
 	$(document).ready(function(){
+		var imageCount = $('.removeImageButton').length;
+		var maxNewImageCount = 5 - imageCount;
+		$("#imageCount").text(maxNewImageCount);
+		if (imageCount > 4) {
+			$( "#upload" ).hide();
+			$( "#imageInfo" ).hide();
+		}
 		// Init dropzone
 		Dropzone.autoDiscover = false;
 
@@ -134,29 +144,49 @@
 			autoProcessQueue: false,
 			url: "/",
 			acceptedFiles: "image/*",
-			maxFiles: 5,
+			maxFiles: maxNewImageCount,
 			maxFilesize: 4,
 			paramName: "image",
 			uploadMultiple: true,
 			addRemoveLinks: true,
 			init: function() {
 				dropzone = this;
+				this.on("addedfile", function() {
+					if (this.files[this.options.maxFiles] != null ){
+						this.removeFile(this.files[this.options.maxFiles]);
+					}
+				});
 			},
 			accept: function(file, done) {
-					//$('new-recipe').append(file);
+					imageCount += 1;
+					maxNewImageCount -= 1;
+					$("#imageCount").text(maxNewImageCount);
+					if (maxNewImageCount == 0)
+					{
+						$("#imageInfo").hide();
+					}
 					done();
 			},
 			success: function (file, response) {
-				//alert(file);
-				var imgName = response;
-				//file.previewElement.classList.add("dz-success");
-				console.log("Successfully uploaded :" + imgName);
 			},
 			error: function (file, response) {
 				file.previewElement.classList.add("dz-error");
 			}
 		});
+		dropzone.on("removedfile", function(file) {
+			imageCount -= 1;
+			maxNewImageCount += 1;
+			$("#imageCount").text(maxNewImageCount);
+			$("#imageInfo").show();
+		});
 
+		$( ".removeImageButton" ).on( "click", function() {
+			imageCount -= 1;
+			maxNewImageCount += 1;
+			dropzone.options.maxFiles = maxNewImageCount;
+			$("#imageCount").text(maxNewImageCount);
+			$("#imageInfo").show();
+		});
 
 		var saved = "{{ saved }}";
 		if (saved == true) {
