@@ -50,14 +50,21 @@
 							<span><i class="glyphicon glyphicon-user fa-lg"></i></span>
 						</a>
 						<ul class="dropdown-menu">
-							<li><a href="{% url 'user' user.id %}" id="navBarUsername"><strong>{{user.username}}</strong></a></li>
-							<li><a href="{% url 'settings' %}" id="navBarUsername"><strong>Settings</strong></a></li>
+							<li><a id="navBarUsername">{{user.username}}</a></li>
+							<li><a href="{% url 'user' user.id %}" id="navBarProfile"><strong>Profile</strong></a></li>
+							<li><a href="{% url 'settings' %}" id="navBarSettings"><strong>Settings</strong></a></li>
 							<li><a href="{% url 'logout' %}"><span class="glyphicon glyphicon-log-out"></span> Log Out</a></li>
 						</ul>
 					</li>
 					<!-- for mobile view -->
 					<li class="visible-xs">
-						<a href="{% url 'user' user.id %}" id="navBarUsername"><strong>{{user.username}}</strong></a>
+						<a id="navBarUsername">{{user.username}}</a>
+					</li>
+					<li class="visible-xs">
+						<a href="{% url 'user' user.id %}" id="navBarUsername"><strong>Profile</strong></a>
+					</li>
+					<li class="visible-xs">
+						<a href="{% url 'settings' %}" id="navBarSettings"><strong>Settings</strong></a>
 					</li>
 					<li class="visible-xs">
 						<a href="{% url 'logout' %}"><span class="glyphicon glyphicon-log-out"></span> Log Out</a>
