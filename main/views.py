@@ -104,23 +104,35 @@ def settings(request):
 		if form.is_valid():
 			form.save()
 
-			# Store new images TODO allow only one image
+			# Store new image
 			request_images = request.FILES.getlist('image')
 			for img in request_images:
 				#print "Saving user profile image.."
 				image = UserImage(user_account=user_account, image=img)
 				image.save()
+				break
 				# print "done!"
 				# print "url: " + image.image.url
 				# print "path: " + image.image.path
 				# print "name: " + image.image.name
 			#print "redirecting"
 			#return redirect('user', user_id=user.id)
+
+			# Remove images
+			removed_images = request.POST.getlist('removeimage')
+			for img_id in removed_images:
+				print "Removing userimage  " + str(img_id)
+				image = UserImage.objects.get(id=img_id)
+				image.delete()
+				print "Removed userimage " + str(img_id)
 	else:
 		form = SettingsForm()
 
 	images = UserImage.objects.filter(user_account=user_account)
 	context = {'user': user, 'user_account': user_account, 'images': images}
+
+	if len(images) > 0:
+		context['hasUserImage'] = True
 
 	return render(request, 'settings.html', context)
 
@@ -430,6 +442,14 @@ def edit_recipe(request, recipe_id):
 				# print "url: " + image.image.url
 				# print "path: " + image.image.path
 				# print "name: " + image.image.name
+
+			# Remove removed images
+			removed_images = request.POST.getlist('removeimage')
+			for img_id in removed_images:
+				print "Removing image  " + str(img_id)
+				image = RecipeImage.objects.get(id=img_id)
+				image.delete()
+				print "Removed image " + str(img_id)
 
 			# Update or create new ingredients
 			for item in new_ingredients:

@@ -15,8 +15,19 @@
 			</div>
 		</div>
 		<div class="row">
+			<script> var removedImages = []; </script>
 			{% for recipeimage in images %}
-				<img src="{{ MEDIA_ROOT }}{{ recipeimage.image.url }}" alt="Image"/>
+				<div id="recipeImage{{ recipeimage.id }}">
+					<img src="{{ MEDIA_ROOT }}{{ recipeimage.image.url }}" alt="Image"/>
+					<button class="btn rm-btn" id="removeImageButton{{ recipeimage.id }}"><span class="glyphicon glyphicon-plus"></span></button>
+					<script>
+						$( "#removeImageButton{{ recipeimage.id }}" ).click(function() {
+							removedImages.push("{{ recipeimage.id }}");
+							$( "#recipeImage{{ recipeimage.id }}" ).remove();
+							$( this ).remove();
+						});
+					</script>
+				</div>
 			{% endfor %}
 			<div class="col-md-12">
 				<div id="upload" class="dropzone">
@@ -214,11 +225,17 @@
 			//Serialize form data
 			var data = new FormData( $('#new-recipe').get(0) );
 
-			//Append images to form data
+			//Append new images to form data
 			var images = dropzone.getQueuedFiles();
 			for(i = 0; i < images.length; i++)
 			{
 				data.append('image', images[i]);
+			}
+			// Append removed images (their recipeimage id) to form data
+			for(i = 0; i < removedImages.length; i++)
+			{
+				data.append('removeimage', removedImages[i]);
+				//alert("Removed image");
 			}
 
 			var recipeId = "{{ recipe.id }}";
@@ -276,6 +293,7 @@
 			e.preventDefault();
 			window.location = "{% url 'recipe' recipe.id %}";
 		});
+
 
 
 		$('.ingredientInput').typeahead({source: all_ingredients });
