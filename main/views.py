@@ -275,12 +275,14 @@ def rate_recipe(request):
 					recipe.average_rating = (float(recipe.average_rating)*recipe.rating_count + rating)/(recipe.rating_count+1)
 					recipe.rating_count += 1
 					recipe.save()
+					return JsonResponse({'code': 0, 'message':'Voting succesful', 'rating': recipe.average_rating})
 				else:
 					# Update average rating
 					recipe.average_rating = float(recipe.average_rating) + (rating - rated_recipe.user_rating)/recipe.rating_count
 					recipe.save()
 					rated_recipe.user_rating = rating
 					rated_recipe.save()
+					return JsonResponse({'code': 0, 'message':'Rating changed', 'rating': recipe.average_rating})
 			else:
 				return JsonResponse({'code': 2, 'message':'Recipe not cooked'})
 
@@ -305,7 +307,7 @@ def cook_recipe(request, recipe_id):
 				user_account = user_account,
 				serving_count = servings
 			)
-			return HttpResponse('')
+			return JsonResponse({'code': 0, 'message':'Recipe cooked'})
 
 # @login_required
 # def upload_recipe_image(request, recipe_name):

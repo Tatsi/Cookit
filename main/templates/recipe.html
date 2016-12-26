@@ -190,7 +190,7 @@
 			return cookieValue;
 		}
 
-		function rate_success(data) {
+		function show_notification(data) {
 			$.notify({message: data.message}, {delay: 2000}); 
 		}
 
@@ -222,7 +222,7 @@
 		      data: {'rating': value,
 		  			'id': {{recipe.id}}
 		  			},
-		  	  success: rate_success
+		  	  success: show_notification
 		  	});
 		});
 
