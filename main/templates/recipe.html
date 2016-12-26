@@ -190,6 +190,10 @@
 			return cookieValue;
 		}
 
+		function rate_success(data) {
+			$.notify({message: data.message}, {delay: 2000}); 
+		}
+
 		// Delete recipe
 		$('.fa-trash').click(function() {
 			$.ajax({
@@ -209,17 +213,17 @@
 		// Initialize rating
 		$("#user_rating_input").rating({min:0, max:5, step: 1.0, stars: 5, showClear: false, showCaption: false, size: 'sm'});
 		var rating = {{recipe.average_rating}};
-		console.log(rating);
 		$('#user_rating_input').rating('update', rating);
 
 		$('#user_rating_input').on('rating.change', function(event, value, caption) {
-		    console.log(value);
 		    $.ajax({
 		      type: "POST",
 		      url: '{% url "rate_recipe" %}',
 		      data: {'rating': value,
-		  			'id': {{recipe.id}}}
-		    });
+		  			'id': {{recipe.id}}
+		  			},
+		  	  success: rate_success
+		  	});
 		});
 
 	});

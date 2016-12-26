@@ -130,10 +130,10 @@ def settings(request):
 			# Remove images
 			removed_images = request.POST.getlist('removeimage')
 			for img_id in removed_images:
-				print "Removing userimage  " + str(img_id)
+				#print "Removing userimage  " + str(img_id)
 				image = UserImage.objects.get(id=img_id)
 				image.delete()
-				print "Removed userimage " + str(img_id)
+				#print "Removed userimage " + str(img_id)
 	else:
 		form = SettingsForm()
 
@@ -247,6 +247,12 @@ def recipe(request, recipe_id):
 
 	return render(request, 'recipe.html', context)
 
+def has_cooked(recipe, user_account):
+	if CookedRecipe.objects.filter(user_account=user_account, recipe=recipe).count() > 0:
+		return True
+	else:
+		return False
+
 @login_required
 @csrf_exempt
 def rate_recipe(request):
@@ -258,25 +264,27 @@ def rate_recipe(request):
 		try:
 			recipe = Recipe.objects.get(id=recipe_id)
 		except Recipe.DoesNotExist:
-			return JsonResponse({'status':'Recipe not found'})
+			return JsonResponse({'code': 1, 'message': 'Recipe not found'})
 		else:
-			try:
-				rated_recipe = RatedRecipe.objects.get(recipe=recipe, user_account=user_account)
-			except RatedRecipe.DoesNotExist:
-				r_recipe = RatedRecipe.objects.create(recipe=recipe, user_account=user_account, user_rating=rating)
-				# Update average rating
-				recipe.average_rating = (float(recipe.average_rating)*recipe.rating_count + rating)/(recipe.rating_count+1)
-				recipe.rating_count += 1
-				recipe.save()
+			if has_cooked(recipe, user_account):
+				try:
+					rated_recipe = RatedRecipe.objects.get(recipe=recipe, user_account=user_account)
+				except RatedRecipe.DoesNotExist:
+					r_recipe = RatedRecipe.objects.create(recipe=recipe, user_account=user_account, user_rating=rating)
+					# Update average rating
+					recipe.average_rating = (float(recipe.average_rating)*recipe.rating_count + rating)/(recipe.rating_count+1)
+					recipe.rating_count += 1
+					recipe.save()
+				else:
+					# Update average rating
+					recipe.average_rating = float(recipe.average_rating) + (rating - rated_recipe.user_rating)/recipe.rating_count
+					recipe.save()
+					rated_recipe.user_rating = rating
+					rated_recipe.save()
 			else:
-				# Update average rating
-				recipe.average_rating = float(recipe.average_rating) + (rating - rated_recipe.user_rating)/recipe.rating_count
-				recipe.save()
-				rated_recipe.user_rating = rating
-				rated_recipe.save()
-			return JsonResponse({'status':'success'})
+				return JsonResponse({'code': 2, 'message':'Recipe not cooked'})
 
-		return JsonResponse({'status':'success'})
+		return JsonResponse({'code': 0, 'message':'Voting succesful', 'rating': recipe.average_rating})
 
 @login_required
 def cook_recipe(request, recipe_id):
@@ -465,10 +473,10 @@ def edit_recipe(request, recipe_id):
 			# Remove removed images
 			removed_images = request.POST.getlist('removeimage')
 			for img_id in removed_images:
-				print "Removing image  " + str(img_id)
+				#print "Removing image  " + str(img_id)
 				image = RecipeImage.objects.get(id=img_id)
 				image.delete()
-				print "Removed image " + str(img_id)
+				#print "Removed image " + str(img_id)
 
 			# Store new images
 			request_images = request.FILES.getlist('image')
@@ -477,7 +485,7 @@ def edit_recipe(request, recipe_id):
 				#print "Saving image "
 
 				image_count = RecipeImage.objects.filter(recipe=recipe).count()
-				print image_count
+				#print image_count
 				if image_count < 5:
 					image = RecipeImage(recipe=recipe, image=img)
 					image.save()
