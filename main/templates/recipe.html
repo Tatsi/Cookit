@@ -208,7 +208,8 @@
 
 		// Initialize rating
 		$("#user_rating_input").rating({min:0, max:5, step: 1.0, stars: 5, showClear: false, showCaption: false, size: 'sm'});
-		var rating = {{recipe.rating_count}}
+		var rating = {{recipe.average_rating}};
+		console.log(rating);
 		$('#user_rating_input').rating('update', rating);
 
 		$('#user_rating_input').on('rating.change', function(event, value, caption) {

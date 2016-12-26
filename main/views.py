@@ -223,19 +223,25 @@ def rate_recipe(request):
 	user = request.user
 	user_account = UserAccount.objects.get(user=user) if user.is_authenticated() else None
 	if request.method == "POST":
-		rating = request.POST.get("rating")
+		rating = float(request.POST.get("rating"))
 		recipe_id = request.POST.get("id")
 		try:
 			recipe = Recipe.objects.get(id=recipe_id)
 		except Recipe.DoesNotExist:
 			return JsonResponse({'status':'Recipe not found'})
 		else:
-			recipe = Recipe.objects.get(id=recipe_id)
 			try:
 				rated_recipe = RatedRecipe.objects.get(recipe=recipe, user_account=user_account)
 			except RatedRecipe.DoesNotExist:
 				r_recipe = RatedRecipe.objects.create(recipe=recipe, user_account=user_account, user_rating=rating)
+				# Update average rating
+				recipe.average_rating = (float(recipe.average_rating)*recipe.rating_count + rating)/(recipe.rating_count+1)
+				recipe.rating_count += 1
+				recipe.save()
 			else:
+				# Update average rating
+				recipe.average_rating = float(recipe.average_rating) + (rating - rated_recipe.user_rating)/recipe.rating_count
+				recipe.save()
 				rated_recipe.user_rating = rating
 				rated_recipe.save()
 			return JsonResponse({'status':'success'})
