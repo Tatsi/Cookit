@@ -5,12 +5,6 @@
 
 <div class="recipe-page">
 	<div class="row">
-		<div class="alert alert-success hidden" id="cooked" role="alert">This recipe was added to your cooking history!</div>
-	</div>
-	<div class="row">
-		<div class="alert alert-success hidden" id="saved" role="alert">This recipe was saved succesfully!</div>
-	</div>
-	<div class="row">
 		<h2>{{ recipe.title }}
 		{% if user.is_authenticated %}
 			{% if favourite %}
@@ -45,7 +39,7 @@
 			<label for="user_rating_input" class="control-label">Avg. rating</label>
 			<span class="fa-stack fa-2x">
 			  <i class="fa fa-star fa-stack-2x" id="avg-rating-icon"></i>
-			  <strong class="fa-stack-1x">{{recipe.average_rating|floatformat:0}}</strong>
+			  <strong class="fa-stack-1x" id="avg-rating-figure">{{recipe.average_rating|floatformat:0}}</strong>
 			</span>
 			</div>
 		</div>
@@ -119,11 +113,7 @@
 		// Show alert for saved recipe if saved = true
 		var saved = "{{ saved }}";
 		if (saved == true) {
-			$('.alert-success#saved').removeClass("hidden");
-			setTimeout(function() {
-				$('.alert-success#saved').fadeOut();
-				$('.alert-success#saved').addClass("hidden");
-			}, 5000);
+			show_notification("This recipe was saved succesfully!");
 		}
 
 		var original_amounts = [];
@@ -143,10 +133,7 @@
 					csrfmiddlewaretoken: $('input[name=csrfmiddlewaretoken]').val(),
 				},
 				success: function() {
-					$('.alert-success#cooked').removeClass("hidden");
-					setTimeout(function() {
-						$('.alert-success#cooked').fadeOut();
-					}, 5000);
+					show_notification("This recipe was added to your cooking history!");
 				}
 			});
 		});
@@ -193,8 +180,8 @@
 			return cookieValue;
 		}
 
-		function show_notification(data) {
-			$.notify({message: data.message}, {delay: 2000}); 
+		function show_notification(message) {
+			$.notify({message: message}, {delay: 2000}); 
 		}
 
 		// Delete recipe
@@ -215,7 +202,7 @@
 
 		// Initialize rating
 		$("#user_rating_input").rating({min:0, max:5, step: 1.0, stars: 5, showClear: false, showCaption: false, size: 'sm'});
-		var rating = {{user_rating}};
+		var rating = {{user_rating|default_if_none:-1}};
 		$('#user_rating_input').rating('update', rating);
 
 		$('#user_rating_input').on('rating.change', function(event, value, caption) {
@@ -225,7 +212,12 @@
 		      data: {'rating': value,
 		  			'id': {{recipe.id}}
 		  			},
-		  	  success: show_notification
+		  	  success: function(data) {
+		  	  	show_notification(data.message);
+		  	  	if(data.code === 0) {
+		  	  		$("#avg-rating-figure").text(parseFloat(data.rating).toFixed(0));
+		  	  	}
+		  	  }
 		  	});
 		});
 
