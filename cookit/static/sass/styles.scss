@@ -223,6 +223,12 @@ button.add-btn {
 			color: $dark-grey;
 		}
 	}
+	#avg-rating-icon {
+		color: $navbar-color;
+	}
+	.glyphicon-star {
+		color: $navbar-color;
+	}
 	.instructions {
 		p {
 			margin: 0;
