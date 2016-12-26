@@ -12,12 +12,27 @@
 	</div>
 	<div>
 		<h3>Profile picture<h3>
+		<script> var removedImages = []; </script>
+		<p>You may add one image for your profile.</p>
 		{% for userimage in images %}
-			<img src="{{ MEDIA_ROOT }}{{ userimage.image.url }}" alt="Image"/>
+			<img id="profileimage" src="{{ MEDIA_ROOT }}{{ userimage.image.url }}" alt="Image"/>
+			<button class="btn rm-btn" id="removeProfileImage"><span class="glyphicon glyphicon-plus"></span></button>
+			<script>
+				$( "#removeProfileImage" ).click(function() {
+					removedImages.push("{{ userimage.id }}");
+					$( "#profileimage" ).remove();
+					$( this ).remove();
+					$("#upload").show();
+				});
+			</script>
 		{% endfor %}
 		<div class="col-md-12">
 			<div id="upload" class="dropzone">
-				<div class="dz-default dz-message"></div>
+				{% if hasUserImage %}
+					<script>
+						$("#upload").hide();
+					</script>
+				{% endif %}
 			</div>
 		</div>
 	</div>
@@ -61,6 +76,12 @@
 		for(i = 0; i < images.length; i++)
 		{
 			data.append('image', images[i]);
+		}
+
+		// Append removed images (their userimage id) to form data
+		for(i = 0; i < removedImages.length; i++)
+		{
+			data.append('removeimage', removedImages[i]);
 		}
 
 		$.ajax({

@@ -12,6 +12,12 @@ from django.http import JsonResponse
 
 def mainpage(request):
 	context = {}
+	user = request.user
+	if user.is_authenticated():
+		user_account = UserAccount.objects.get(user=user)
+		# Fetch ingredients the user has
+		context['my_ingredients'] = UserIngredient.objects.filter(user_account=user_account)
+		context['all_ingredients'] = json.dumps(list(Ingredient.objects.all().values('name', 'unit').distinct()))
 	return render(request, 'mainpage.html', context)
 
 def search(request):
@@ -92,6 +98,9 @@ def user(request, user_id=None):
 		if viewed_user_account in user_account.favourite_users.all():
 			context['favourite_user'] = True
 
+		# Fetch ingredients the user has
+		context['my_ingredients'] = UserIngredient.objects.filter(user_account=user_account)
+
 	return render(request, 'user.html', context)
 
 @login_required
@@ -104,23 +113,39 @@ def settings(request):
 		if form.is_valid():
 			form.save()
 
-			# Store new images TODO allow only one image
+			# Store new image
 			request_images = request.FILES.getlist('image')
 			for img in request_images:
 				#print "Saving user profile image.."
 				image = UserImage(user_account=user_account, image=img)
 				image.save()
+				break
 				# print "done!"
 				# print "url: " + image.image.url
 				# print "path: " + image.image.path
 				# print "name: " + image.image.name
 			#print "redirecting"
 			#return redirect('user', user_id=user.id)
+
+			# Remove images
+			removed_images = request.POST.getlist('removeimage')
+			for img_id in removed_images:
+				print "Removing userimage  " + str(img_id)
+				image = UserImage.objects.get(id=img_id)
+				image.delete()
+				print "Removed userimage " + str(img_id)
 	else:
 		form = SettingsForm()
 
 	images = UserImage.objects.filter(user_account=user_account)
 	context = {'user': user, 'user_account': user_account, 'images': images}
+
+	if user.is_authenticated():
+		# Fetch ingredients the user has
+		context['my_ingredients'] = UserIngredient.objects.filter(user_account=user_account)
+
+	if len(images) > 0:
+		context['hasUserImage'] = True
 
 	return render(request, 'settings.html', context)
 
@@ -213,8 +238,13 @@ def recipe(request, recipe_id):
 		'instructions': steps,
 		'images': images,
 		'user_rating': user_rating,
-		'all_ingredients': [""] # REMOVE WHEN BASE IS FIXED!!
+		'all_ingredients': json.dumps(list(Ingredient.objects.all().values('name', 'unit').distinct())),
 	}
+
+	if user.is_authenticated():
+		# Fetch ingredients the user has
+		context['my_ingredients'] = UserIngredient.objects.filter(user_account=user_account)
+
 	return render(request, 'recipe.html', context)
 
 @login_required
@@ -269,18 +299,18 @@ def cook_recipe(request, recipe_id):
 			)
 			return HttpResponse('')
 
-@login_required
-def upload_recipe_image(request, recipe_name):
-	if request.method == "POST":
-		recipe = Recipe.objects.get(id=recipe_id)
-		form = RecipeImageForm(request, recipe=recipe_id)
-		if form.is_valid():
-			#form = form.save(commit=False)
-			#form.user = request.user
-			form.save()
-			# return redirect('user', user_id=user.id)
-	else:
-		return HttpResponse('')
+# @login_required
+# def upload_recipe_image(request, recipe_name):
+# 	if request.method == "POST":
+# 		recipe = Recipe.objects.get(id=recipe_id)
+# 		form = RecipeImageForm(request, recipe=recipe_id)
+# 		if form.is_valid():
+# 			#form = form.save(commit=False)
+# 			#form.user = request.user
+# 			form.save()
+# 			# return redirect('user', user_id=user.id)
+# 	else:
+# 		return HttpResponse('')
 
 @login_required
 def add_favourite(request, recipe_id):
@@ -373,6 +403,13 @@ def new_recipe(request):
 		form = NewRecipeForm()
 	context = {}
 	context['all_ingredients'] = json.dumps(list(Ingredient.objects.all().values('name', 'unit').distinct()))
+
+	user = request.user
+	user_account = UserAccount.objects.get(user=user)
+
+	# Fetch ingredients the user has
+	context['my_ingredients'] = UserIngredient.objects.filter(user_account=user_account)
+
 	return render(request, 'new_recipe.html', context)
 
 @login_required
@@ -425,17 +462,31 @@ def edit_recipe(request, recipe_id):
 				if found is False:
 					old_ingredient.delete()
 
+			# Remove removed images
+			removed_images = request.POST.getlist('removeimage')
+			for img_id in removed_images:
+				print "Removing image  " + str(img_id)
+				image = RecipeImage.objects.get(id=img_id)
+				image.delete()
+				print "Removed image " + str(img_id)
+
 			# Store new images
 			request_images = request.FILES.getlist('image')
 
 			for img in request_images:
 				#print "Saving image "
-				image = RecipeImage(recipe=recipe, image=img)
-				image.save()
-				# print "done."
-				# print "url: " + image.image.url
-				# print "path: " + image.image.path
-				# print "name: " + image.image.name
+
+				image_count = RecipeImage.objects.filter(recipe=recipe).count()
+				print image_count
+				if image_count < 5:
+					image = RecipeImage(recipe=recipe, image=img)
+					image.save()
+					# print "done."
+					# print "url: " + image.image.url
+					# print "path: " + image.image.path
+					# print "name: " + image.image.name
+				else:
+					break
 
 			# Update or create new ingredients
 			for item in new_ingredients:
@@ -476,6 +527,10 @@ def edit_recipe(request, recipe_id):
 	context['time'] = {'hours': hours, 'minutes': minutes}
 	context['steps'] = steps
 	context['all_ingredients'] = json.dumps(list(Ingredient.objects.all().values('name', 'unit').distinct()))
+
+	# Fetch ingredients the user has
+	context['my_ingredients'] = UserIngredient.objects.filter(user_account=user_account)
+
 	return render(request, 'new_recipe.html', context)
 
 @login_required
