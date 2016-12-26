@@ -12,7 +12,11 @@
 				</h1>
 				<h5> by {{item.creator.user.username}}</h5>
 				<p>{{item.description|truncatechars:90}}</p>
-				{% include "vote_stars.html" with item=item %}
+				<label for="user_rating_input" class="control-label">Avg. rating</label>
+				<span class="fa-stack">
+				  <i class="fa fa-star fa-stack-2x" id="avg-rating-icon"></i>
+				  <strong class="fa-stack-1x">{{item.average_rating|floatformat:0}}</strong>
+				</span>
 			</div>
 		</div>
 	</a>

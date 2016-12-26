@@ -223,9 +223,7 @@ button.add-btn {
 			color: $dark-grey;
 		}
 	}
-	#avg-rating-icon {
-		color: $navbar-color;
-	}
+
 	.glyphicon-star {
 		color: $navbar-color;
 	}
@@ -363,6 +361,10 @@ button.add-btn {
 .vote-star {
 	font-size: 1.5em;
 	color: #EAB126;
+}
+
+#avg-rating-icon {
+	color: $navbar-color;
 }
 
 // My ingredients modal
