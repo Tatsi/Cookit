@@ -5,129 +5,129 @@
 		<title>Cookit</title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-star-rating/4.0.1/css/star-rating.min.css">
-		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-star-rating/4.0.1/css/theme-krajee-fa.min.css">
+		<link rel="stylesheet" type="text/css" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+		<link rel="stylesheet" type="text/css" href="{% static 'bootstrap-star-rating/css/star-rating.min.css' %}">
+		<link rel="stylesheet" type="text/css" href="{% static 'bootstrap-star-rating/themes/krajee-fa/theme.min.css' %}">
 		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
 		<link href="{% static 'sass/styles.css' %}" rel="stylesheet" type="text/css" />
 		<link href="{% static 'dropzone/dropzone.css' %}" rel="stylesheet" type="text/css" />
+		<link href="{% static 'font-awesome/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css" />
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-		<script src="https://use.fontawesome.com/2483007207.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-3-typeahead/4.0.2/bootstrap3-typeahead.min.js"></script>
+		<script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+		<script src="{% static 'bootstrap3-typeahead.min.js' %}"></script>
 		<script src="{% static 'dropzone/dropzone.js' %}"></script>
-		<script type="text/javascript" src='https://cdnjs.cloudflare.com/ajax/libs/bootstrap-star-rating/4.0.1/js/star-rating.min.js'></script>
+		<script type="text/javascript" src="{% static 'bootstrap-star-rating/js/star-rating.min.js' %}"></script>
 		<script type="text/javascript" src="{% static 'bootstrap-notify.min.js' %}"></script>
 		<script type="text/javascript">
-	$(document).ready(function() {
-		var isOpen = window.localStorage.getItem('my_ingredients_open');
-		var modal = document.getElementById('my-ingredients-modal');
-		if (isOpen == "true") {
-			modal.style.display = 'block';
-			$('#my-ingredients-button i').addClass('fa-angle-up');
-		} else {
-
-			$('#my-ingredients-button i').addClass('fa-angle-down');
-		}
-
-		var all_ingredients = {{all_ingredients|safe}};
-		$('#ingredientInput').typeahead({source: all_ingredients });
-
-		$(document).on('submit', '#main_form', function(e) {
-			e.preventDefault();
-			var ingredient_name = $('#ingredientInput').val();
-			var ingredient_amount = $('#ingredientAmountInput').val();
-			// If ingredient is already there do nothing
-			if ($('span:contains("' + ingredient_name + '")').length > 0) {
-				// Clear input
-				$('#ingredientInput').val('');
+		$(document).ready(function() {
+			var isOpen = window.localStorage.getItem('my_ingredients_open');
+			var modal = document.getElementById('my-ingredients-modal');
+			if (isOpen == "true") {
+				modal.style.display = 'block';
+				$('#my-ingredients-button i').addClass('fa-angle-up');
 			} else {
+
+				$('#my-ingredients-button i').addClass('fa-angle-down');
+			}
+
+			var all_ingredients = {{all_ingredients|safe}};
+			$('#ingredientInput').typeahead({source: all_ingredients });
+
+			$(document).on('submit', '#main_form', function(e) {
+				e.preventDefault();
+				var ingredient_name = $('#ingredientInput').val();
+				var ingredient_amount = $('#ingredientAmountInput').val();
+				// If ingredient is already there do nothing
+				if ($('span:contains("' + ingredient_name + '")').length > 0) {
+					// Clear input
+					$('#ingredientInput').val('');
+				} else {
+					$.ajax({
+						type: "POST",
+						url: "{% url 'add_my_ingredient' %}",
+						data: {
+							csrfmiddlewaretoken: $('input[name=csrfmiddlewaretoken]').val(),
+							ingredient_name: ingredient_name,
+							ingredient_amount: ingredient_amount,
+						},
+						success: function() {
+							// Add element to list
+							var list = document.getElementsByClassName('ingredients-list')[0];
+							var entry = document.createElement('h4');
+							var amountLabel = document.createElement('span');
+							var unitLabel = document.createElement('span');
+							var nameLabel = document.createElement('span');
+							var removeButton = document.createElement('span');
+							var text = ingredient_amount + ' ';
+							amountLabel.appendChild(document.createTextNode(text));
+							text = "unit "
+							unitLabel.appendChild(document.createTextNode(text));
+							text = ingredient_name;
+							nameLabel.appendChild(document.createTextNode(text));
+							removeButton.setAttribute('class', 'fa fa-remove pull-right')
+							entry.appendChild(amountLabel);
+							entry.appendChild(unitLabel);
+							entry.appendChild(nameLabel);
+							entry.appendChild(removeButton);
+							list.appendChild(entry);
+							// Clear input
+							$('#ingredientInput').val('');
+							$('#ingredientAmountInput').val('');
+						}
+					});
+				}
+			});
+
+			$(document).on("click", '.ingredients-list .fa-remove', function() {
+				var ingredient_name = $(this).prev().text();
+				var elem = $('span:contains("' + ingredient_name + '")')[0].parentElement
+				elem.parentElement.removeChild(elem);
 				$.ajax({
 					type: "POST",
 					url: "{% url 'add_my_ingredient' %}",
 					data: {
 						csrfmiddlewaretoken: $('input[name=csrfmiddlewaretoken]').val(),
 						ingredient_name: ingredient_name,
-						ingredient_amount: ingredient_amount,
+						delete: true,
 					},
 					success: function() {
-						// Add element to list
-						var list = document.getElementsByClassName('ingredients-list')[0];
-						var entry = document.createElement('h4');
-						var amountLabel = document.createElement('span');
-						var unitLabel = document.createElement('span');
-						var nameLabel = document.createElement('span');
-						var removeButton = document.createElement('span');
-						var text = ingredient_amount + ' ';
-						amountLabel.appendChild(document.createTextNode(text));
-						text = "unit "
-						unitLabel.appendChild(document.createTextNode(text));
-						text = ingredient_name;
-						nameLabel.appendChild(document.createTextNode(text));
-						removeButton.setAttribute('class', 'fa fa-remove pull-right')
-						entry.appendChild(amountLabel);
-						entry.appendChild(unitLabel);
-						entry.appendChild(nameLabel);
-						entry.appendChild(removeButton);
-						list.appendChild(entry);
-						// Clear input
-						$('#ingredientInput').val('');
-						$('#ingredientAmountInput').val('');
 					}
 				});
-			}
-		});
+			});
 
-		$(document).on("click", '.ingredients-list .fa-remove', function() {
-			var ingredient_name = $(this).prev().text();
-			var elem = $('span:contains("' + ingredient_name + '")')[0].parentElement
-			elem.parentElement.removeChild(elem);
-			$.ajax({
-				type: "POST",
-				url: "{% url 'add_my_ingredient' %}",
-				data: {
-					csrfmiddlewaretoken: $('input[name=csrfmiddlewaretoken]').val(),
-					ingredient_name: ingredient_name,
-					delete: true,
-				},
-				success: function() {
+
+			var modalButton = document.getElementById('my-ingredients-button');
+			var closeButton = document.getElementById('close-modal');
+
+			function closeModal() {
+				modal.style.display = 'none';
+				location.reload();
+				window.localStorage.setItem('my_ingredients_open', false);
+				$('#my-ingredients-button i').removeClass('fa-angle-up');
+				$('#my-ingredients-button i').addClass('fa-angle-down');
+			}
+
+			function openModal() {
+				modal.style.display = 'block';
+				window.localStorage.setItem('my_ingredients_open', true);
+				$('#my-ingredients-button i').removeClass('fa-angle-down');
+				$('#my-ingredients-button i').addClass('fa-angle-up');
+			}
+
+			$('#my-ingredients-button').click(function() {
+				var isOpen = window.localStorage.getItem('my_ingredients_open');
+				if (isOpen == "true") {
+					closeModal();
+				} else {
+					openModal();
 				}
 			});
+
+			$('#apply-btn').click(function() {
+				location.reload();
+			})
 		});
-
-
-		var modalButton = document.getElementById('my-ingredients-button');
-		var closeButton = document.getElementById('close-modal');
-
-		function closeModal() {
-			modal.style.display = 'none';
-			location.reload();
-			window.localStorage.setItem('my_ingredients_open', false);
-			$('#my-ingredients-button i').removeClass('fa-angle-up');
-			$('#my-ingredients-button i').addClass('fa-angle-down');
-		}
-
-		function openModal() {
-			modal.style.display = 'block';
-			window.localStorage.setItem('my_ingredients_open', true);
-			$('#my-ingredients-button i').removeClass('fa-angle-down');
-			$('#my-ingredients-button i').addClass('fa-angle-up');
-		}
-
-		$('#my-ingredients-button').click(function() {
-			var isOpen = window.localStorage.getItem('my_ingredients_open');
-			if (isOpen == "true") {
-				closeModal();
-			} else {
-				openModal();
-			}
-		});
-
-		$('#apply-btn').click(function() {
-			location.reload();
-		})
-	});
-</script>
+		</script>
 	</head>
 	<body>
 		{% include "base/navbar.html" %}
@@ -163,8 +163,10 @@
 						</div>
 					</div>
 				</div>
-			{% endif %}
 			<div class="col-lg-8 container center-column">
+			{% else %}
+			<div class="col-lg-8 col-lg-offset-2 container center-column">
+			{% endif %}
 				{% block content %}
 				{% endblock %}
 			</div>

@@ -4,9 +4,6 @@
 {% block content %}
 
 <div class="new-recipe-page">
-	<div class="row">
-		<div class="alert alert-success hidden" role="alert">This recipe was saved succesfully!</div>
-	</div>
 	<form class="form-inline" id="new-recipe" enctype="multipart/form-data">
 		{% csrf_token %}
 		<div class="row">
@@ -130,6 +127,12 @@
 <script type="text/javascript">
 	var dropzone;
 	$(document).ready(function(){
+		// Show alert for saved recipe if saved = true
+		var saved = "{{ saved }}";
+		if (saved == true) {
+			show_notification("This recipe was saved succesfully!");
+		}
+
 		var imageCount = $('.removeImageButton').length;
 		var maxNewImageCount = 5 - imageCount;
 		$("#imageCount").text(maxNewImageCount);
@@ -188,14 +191,6 @@
 			$("#imageInfo").show();
 		});
 
-		var saved = "{{ saved }}";
-		if (saved == true) {
-			$('.alert-success').removeClass("hidden");
-			setTimeout(function() {
-				$('.alert-success').fadeOut();
-				$('.alert-success').addClass("hidden");
-			}, 5000);
-		}
 		var all_ingredients = {{all_ingredients|safe}};
 
 		$('.step-container').on('click', '#addStepButton', function(evt) {
@@ -224,6 +219,10 @@
 
 			$('#addIngredientButton').before(newContainer);
 		});
+
+		function show_notification(message) {
+			$.notify({message: message}, {delay: 2000});
+		}
 
 		function submitRecipe(type) {
 			var buttonText = $(this).find("button[type=submit]:focus").text();

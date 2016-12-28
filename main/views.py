@@ -66,10 +66,10 @@ def feed(request, feed_type=None):
 	context = {'recipes': recipes}
 	images = {'images': images}
 
-	# Convert all ingredients to a list and pass to template
-	context['all_ingredients'] = json.dumps(list(Ingredient.objects.all().values_list('name', flat=True).distinct()))
 
 	if user.is_authenticated():
+		# Convert all ingredients to a list and pass to template
+		context['all_ingredients'] = json.dumps(list(Ingredient.objects.all().values_list('name', flat=True).distinct()))
 		# Fetch ingredients the user has
 		context['my_ingredients'] = UserIngredient.objects.filter(user_account=user_account)
 
@@ -97,6 +97,9 @@ def user(request, user_id=None):
 	if user.is_authenticated():
 		if viewed_user_account in user_account.favourite_users.all():
 			context['favourite_user'] = True
+
+		# Convert all ingredients to a list and pass to template
+		context['all_ingredients'] = json.dumps(list(Ingredient.objects.all().values_list('name', flat=True).distinct()))
 
 		# Fetch ingredients the user has
 		context['my_ingredients'] = UserIngredient.objects.filter(user_account=user_account)
@@ -141,6 +144,9 @@ def settings(request):
 	context = {'user': user, 'user_account': user_account, 'images': images}
 
 	if user.is_authenticated():
+		# Convert all ingredients to a list and pass to template
+		context['all_ingredients'] = json.dumps(list(Ingredient.objects.all().values_list('name', flat=True).distinct()))
+
 		# Fetch ingredients the user has
 		context['my_ingredients'] = UserIngredient.objects.filter(user_account=user_account)
 
@@ -193,6 +199,8 @@ def recipe(request, recipe_id):
 	user = request.user
 	user_account = UserAccount.objects.get(user=user) if user.is_authenticated() else None
 
+	user_rating = None
+
 	# Check if the user has this recipe in his favourites
 	if user_account:
 		try:
@@ -204,7 +212,7 @@ def recipe(request, recipe_id):
 		try:
 			rated_recipe = RatedRecipe.objects.get(recipe=recipe, user_account=user_account)
 		except RatedRecipe.DoesNotExist:
-			user_rating = None
+			pass
 		else:
 			user_rating = rated_recipe.user_rating
 	else:
