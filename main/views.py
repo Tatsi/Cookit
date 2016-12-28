@@ -288,7 +288,7 @@ def rate_recipe(request):
 					rated_recipe.save()
 					return JsonResponse({'code': 0, 'message':'Rating changed', 'rating': recipe.average_rating})
 			else:
-				return JsonResponse({'code': 2, 'message':'Recipe not cooked'})
+				return JsonResponse({'code': 2, 'message':'You have to Cookit before rating'})
 
 		return JsonResponse({'code': 0, 'message':'Voting succesful', 'rating': recipe.average_rating})
 
