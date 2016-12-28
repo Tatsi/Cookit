@@ -132,7 +132,7 @@
 	<body>
 		{% include "base/navbar.html" %}
 			{% if user.is_authenticated %}
-				<div class="col-lg-2 my-ingredients">
+				<div class="my-ingredients">
 					<button class="btn" id="my-ingredients-button">My ingredients<i class="fa fa-lg"></i></button>
 					<div id="my-ingredients-modal">
 						<div class="content">
@@ -163,10 +163,8 @@
 						</div>
 					</div>
 				</div>
-			<div class="col-lg-8 container center-column">
-			{% else %}
-			<div class="col-lg-8 col-lg-offset-2 container center-column">
 			{% endif %}
+			<div class="col-lg-8 col-lg-offset-2 container center-column">
 				{% block content %}
 				{% endblock %}
 			</div>

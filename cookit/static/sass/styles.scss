@@ -12,18 +12,18 @@ html {
 }
 
 html:after {
-    content: "";
-    display: block;
-    position: fixed;
-    top: 0;
-    left: 0;
-    background-image: url('../images/food2.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    opacity: 0.9;
+	content: "";
+	display: block;
+	position: fixed;
+	top: 0;
+	left: 0;
+	background-image: url('../images/food2.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	width: 100%;
+	height: 100%;
+	z-index: -1;
+	opacity: 0.9;
 }
 
 body {
@@ -368,33 +368,13 @@ button.add-btn {
 }
 
 // My ingredients modal
-// Mobile
-@media only screen and (max-width : 767px) {
-	.content {
-		width: 100%;
-		left: 0;
-	}
-	.ingredients-list {
-		max-height: 500px;
-	}
-}
-
-// Other devices
-@media only screen and (min-width : 768px) {
-	.ingredients-list {
-		max-height: 500px;
-	}
-}
-
 // All devices
 #my-ingredients-modal {
 	display: none;
 	z-index: 2;
-	width: 100%;
-	height: 100%;
 	overflow: auto;
-	background-color: rgba(0, 0, 0, 0.5);
-	left: 0;
+	background-color: rgba(0, 0, 0, 0.7);
+	position: absolute;
 
 	.content {
 		padding: 10px;
@@ -403,6 +383,7 @@ button.add-btn {
 	.ingredients-list {
 		overflow: auto;
 		padding: 0 15px 0 5px;
+		max-height: 514px;
 
 		span {
 			color: #fff;
@@ -432,6 +413,12 @@ button.add-btn {
 				color: #fff;
 			}
 		}
+		.form-group {
+			.col-sm-8 {
+				padding: 0;
+				margin-bottom: 15px;
+			}
+		}
 	}
 
 	.typeahead.dropdown-menu {
@@ -444,11 +431,11 @@ button.add-btn {
 // My ingredients button
 #my-ingredients-button {
 	z-index: 1;
-	left: 0;
-	width: 100%;
 	background-color: $heading-color;
 	color: #fff;
 	border-radius: 0;
+	font-size: 22px;
+	position: fixed;
 
 	&:focus {
 		outline: none;
@@ -462,19 +449,40 @@ button.add-btn {
 // Mobile
 @media only screen and (max-width : 767px) {
 	#my-ingredients-button {
-		position: fixed;
 		bottom: 0;
 		font-size: 20px;
+		width: 100%;
+	}
+
+	#my-ingredients-modal {
+		bottom: 42px;
+		width: 100%;
+	}
+}
+
+@media only screen and (max-width : 1199px) and (min-width : 768px) {
+	#my-ingredients-button {
+		-webkit-transform: rotate(-90deg);
+		-moz-transform: rotate(-90deg);
+		left: -90px;
+		top: 30%;
+		font-size: 24px;
+	}
+
+	#my-ingredients-modal {
+		left: 47px;
+		width: 30%;
 	}
 }
 
 // Other devices
-@media only screen and (min-width : 768px) {
-	div.my-ingredients {
-		padding: 0;
+@media only screen and (min-width : 1200px) {
+	#my-ingredients-button {
+		width: 16.7%;
 	}
 
-	#my-ingredients-button {
-		font-size: 24px;
+	#my-ingredients-modal {
+		width: 16.7%;
+		top: 97px;
 	}
 }
