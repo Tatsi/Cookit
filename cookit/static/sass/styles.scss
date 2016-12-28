@@ -31,6 +31,15 @@ body {
 	height: 100%;
 }
 
+@media only screen and (max-width : 767px) {
+	.container {
+		.recipe-page, .new-recipe-page, .feed {
+			margin-bottom: 45px;
+		}
+
+	}
+}
+
 .center-column {
 	background-color: rgba(255, 255, 255, 0.9);
 	height: 100%;
