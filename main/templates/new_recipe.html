@@ -4,9 +4,6 @@
 {% block content %}
 
 <div class="new-recipe-page">
-	<div class="row">
-		<div class="alert alert-success hidden" role="alert">This recipe was saved succesfully!</div>
-	</div>
 	<form class="form-inline" id="new-recipe" enctype="multipart/form-data">
 		{% csrf_token %}
 		<div class="row">
@@ -190,11 +187,8 @@
 
 		var saved = "{{ saved }}";
 		if (saved == true) {
-			$('.alert-success').removeClass("hidden");
-			setTimeout(function() {
-				$('.alert-success').fadeOut();
-				$('.alert-success').addClass("hidden");
-			}, 5000);
+			$.notify({message: "This recipe was saved succesfully!"}, {delay: 2000});
+
 		}
 		var all_ingredients = {{all_ingredients|safe}};
 
