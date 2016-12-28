@@ -61,7 +61,10 @@
 			  <strong class="fa-stack-1x" id="avg-rating-figure">{{recipe.average_rating|floatformat:0}}</strong>
 			</span>
 			</div>
-			<div class="fb-share-button" data-href="{{ absolute_url }}" data-layout="button_count"></div>
+
+			<div class="fb-like" data-href="{{ absolute_url }}" data-layout="button_count" 
+				data-action="like" data-size="small" data-show-faces="true" data-share="true">
+			</div>
 		</div>
 	</div>
 	<div class="row time">
