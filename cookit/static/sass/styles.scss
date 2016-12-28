@@ -166,6 +166,9 @@ button.add-btn {
 
 .feed {
 	padding-top: 22px;
+	.description {
+		min-height: 60px;
+	}
 }
 // Styles for feed items
 .thumbnail {
