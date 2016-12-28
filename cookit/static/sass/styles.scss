@@ -201,6 +201,12 @@ button.add-btn {
 			padding: 4px;
 		}
 	}
+	#description {
+		overflow: hidden;
+		display: -webkit-box;
+		-webkit-line-clamp: 3;
+		-webkit-box-orient: vertical;
+	}
 }
 
 @media (min-width: 768px) {

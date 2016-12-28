@@ -11,7 +11,7 @@
 				{% endif %}
 				</h1>
 				<h5> by {{item.creator.user.username}}</h5>
-				<p>{{item.description|truncatechars:90}}</p>
+				<p id="description">{{item.description}}</p>
 				<label for="user_rating_input" class="control-label">Avg. rating</label>
 				<span class="fa-stack">
 				  <i class="fa fa-star fa-stack-2x" id="avg-rating-icon"></i>
