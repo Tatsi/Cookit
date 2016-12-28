@@ -220,10 +220,32 @@
 		});
 
 		function submitRecipe(type) {
-			if(!$('.step-text').val() || !$('.ingredientInput').val() || !$('#input-title').val()
-				|| !$('#description').val() || (!$('#hours').val() && !$('#minutes').val()) 
-				|| !$('#servings').val()) {
-				$.notify({message: 'Please fill all fields!'},{delay: 2000, type: 'danger'});
+			var data_missing = false;
+			if(!$('.step-text').val()) {
+				$.notify({message: 'Please add a step!'},{delay: 3000, type: 'danger'});
+				data_missing = true;
+			}
+			if(!$('.ingredientInput').val()) {
+				$.notify({message: 'Please add an ingredient!'},{delay: 3000, type: 'danger'});
+				data_missing = true;
+			} 
+			if(!$('#input-title').val()){
+				$.notify({message: 'Please add the title!'},{delay: 3000, type: 'danger'});
+				data_missing = true;
+			}
+			if(!$('#description').val()) {
+				$.notify({message: 'Please add the description!'},{delay: 3000, type: 'danger'});
+				data_missing = true;
+			}
+			if(!$('#hours').val() && !$('#minutes').val()) {
+				$.notify({message: 'Please add the duration!'},{delay: 3000, type: 'danger'});
+				data_missing = true;
+			}
+			if(!$('#servings').val()) {
+				$.notify({message: 'Please add servings!'},{delay: 3000, type: 'danger'});
+				data_missing = true;
+			}
+			if(data_missing) {
 				return;
 			}
 
