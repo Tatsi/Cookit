@@ -234,6 +234,9 @@ def recipe(request, recipe_id):
 	images = RecipeImage.objects.filter(recipe=recipe)
 	#print images
 
+	# Create absolute url
+	absolute_url = request.build_absolute_uri()
+
 	# Was the recipe just saved? (for showing alert)
 	saved = request.GET.get('saved', False)
 
@@ -246,6 +249,7 @@ def recipe(request, recipe_id):
 		'instructions': steps,
 		'images': images,
 		'user_rating': user_rating,
+		'absolute_url': absolute_url,
 		'all_ingredients': json.dumps(list(Ingredient.objects.all().values('name', 'unit').distinct())),
 	}
 
@@ -292,7 +296,7 @@ def rate_recipe(request):
 					rated_recipe.save()
 					return JsonResponse({'code': 0, 'message':'Rating changed', 'rating': recipe.average_rating})
 			else:
-				return JsonResponse({'code': 2, 'message':'Recipe not cooked'})
+				return JsonResponse({'code': 2, 'message':'You have to Cookit before rating'})
 
 		return JsonResponse({'code': 0, 'message':'Voting succesful', 'rating': recipe.average_rating})
 

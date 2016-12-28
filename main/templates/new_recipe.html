@@ -8,7 +8,7 @@
 		{% csrf_token %}
 		<div class="row">
 			<div class="col-md-6">
-				<h2><input type="text" name="title" placeholder="Enter title..." value="{{ recipe.title }}"></h2>
+				<h2><input id="input-title" type="text" name="title" placeholder="Enter title..." value="{{ recipe.title }}"></h2>
 			</div>
 		</div>
 		<div class="row">
@@ -191,6 +191,11 @@
 			$("#imageInfo").show();
 		});
 
+		var saved = "{{ saved }}";
+		if (saved == true) {
+			$.notify({message: "This recipe was saved succesfully!"}, {delay: 2000});
+
+		}
 		var all_ingredients = {{all_ingredients|safe}};
 
 		$('.step-container').on('click', '#addStepButton', function(evt) {
@@ -225,6 +230,35 @@
 		}
 
 		function submitRecipe(type) {
+			var data_missing = false;
+			if(!$('.step-text').val()) {
+				$.notify({message: 'Please add a step!'},{delay: 3000, type: 'danger'});
+				data_missing = true;
+			}
+			if(!$('.ingredientInput').val()) {
+				$.notify({message: 'Please add an ingredient!'},{delay: 3000, type: 'danger'});
+				data_missing = true;
+			}
+			if(!$('#input-title').val()){
+				$.notify({message: 'Please add the title!'},{delay: 3000, type: 'danger'});
+				data_missing = true;
+			}
+			if(!$('#description').val()) {
+				$.notify({message: 'Please add the description!'},{delay: 3000, type: 'danger'});
+				data_missing = true;
+			}
+			if(!$('#hours').val() && !$('#minutes').val()) {
+				$.notify({message: 'Please add the duration!'},{delay: 3000, type: 'danger'});
+				data_missing = true;
+			}
+			if(!$('#servings').val()) {
+				$.notify({message: 'Please add servings!'},{delay: 3000, type: 'danger'});
+				data_missing = true;
+			}
+			if(data_missing) {
+				return;
+			}
+
 			var buttonText = $(this).find("button[type=submit]:focus").text();
 			var steps = [];
 			var ingredients = [];
