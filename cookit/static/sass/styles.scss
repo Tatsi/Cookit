@@ -194,10 +194,13 @@ button.add-btn {
 	&.right-caption {
 		float: left;
 		width: 100%;
+		height: 160px;
 
 		> img {
 			float: left;
 			margin-right: 9px;
+			max-width: 40% !important;
+			max-height: 100% !important;
 		}
 
 		> .caption {

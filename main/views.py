@@ -61,11 +61,11 @@ def feed(request, feed_type=None):
 	# Add images of each recipe to context
 	images = []
 	for recipe in recipes:
-		images.append(RecipeImage.objects.filter(recipe=recipe))
+		images = RecipeImage.objects.filter(recipe=recipe)
+		if images:
+			recipe.image = images[0]
 
 	context = {'recipes': recipes}
-	images = {'images': images}
-
 
 	if user.is_authenticated():
 		# Convert all ingredients to a list and pass to template

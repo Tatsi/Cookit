@@ -1,7 +1,11 @@
 <div class="col-md-6">
 	<a href="{% url 'recipe' item.id %}" class="recipe_link">
 		<div class="thumbnail right-caption">
-			<img class="img-rounded img-responsive" src="http://placehold.it/180x150" alt="recipe thumb">
+			{% if item.image %}
+				<img class="img-rounded img-responsive" src="{{ item.image.image.url }}" alt="recipe thumb">
+			{% else %}
+				<img class="img-rounded img-responsive" src="http://placehold.it/180x150" alt="recipe thumb">
+			{% endif %}
 			<div class="caption">
 				<h1>{{item.title}}
 				{% if item.favourite %}
