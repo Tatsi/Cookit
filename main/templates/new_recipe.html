@@ -8,7 +8,7 @@
 		{% csrf_token %}
 		<div class="row">
 			<div class="col-md-6">
-				<h2><input type="text" name="title" placeholder="Enter title..." value="{{ recipe.title }}"></h2>
+				<h2><input id="input-title" type="text" name="title" placeholder="Enter title..." value="{{ recipe.title }}"></h2>
 			</div>
 		</div>
 		<div class="row">
@@ -220,6 +220,13 @@
 		});
 
 		function submitRecipe(type) {
+			if(!$('.step-text').val() || !$('.ingredientInput').val() || !$('#input-title').val()
+				|| !$('#description').val() || (!$('#hours').val() && !$('#minutes').val()) 
+				|| !$('#servings').val()) {
+				$.notify({message: 'Please fill all fields!'},{delay: 2000, type: 'danger'});
+				return;
+			}
+
 			var buttonText = $(this).find("button[type=submit]:focus").text();
 			var steps = [];
 			var ingredients = [];
