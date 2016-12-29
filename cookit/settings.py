@@ -127,6 +127,8 @@ STATICFILES_DIRS = (
     os.path.join(PROJECT_ROOT, 'static'),
 )
 
+STATIC_ROOT = os.path.join(PROJECT_ROOT, 'static')
+
 # Custom settings
 
 LOGIN_REDIRECT_URL = '/'
