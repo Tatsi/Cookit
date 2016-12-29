@@ -41,6 +41,7 @@ def feed(request, feed_type=None):
 			recipes = Recipe.objects.all()
 		else:
 			recipes = Recipe.objects.filter(ingredients__in=user_account.ingredients.all()).distinct()
+			message = "There is no recipes matching your own ingredients"
 	else:
 		if user.is_authenticated():
 			if feed_type == "own_recipes":
