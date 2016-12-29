@@ -131,3 +131,12 @@ STATICFILES_DIRS = (
 
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
+
+
+# Only when running in Heroku
+if "DYNO" in os.environ:
+    import dj_database_url
+    DATABASES['default'] =  dj_database_url.config(conn_max_age=500)
+
+    DEBUG = False # False, once service is succesfully deployed
+    ALLOWED_HOSTS = ['*']
