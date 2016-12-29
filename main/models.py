@@ -46,7 +46,7 @@ class CookedRecipe(models.Model):
 
 class Ingredient(models.Model):
     ingredient_id = models.BigIntegerField(primary_key=True) # ID from external API
-    unit_short = models.CharField(max_length=10)
+    unit_short = models.CharField(max_length=20)
     unit = models.CharField(max_length=20)
     unit_long = models.CharField(max_length=100)
     name = models.CharField(max_length=500)
