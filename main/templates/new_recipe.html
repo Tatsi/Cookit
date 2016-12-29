@@ -227,6 +227,27 @@
 			$.notify({message: message}, {delay: 2000});
 		}
 
+		function valid_ingredients() {
+			false_ingredients = [];
+			$('.ingredientInput').each(function(idx) {
+				var name = $(this).val();
+				var found = false;
+				all_ingredients.forEach(function(item) {
+					if(name == item.name) {
+						found = true;
+					}
+				});
+				if(found == false) {
+					false_ingredients.push(name);
+				}
+			});
+
+			if(false_ingredients.length) {
+				return false;
+			}
+			return true;
+		}
+
 		function submitRecipe(type) {
 			var data_missing = false;
 			if(!$('.step-text').val()) {
@@ -253,6 +274,10 @@
 				$.notify({message: 'Please add servings!'},{delay: 3000, type: 'danger'});
 				data_missing = true;
 			}
+			if(valid_ingredients() == false) {
+				$.notify({message: "Found unknown ingredients!"},{delay: 3000, type: 'danger'});
+				data_missing = true;
+			}
 			if(data_missing) {
 				return;
 			}
@@ -266,6 +291,7 @@
 					steps.push(value);
 				}
 			});
+			var false_ingredients = [];
 
 			$('.ingredientInput').each(function(idx) {
 				var name = $(this).val();
@@ -280,6 +306,7 @@
 					ingredients.push(item);
 				}
 			});
+
 			$('#input-steps').val(JSON.stringify(steps));
 			$('#input-ingredients').val(JSON.stringify(ingredients));
 
