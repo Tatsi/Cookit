@@ -6,7 +6,7 @@ from django.urls import reverse
 from main.forms import RegisterForm, IngredientsForm, NewRecipeForm, SettingsForm
 from main.models import Ingredient, UserAccount, UserIngredient, Recipe, RecipeIngredient, CookedRecipe, RecipeImage, UserImage, RatedRecipe
 from django.utils import dateparse
-import json, datetime
+import json, datetime, random
 from django.views.decorators.csrf import csrf_exempt
 from django.http import JsonResponse
 
@@ -14,10 +14,20 @@ def mainpage(request):
 	context = {}
 	user = request.user
 	if user.is_authenticated():
-		user_account = UserAccount.objects.get(user=user)
+		#user_account = UserAccount.objects.get(user=user)
 		# Fetch ingredients the user has
-		context['my_ingredients'] = UserIngredient.objects.filter(user_account=user_account)
-		context['all_ingredients'] = json.dumps(list(Ingredient.objects.all().values('name', 'unit', 'unit_short').distinct()))
+		#context['my_ingredients'] = UserIngredient.objects.filter(user_account=user_account)
+		#context['all_ingredients'] = json.dumps(list(Ingredient.objects.all().values('name', 'unit', 'unit_short').distinct()))
+		return HttpResponseRedirect(reverse('feed'))
+
+	# Get 6 random recipes
+	ids = Recipe.objects.values_list('id', flat=True)
+	n = 6
+	rand_ids = random.sample(ids, n)
+	recipes = Recipe.objects.filter(id__in=rand_ids)
+
+	context['recipes'] = recipes
+	context['message'] = "We are embarrassed, no recipes were found.."
 	return render(request, 'mainpage.html', context)
 
 def search(request):
