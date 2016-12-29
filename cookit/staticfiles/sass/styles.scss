@@ -1,0 +1,570 @@
+$recipe-name-color: #1b7b34;
+$heading-color: #f73d40;
+$heading-hover-color: #fb5a5d;
+$navbar-color: #ffb500;
+$navbar-hover-color: #ffbf23;
+$light-grey: #bbb;
+$dark-grey: #555;
+
+html {
+	position: relative;
+	height: 100%;
+}
+
+html:after {
+	content: "";
+	display: block;
+	position: fixed;
+	top: 0;
+	left: 0;
+	background-image: url('../images/food2.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	width: 100%;
+	height: 100%;
+	z-index: -1;
+	opacity: 0.9;
+}
+
+body {
+	padding-top: 52px;
+	height: 100%;
+}
+
+@media only screen and (max-width : 767px) {
+	.container {
+		.recipe-page, .new-recipe-page, .feed {
+			margin-bottom: 45px;
+		}
+
+	}
+}
+
+.center-column {
+	background-color: rgba(255, 255, 255, 0.9);
+	height: 100%;
+	overflow: auto;
+}
+
+// Common style for all the orange elements on the page
+// e.g. navbar and buttons
+.shadow-element {
+	color: #fff;
+	background-color: $navbar-color;
+	box-shadow: 2px 2px 3px #888888;
+}
+
+// Common style for collapsing headers
+// e.g. mobile ingredients and instructions
+.collapse-header {
+	padding: 8px;
+	border: 1px solid $light-grey;
+	cursor: pointer;
+	// symbol for non-collapsed header
+	.toggle:after {
+		font-family: 'Glyphicons Halflings';
+		content: "\e114";
+		float: right;
+		color: $dark-grey;
+	}
+	&.collapsed .toggle:after {
+		// symbol for collapsed header
+		content: "\e113";
+	}
+}
+
+// Common styles for headings
+h1, h2 {
+	color: $recipe-name-color;
+	margin-left: 15px;
+
+	span {
+		margin-left: 20px;
+		color: $heading-color;
+		cursor: pointer;
+	}
+}
+h4 {
+	color: $heading-color;
+}
+
+hr {
+	border-top: 1px solid $light-grey;
+}
+
+.alert {
+	margin-bottom: 0;
+}
+
+// Common styles for add buttons
+button.add-btn {
+	background-color: $navbar-color;
+	color: #fff;
+	height: 45px;
+	width: 45px;
+	border-radius: 25px;
+	font-size: 18px;
+	margin-left: 10px;
+
+	&:hover, &:focus, &:active {
+		background-color: $navbar-hover-color;
+		color: #fff;
+	}
+
+	> .glyphicon-plus {
+		left: 1px;
+		top: 2px;
+	}
+}
+
+// Styles for navigation bar
+.navbar {
+	a {
+		color: #fff;
+
+		&:hover, &:focus, &:active {
+			background-color: $navbar-hover-color !important;
+		}
+	}
+
+	.icon-bar {
+		background-color: #fff;
+	}
+
+	// Expanding search input
+	.form-group.desktop-search {
+		margin-top: 10px;
+		margin-bottom: 0;
+		width: 34px;
+		height: 28px;
+		background-color: #fff;
+		box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+		border-radius: 20px;
+		border: 1px solid #ccc;
+		transition: all 0.35s, border-radius 0s;
+
+		&.focus {
+			width: 250px;
+			cursor: pointer;
+		}
+		input {
+			padding-right: 20px;
+			height: 28px;
+			border: 0 none;
+			background: transparent;
+			box-shadow: none;
+		}
+		span.glyphicon-search {
+			position: absolute;
+			right: 10px;
+			top: 17px;
+			color: $dark-grey;
+		}
+	}
+
+	// Mobile version for search
+	.input-group.mobile-search {
+		input {
+			border-radius: 0;
+		}
+		button {
+			border-radius: 0;
+		}
+	}
+}
+
+.feed {
+	padding-top: 22px;
+	.description {
+		min-height: 60px;
+	}
+}
+// Styles for feed items
+.thumbnail {
+	.caption {
+		h1 {
+			font-size: 1.0em;
+			margin: 5px;
+			span {
+				float: right;
+				transition: all .2s ease-in-out;
+				-webkit-transition: all .2s ease-in-out;
+				-moz-transition: all .2s ease-in-out;
+
+				&:hover {
+					transform: scale(1.4);
+					-webkit-transform: scale(1.4);
+					-moz-transform: scale(1.4);
+				}
+			}
+		}
+		h5 {
+			font-size: 0.7em;
+			margin-top: 0.1em;
+			color: #777;
+
+			span {
+				color: #337ab7;
+				transition: all .2s ease-in-out;
+				-webkit-transition: all .2s ease-in-out;
+				-moz-transition: all .2s ease-in-out;
+
+				&:hover {
+					font-size: 14px;
+				}
+			}
+		}
+	}
+
+	&:hover {
+		border-color: red;
+	}
+
+	&.right-caption {
+		float: left;
+		width: 100%;
+		height: 160px;
+
+		> img {
+			float: left;
+			margin-right: 9px;
+			max-width: 40% !important;
+			max-height: 100% !important;
+		}
+
+		> .caption {
+			padding: 4px;
+		}
+	}
+	#description {
+		overflow: hidden;
+		display: -webkit-box;
+		-webkit-line-clamp: 3;
+		-webkit-box-orient: vertical;
+	}
+}
+
+.settings-page {
+	padding: 20px;
+
+	h2 {
+		margin-left: 0;
+	}
+
+	h4 {
+		margin-top: 20px;
+	}
+
+	button {
+		margin-top: 20px;
+	}
+
+	#description {
+		width: 60%;
+	}
+
+	#upload {
+		width: 60%;
+	}
+}
+
+// Styles for recipe page
+.recipe-page {
+	padding: 20px;
+
+	img {
+		max-height: 300px;
+		max-width: none !important;
+		width: auto;
+	}
+	h2 {
+		margin-left: 0;
+
+		.recipe-tools span {
+			color: $dark-grey;
+		}
+	}
+
+	.glyphicon-star {
+		color: $navbar-color;
+	}
+	.instructions {
+		p {
+			margin: 0;
+			display: inline-block;
+		}
+		ul, ol {
+			padding-left: 20px;
+			li {
+				p {
+					vertical-align: top;
+				}
+			}
+		}
+	}
+	.time {
+		margin-top: 10px;
+		margin-bottom: 15px;
+
+		p {
+			display: inline-block;
+		}
+
+		.servings{
+			margin-left: 20px;
+			display: inline-block;
+			form {
+				input {
+					display: inline-block;
+					width: 55px;
+				}
+				button {
+					position: absolute;
+					right: 20px;
+					top: 0;
+
+					&:hover {
+						background-color: $navbar-hover-color;
+						color: #fff;
+					}
+				}
+			}
+		}
+	}
+	.rating_box {
+		margin-top: 30px;
+	}
+}
+
+.new-recipe-page {
+	padding: 20px;
+
+	textarea {
+		resize: none;
+	}
+	h2 {
+		margin-left: 0;
+
+		input {
+			border: none;
+		}
+	}
+	img {
+		max-width: 20%;
+		display: inline-block;
+		+ button {
+			margin-left: 30px;
+			width: 50px;
+			height: 50px;
+			color: $dark-grey;
+		}
+	}
+	.time {
+		padding-top: 40px;
+
+		input {
+			&#hours {
+				width: 55px;
+			}
+			&#minutes {
+				width: 55px;
+			}
+			&#servings {
+				width: 55px;
+			}
+		}
+		span.fa-users {
+			margin-left: 30px;
+		}
+	}
+	.ingredient-container {
+		.ingredient-row {
+			display: inline;
+		}
+		.add-btn {
+			display: inline;
+		}
+	}
+	.instructions {
+		.form-group {
+			.amountInput {
+				width: 20%;
+			}
+			&.amount {
+				width: 80%;
+
+				> input {
+					width: 49.8%;
+				}
+				> select {
+					width: 49%;
+				}
+			}
+			+ .add-btn {
+				position: absolute;
+				top: 50px;
+			}
+		}
+
+		select {
+			&#ingredient {
+				width: 80%;
+				margin-top: 5px;
+			}
+		}
+	}
+}
+
+.vote-star {
+	font-size: 1.5em;
+	color: #EAB126;
+}
+
+#avg-rating-icon {
+	color: $navbar-color;
+}
+
+#userImage {
+	max-width: 100%;
+	margin-bottom: 20px;
+}
+
+#editProfile {
+	color: $dark-grey;
+}
+
+#userDescription {
+	padding: 15px 0 15px 0;
+}
+
+// My ingredients modal
+// All devices
+#my-ingredients-modal {
+	display: none;
+	z-index: 10000;
+	overflow: auto;
+	background-color: rgba(0, 0, 0, 0.7);
+	position: absolute;
+
+	.content {
+		padding: 10px;
+	}
+
+	.ingredients-list {
+		overflow: auto;
+		padding: 0 15px 0 5px;
+		max-height: 514px;
+
+		span {
+			color: #fff;
+
+			&.fa-remove {
+				color: $heading-color;
+				cursor: pointer;
+				position: relative;
+				top: 14px;
+				right: -8px;
+			}
+		}
+	}
+
+	.ingredients-form {
+		margin-top: 15px;
+		.shadow-element {
+			&:hover, &:focus, &:active {
+				background-color: $navbar-hover-color;
+				color: #fff;
+			}
+		}
+		.form-group {
+			.col-sm-8 {
+				padding: 0;
+				margin-bottom: 15px;
+			}
+			button {
+				margin-bottom: 10px;
+				display: block;
+			}
+			.amount_unit {
+				color: #fff;
+			}
+		}
+	}
+
+	#apply-btn {
+		box-shadow: 2px 2px 3px #888888;
+		background-color: $heading-color;
+		color: #fff;
+
+		&:hover, &:focus, &:active {
+			background-color: $heading-hover-color;
+			color: #fff;
+		}
+	}
+
+	.typeahead.dropdown-menu {
+		top: 34px !important;
+		left: 30px !important;
+		position: absolute;
+	}
+}
+
+// My ingredients button
+#my-ingredients-button {
+	z-index: 1;
+	background-color: $heading-color;
+	color: #fff;
+	border-radius: 0;
+	font-size: 22px;
+	position: fixed;
+
+	&:focus {
+		outline: none;
+	}
+
+	i {
+		padding-left: 20px;
+	}
+}
+
+// Mobile
+@media only screen and (max-width : 767px) {
+	#my-ingredients-button {
+		bottom: 0;
+		font-size: 20px;
+		width: 100%;
+	}
+
+	#my-ingredients-modal {
+		bottom: 42px;
+		width: 100%;
+	}
+}
+
+@media only screen and (max-width : 1199px) and (min-width : 768px) {
+	#my-ingredients-button {
+		-webkit-transform: rotate(-90deg);
+		-moz-transform: rotate(-90deg);
+		left: -90px;
+		top: 30%;
+		font-size: 24px;
+	}
+
+	#my-ingredients-modal {
+		left: 47px;
+		width: 30%;
+		top: 10%;
+	}
+}
+
+// Other devices
+@media only screen and (min-width : 1200px) {
+	#my-ingredients-button {
+		width: 16.7%;
+	}
+
+	#my-ingredients-modal {
+		width: 16.7%;
+		top: 97px;
+	}
+}
