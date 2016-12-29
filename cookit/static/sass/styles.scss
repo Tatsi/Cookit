@@ -41,8 +41,12 @@ body {
 	}
 }
 
-h1.logo {
+.logo {
 	font-family: 'Alfa Slab One', cursive;
+	color: $recipe-name-color !important;
+}
+
+h1.logo {
 	font-size: 5em;
 }
 

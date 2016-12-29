@@ -25,8 +25,11 @@ body {
 @media only screen and (max-width: 767px) {
   .container .recipe-page, .container .new-recipe-page, .container .feed  {
     margin-bottom: 45px; } }
-h1.logo {
+.logo {
   font-family: 'Alfa Slab One', cursive;
+  color: #1b7b34 !important; }
+
+h1.logo {
   font-size: 5em; }
 
 .main-content {
