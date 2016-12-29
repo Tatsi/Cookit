@@ -187,6 +187,15 @@ button.add-btn {
 			margin: 5px;
 			span {
 				float: right;
+				transition: all .2s ease-in-out;
+				-webkit-transition: all .2s ease-in-out;
+				-moz-transition: all .2s ease-in-out;
+
+				&:hover {
+					transform: scale(1.4);
+					-webkit-transform: scale(1.4);
+					-moz-transform: scale(1.4);
+				}
 			}
 		}
 		h5 {

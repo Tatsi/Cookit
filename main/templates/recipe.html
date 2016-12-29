@@ -191,9 +191,14 @@
 				data: {
 					csrfmiddlewaretoken: $('input[name=csrfmiddlewaretoken]').val(),
 				},
-				// TODO: maybe something else than reload?
 				success: function() {
-					location.reload();
+					if ($('#favourite').hasClass('fa-heart-o')) {
+						$('#favourite').removeClass('fa-heart-o');
+						$('#favourite').addClass('fa-heart');
+					} else {
+						$('#favourite').removeClass('fa-heart');
+						$('#favourite').addClass('fa-heart-o');
+					}
 				}
 			});
 		});

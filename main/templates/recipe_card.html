@@ -9,9 +9,9 @@
 			<div class="caption">
 				<h1>{{item.title}}
 				{% if item.favourite %}
-					<span class="fa fa-heart"></span>
+					<span class="fa fa-heart" id="favourite{{ item.id }}"></span>
 				{% else %}
-					<span class="fa fa-heart-o"></span>
+					<span class="fa fa-heart-o" id="favourite{{ item.id }}"></span>
 				{% endif %}
 				</h1>
 				<h5> by {{item.creator.user.username}}</h5>
@@ -25,3 +25,27 @@
 		</div>
 	</a>
 </div>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		$(document).on('click', '#favourite{{ item.id }}', function(e) {
+			e.preventDefault();
+			$.ajax({
+				type: "POST",
+				url: "{% url 'add_favourite' item.id %}",
+				data: {
+					csrfmiddlewaretoken: $('input[name=csrfmiddlewaretoken]').val(),
+				},
+				success: function() {
+					if ($('#favourite{{ item.id }}').hasClass('fa-heart-o')) {
+						$('#favourite{{ item.id }}').removeClass('fa-heart-o');
+						$('#favourite{{ item.id }}').addClass('fa-heart');
+					} else {
+						$('#favourite{{ item.id }}').removeClass('fa-heart');
+						$('#favourite{{ item.id }}').addClass('fa-heart-o');
+					}
+				}
+			});
+		});
+	});
+</script>
