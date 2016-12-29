@@ -30,8 +30,11 @@
 
 				$('#my-ingredients-button i').addClass('fa-angle-down');
 			}
-
-			var all_ingredients = {{all_ingredients|safe}};
+			{% if all_ingredients|length > 0 %}
+				var all_ingredients = {{all_ingredients|safe}};
+			{%else%}
+				var all_ingredients = [];
+			{%endif%}
 			$('#ingredientInput').typeahead({source: all_ingredients });
 
 			$(document).on('submit', '#main_form', function(e) {
