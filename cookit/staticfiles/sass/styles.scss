@@ -29,6 +29,7 @@ html:after {
 body {
 	padding-top: 52px;
 	height: 100%;
+	font-family: 'Lato', sans-serif;
 }
 
 @media only screen and (max-width : 767px) {
@@ -40,10 +41,24 @@ body {
 	}
 }
 
+.logo {
+	font-family: 'Alfa Slab One', cursive;
+	color: $recipe-name-color !important;
+}
+
+h1.logo {
+	font-size: 5em;
+}
+
+.main-content {
+	margin-bottom: 2em;
+}
+
 .center-column {
 	background-color: rgba(255, 255, 255, 0.9);
 	height: 100%;
 	overflow: auto;
+	max-width: 1100px;
 }
 
 // Common style for all the orange elements on the page
@@ -173,6 +188,7 @@ button.add-btn {
 	}
 }
 
+
 .feed {
 	padding-top: 22px;
 	.description {
@@ -228,12 +244,14 @@ button.add-btn {
 		> img {
 			float: left;
 			margin-right: 9px;
-			max-width: 40% !important;
+			width: 180px !important;
 			max-height: 100% !important;
 		}
 
 		> .caption {
 			padding: 4px;
+			margin-left: 190px;
+
 		}
 	}
 	#description {

@@ -19,15 +19,27 @@ html:after {
 
 body {
   padding-top: 52px;
-  height: 100%; }
+  height: 100%;
+  font-family: 'Lato', sans-serif; }
 
 @media only screen and (max-width: 767px) {
   .container .recipe-page, .container .new-recipe-page, .container .feed  {
     margin-bottom: 45px; } }
+.logo {
+  font-family: 'Alfa Slab One', cursive;
+  color: #1b7b34 !important; }
+
+h1.logo {
+  font-size: 5em; }
+
+.main-content {
+  margin-bottom: 2em; }
+
 .center-column {
   background-color: rgba(255, 255, 255, 0.9);
   height: 100%;
-  overflow: auto; }
+  overflow: auto;
+  max-width: 1100px; }
 
 .shadow-element {
   color: #fff;
@@ -150,10 +162,11 @@ button.add-btn {
   .thumbnail.right-caption > img {
     float: left;
     margin-right: 9px;
-    max-width: 40% !important;
+    width: 180px !important;
     max-height: 100% !important; }
   .thumbnail.right-caption > .caption {
-    padding: 4px; }
+    padding: 4px;
+    margin-left: 190px; }
 .thumbnail #description {
   overflow: hidden;
   display: -webkit-box;
