@@ -14,7 +14,7 @@
 			{% for recipeimage in images %}
 				<div id="recipeImage{{ recipeimage.id }}">
 					<img src="{{ MEDIA_ROOT }}{{ recipeimage.image.url }}" alt="Image"/>
-					<button class="removeImageButton" id="removeImageButton{{ recipeimage.id }}"><span class="glyphicon glyphicon-plus"></span></button>
+					<button class="removeImageButton" id="removeImageButton{{ recipeimage.id }}"><span class="glyphicon glyphicon-minus"></span></button>
 					<script>
 						imageCount++;
 						$( "#removeImageButton{{ recipeimage.id }}" ).click(function() {

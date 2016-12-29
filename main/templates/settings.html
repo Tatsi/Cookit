@@ -18,7 +18,7 @@
 		<p>You may add one image for your profile.</p>
 		{% for userimage in images %}
 			<img id="profileimage" src="{{ MEDIA_ROOT }}{{ userimage.image.url }}" alt="Image"/>
-			<button class="btn rm-btn" id="removeProfileImage"><span class="glyphicon glyphicon-plus"></span></button>
+			<button class="btn rm-btn" id="removeProfileImage"><span class="glyphicon glyphicon-minus"></span></button>
 			<script>
 				$( "#removeProfileImage" ).click(function() {
 					removedImages.push("{{ userimage.id }}");
