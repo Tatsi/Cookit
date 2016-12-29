@@ -243,12 +243,13 @@ button.add-btn {
 		> img {
 			float: left;
 			margin-right: 9px;
-			max-width: 40% !important;
+			width: 180px !important;
 			max-height: 100% !important;
 		}
 
 		> .caption {
 			padding: 4px;
+
 		}
 	}
 	#description {
