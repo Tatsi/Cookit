@@ -62,13 +62,13 @@
 <!-- Users info: Image and description -->
 <div class="row">
 	{% if images %}
-	<div class="col-xs-4">
+	<div class="col-md-4 col-sm-6">
 		{% for userimage in images %}
 			<img id="userImage" src="{{ MEDIA_ROOT }}{{ userimage.image.url }}" alt="Image"/>
 		{% endfor %}
 	</div>
 	{% endif %}
-	<div class="col-xs-8">
+	<div class="col-md-8 col-sm-6">
 		<p id="userDescription">{{ viewed_user_account.description }}</p>
 	</div>
 </div>
