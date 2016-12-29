@@ -54,35 +54,44 @@
 						success: function() {
 							// Add element to list
 							var list = document.getElementsByClassName('ingredients-list')[0];
-							var entry = document.createElement('h4');
+							var div = document.createElement('div');
+							var h4 = document.createElement('h4');
 							var amountLabel = document.createElement('span');
 							var unitLabel = document.createElement('span');
 							var nameLabel = document.createElement('span');
 							var removeButton = document.createElement('span');
 							var text = ingredient_amount + ' ';
 							amountLabel.appendChild(document.createTextNode(text));
-							text = "unit "
+							text = $('.amount_unit').text() + ' ';
 							unitLabel.appendChild(document.createTextNode(text));
 							text = ingredient_name;
 							nameLabel.appendChild(document.createTextNode(text));
-							removeButton.setAttribute('class', 'fa fa-remove pull-right')
-							entry.appendChild(amountLabel);
-							entry.appendChild(unitLabel);
-							entry.appendChild(nameLabel);
-							entry.appendChild(removeButton);
-							list.appendChild(entry);
+							h4.setAttribute('class', 'col-sm-10 col-xs-10');
+							removeButton.setAttribute('class', 'fa fa-remove fa-lg pull-right');
+							h4.appendChild(amountLabel);
+							h4.appendChild(unitLabel);
+							h4.appendChild(nameLabel);
+							div.appendChild(h4);
+							list.appendChild(div);
+							list.appendChild(removeButton);
 							// Clear input
 							$('#ingredientInput').val('');
 							$('#ingredientAmountInput').val('');
+							$('.amount_unit').empty();
+						},
+						error: function(XMLHttpRequest, textStatus, errorThrown) {
+							console.log("Status: " + textStatus);
+							console.log("Error: " + errorThrown);
 						}
 					});
 				}
 			});
 
 			$(document).on("click", '.ingredients-list .fa-remove', function() {
-				var ingredient_name = $(this).prev().text();
+				var ingredient_name = $(this).prev().find("span:nth-of-type(3)").text();
 				var elem = $('span:contains("' + ingredient_name + '")')[0].parentElement
 				elem.parentElement.removeChild(elem);
+				$(this).remove();
 				$.ajax({
 					type: "POST",
 					url: "{% url 'add_my_ingredient' %}",
@@ -102,7 +111,6 @@
 
 			function closeModal() {
 				modal.style.display = 'none';
-				location.reload();
 				window.localStorage.setItem('my_ingredients_open', false);
 				$('#my-ingredients-button i').removeClass('fa-angle-up');
 				$('#my-ingredients-button i').addClass('fa-angle-down');
@@ -127,6 +135,26 @@
 			$('#apply-btn').click(function() {
 				location.reload();
 			})
+
+			// Update ingredient unit after input changes
+			$('.ingredients-form').on('change input propertychange paste', '#ingredientInput', function() {
+				var $unit = $('.amount_unit:first');
+				var name = $(this).val();
+				var result = $.grep(all_ingredients, function(item){
+					return item.name == name;
+				});
+
+				// Remove console output when all clean.
+				if (result.length == 0) {
+					$unit.empty();
+				} else if (result.length == 1) {
+					var unit = result[0].unit_short;
+					$unit.text(unit);
+
+				} else {
+					$unit.empty();
+				}
+			})
 		});
 	</script>
 	{% endblock %}
@@ -141,12 +169,14 @@
 							<!-- Ingredient list -->
 							<div class="ingredients-list">
 								{% for item in my_ingredients %}
-									<h4>
-										<span>{{ item.amount }}</span>
-										<span>{{ item.ingredient.unit_short }}</span>
-										<span>{{ item.ingredient.name }}</span>
-										<span class="fa fa-remove pull-right"></span>
-									</h4>
+									<div class="col-sm-10 col-xs-10">
+										<h4>
+											<span>{{ item.amount }}</span>
+											<span>{{ item.ingredient.unit_short }}</span>
+											<span>{{ item.ingredient.name }}</span>
+										</h4>
+									</div>
+									<span class="fa fa-remove fa-lg pull-right"></span>
 								{% endfor %}
 							</div>
 
@@ -158,10 +188,13 @@
 										<input type="text" name="ingredient" class="form-control" id="ingredientInput" placeholder="Search for ingredients..." autocomplete="off">
 										<input type="number" name="ingredientAmount" class="form-control" id="ingredientAmountInput" placeholder="Amount" autocomplete="off">
 									</div>
-									<button type="submit" class="btn shadow-element">Add</button>
-									<button class="btn" id="apply-btn">Apply</button>
+									<div class="col-sm-4 col-xs-4">
+										<button type="submit" class="btn shadow-element">Add</button>
+										<span class="amount_unit"></span>
+									</div>
 								</div>
 							</form>
+							<button class="btn" id="apply-btn">Apply changes</button>
 						</div>
 					</div>
 				</div>

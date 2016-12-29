@@ -394,7 +394,7 @@ button.add-btn {
 // All devices
 #my-ingredients-modal {
 	display: none;
-	z-index: 2;
+	z-index: 10000;
 	overflow: auto;
 	background-color: rgba(0, 0, 0, 0.7);
 	position: absolute;
@@ -414,6 +414,9 @@ button.add-btn {
 			&.fa-remove {
 				color: $heading-color;
 				cursor: pointer;
+				position: relative;
+				top: 14px;
+				right: -8px;
 			}
 		}
 	}
@@ -426,21 +429,29 @@ button.add-btn {
 				color: #fff;
 			}
 		}
-		#apply-btn {
-			box-shadow: 2px 2px 3px #888888;
-			background-color: $heading-color;
-			color: #fff;
-
-			&:hover, &:focus, &:active {
-				background-color: $heading-hover-color;
-				color: #fff;
-			}
-		}
 		.form-group {
 			.col-sm-8 {
 				padding: 0;
 				margin-bottom: 15px;
 			}
+			button {
+				margin-bottom: 10px;
+				display: block;
+			}
+			.amount_unit {
+				color: #fff;
+			}
+		}
+	}
+
+	#apply-btn {
+		box-shadow: 2px 2px 3px #888888;
+		background-color: $heading-color;
+		color: #fff;
+
+		&:hover, &:focus, &:active {
+			background-color: $heading-hover-color;
+			color: #fff;
 		}
 	}
 
@@ -495,6 +506,7 @@ button.add-btn {
 	#my-ingredients-modal {
 		left: 47px;
 		width: 30%;
+		top: 10%;
 	}
 }
 

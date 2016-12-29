@@ -17,7 +17,7 @@ def mainpage(request):
 		user_account = UserAccount.objects.get(user=user)
 		# Fetch ingredients the user has
 		context['my_ingredients'] = UserIngredient.objects.filter(user_account=user_account)
-		context['all_ingredients'] = json.dumps(list(Ingredient.objects.all().values('name', 'unit').distinct()))
+		context['all_ingredients'] = json.dumps(list(Ingredient.objects.all().values('name', 'unit', 'unit_short').distinct()))
 	return render(request, 'mainpage.html', context)
 
 def search(request):
@@ -69,7 +69,7 @@ def feed(request, feed_type=None):
 
 	if user.is_authenticated():
 		# Convert all ingredients to a list and pass to template
-		context['all_ingredients'] = json.dumps(list(Ingredient.objects.all().values_list('name', flat=True).distinct()))
+		context['all_ingredients'] = json.dumps(list(Ingredient.objects.all().values('name', 'unit', 'unit_short').distinct()))
 		# Fetch ingredients the user has
 		context['my_ingredients'] = UserIngredient.objects.filter(user_account=user_account)
 
@@ -99,7 +99,7 @@ def user(request, user_id=None):
 			context['favourite_user'] = True
 
 		# Convert all ingredients to a list and pass to template
-		context['all_ingredients'] = json.dumps(list(Ingredient.objects.all().values_list('name', flat=True).distinct()))
+		context['all_ingredients'] = json.dumps(list(Ingredient.objects.all().values('name', 'unit', 'unit_short').distinct()))
 
 		# Fetch ingredients the user has
 		context['my_ingredients'] = UserIngredient.objects.filter(user_account=user_account)
@@ -122,11 +122,11 @@ def settings(request):
 				#print "Saving user profile image.."
 				image = UserImage(user_account=user_account, image=img)
 				image.save()
-				break
 				# print "done!"
 				# print "url: " + image.image.url
 				# print "path: " + image.image.path
 				# print "name: " + image.image.name
+				break
 			#print "redirecting"
 			#return redirect('user', user_id=user.id)
 
@@ -145,7 +145,7 @@ def settings(request):
 
 	if user.is_authenticated():
 		# Convert all ingredients to a list and pass to template
-		context['all_ingredients'] = json.dumps(list(Ingredient.objects.all().values_list('name', flat=True).distinct()))
+		context['all_ingredients'] = json.dumps(list(Ingredient.objects.all().values('name', 'unit', 'unit_short').distinct()))
 
 		# Fetch ingredients the user has
 		context['my_ingredients'] = UserIngredient.objects.filter(user_account=user_account)
@@ -250,7 +250,7 @@ def recipe(request, recipe_id):
 		'images': images,
 		'user_rating': user_rating,
 		'absolute_url': absolute_url,
-		'all_ingredients': json.dumps(list(Ingredient.objects.all().values('name', 'unit').distinct())),
+		'all_ingredients': json.dumps(list(Ingredient.objects.all().values('name', 'unit', 'unit_short').distinct()))
 	}
 
 	if user.is_authenticated():
@@ -424,7 +424,7 @@ def new_recipe(request):
 	else:
 		form = NewRecipeForm()
 	context = {}
-	context['all_ingredients'] = json.dumps(list(Ingredient.objects.all().values('name', 'unit').distinct()))
+	context['all_ingredients'] = json.dumps(list(Ingredient.objects.all().values('name', 'unit', 'unit_short').distinct()))
 
 	user = request.user
 	user_account = UserAccount.objects.get(user=user)
@@ -548,7 +548,7 @@ def edit_recipe(request, recipe_id):
 	context['images'] = images
 	context['time'] = {'hours': hours, 'minutes': minutes}
 	context['steps'] = steps
-	context['all_ingredients'] = json.dumps(list(Ingredient.objects.all().values('name', 'unit').distinct()))
+	context['all_ingredients'] = json.dumps(list(Ingredient.objects.all().values('name', 'unit', 'unit_short').distinct()))
 
 	# Fetch ingredients the user has
 	context['my_ingredients'] = UserIngredient.objects.filter(user_account=user_account)

@@ -364,7 +364,6 @@
 		// Update ingredient unit after input changes
 		$('.ingredient-container').on('change input propertychange paste', '.ingredientInput', function() {
 			var $unit = $(this).nextAll('.amount_unit:first');
-			console.log($unit)
 			var name = $(this).val();
 			var result = $.grep(all_ingredients, function(item){
 				return item.name == name;
@@ -372,14 +371,12 @@
 
 			// Remove console output when all clean.
 			if (result.length == 0) {
-				console.log("Not found");
 				$unit.empty();
 			} else if (result.length == 1) {
 				var unit = result[0].unit;
 				$unit.text(unit);
 
 			} else {
-				console.log("Multiple matches");
 				$unit.empty();
 			}
 		})
