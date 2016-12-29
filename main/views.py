@@ -26,6 +26,13 @@ def mainpage(request):
 	rand_ids = random.sample(ids, n)
 	recipes = Recipe.objects.filter(id__in=rand_ids)
 
+	# Add images of each recipe to context
+	images = []
+	for recipe in recipes:
+		images = RecipeImage.objects.filter(recipe=recipe)
+		if images:
+			recipe.image = images[0]
+
 	context['recipes'] = recipes
 	context['message'] = "We are embarrassed, no recipes were found.."
 	return render(request, 'mainpage.html', context)
