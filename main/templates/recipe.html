@@ -198,7 +198,7 @@
 			});
 		});
 
-		$('#servings').change(function() {
+		$('#servings').on('input', function() {
 			var old_servings = "{{ recipe.servings }}";
 			var new_servings = $('#servings').val();
 			var elements = document.getElementById('ingredients').getElementsByTagName('li');
