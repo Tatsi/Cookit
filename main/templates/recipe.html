@@ -202,10 +202,14 @@
 			var old_servings = "{{ recipe.servings }}";
 			var new_servings = $('#servings').val();
 			var elements = document.getElementById('ingredients').getElementsByTagName('li');
-			for (var i=0; i < elements.length; i++) {
-				var amount = elements[i].firstChild;
-				var old_amount = original_amounts[i];
-				amount.innerHTML = old_amount / old_servings * new_servings;
+			if (new_servings > 0) {
+				for (var i=0; i < elements.length; i++) {
+					var amount = elements[i].firstChild;
+					var old_amount = original_amounts[i];
+					amount.innerHTML = (old_amount / old_servings * new_servings).toFixed(2);
+				}
+			} else {
+				$.notify({message: 'Please enter a positive number!'},{delay: 3000, type: 'danger'});
 			}
 		});
 
