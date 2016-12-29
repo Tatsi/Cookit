@@ -21,7 +21,7 @@ def mainpage(request):
 		return HttpResponseRedirect(reverse('feed'))
 
 	# Get 6 random recipes
-	ids = Recipe.objects.values_list('id', flat=True)
+	ids = list(Recipe.objects.values_list('id', flat=True))
 	n = 6
 	rand_ids = random.sample(ids, n)
 	recipes = Recipe.objects.filter(id__in=rand_ids)
