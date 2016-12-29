@@ -4,14 +4,16 @@
 {% block content %}
 
 <!-- Users info-->
+<div class="settings-page">
 <form id="settings-form" method="post" enctype="multipart/form-data">
 	{% csrf_token %}
+	<h2>Profile settings</h2>
 	<div>
-		<h3>Description<h3>
-		<textarea id="description" name="description" rows="3" cols="50" placeholder="Tell something about yourself...">{{ user_account.description }}</textarea>
+		<h4>Description</h4>
+		<textarea id="description" name="description" rows="5" placeholder="Tell something about yourself...">{{ user_account.description }}</textarea>
 	</div>
 	<div>
-		<h3>Profile picture<h3>
+		<h4>Profile picture</h4>
 		<script> var removedImages = []; </script>
 		<p>You may add one image for your profile.</p>
 		{% for userimage in images %}
@@ -26,18 +28,17 @@
 				});
 			</script>
 		{% endfor %}
-		<div class="col-md-12">
-			<div id="upload" class="dropzone">
-				{% if hasUserImage %}
-					<script>
-						$("#upload").hide();
-					</script>
-				{% endif %}
-			</div>
+		<div id="upload" class="dropzone">
+			{% if hasUserImage %}
+				<script>
+					$("#upload").hide();
+				</script>
+			{% endif %}
 		</div>
 	</div>
 </form>
-<button id="save" class="btn btn-primary">Update changes</button>
+<button id="save" class="btn shadow-element">Update changes</button>
+</div>
 
 <script type="text/javascript">
 	var dropzone;
@@ -90,14 +91,14 @@
 			data: data,
 			processData: false,
 			contentType: false,
-			success: function(data) { 
+			success: function(data) {
 				// Redirect
 				var url = "{% url 'user' user.id %}";
 				window.location.href = url;
 			}
 		});
 
-		
+
 	};
 </script>
 {% endblock %}

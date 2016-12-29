@@ -244,9 +244,30 @@ button.add-btn {
 	}
 }
 
-.search-results {
+.settings-page {
 	padding: 20px;
+
+	h2 {
+		margin-left: 0;
+	}
+
+	h4 {
+		margin-top: 20px;
+	}
+
+	button {
+		margin-top: 20px;
+	}
+
+	#description {
+		width: 60%;
+	}
+
+	#upload {
+		width: 60%;
+	}
 }
+
 // Styles for recipe page
 .recipe-page {
 	padding: 20px;
