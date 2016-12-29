@@ -14,7 +14,7 @@
 					<span class="fa fa-heart-o" id="favourite{{ item.id }}"></span>
 				{% endif %}
 				</h1>
-				<h5> by {{item.creator.user.username}}</h5>
+				<h5> by <span id="creator{{ item.creator.user.id }}">{{item.creator.user.username}}</span></h5>
 				<p id="description">{{item.description}}</p>
 				<label for="user_rating_input" class="control-label">Avg. rating</label>
 				<span class="fa-stack">
@@ -46,6 +46,10 @@
 					}
 				}
 			});
+		});
+		$(document).on('click', '#creator{{ item.creator.user.id }}', function(e) {
+			e.preventDefault();
+			location.href = "{% url 'user' item.creator.user.id %}";
 		});
 	});
 </script>

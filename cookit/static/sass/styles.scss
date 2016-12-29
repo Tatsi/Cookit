@@ -202,6 +202,17 @@ button.add-btn {
 			font-size: 0.7em;
 			margin-top: 0.1em;
 			color: #777;
+
+			span {
+				color: #337ab7;
+				transition: all .2s ease-in-out;
+				-webkit-transition: all .2s ease-in-out;
+				-moz-transition: all .2s ease-in-out;
+
+				&:hover {
+					font-size: 14px;
+				}
+			}
 		}
 	}
 
