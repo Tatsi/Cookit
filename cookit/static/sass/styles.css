@@ -19,11 +19,19 @@ html:after {
 
 body {
   padding-top: 52px;
-  height: 100%; }
+  height: 100%;
+  font-family: 'Lato', sans-serif; }
 
 @media only screen and (max-width: 767px) {
   .container .recipe-page, .container .new-recipe-page, .container .feed  {
     margin-bottom: 45px; } }
+h1.logo {
+  font-family: 'Alfa Slab One', cursive;
+  font-size: 5em; }
+
+.main-content {
+  margin-bottom: 2em; }
+
 .center-column {
   background-color: rgba(255, 255, 255, 0.9);
   height: 100%;

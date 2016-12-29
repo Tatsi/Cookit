@@ -29,6 +29,7 @@ html:after {
 body {
 	padding-top: 52px;
 	height: 100%;
+	font-family: 'Lato', sans-serif;
 }
 
 @media only screen and (max-width : 767px) {
@@ -38,6 +39,15 @@ body {
 		}
 
 	}
+}
+
+h1.logo {
+	font-family: 'Alfa Slab One', cursive;
+	font-size: 5em;
+}
+
+.main-content {
+	margin-bottom: 2em;
 }
 
 .center-column {
