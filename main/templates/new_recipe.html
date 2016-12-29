@@ -7,9 +7,7 @@
 	<form class="form-inline" id="new-recipe" enctype="multipart/form-data">
 		{% csrf_token %}
 		<div class="row">
-			<div class="col-md-6">
-				<h2><input id="input-title" type="text" name="title" placeholder="Enter title..." value="{{ recipe.title }}"></h2>
-			</div>
+			<h2><input id="input-title" type="text" name="title" placeholder="Enter title..." value="{{ recipe.title }}"></h2>
 		</div>
 		<div class="row">
 			<script> var removedImages = []; var imageCount = 0; </script>

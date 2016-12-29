@@ -244,23 +244,20 @@ button.add-btn {
 	}
 }
 
-@media (min-width: 768px) {
-	.recipe-page {
-		padding: 20px;
-	}
-	.search-results {
-		padding: 20px;
-	}
+.search-results {
+	padding: 20px;
 }
 // Styles for recipe page
 .recipe-page {
+	padding: 20px;
+
 	img {
 		max-height: 300px;
 		max-width: none !important;
 		width: auto;
 	}
 	h2 {
-		// margin-left: 15px;
+		margin-left: 0;
 
 		.recipe-tools span {
 			color: $dark-grey;
@@ -318,13 +315,9 @@ button.add-btn {
 	}
 }
 
-// Styles for new recipe page
-@media (min-width: 768px) {
-	.new-recipe-page {
-		padding: 20px;
-	}
-}
 .new-recipe-page {
+	padding: 20px;
+
 	textarea {
 		resize: none;
 	}
@@ -408,6 +401,19 @@ button.add-btn {
 
 #avg-rating-icon {
 	color: $navbar-color;
+}
+
+#userImage {
+	max-width: 100%;
+	margin-bottom: 20px;
+}
+
+#editProfile {
+	color: $dark-grey;
+}
+
+#userDescription {
+	padding: 15px 0 15px 0;
 }
 
 // My ingredients modal

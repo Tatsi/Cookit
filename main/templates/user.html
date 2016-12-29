@@ -6,7 +6,7 @@
 	<h2>{{ viewed_user.username }}
 	{% if user.is_authenticated %}
 		{% if viewed_user.id == user.id %}
-			<a href="{% url 'settings' %}">Profile Settings</a>
+			<a href="{% url 'settings' %}"><span id="editProfile" class="fa fa-pencil" data-toggle="tooltip" data-container="body" title="Edit profile settings"></span></a>
 		{% elif favourite_user %}
 			<span class="fa fa-heart" id="favourite"></span>
 		{% else %}
@@ -33,6 +33,8 @@
 		return cookieValue;
 	}
 
+	$('[data-toggle="tooltip"]').tooltip();
+
 	var csrftoken = getCookie('csrftoken');
 
 	$('#favourite').click(function() {
@@ -42,9 +44,14 @@
 			data: {
 				csrfmiddlewaretoken: csrftoken,
 			},
-			// TODO: maybe something else than reload?
 			success:function() {
-				location.reload();
+				if ($('#favourite').hasClass('fa-heart-o')) {
+					$('#favourite').removeClass('fa-heart-o');
+					$('#favourite').addClass('fa-heart');
+				} else {
+					$('#favourite').removeClass('fa-heart');
+					$('#favourite').addClass('fa-heart-o');
+				}
 			}
 		});
 	});
@@ -53,16 +60,22 @@
 <!-- Users info-->
 
 <!-- Users info: Image and description -->
-<div>
-	{% for userimage in images %}
-		<img src="{{ MEDIA_ROOT }}{{ userimage.image.url }}" alt="Image"/>
-	{% endfor %}
-	{{ viewed_user_account.description }}
+<div class="row">
+	{% if images %}
+	<div class="col-xs-4">
+		{% for userimage in images %}
+			<img id="userImage" src="{{ MEDIA_ROOT }}{{ userimage.image.url }}" alt="Image"/>
+		{% endfor %}
+	</div>
+	{% endif %}
+	<div class="col-xs-8">
+		<p id="userDescription">{{ viewed_user_account.description }}</p>
+	</div>
 </div>
 
 <!-- Users recipes-->
-<h3>Recipes</h3>
-<div class="row feed">
+<h4>Recipes</h4>
+<div class="row">
 	{% for item in recipes %}
 		{% include "recipe_card.html" with item=item %}
 	{% endfor %}
