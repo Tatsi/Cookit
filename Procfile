@@ -1,1 +1,1 @@
-web: gunicorn wsdproject.wsgi --log-file -
+web: gunicorn cookit.wsgi --log-file -
