@@ -1,0 +1,364 @@
+@charset "UTF-8";
+html {
+  position: relative;
+  height: 100%; }
+
+html:after {
+  content: "";
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-image: url("../images/food2.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  opacity: 0.9; }
+
+body {
+  padding-top: 52px;
+  height: 100%; }
+
+@media only screen and (max-width: 767px) {
+  .container .recipe-page, .container .new-recipe-page, .container .feed  {
+    margin-bottom: 45px; } }
+.center-column {
+  background-color: rgba(255, 255, 255, 0.9);
+  height: 100%;
+  overflow: auto; }
+
+.shadow-element {
+  color: #fff;
+  background-color: #ffb500;
+  box-shadow: 2px 2px 3px #888888; }
+
+.collapse-header {
+  padding: 8px;
+  border: 1px solid #bbb;
+  cursor: pointer; }
+  .collapse-header .toggle:after {
+    font-family: 'Glyphicons Halflings';
+    content: "\e114";
+    float: right;
+    color: #555; }
+  .collapse-header.collapsed .toggle:after {
+    content: "\e113"; }
+
+h1, h2 {
+  color: #1b7b34;
+  margin-left: 15px; }
+  h1 span, h2 span {
+    margin-left: 20px;
+    color: #f73d40;
+    cursor: pointer; }
+
+h4 {
+  color: #f73d40; }
+
+hr {
+  border-top: 1px solid #bbb; }
+
+.alert {
+  margin-bottom: 0; }
+
+button.add-btn {
+  background-color: #ffb500;
+  color: #fff;
+  height: 45px;
+  width: 45px;
+  border-radius: 25px;
+  font-size: 18px;
+  margin-left: 10px; }
+  button.add-btn:hover, button.add-btn:focus, button.add-btn:active {
+    background-color: #ffbf23;
+    color: #fff; }
+  button.add-btn > .glyphicon-plus {
+    left: 1px;
+    top: 2px; }
+
+.navbar a {
+  color: #fff; }
+  .navbar a:hover, .navbar a:focus, .navbar a:active {
+    background-color: #ffbf23 !important; }
+.navbar .icon-bar {
+  background-color: #fff; }
+.navbar .form-group.desktop-search {
+  margin-top: 10px;
+  margin-bottom: 0;
+  width: 34px;
+  height: 28px;
+  background-color: #fff;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  transition: all 0.35s, border-radius 0s; }
+  .navbar .form-group.desktop-search.focus {
+    width: 250px;
+    cursor: pointer; }
+  .navbar .form-group.desktop-search input {
+    padding-right: 20px;
+    height: 28px;
+    border: 0 none;
+    background: transparent;
+    box-shadow: none; }
+  .navbar .form-group.desktop-search span.glyphicon-search {
+    position: absolute;
+    right: 10px;
+    top: 17px;
+    color: #555; }
+.navbar .input-group.mobile-search input {
+  border-radius: 0; }
+.navbar .input-group.mobile-search button {
+  border-radius: 0; }
+
+.feed {
+  padding-top: 22px; }
+  .feed .description {
+    min-height: 60px; }
+
+.thumbnail .caption h1 {
+  font-size: 1.0em;
+  margin: 5px; }
+  .thumbnail .caption h1 span {
+    float: right;
+    transition: all .2s ease-in-out;
+    -webkit-transition: all .2s ease-in-out;
+    -moz-transition: all .2s ease-in-out; }
+    .thumbnail .caption h1 span:hover {
+      transform: scale(1.4);
+      -webkit-transform: scale(1.4);
+      -moz-transform: scale(1.4); }
+.thumbnail .caption h5 {
+  font-size: 0.7em;
+  margin-top: 0.1em;
+  color: #777; }
+  .thumbnail .caption h5 span {
+    color: #337ab7;
+    transition: all .2s ease-in-out;
+    -webkit-transition: all .2s ease-in-out;
+    -moz-transition: all .2s ease-in-out; }
+    .thumbnail .caption h5 span:hover {
+      font-size: 14px; }
+.thumbnail:hover {
+  border-color: red; }
+.thumbnail.right-caption {
+  float: left;
+  width: 100%;
+  height: 160px; }
+  .thumbnail.right-caption > img {
+    float: left;
+    margin-right: 9px;
+    max-width: 40% !important;
+    max-height: 100% !important; }
+  .thumbnail.right-caption > .caption {
+    padding: 4px; }
+.thumbnail #description {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical; }
+
+.settings-page {
+  padding: 20px; }
+  .settings-page h2 {
+    margin-left: 0; }
+  .settings-page h4 {
+    margin-top: 20px; }
+  .settings-page button {
+    margin-top: 20px; }
+  .settings-page #description {
+    width: 60%; }
+  .settings-page #upload {
+    width: 60%; }
+
+.recipe-page {
+  padding: 20px; }
+  .recipe-page img {
+    max-height: 300px;
+    max-width: none !important;
+    width: auto; }
+  .recipe-page h2 {
+    margin-left: 0; }
+    .recipe-page h2 .recipe-tools span {
+      color: #555; }
+  .recipe-page .glyphicon-star {
+    color: #ffb500; }
+  .recipe-page .instructions p {
+    margin: 0;
+    display: inline-block; }
+  .recipe-page .instructions ul, .recipe-page .instructions ol {
+    padding-left: 20px; }
+    .recipe-page .instructions ul li p, .recipe-page .instructions ol li p {
+      vertical-align: top; }
+  .recipe-page .time {
+    margin-top: 10px;
+    margin-bottom: 15px; }
+    .recipe-page .time p {
+      display: inline-block; }
+    .recipe-page .time .servings {
+      margin-left: 20px;
+      display: inline-block; }
+      .recipe-page .time .servings form input {
+        display: inline-block;
+        width: 55px; }
+      .recipe-page .time .servings form button {
+        position: absolute;
+        right: 20px;
+        top: 0; }
+        .recipe-page .time .servings form button:hover {
+          background-color: #ffbf23;
+          color: #fff; }
+  .recipe-page .rating_box {
+    margin-top: 30px; }
+
+.new-recipe-page {
+  padding: 20px; }
+  .new-recipe-page textarea {
+    resize: none; }
+  .new-recipe-page h2 {
+    margin-left: 0; }
+    .new-recipe-page h2 input {
+      border: none; }
+  .new-recipe-page img {
+    max-width: 20%;
+    display: inline-block; }
+    .new-recipe-page img + button {
+      margin-left: 30px;
+      width: 50px;
+      height: 50px;
+      color: #555; }
+  .new-recipe-page .time {
+    padding-top: 40px; }
+    .new-recipe-page .time input#hours {
+      width: 55px; }
+    .new-recipe-page .time input#minutes {
+      width: 55px; }
+    .new-recipe-page .time input#servings {
+      width: 55px; }
+    .new-recipe-page .time span.fa-users {
+      margin-left: 30px; }
+  .new-recipe-page .ingredient-container .ingredient-row {
+    display: inline; }
+  .new-recipe-page .ingredient-container .add-btn {
+    display: inline; }
+  .new-recipe-page .instructions .form-group .amountInput {
+    width: 20%; }
+  .new-recipe-page .instructions .form-group.amount {
+    width: 80%; }
+    .new-recipe-page .instructions .form-group.amount > input {
+      width: 49.8%; }
+    .new-recipe-page .instructions .form-group.amount > select {
+      width: 49%; }
+  .new-recipe-page .instructions .form-group + .add-btn {
+    position: absolute;
+    top: 50px; }
+  .new-recipe-page .instructions select#ingredient {
+    width: 80%;
+    margin-top: 5px; }
+
+.vote-star {
+  font-size: 1.5em;
+  color: #EAB126; }
+
+#avg-rating-icon {
+  color: #ffb500; }
+
+#userImage {
+  max-width: 100%;
+  margin-bottom: 20px; }
+
+#editProfile {
+  color: #555; }
+
+#userDescription {
+  padding: 15px 0 15px 0; }
+
+#my-ingredients-modal {
+  display: none;
+  z-index: 10000;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.7);
+  position: absolute; }
+  #my-ingredients-modal .content {
+    padding: 10px; }
+  #my-ingredients-modal .ingredients-list {
+    overflow: auto;
+    padding: 0 15px 0 5px;
+    max-height: 514px; }
+    #my-ingredients-modal .ingredients-list span {
+      color: #fff; }
+      #my-ingredients-modal .ingredients-list span.fa-remove {
+        color: #f73d40;
+        cursor: pointer;
+        position: relative;
+        top: 14px;
+        right: -8px; }
+  #my-ingredients-modal .ingredients-form {
+    margin-top: 15px; }
+    #my-ingredients-modal .ingredients-form .shadow-element:hover, #my-ingredients-modal .ingredients-form .shadow-element:focus, #my-ingredients-modal .ingredients-form .shadow-element:active {
+      background-color: #ffbf23;
+      color: #fff; }
+    #my-ingredients-modal .ingredients-form .form-group .col-sm-8 {
+      padding: 0;
+      margin-bottom: 15px; }
+    #my-ingredients-modal .ingredients-form .form-group button {
+      margin-bottom: 10px;
+      display: block; }
+    #my-ingredients-modal .ingredients-form .form-group .amount_unit {
+      color: #fff; }
+  #my-ingredients-modal #apply-btn {
+    box-shadow: 2px 2px 3px #888888;
+    background-color: #f73d40;
+    color: #fff; }
+    #my-ingredients-modal #apply-btn:hover, #my-ingredients-modal #apply-btn:focus, #my-ingredients-modal #apply-btn:active {
+      background-color: #fb5a5d;
+      color: #fff; }
+  #my-ingredients-modal .typeahead.dropdown-menu {
+    top: 34px !important;
+    left: 30px !important;
+    position: absolute; }
+
+#my-ingredients-button {
+  z-index: 1;
+  background-color: #f73d40;
+  color: #fff;
+  border-radius: 0;
+  font-size: 22px;
+  position: fixed; }
+  #my-ingredients-button:focus {
+    outline: none; }
+  #my-ingredients-button i {
+    padding-left: 20px; }
+
+@media only screen and (max-width: 767px) {
+  #my-ingredients-button {
+    bottom: 0;
+    font-size: 20px;
+    width: 100%; }
+
+  #my-ingredients-modal {
+    bottom: 42px;
+    width: 100%; } }
+@media only screen and (max-width: 1199px) and (min-width: 768px) {
+  #my-ingredients-button {
+    -webkit-transform: rotate(-90deg);
+    -moz-transform: rotate(-90deg);
+    left: -90px;
+    top: 30%;
+    font-size: 24px; }
+
+  #my-ingredients-modal {
+    left: 47px;
+    width: 30%;
+    top: 10%; } }
+@media only screen and (min-width: 1200px) {
+  #my-ingredients-button {
+    width: 16.7%; }
+
+  #my-ingredients-modal {
+    width: 16.7%;
+    top: 97px; } }
+
+/*# sourceMappingURL=styles.css.map */
