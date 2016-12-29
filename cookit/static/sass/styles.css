@@ -165,7 +165,8 @@ button.add-btn {
     width: 180px !important;
     max-height: 100% !important; }
   .thumbnail.right-caption > .caption {
-    padding: 4px; }
+    padding: 4px;
+    margin-left: 190px; }
 .thumbnail #description {
   overflow: hidden;
   display: -webkit-box;
