@@ -27,7 +27,8 @@ body {
 .center-column {
   background-color: rgba(255, 255, 255, 0.9);
   height: 100%;
-  overflow: auto; }
+  overflow: auto;
+  max-width: 1100px; }
 
 .shadow-element {
   color: #fff;
