@@ -34,6 +34,8 @@ def feed(request, feed_type=None):
 	user = request.user
 	user_account = UserAccount.objects.get(user=user) if user.is_authenticated() else None
 
+	message = "There is no recipes"
+
 	if feed_type is None:
 		if not user.is_authenticated():
 			recipes = Recipe.objects.all()
@@ -43,11 +45,14 @@ def feed(request, feed_type=None):
 		if user.is_authenticated():
 			if feed_type == "own_recipes":
 				recipes = Recipe.objects.filter(creator=user_account)
+				message = "You can create your own recipes by clicking 'New Recipe'! They will show up here."
 			elif feed_type == "favourites":
 				recipes = user_account.favourite_recipes.all()
+				message = "You can mark recipes as your favourites by clicking heart button next to recipe title. Favourite recipes will show up here."
 			elif feed_type == "history":
 				cooked_recipes = CookedRecipe.objects.filter(user_account=user_account).order_by('-cooking_date', '-cooking_time')
 				recipes = [cooked.recipe for cooked in cooked_recipes]
+				message = "You have not cooked anything yet. You can add recipes to your cooking history by clicking 'COOKIT' button in recipe page."
 			else:
 				raise Http404()
 		else:
@@ -66,6 +71,7 @@ def feed(request, feed_type=None):
 			recipe.image = images[0]
 
 	context = {'recipes': recipes}
+	context['message'] = message
 
 	if user.is_authenticated():
 		# Convert all ingredients to a list and pass to template

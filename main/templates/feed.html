@@ -3,7 +3,10 @@
 {% block content %}
 
 <!-- Feed -->
-<div class="row feed">
+<div class="feed">
+{% if not recipes %}
+<div class="alert alert-info">{{ message }}</div>
+{% endif %}
 {% for item in recipes %}
 {% include "recipe_card.html" with item=item %}
 {% endfor %}
