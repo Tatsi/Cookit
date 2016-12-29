@@ -3,7 +3,5 @@ __pycache__
 *.pyc
 .sass-cache/
 db.sqlite3
-styles.css.map
-styles.css
 ingredient_ids
 cookit/media/*

@@ -335,6 +335,25 @@ def cook_recipe(request, recipe_id):
 				user_account = user_account,
 				serving_count = servings
 			)
+
+			# Decrease my ingredient amount according to recipe ingredient amounts
+			recipe_ingredients = RecipeIngredient.objects.filter(recipe=recipe)
+			user_ingredients = UserIngredient.objects.filter(user_account=user_account)
+			ingredients = [ingredient.ingredient for ingredient in user_ingredients]
+			for i in range(0, len(recipe_ingredients)-1):
+				if recipe_ingredients[i].ingredient in ingredients:
+					user_ingredient = user_ingredients.get(ingredient=recipe_ingredients[i].ingredient)
+					# The amount should be defined by the selected servings
+					new_recipe_amount = float(recipe_ingredients[i].amount) / int(recipe.servings) * int(servings)
+					new_amount = float(user_ingredient.amount) - float(new_recipe_amount)
+					if new_amount >= 0:
+						# Set the new amount
+						user_ingredient.amount = new_amount
+						user_ingredient.save()
+					else:
+						# Delete ingredient
+						user_ingredient.delete()
+
 			return JsonResponse({'code': 0, 'message':'Recipe cooked'})
 
 # @login_required
