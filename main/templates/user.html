@@ -75,7 +75,10 @@
 
 <!-- Users recipes-->
 <h4>Recipes</h4>
-<div class="row">
+{% if not recipes %}
+<div class="alert alert-info">You can create your own recipes by clicking 'New Recipe'! They will show up here.</div>
+{% endif %}
+<div>
 	{% for item in recipes %}
 		{% include "recipe_card.html" with item=item %}
 	{% endfor %}
