@@ -38,10 +38,12 @@
 				e.preventDefault();
 				var ingredient_name = $('#ingredientInput').val();
 				var ingredient_amount = $('#ingredientAmountInput').val();
+				if (!ingredient_amount) {
+					$.notify({message: 'Please enter amount!'},{delay: 3000, type: 'danger'});
+				}
 				// If ingredient is already there do nothing
 				if ($('span:contains("' + ingredient_name + '")').length > 0) {
-					// Clear input
-					$('#ingredientInput').val('');
+					$.notify({message: 'You already have this ingredient in your list!'},{delay: 3000, type: 'info'});
 				} else {
 					$.ajax({
 						type: "POST",
