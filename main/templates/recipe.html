@@ -73,10 +73,11 @@
 			<p><span class="glyphicon glyphicon-user"></span> <a href="{% url 'user' recipe.creator.user.id %}">{{ recipe.creator.user.username }}</a></p>
 			<i>{{ recipe.description }}</i>
 			<div class="rating_box">
-			{%comment%}
-			{% include "vote_stars.html" with item=recipe %}
-			{%endcomment%}
-			<label for="user_rating_input" class="control-label">User rating</label>
+			{%if is_cooked%}
+				<label for="user_rating_input" class="control-label">User rating</label>
+			{% else %}
+				<label for="user_rating_input" class="control-label">Cookit first, then rate!</label>
+			{% endif %}
 			<input id="user_rating_input">
 			<label for="user_rating_input" class="control-label">Avg. rating</label>
 			<span class="fa-stack fa-2x">
@@ -159,7 +160,7 @@
 		// Show alert for saved recipe if saved = true
 		var saved = "{{ saved }}";
 		if (saved == true) {
-			show_notification("This recipe was saved succesfully!");
+			show_notification("This recipe was saved succesfully!", 'info');
 		}
 
 		var original_amounts = [];
@@ -179,7 +180,7 @@
 					csrfmiddlewaretoken: $('input[name=csrfmiddlewaretoken]').val(),
 				},
 				success: function() {
-					show_notification("This recipe was added to your cooking history!");
+					show_notification("This recipe was added to your cooking history!", 'info');
 				}
 			});
 		});
@@ -235,8 +236,8 @@
 			return cookieValue;
 		}
 
-		function show_notification(message) {
-			$.notify({message: message}, {delay: 2000});
+		function show_notification(message, type) {
+			$.notify({message: message}, {delay: 2000, type: type});
 		}
 
 		// Delete recipe
@@ -256,7 +257,12 @@
 		$('[data-toggle="tooltip"]').tooltip();
 
 		// Initialize rating
-		$("#user_rating_input").rating({min:0, max:5, step: 1.0, stars: 5, showClear: false, showCaption: false, size: 'sm'});
+		{%if is_cooked%}
+		var disable_voting = false;
+		{%else%}
+		var disable_voting = true;
+		{%endif%} 
+		$("#user_rating_input").rating({min:0, max:5, step: 1.0, stars: 5, showClear: false, showCaption: false, size: 'sm', disabled: disable_voting});
 		var rating = {{user_rating|default_if_none:-1}};
 		$('#user_rating_input').rating('update', rating);
 
@@ -268,9 +274,12 @@
 		  			'id': {{recipe.id}}
 		  			},
 		  	  success: function(data) {
-		  	  	show_notification(data.message);
 		  	  	if(data.code === 0) {
+		  	  		show_notification(data.message, 'info');
 		  	  		$("#avg-rating-figure").text(parseFloat(data.rating).toFixed(0));
+		  	  	}
+		  	  	else {
+		  	  		show_notification(data.message, 'danger');
 		  	  	}
 		  	  }
 		  	});

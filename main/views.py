@@ -224,9 +224,11 @@ def recipe(request, recipe_id):
 	user_account = UserAccount.objects.get(user=user) if user.is_authenticated() else None
 
 	user_rating = None
+	is_cooked = False
 
 	# Check if the user has this recipe in his favourites
 	if user_account:
+		is_cooked = has_cooked(recipe, user_account)
 		try:
 			user_account.favourite_recipes.get(id=recipe_id)
 		except Recipe.DoesNotExist:
@@ -273,6 +275,7 @@ def recipe(request, recipe_id):
 		'instructions': steps,
 		'images': images,
 		'user_rating': user_rating,
+		'is_cooked': is_cooked,
 		'absolute_url': absolute_url,
 		'all_ingredients': json.dumps(list(Ingredient.objects.all().values('name', 'unit', 'unit_short').distinct()))
 	}

@@ -132,7 +132,7 @@ button.add-btn {
 
 .thumbnail .caption h1 {
   font-size: 1.0em;
-  margin: 5px; }
+  margin: 5px 0 5px 0; }
   .thumbnail .caption h1 span {
     float: right;
     transition: all .2s ease-in-out;
@@ -368,10 +368,10 @@ button.add-btn {
     top: 10%; } }
 @media only screen and (min-width: 1200px) {
   #my-ingredients-button {
-    width: 16.7%; }
+    width: 17.2%; }
 
   #my-ingredients-modal {
-    width: 16.7%;
+    width: 17.2%;
     top: 97px; } }
 
 /*# sourceMappingURL=styles.css.map */
