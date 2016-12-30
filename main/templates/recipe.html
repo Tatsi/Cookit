@@ -115,7 +115,7 @@
 			<!-- Non-collapsing ingredient list for desktop -->
 			<div class="hidden-xs">
 				<h4>Ingredients</h4>
-				<ul id="ingredients">
+				<ul>
 					{% for ingredient in ingredients %}
 					<li><p id="amount">{{ ingredient.amount }}</p> <p id="unit">{{ ingredient.ingredient.unit_short }}</p> <p id="name">{{ ingredient.ingredient.name }}</p></li>
 					{% endfor %}
