@@ -14,10 +14,6 @@ def mainpage(request):
 	context = {}
 	user = request.user
 	if user.is_authenticated():
-		#user_account = UserAccount.objects.get(user=user)
-		# Fetch ingredients the user has
-		#context['my_ingredients'] = UserIngredient.objects.filter(user_account=user_account)
-		#context['all_ingredients'] = json.dumps(list(Ingredient.objects.all().values('name', 'unit', 'unit_short').distinct()))
 		return HttpResponseRedirect(reverse('feed'))
 
 	# Get 6 random recipes
@@ -29,6 +25,10 @@ def mainpage(request):
 	# Add images of each recipe to context
 	images = []
 	for recipe in recipes:
+		ingredients = RecipeIngredient.objects.filter(recipe=recipe)
+		recipe.ingredients_user_has = "0"
+		recipe.ingredients_count = ingredients.count()
+
 		images = RecipeImage.objects.filter(recipe=recipe)
 		if images:
 			recipe.image = images[0]
@@ -50,25 +50,56 @@ def feed(request, feed_type=None):
 	user = request.user
 	user_account = UserAccount.objects.get(user=user) if user.is_authenticated() else None
 
-	message = "There is no recipes"
+	message = "There are no recipes"
 
 	if feed_type is None:
 		if not user.is_authenticated():
 			recipes = Recipe.objects.all()
 		else:
 			recipes = Recipe.objects.filter(ingredients__in=user_account.ingredients.all()).distinct()
-			message = "There is no recipes matching your own ingredients"
+
+			for recipe in recipes:
+				ingredients = RecipeIngredient.objects.filter(recipe=recipe)
+				ingredients_user_has = ingredients.filter(ingredient__in=UserIngredient.objects.filter(user_account=user_account).values_list('ingredient', flat=True))
+				recipe.ingredients_user_has = ingredients_user_has.count()
+				recipe.ingredients_count = ingredients.count()
+			recipes = sorted(recipes, key=lambda recipe: recipe.ingredients_user_has, reverse=True)
+
+			message = "There are no recipes matching your own ingredients"
 	else:
 		if user.is_authenticated():
 			if feed_type == "own_recipes":
 				recipes = Recipe.objects.filter(creator=user_account)
+
+				for recipe in recipes:
+					ingredients = RecipeIngredient.objects.filter(recipe=recipe)
+					ingredients_user_has = ingredients.filter(ingredient__in=UserIngredient.objects.filter(user_account=user_account).values_list('ingredient', flat=True))
+					recipe.ingredients_user_has = ingredients_user_has.count()
+					recipe.ingredients_count = ingredients.count()
+				recipes = sorted(recipes, key=lambda recipe: recipe.ingredients_user_has, reverse=True)
+
 				message = "You can create your own recipes by clicking 'New Recipe'! They will show up here."
 			elif feed_type == "favourites":
 				recipes = user_account.favourite_recipes.all()
+
+				for recipe in recipes:
+					ingredients = RecipeIngredient.objects.filter(recipe=recipe)
+					ingredients_user_has = ingredients.filter(ingredient__in=UserIngredient.objects.filter(user_account=user_account).values_list('ingredient', flat=True))
+					recipe.ingredients_user_has = ingredients_user_has.count()
+					recipe.ingredients_count = ingredients.count()
+				recipes = sorted(recipes, key=lambda recipe: recipe.ingredients_user_has, reverse=True)
+
 				message = "You can mark recipes as your favourites by clicking heart button next to recipe title. Favourite recipes will show up here."
 			elif feed_type == "history":
 				cooked_recipes = CookedRecipe.objects.filter(user_account=user_account).order_by('-cooking_date', '-cooking_time')
 				recipes = [cooked.recipe for cooked in cooked_recipes]
+
+				for recipe in recipes:
+					ingredients = RecipeIngredient.objects.filter(recipe=recipe)
+					ingredients_user_has = ingredients.filter(ingredient__in=UserIngredient.objects.filter(user_account=user_account).values_list('ingredient', flat=True))
+					recipe.ingredients_user_has = ingredients_user_has.count()
+					recipe.ingredients_count = ingredients.count()
+
 				message = "You have not cooked anything yet. You can add recipes to your cooking history by clicking 'COOKIT' button in recipe page."
 			else:
 				raise Http404()
@@ -96,7 +127,6 @@ def feed(request, feed_type=None):
 		# Fetch ingredients the user has
 		context['my_ingredients'] = UserIngredient.objects.filter(user_account=user_account)
 
-	# TODO: Update the filter and return the list of matching recipes
 	return render(request, 'feed.html', context)
 
 def user(request, user_id=None):
@@ -269,6 +299,16 @@ def recipe(request, recipe_id):
 	if user.is_authenticated():
 		# Fetch ingredients the user has
 		context['my_ingredients'] = UserIngredient.objects.filter(user_account=user_account)
+	
+		recipes_ingredients = ingredients.select_related('ingredient')
+		recipe_ingredient_count = recipes_ingredients.count()
+
+		ingredients_user_has = ingredients.filter(ingredient__in=UserIngredient.objects.filter(user_account=user_account).values_list('ingredient', flat=True))
+		ingredients_count = ingredients_user_has.count()
+		print str(ingredients_count) + "/" + str(recipe_ingredient_count)
+		context['recipe_ingredient_count'] = recipe_ingredient_count
+		context['ingredients_count'] = ingredients_count
+
 
 	return render(request, 'recipe.html', context)
 
