@@ -126,6 +126,9 @@ button.add-btn {
 .navbar .input-group.mobile-search button {
   border-radius: 0; }
 
+.navbar-collapse {
+  max-height: none !important; }
+
 .feed {
   padding-top: 22px; }
   .feed .description {
