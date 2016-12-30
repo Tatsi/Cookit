@@ -22,13 +22,16 @@
 		<script type="text/javascript" src="{% static 'bootstrap-notify.min.js' %}"></script>
 		<script type="text/javascript">
 		$(document).ready(function() {
-			var isOpen = window.localStorage.getItem('my_ingredients_open');
 			var modal = document.getElementById('my-ingredients-modal');
-			if (isOpen == "true") {
+			var isOpen = window.localStorage.getItem('my_ingredients_open');
+			if (typeof isOpen == 'undefined') {
+				window.localStorage.setItem('my_ingredients_open', true);
+				modal.style.display = 'block';
+				$('#my-ingredients-button i').addClass('fa-angle-up');
+			} else if (isOpen == "true") {
 				modal.style.display = 'block';
 				$('#my-ingredients-button i').addClass('fa-angle-up');
 			} else {
-
 				$('#my-ingredients-button i').addClass('fa-angle-down');
 			}
 			{% if all_ingredients|length > 0 %}
