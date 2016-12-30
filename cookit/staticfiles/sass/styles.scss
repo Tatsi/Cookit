@@ -135,7 +135,8 @@ button.add-btn {
 // Styles for navigation bar
 .navbar {
 	a {
-		color: #fff;
+		color: $recipe-name-color !important;
+		font-size: 16px;
 
 		&:hover, &:focus, &:active {
 			background-color: $navbar-hover-color !important;
@@ -188,6 +189,9 @@ button.add-btn {
 	}
 }
 
+.navbar-collapse {
+	max-height: none !important;
+}
 
 .feed {
 	padding-top: 22px;

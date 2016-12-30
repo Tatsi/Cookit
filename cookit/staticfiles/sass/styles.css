@@ -91,7 +91,8 @@ button.add-btn {
     top: 2px; }
 
 .navbar a {
-  color: #fff; }
+  color: #1b7b34 !important;
+  font-size: 16px; }
   .navbar a:hover, .navbar a:focus, .navbar a:active {
     background-color: #ffbf23 !important; }
 .navbar .icon-bar {
@@ -124,6 +125,9 @@ button.add-btn {
   border-radius: 0; }
 .navbar .input-group.mobile-search button {
   border-radius: 0; }
+
+.navbar-collapse {
+  max-height: none !important; }
 
 .feed {
   padding-top: 22px; }
