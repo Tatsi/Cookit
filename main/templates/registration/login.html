@@ -54,7 +54,7 @@
 
 <script type="text/javascript">
 	$(document).ready(function() {
-		$('#loginForm').keydown(function() {
+		$('#loginForm').keydown(function(e) {
 			var key = e.which;
 			if (key == 13) {
 				$('#loginForm').submit();
