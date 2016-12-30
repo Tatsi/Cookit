@@ -74,9 +74,9 @@
 			<i>{{ recipe.description }}</i>
 			<div class="rating_box">
 			{%if is_cooked%}
-				<label for="user_rating_input" class="control-label">User rating</label>
+				<label id="rate_label" for="user_rating_input" class="control-label">User rating</label>
 			{% else %}
-				<label for="user_rating_input" class="control-label">Cookit first, then rate!</label>
+				<label id="rate_label" for="user_rating_input" class="control-label">Cookit first, then rate!</label>
 			{% endif %}
 			<input id="user_rating_input">
 			<label for="user_rating_input" class="control-label">Avg. rating</label>
@@ -159,6 +159,12 @@
 	$(document).ready(function() {
 		// Show alert for saved recipe if saved = true
 		var saved = "{{ saved }}";
+		{%if is_cooked%}
+		var is_cooked = true;
+		{%else%}
+		var is_cooked = false;
+		{%endif%}
+
 		if (saved == true) {
 			show_notification("This recipe was saved succesfully!", 'info');
 		}
@@ -181,6 +187,15 @@
 				},
 				success: function() {
 					show_notification("This recipe was added to your cooking history!", 'info');
+					if(!is_cooked){
+						is_cooked = true;
+						var $new_input = $("<input>").attr('id', 'user_rating_input');
+						$('#rate_label').after($new_input);
+						$('.rating-container').remove();
+						update_rating_box();
+						$('#rate_label').text('User rating');
+					}
+
 				}
 			});
 		});
@@ -240,6 +255,40 @@
 			$.notify({message: message}, {delay: 2000, type: type});
 		}
 
+		function update_rating_box() {
+			// Initialize rating
+			if(is_cooked) {
+				var disable_voting = false;
+			}
+			else {
+				var disable_voting = true;
+			} 
+			$("#user_rating_input").rating({min:0, max:5, step: 1.0, stars: 5, showClear: false, showCaption: false, size: 'sm', disabled: disable_voting});
+			var rating = {{user_rating|default_if_none:-1}};
+			$('#user_rating_input').rating('update', rating);
+
+			$('#user_rating_input').on('rating.change', function(event, value, caption) {
+			    $.ajax({
+			      type: "POST",
+			      url: '{% url "rate_recipe" %}',
+			      data: {'rating': value,
+			  			'id': {{recipe.id}}
+			  			},
+			  	  success: function(data) {
+			  	  	if(data.code === 0) {
+			  	  		show_notification(data.message, 'info');
+			  	  		$("#avg-rating-figure").text(parseFloat(data.rating).toFixed(0));
+			  	  	}
+			  	  	else {
+			  	  		show_notification(data.message, 'danger');
+			  	  	}
+			  	  }
+			  	});
+			});
+		}
+
+		update_rating_box();
+
 		// Delete recipe
 		$('.fa-trash').click(function() {
 			$.ajax({
@@ -256,34 +305,7 @@
 
 		$('[data-toggle="tooltip"]').tooltip();
 
-		// Initialize rating
-		{%if is_cooked%}
-		var disable_voting = false;
-		{%else%}
-		var disable_voting = true;
-		{%endif%} 
-		$("#user_rating_input").rating({min:0, max:5, step: 1.0, stars: 5, showClear: false, showCaption: false, size: 'sm', disabled: disable_voting});
-		var rating = {{user_rating|default_if_none:-1}};
-		$('#user_rating_input').rating('update', rating);
 
-		$('#user_rating_input').on('rating.change', function(event, value, caption) {
-		    $.ajax({
-		      type: "POST",
-		      url: '{% url "rate_recipe" %}',
-		      data: {'rating': value,
-		  			'id': {{recipe.id}}
-		  			},
-		  	  success: function(data) {
-		  	  	if(data.code === 0) {
-		  	  		show_notification(data.message, 'info');
-		  	  		$("#avg-rating-figure").text(parseFloat(data.rating).toFixed(0));
-		  	  	}
-		  	  	else {
-		  	  		show_notification(data.message, 'danger');
-		  	  	}
-		  	  }
-		  	});
-		});
 
 	});
 </script>
