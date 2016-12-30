@@ -44,7 +44,6 @@ def search(request):
 	recipes = Recipe.objects.filter(title__contains=search_query)
 
 	context['recipes'] = recipes
-	#print context['recipes']
 	return render(request, 'search.html', context)
 
 def feed(request, feed_type=None):
@@ -143,24 +142,15 @@ def settings(request):
 			# Store new image
 			request_images = request.FILES.getlist('image')
 			for img in request_images:
-				#print "Saving user profile image.."
 				image = UserImage(user_account=user_account, image=img)
 				image.save()
-				# print "done!"
-				# print "url: " + image.image.url
-				# print "path: " + image.image.path
-				# print "name: " + image.image.name
 				break
-			#print "redirecting"
-			#return redirect('user', user_id=user.id)
 
 			# Remove images
 			removed_images = request.POST.getlist('removeimage')
 			for img_id in removed_images:
-				#print "Removing userimage  " + str(img_id)
 				image = UserImage.objects.get(id=img_id)
 				image.delete()
-				#print "Removed userimage " + str(img_id)
 	else:
 		form = SettingsForm()
 
@@ -191,8 +181,6 @@ def add_my_ingredient(request):
 				name = form.cleaned_data['ingredient_name']
 				amount = form.cleaned_data['ingredient_amount']
 				try:
-					# TODO: Ingredients should not contain many ingredients with the same name
-					# This is only in the demo phase
 					ingredients = Ingredient.objects.filter(name=name)
 				except Ingredient.DoesNotExist:
 					pass
@@ -206,7 +194,6 @@ def add_my_ingredient(request):
 							item.delete()
 			else:
 				pass
-				#print form.errors
 		else:
 			form = IngredientsForm()
 
@@ -258,7 +245,6 @@ def recipe(request, recipe_id):
 
 	# Filter images
 	images = RecipeImage.objects.filter(recipe=recipe)
-	#print images
 
 	# Create absolute url
 	absolute_url = request.build_absolute_uri()
@@ -367,19 +353,6 @@ def cook_recipe(request, recipe_id):
 
 			return JsonResponse({'code': 0, 'message':'Recipe cooked'})
 
-# @login_required
-# def upload_recipe_image(request, recipe_name):
-# 	if request.method == "POST":
-# 		recipe = Recipe.objects.get(id=recipe_id)
-# 		form = RecipeImageForm(request, recipe=recipe_id)
-# 		if form.is_valid():
-# 			#form = form.save(commit=False)
-# 			#form.user = request.user
-# 			form.save()
-# 			# return redirect('user', user_id=user.id)
-# 	else:
-# 		return HttpResponse('')
-
 @login_required
 def add_favourite(request, recipe_id):
 	# Get recipe from db
@@ -425,8 +398,6 @@ def add_favourite_user(request, user_id):
 @login_required
 def new_recipe(request):
 	if request.method == 'POST':
-		#print "request:"
-		#print request.POST
 
 		form = NewRecipeForm(request.POST)
 
@@ -452,13 +423,8 @@ def new_recipe(request):
 			request_images = request.FILES.getlist('image')
 
 			for img in request_images:
-				#print "Saving image "
 				image = RecipeImage(recipe=recipe, image=img)
 				image.save()
-				# print "done."
-				# print "url: " + image.image.url
-				# print "path: " + image.image.path
-				# print "name: " + image.image.name
 
 			# Add the ingredients
 			ingredients = json.loads(form.cleaned_data['ingredients'])
@@ -533,26 +499,17 @@ def edit_recipe(request, recipe_id):
 			# Remove removed images
 			removed_images = request.POST.getlist('removeimage')
 			for img_id in removed_images:
-				#print "Removing image  " + str(img_id)
 				image = RecipeImage.objects.get(id=img_id)
 				image.delete()
-				#print "Removed image " + str(img_id)
 
 			# Store new images
 			request_images = request.FILES.getlist('image')
 
 			for img in request_images:
-				#print "Saving image "
-
 				image_count = RecipeImage.objects.filter(recipe=recipe).count()
-				#print image_count
 				if image_count < 5:
 					image = RecipeImage(recipe=recipe, image=img)
 					image.save()
-					# print "done."
-					# print "url: " + image.image.url
-					# print "path: " + image.image.path
-					# print "name: " + image.image.name
 				else:
 					break
 
