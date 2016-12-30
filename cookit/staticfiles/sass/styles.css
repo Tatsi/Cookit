@@ -132,7 +132,7 @@ button.add-btn {
 
 .thumbnail .caption h1 {
   font-size: 1.0em;
-  margin: 5px; }
+  margin: 5px 0 5px 0; }
   .thumbnail .caption h1 span {
     float: right;
     transition: all .2s ease-in-out;
