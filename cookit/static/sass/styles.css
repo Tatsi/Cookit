@@ -252,9 +252,9 @@ button.add-btn {
       width: 55px; }
     .new-recipe-page .time span.fa-users {
       margin-left: 30px; }
-  .new-recipe-page .ingredient-container .ingredient-row {
+  .new-recipe-page .ingredient-container .ingredient-row, .new-recipe-page .ingredient-container .instruction-row, .new-recipe-page .step-container .ingredient-row, .new-recipe-page .step-container .instruction-row {
     display: inline; }
-  .new-recipe-page .ingredient-container .add-btn {
+  .new-recipe-page .ingredient-container .add-btn, .new-recipe-page .step-container .add-btn {
     display: inline; }
   .new-recipe-page .instructions .form-group .amountInput {
     width: 20%; }

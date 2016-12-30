@@ -395,8 +395,8 @@ button.add-btn {
 			margin-left: 30px;
 		}
 	}
-	.ingredient-container {
-		.ingredient-row {
+	.ingredient-container, .step-container {
+		.ingredient-row, .instruction-row {
 			display: inline;
 		}
 		.add-btn {
