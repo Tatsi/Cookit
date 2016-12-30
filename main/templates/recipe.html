@@ -116,7 +116,7 @@
 			<!-- Non-collapsing ingredient list for desktop -->
 			<div class="hidden-xs">
 				<h4>Ingredients</h4>
-				<ul>
+				<ul class="ingredients">
 					{% for ingredient in ingredients %}
 					<li><p id="amount">{{ ingredient.amount }}</p> <p id="unit">{{ ingredient.ingredient.unit_short }}</p> <p id="name">{{ ingredient.ingredient.name }}</p></li>
 					{% endfor %}
@@ -125,7 +125,7 @@
 			<!-- Collapsing ingredient list for mobile -->
 			<div class="visible-xs">
 				<h4 class="collapse-header" data-toggle="collapse" href="#ingredients">Ingredients<span class="toggle"></span></h4>
-				<ul id="ingredients" class="collapse in">
+				<ul id="ingredients" class="ingredients collapse in">
 					{% for ingredient in ingredients %}
 					<li><p id="amount">{{ ingredient.amount }}</p> <p id="unit">{{ ingredient.ingredient.unit_short }}</p> <p id="name">{{ ingredient.ingredient.name }}</p></li>
 					{% endfor %}
@@ -222,10 +222,16 @@
 		$('#servings').on('input', function() {
 			var old_servings = "{{ recipe.servings }}";
 			var new_servings = $('#servings').val();
-			var elements = document.getElementById('ingredients').getElementsByTagName('li');
+			var desktop_elements = $('.hidden-xs .ingredients li');
+			var mobile_elements = $('.visible-xs .ingredients li')
 			if (new_servings > 0) {
-				for (var i=0; i < elements.length; i++) {
-					var amount = elements[i].firstChild;
+				for (var i=0; i < desktop_elements.length; i++) {
+					var amount = desktop_elements[i].firstChild;
+					var old_amount = original_amounts[i];
+					amount.innerHTML = (old_amount / old_servings * new_servings).toFixed(2);
+				}
+				for (var i=0; i < mobile_elements.length; i++) {
+					var amount = mobile_elements[i].firstChild;
 					var old_amount = original_amounts[i];
 					amount.innerHTML = (old_amount / old_servings * new_servings).toFixed(2);
 				}
@@ -262,7 +268,7 @@
 			}
 			else {
 				var disable_voting = true;
-			} 
+			}
 			$("#user_rating_input").rating({min:0, max:5, step: 1.0, stars: 5, showClear: false, showCaption: false, size: 'sm', disabled: disable_voting});
 			var rating = {{user_rating|default_if_none:-1}};
 			$('#user_rating_input').rating('update', rating);
